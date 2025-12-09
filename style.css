@@ -1,0 +1,283 @@
+body {
+  margin: 0;
+  background-color: #faf7ef !important;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  color: #1e2330;
+}
+.faqPageWrapper {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2.5rem 1.5rem 3rem;
+}
+.faqPageWrapper .faqSplashContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  background-image: url(./asset/splashBg.png);
+  background-repeat: repeat-y;
+  background-size: cover;
+  background-color: rgba(250, 247, 239, 0.6);
+  background-blend-mode: lighten;
+  padding: 2rem 1rem;
+}
+
+.faqPageWrapper .faqSplashContainer .faqMainHeader {
+  color: #1b4297;
+  font-size: 4rem;
+  line-height: 1.1;
+  font-family: "Gloock", serif; 
+}
+
+.faqSearchBox {
+  width: 60%;
+}
+
+.clearButton {
+  color: #93afea;
+  background-color: transparent;
+  border: none;
+  font-size: 1rem;
+  border-radius: 50%;
+}
+
+.searchInput {
+  border: none;
+  background-color: transparent;
+  width: 100%;
+  padding: 0rem 1rem;
+  color: #1b4297;
+}
+
+.searchInput:focus-visible {
+  border: none;
+  background-color: transparent;
+  outline: none;
+}
+
+.searchButton {
+  color: #1b4297;
+  background-color: transparent;
+  border: none;
+  font-size: 1rem;
+  border-radius: 50%;
+}
+
+.searchButton:focus-visible {
+  border: none;
+  outline: none;
+}
+
+.searchContainer {
+  display: flex;
+  flex-direction: row;
+  border: 2px#1B4297 solid;
+
+  justify-content: space-between;
+  padding: 1rem;
+  width: 100%;
+  border-radius: 50px;
+  background-color: #faf7ef;
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.gloock-regular {
+  font-family: "Gloock", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.inter-light {
+  font-family: "Inter", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+.inter-regular {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.inter-semibold {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.shadowSm {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.searchHintWrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  padding: auto 0.5rem;
+}
+
+.searchPlaceHolder {
+  color: #828282;
+}
+
+.iconSearch {
+  color: #1b4297;
+}
+
+.footerContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  gap: 1rem;
+  align-items: start;
+  font-weight: 500;
+  padding: 2rem 1rem;
+  color: #4f4f4f;
+}
+
+.footerWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  background-image: url(./asset/splashBg.png);
+  background-color: rgba(250, 247, 239, 0.6);
+  background-blend-mode: lighten;
+  background-repeat: repeat-y;
+  background-size: cover;
+}
+
+.logoWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.joinNowBtn {
+  background-color: #1b4297;
+  color: #ffffff;
+  font-size: 1rem;
+  padding: 0.5rem 2rem;
+  border-radius: 50px;
+}
+
+.logoContainer {
+  font-size: 2rem;
+  color: #1b4297;
+}
+
+.paginationWrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.prevButton {
+  background-color: transparent;
+  border: 2px solid #d5d7da;
+  height: fit-content;
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+}
+
+.nextButton {
+  background-color: transparent;
+  border: 2px solid #d5d7da;
+  height: fit-content;
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+}
+
+.pageWrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  padding: 0rem;
+  margin: 0;
+  list-style: none;
+}
+
+.pageNum {
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.currentPage {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+@media screen and (max-width: 768px) {
+  .faqContentListWrapper {
+    padding: 0rem !important;
+  }
+  .faqPageWrapper .faqSplashContainer .faqMainHeader {
+    font-size: 2rem !important;
+  }
+  .searchContainer {
+    padding: 0.5rem !important;
+  }
+  .faqSearchBox {
+    width: 100% !important;
+  }
+  .companyDesc {
+    text-align: center;
+  }
+
+  .footerContainer {
+    font-size: 0.825rem !important;
+    font-weight: 400 !important;
+    color: #4f4f4f;
+    padding: 0rem;
+  }
+
+  .searchHintWrapper {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .nextButton {
+    flex-direction: column-reverse;
+    width: 6rem;
+  }
+  .prevButton {
+    flex-direction: column;
+    width: 6rem;
+  }
+
+  .footerContainer {
+    gap: 1.5rem;
+  }
+}

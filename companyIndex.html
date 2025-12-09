@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAQ Dispenser</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="companyIndex.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gloock&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-h20CPMrzrerdqFqW1vvgkjz3Y5t15ScolN+ZIg4mpVABq8IknnP4a06f71Q2dbzWYHd8PSP7ZzkUvZ1sjYgCnw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <script src="script.js"></script>
+  </head>
+
+  <body>
+    <div class="faqPageWrapper">
+      <div class="faqSplashContainer">
+        <h1 class="faqMainHeader">FAQ Dispenser</h1>
+        <div class="faqSearchBox">
+          <form action="/search" method="get" class="searchContainer shadowSm">
+            <input
+              type="search"
+              id="search-box"
+              name="query"
+              placeholder="Search..."
+              class="searchInput"
+            />
+
+            <div class="buttonContainer">
+              <button
+                type="submit"
+                class="btn btn-icon searchButton"
+                aria-label="Search"
+              >
+                <i class="fa-solid fa-magnifying-glass iconSearch"></i>
+              </button>
+            </div>
+          </form>
+        </div>
+        <div class="row">
+          <div
+            class="col-lg-3 d-flex align-items-center justify-content-lg-end justify-content-center p-2"
+          >
+            <div class="profileLogoWrapper shadowSm">
+              <img
+                src="https://media.istockphoto.com/id/814423752/photo/eye-of-model-with-colorful-art-make-up-close-up.jpg?s=612x612&w=0&k=20&c=l15OdMWjgCKycMMShP8UK94ELVlEGvt7GmB_esHWPYE="
+                class="profileLogo"
+              />
+            </div>
+          </div>
+          <div class="col-lg-9 p-2">
+            <div
+              class="d-flex flex-column justify-content-start align-items-lg-start align-items-center gap-md-2"
+            >
+              <span class="companyName">
+                Sia Traditional Chinese Medicine
+              </span>
+              <p class="companyDesc">
+                Sia Traditional Chinese Medicine - TCM Spinal Manipulation,
+                Traditional Chinese Massage Therapy, Acupuncture, Moxibustion,
+                Cupping, Facial Gua Sha, Facial Rejuvenation Acupuncture
+              </p>
+
+              <div class="d-flex flex-column justify-content-start gap-2">
+                <div class="iconWrapper">
+                  <i class="fa-regular fa-envelope emailIcon"></i>
+                  <span class="textContainer"> sia@sia.com </span>
+                </div>
+                <div class="iconWrapper">
+                  <i class="fa-regular fa-address-book emailIcon"></i>
+                  <span class="textContainer"> +6010-824 7333 </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="faqContentContainer container">
+        <div class="align-items-end justify-content-end w-100 d-none d-lg-flex">
+          <div class="tabWrapper">
+            <div class="tabContainer" id="gridViewTab">
+              <span><i class="fa-solid fa-table-cells-large faSize"></i></span>
+              <span> Grid View </span>
+            </div>
+            <div class="tabContainer selectedTabContainer" id="listViewTab">
+              <span><i class="fa-solid fa-list faSize"></i></span>
+              <span> List View </span>
+            </div>
+          </div>
+        </div>
+        <div class="faqContentListWrapper">
+          <div class="faqContentListContainer shadowSm">
+            <div class="faqContentHeaderWrapper">
+              <div class="faqContentHeaderContainer"></div>
+              <div class="faqContentBodyContainer">
+                <div class="contentHeaderContainer">
+                  <h2 class="faqHeader">
+                    Kimi No Nawa NawaNawa Nawa NawaNawaNawa ?
+                  </h2>
+                  <div class="faqContentIcon">
+                    <button class="viewBtn shadowSm">
+                      <span class="viewBtnText">View</span>
+                      <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="faqSub">
+                26 Mar 2025 — In this article, let's dive into how to create a
+                good site search UI and get inspiration from 20 best search UI
+                design examples. 26 Mar 2025 — In this article, let's dive
+                into how to create a good site search UI and get inspiration
+                from 20 best search UI design examples. 26 Mar 2025 — In this
+                article, let's dive into how to create a good site search UI and
+                get inspiration from 20 best search UI design examples. 26 Mar
+                2025 — In this article, let's dive into how to create a good
+                site search UI and get inspiration from 20 best search UI design
+                examples. 26 Mar 2025 — In this article, let's dive into how to
+                create a good site search UI and get inspiration from 20 best
+                search UI design examples.
+              </div>
+            </div>
+
+            <div class="faqContentIcon">
+              <button class="viewMoreBtn viewMore">
+                <i class="fa-solid fa-plus"></i>
+              </button>
+              <button class="viewMoreBtn viewLess">
+                <i class="fa-solid fa-minus"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="faqContentListContainer shadowSm">
+            <div class="faqContentHeaderWrapper">
+              <div class="faqContentHeaderContainer"></div>
+              <div class="faqContentBodyContainer">
+                <div class="contentHeaderContainer">
+                  <h2 class="faqHeader">
+                    Kimi No Nawa NawaNawa Nawa NawaNawaNawa ?
+                  </h2>
+                  <div class="faqContentIcon">
+                    <button class="viewBtn shadowSm">
+                      <span class="viewBtnText">View</span>
+                      <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="faqSub">
+                26 Mar 2025 — In this article, let's dive into how to create a
+                good site search UI and get inspiration from 20 best search UI
+                design examples. 26 Mar 2025 — In this article, let's dive
+                into how to create a good site search UI and get inspiration
+                from 20 best search UI design examples. 26 Mar 2025 — In this
+                article, let's dive into how to create a good site search UI and
+                get inspiration from 20 best search UI design examples. 26 Mar
+                2025 — In this article, let's dive into how to create a good
+                site search UI and get inspiration from 20 best search UI design
+                examples. 26 Mar 2025 — In this article, let's dive into how to
+                create a good site search UI and get inspiration from 20 best
+                search UI design examples.
+              </div>
+            </div>
+
+            <div class="faqContentIcon">
+              <button class="viewMoreBtn viewMore">
+                <i class="fa-solid fa-plus"></i>
+              </button>
+              <button class="viewMoreBtn viewLess">
+                <i class="fa-solid fa-minus"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="faqContentListContainer shadowSm">
+            <div class="faqContentHeaderWrapper">
+              <div class="faqContentHeaderContainer"></div>
+              <div class="faqContentBodyContainer">
+                <div class="contentHeaderContainer">
+                  <h2 class="faqHeader">
+                    Kimi No Nawa NawaNawa Nawa NawaNawaNawa ?
+                  </h2>
+                  <div class="faqContentIcon">
+                    <button class="viewBtn shadowSm">
+                      <span class="viewBtnText">View</span>
+                      <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="faqSub">
+                26 Mar 2025 — In this article, let's dive into how to create a
+                good site search UI and get inspiration from 20 best search UI
+                design examples. 26 Mar 2025 — In this article, let's dive
+                into how to create a good site search UI and get inspiration
+                from 20 best search UI design examples. 26 Mar 2025 — In this
+                article, let's dive into how to create a good site search UI and
+                get inspiration from 20 best search UI design examples. 26 Mar
+                2025 — In this article, let's dive into how to create a good
+                site search UI and get inspiration from 20 best search UI design
+                examples. 26 Mar 2025 — In this article, let's dive into how to
+                create a good site search UI and get inspiration from 20 best
+                search UI design examples.
+              </div>
+            </div>
+
+            <div class="faqContentIcon">
+              <button class="viewMoreBtn viewMore">
+                <i class="fa-solid fa-plus"></i>
+              </button>
+              <button class="viewMoreBtn viewLess">
+                <i class="fa-solid fa-minus"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="faqContentListContainer shadowSm">
+            <div class="faqContentHeaderWrapper">
+              <div class="faqContentHeaderContainer"></div>
+              <div class="faqContentBodyContainer">
+                <div class="contentHeaderContainer">
+                  <h2 class="faqHeader">
+                    Kimi No Nawa NawaNawa Nawa NawaNawaNawa ?
+                  </h2>
+                  <div class="faqContentIcon">
+                    <button class="viewBtn shadowSm">
+                      <span class="viewBtnText">View</span>
+                      <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="faqSub">
+                26 Mar 2025 — In this article, let's dive into how to create a
+                good site search UI and get inspiration from 20 best search UI
+                design examples. 26 Mar 2025 — In this article, let's dive
+                into how to create a good site search UI and get inspiration
+                from 20 best search UI design examples. 26 Mar 2025 — In this
+                article, let's dive into how to create a good site search UI and
+                get inspiration from 20 best search UI design examples. 26 Mar
+                2025 — In this article, let's dive into how to create a good
+                site search UI and get inspiration from 20 best search UI design
+                examples. 26 Mar 2025 — In this article, let's dive into how to
+                create a good site search UI and get inspiration from 20 best
+                search UI design examples.
+              </div>
+            </div>
+
+            <div class="faqContentIcon">
+              <button class="viewMoreBtn viewMore">
+                <i class="fa-solid fa-plus"></i>
+              </button>
+              <button class="viewMoreBtn viewLess">
+                <i class="fa-solid fa-minus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="paginationWrapper">
+        <button class="prevButton shadowSm">
+          <i class="fa-solid fa-arrow-left me-2"></i> Previous
+        </button>
+        <ul class="pageWrapper">
+          <li class="pageNum currentPage">1</li>
+          <li class="pageNum">2</li>
+          <li class="pageNum">3</li>
+          <li class="pageNum">4</li>
+        </ul>
+        <button class="nextButton shadowSm">
+          Next <i class="fa-solid fa-arrow-right ms-2"></i>
+        </button>
+      </div>
+    </div>
+
+    <footer>
+      <div class="footerWrapper">
+        <div class="footerContainer container gloock-regular">
+          <div class="logoWrapper">
+            <span class="logoContainer gloock-regular"> Logo. </span>
+            <button class="joinNowBtn gloock-regular">Join Us Now!</button>
+          </div>
+
+          <span> Maximize Your Business's Online Presence with Us </span>
+          <span>
+            Elevate your online presence effortlessly with Us, Malaysia's
+            leading company in scraping FAQ across the internet.
+            <br />
+             Simply manage your company faq, and we'll boost your online
+            exposure across our platform
+          </span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

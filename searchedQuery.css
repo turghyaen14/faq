@@ -1,0 +1,243 @@
+/* ===========================
+   FAQ CONTENT LAYOUT
+=========================== */
+
+.faqContentContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===========================
+   VIEW TABS
+=========================== */
+
+.tabWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: row;
+  border: 2px solid #1b4297;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.tabContainer {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.5rem 0.75rem;
+  width: 10rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #1b4297;
+  background-color: transparent;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.tabContainer .faSize {
+  font-size: 1rem;
+}
+
+.selectedTabContainer,
+.tabContainer.selectedTabContainer {
+  background-color: #1b4297;
+  color: #ffffff;
+}
+
+/* ===========================
+   LIST / GRID WRAPPER
+=========================== */
+
+.faqContentListWrapper {
+  width: 100%;
+  padding: 1.5rem;
+  margin-top: 1.25rem;
+  display: grid;
+  gap: 1.5rem;
+  grid-auto-rows: auto;
+  transition: grid-template-columns 0.35s ease;
+}
+
+/* List view = single column */
+.faqContentListWrapper.list-view {
+  grid-template-columns: 1fr;
+}
+
+/* Grid view = responsive columns */
+.faqContentListWrapper.grid-view {
+  grid-auto-flow: row dense;
+
+  grid-template-columns: repeat(3, minmax(260px, 1fr));
+}
+
+/* ===========================
+   CARD / COMPANY ROW
+=========================== */
+
+.faqContentListContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  column-gap: 1rem;
+  padding: 1rem 1.25rem;
+  border-radius: 25px;
+  cursor: default;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease,
+    background-color 0.25s ease;
+}
+
+.faqContentListContainer:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.06);
+}
+
+/* In grid mode you can tweak alignment if you like */
+.faqContentListWrapper.grid-view .faqContentListContainer {
+  align-items: flex-start;
+}
+
+/* ===========================
+   CARD LEFT SIDE (LOGO + TEXT)
+=========================== */
+
+.faqContentHeaderWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1 1 auto; /* take remaining width */
+  min-width: 0; /* allow text to wrap instead of forcing overflow */
+}
+
+.faqContentHeaderContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.companyLogoWrapper {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.companyLogo {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.companyDetailWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  font-size: 0.625rem;
+  min-width: 0; /* allow text to wrap */
+  overflow-wrap: break-word;
+}
+
+.companyTitle {
+  font-size: 0.625rem;
+}
+
+.faqContentBodyContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 0.5rem;
+}
+
+.faqHeader {
+  font-size: 1.25rem;
+}
+
+.faqSub {
+  color: #4f4f4f;
+  margin: 0;
+  line-height: 1.4;
+  transition: max-height 0.25s ease;
+}
+
+/* Collapsed/expanded states for FAQ text */
+.faqContentListContainer.is-collapsed .faqSub {
+  max-height: 3.6em; /* ~2–3 lines */
+  overflow: hidden;
+}
+
+.faqContentListContainer.is-expanded .faqSub {
+  max-height: 1000px;
+}
+
+/* ===========================
+   ICONS / VIEW BUTTON
+=========================== */
+
+.faqContentIcon {
+  flex: 0 0 auto;
+  margin-left: auto; /* push button to far right */
+}
+
+.iconContainer {
+  background-color: transparent;
+  border: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.faqContentIcon .fa-minus {
+  display: none;
+}
+
+.faqContentListContainer.is-expanded .fa-minus {
+  display: inline-flex;
+}
+
+.faqContentListContainer.is-expanded .fa-plus {
+  display: none;
+}
+
+.viewBtn {
+  border: none;
+  background-color: #1b4297;
+  padding: 0.35rem 0.75rem;
+  display: inline-flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  color: #ffffff;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  transition: background-color 0.2s ease, transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.viewBtn:hover {
+  background-color: #163571;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+}
+
+.viewBtnText {
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 768px) {
+  .faqContentListContainer {
+    align-items: flex-start !important;
+  }
+}
