@@ -19,7 +19,7 @@ body {
   justify-content: center;
   background-image: url(./asset/splashBg.png);
   background-repeat: repeat-y;
-  background-size: cover;
+  background-size: contain;
   background-color: rgba(250, 247, 239, 0.6);
   background-blend-mode: lighten;
   padding: 2rem 1rem;

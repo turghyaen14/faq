@@ -39,6 +39,67 @@
       referrerpolicy="no-referrer"
     />
 
+    <script>
+      const companies = [
+        {
+          name: "Sia Traditional Chinese Medicine",
+          title: "Traditional Chinese Healthcare",
+          url: "https://sia-tcm.com",
+          logo: "https://media.istockphoto.com/id/814423752/photo/eye-of-model-with-colorful-art-make-up-close-up.jpg?s=612x612&w=0&k=20&c=l15OdMWjgCKycMMShP8UK94ELVlEGvt7GmB_esHWPYE=",
+        },
+        {
+          name: "Dribbble",
+          title: "Design Inspiration",
+          url: "https://dribbble.com",
+          logo: "https://media.istockphoto.com/id/814423752/photo/eye-of-model-with-colorful-art-make-up-close-up.jpg?s=612x612&w=0&k=20&c=l15OdMWjgCKycMMShP8UK94ELVlEGvt7GmB_esHWPYE=",
+        },
+        {
+          name: "Figma",
+          title: "Collaborative Interface Design Tool",
+          url: "https://figma.com",
+          logo: "https://media.istockphoto.com/id/814423752/photo/eye-of-model-with-colorful-art-make-up-close-up.jpg?s=612x612&w=0&k=20&c=l15OdMWjgCKycMMShP8UK94ELVlEGvt7GmB_esHWPYE=",
+        },
+      ];
+
+      function renderCompanyCards() {
+        const container = document.getElementById("companyList");
+
+        container.innerHTML = companies
+          .map((item, i) => {
+            return `       
+        <div class="faqContentListContainer shadowSm" data-id="${i}>
+          <div class="faqContentHeaderWrapper">
+            <div class="faqContentHeaderContainer">
+              <div class="companyLogoWrapper">
+                <img src="${item.logo}" class="companyLogo" alt="${item.name}" />
+              </div>
+              <div class="companyDetailWrapper">
+                <span class="companyTitle inter-light">${item.title}</span>
+                <span class="companyUrl">${item.url}</span>
+              </div>
+            </div>
+            <div class="faqContentBodyContainer">
+              <div class="contentHeaderContainer">
+                <h2 class="faqHeader">${item.name}</h2>
+              </div>
+            </div>
+          </div>
+          <div class="faqContentIcon">
+            <button class="viewBtn shadowSm" onclick="window.open('${item.url}', '_blank')">
+              <span class="viewBtnText">View</span>
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </button>
+          </div>
+        </div>
+      `;
+          })
+          .join("");
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        renderCompanyCards();
+      });
+    </script>
     <script src="script.js"></script>
   </head>
 
@@ -128,65 +189,3 @@
     </footer>
   </body>
 </html>
-
-<script>
-  const companies = [
-    {
-      name: "Sia Traditional Chinese Medicine",
-      title: "Traditional Chinese Healthcare",
-      url: "https://sia-tcm.com",
-      logo: "https://media.istockphoto.com/id/814423752/photo/eye-of-model-with-colorful-art-make-up-close-up.jpg?s=612x612&w=0&k=20&c=l15OdMWjgCKycMMShP8UK94ELVlEGvt7GmB_esHWPYE=",
-    },
-    {
-      name: "Dribbble",
-      title: "Design Inspiration",
-      url: "https://dribbble.com",
-      logo: "https://media.istockphoto.com/id/814423752/photo/eye-of-model-with-colorful-art-make-up-close-up.jpg?s=612x612&w=0&k=20&c=l15OdMWjgCKycMMShP8UK94ELVlEGvt7GmB_esHWPYE=",
-    },
-    {
-      name: "Figma",
-      title: "Collaborative Interface Design Tool",
-      url: "https://figma.com",
-      logo: "https://media.istockphoto.com/id/814423752/photo/eye-of-model-with-colorful-art-make-up-close-up.jpg?s=612x612&w=0&k=20&c=l15OdMWjgCKycMMShP8UK94ELVlEGvt7GmB_esHWPYE=",
-    },
-  ];
-
-  function renderCompanyCards() {
-    const container = document.getElementById("companyList");
-
-    container.innerHTML = companies
-      .map((item) => {
-        return `
-        <div class="faqContentListContainer shadowSm">
-          <div class="faqContentHeaderWrapper">
-            <div class="faqContentHeaderContainer">
-              <div class="companyLogoWrapper">
-                <img src="${item.logo}" class="companyLogo" alt="${item.name}" />
-              </div>
-              <div class="companyDetailWrapper">
-                <span class="companyTitle inter-light">${item.title}</span>
-                <span class="companyUrl">${item.url}</span>
-              </div>
-            </div>
-            <div class="faqContentBodyContainer">
-              <div class="contentHeaderContainer">
-                <h2 class="faqHeader">${item.name}</h2>
-              </div>
-            </div>
-          </div>
-          <div class="faqContentIcon">
-            <button class="viewBtn shadowSm" onclick="window.open('${item.url}', '_blank')">
-              <span class="viewBtnText">View</span>
-              <i class="fa-solid fa-arrow-up-right-from-square"></i>
-            </button>
-          </div>
-        </div>
-      `;
-      })
-      .join("");
-  }
-
-  document.addEventListener("DOMContentLoaded", () => {
-    renderCompanyCards();
-  });
-</script>

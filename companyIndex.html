@@ -39,6 +39,77 @@
       referrerpolicy="no-referrer"
     />
 
+    <script>
+      const faqData = [
+        {
+          title: "Kimi No Nawa NawaNawa Nawa NawaNawaNawa ?",
+          desc: `26 Mar 2025 — In this article, let's dive into how to create a good
+           site search UI and get inspiration from 20 best search UI design
+           examples. 26 Mar 2025 — In this article, let's dive into how to create
+           a good site search UI and get inspiration from 20 best search UI design examples.`,
+          link: "https://getbootstrap.com/docs/5.3/utilities/spacing/",
+        },
+        {
+          title: "Why UI Design Matters in 2025? 1",
+          desc: `26 Mar 2025 — In this article, let's dive into how to create a good
+           site search UI and get inspiration from 20 best search UI design
+           examples. 26 Mar 2025 — In this article, let's dive into how to create
+           a good site search UI and get inspiration from 20 best search UI design examples.`,
+        },
+        {
+          title: "Why UI Design Matters in 2025? 2",
+          desc: `26 Mar 2025 — In this article, let's dive into how to create a good
+           site search UI and get inspiration from 20 best search UI design
+           examples. 26 Mar 2025 — In this article, let's dive into how to create
+           a good site search UI and get inspiration from 20 best search UI design examples.`,
+        },
+        {
+          title: "Why UI Design Matters in 2025? 3",
+          desc: `26 Mar 2025 — In this article, let's dive into how to create a good
+           site search UI and get inspiration from 20 best search UI design
+           examples. 26 Mar 2025 — In this article, let's dive into how to create
+           a good site search UI and get inspiration from 20 best search UI design examples.`,
+        },
+      ];
+
+      function renderFAQ() {
+        const faqList = document.getElementById("faqList");
+
+        faqList.innerHTML = faqData
+          .map((item, i) => {
+            return `
+        <div class="faqContentListContainer shadowSm is-collapsed"  data-id="${i}">
+          <div class="faqContentHeaderWrapper">
+            <div class="faqContentBodyContainer">
+              <div class="contentHeaderContainer">
+                <h2 class="faqHeader">${item.title}</h2>
+                <div class="faqContentIcon" >
+                  <a class="viewBtn shadowSm" href="${item.link}" target=_blank >
+                    <span class="viewBtnText">View</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="faqSub">${item.desc}</div>
+          </div>
+
+          <div class="faqContentIcon">
+            <button class="viewMoreBtn viewMore">
+              <i class="fa-solid fa-plus"></i>
+            </button>
+            <button class="viewMoreBtn viewLess">
+              <i class="fa-solid fa-minus"></i>
+            </button>
+          </div>
+        </div>
+      `;
+          })
+          .join("");
+      }
+
+      document.addEventListener("DOMContentLoaded", renderFAQ);
+    </script>
     <script src="script.js"></script>
   </head>
 
@@ -69,7 +140,7 @@
         </div>
         <div class="row">
           <div
-            class="col-lg-3 d-flex align-items-center justify-content-lg-end justify-content-center p-2"
+            class="col-lg-3 d-flex align-items-center  justify-content-center p-2"
           >
             <div class="profileLogoWrapper shadowSm">
               <img
@@ -78,29 +149,25 @@
               />
             </div>
           </div>
-          <div class="col-lg-9 p-2">
-            <div
-              class="d-flex flex-column justify-content-start align-items-lg-start align-items-center gap-md-2"
-            >
-              <div class="companyDetailWrapper">
-                <span class="companyName">
-                  Sia Traditional Chinese Medicine
-                </span>
-                <p class="companyDesc">
-                  Sia Traditional Chinese Medicine - TCM Spinal Manipulation,
-                  Traditional Chinese Massage Therapy, Acupuncture, Moxibustion,
-                  Cupping, Facial Gua Sha, Facial Rejuvenation Acupuncture
-                </p>
+          <div class="col-lg-9 p-2 justify-content-md-center just d-flex">
+            <div class="companyDetailWrapper shadowSm">
+              <span class="companyName">
+                Sia Traditional Chinese Medicine
+              </span>
+              <p class="companyDesc">
+                Sia Traditional Chinese Medicine - TCM Spinal Manipulation,
+                Traditional Chinese Massage Therapy, Acupuncture, Moxibustion,
+                Cupping, Facial Gua Sha, Facial Rejuvenation Acupuncture
+              </p>
 
-                <div class="d-flex flex-column justify-content-start gap-2">
-                  <div class="iconWrapper">
-                    <i class="fa-regular fa-envelope emailIcon"></i>
-                    <span class="textContainer"> sia@sia.com </span>
-                  </div>
-                  <div class="iconWrapper">
-                    <i class="fa-regular fa-address-book emailIcon"></i>
-                    <span class="textContainer"> +6010-824 7333 </span>
-                  </div>
+              <div class="d-flex flex-column justify-content-start gap-2">
+                <div class="iconWrapper">
+                  <i class="fa-regular fa-envelope emailIcon"></i>
+                  <span class="textContainer"> sia@sia.com </span>
+                </div>
+                <div class="iconWrapper">
+                  <i class="fa-regular fa-address-book emailIcon"></i>
+                  <span class="textContainer"> +6010-824 7333 </span>
                 </div>
               </div>
             </div>
@@ -162,74 +229,3 @@
     </footer>
   </body>
 </html>
-
-<script>
-  const faqData = [
-    {
-      title: "Kimi No Nawa NawaNawa Nawa NawaNawaNawa ?",
-      desc: `26 Mar 2025 — In this article, let's dive into how to create a good
-           site search UI and get inspiration from 20 best search UI design
-           examples. 26 Mar 2025 — In this article, let's dive into how to create
-           a good site search UI and get inspiration from 20 best search UI design examples.`,
-    },
-    {
-      title: "Why UI Design Matters in 2025?",
-      desc: `26 Mar 2025 — In this article, let's dive into how to create a good
-           site search UI and get inspiration from 20 best search UI design
-           examples. 26 Mar 2025 — In this article, let's dive into how to create
-           a good site search UI and get inspiration from 20 best search UI design examples.`,
-    },
-    {
-      title: "Why UI Design Matters in 2025?",
-      desc: `26 Mar 2025 — In this article, let's dive into how to create a good
-           site search UI and get inspiration from 20 best search UI design
-           examples. 26 Mar 2025 — In this article, let's dive into how to create
-           a good site search UI and get inspiration from 20 best search UI design examples.`,
-    },
-    {
-      title: "Why UI Design Matters in 2025?",
-      desc: `26 Mar 2025 — In this article, let's dive into how to create a good
-           site search UI and get inspiration from 20 best search UI design
-           examples. 26 Mar 2025 — In this article, let's dive into how to create
-           a good site search UI and get inspiration from 20 best search UI design examples.`,
-    },
-  ];
-
-  function renderFAQ() {
-    const faqList = document.getElementById("faqList");
-
-    faqList.innerHTML = faqData
-      .map((item) => {
-        return `
-        <div class="faqContentListContainer shadowSm is-collapsed">
-          <div class="faqContentHeaderWrapper">
-            <div class="faqContentBodyContainer">
-              <div class="contentHeaderContainer">
-                <h2 class="faqHeader">${item.title}</h2>
-                <div class="faqContentIcon">
-                  <button class="viewBtn shadowSm">
-                    <span class="viewBtnText">View</span>
-                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="faqSub">${item.desc}</div>
-          </div>
-
-          <div class="faqContentIcon">
-            <button class="viewMoreBtn viewMore">
-              <i class="fa-solid fa-plus"></i>
-            </button>
-            <button class="viewMoreBtn viewLess">
-              <i class="fa-solid fa-minus"></i>
-            </button>
-          </div>
-        </div>
-      `;
-      })
-      .join("");
-  }
-
-  document.addEventListener("DOMContentLoaded", renderFAQ);
-</script>

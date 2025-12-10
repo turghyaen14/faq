@@ -1,13 +1,24 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const MAX_CHARS = 80;
+document.addEventListener("DOMContentLoaded", () => {
+  initFaqToggle();
+  initViewTabs();
+  enforceMobileView();
+  window.addEventListener("resize", enforceMobileView);
+});
 
-  document.querySelectorAll(".faqContentListContainer").forEach((card) => {
+/* ===========================
+   FAQ CARD TOGGLE + TRUNCATE
+=========================== */
+
+function initFaqToggle() {
+  const MAX_CHARS = 80;
+  const cards = document.querySelectorAll(".faqContentListContainer");
+
+  cards.forEach((card) => {
     const sub = card.querySelector(".faqSub");
     if (!sub) return;
 
     const iconBlocks = card.querySelectorAll(".faqContentIcon");
     const toggleIcons = iconBlocks[iconBlocks.length - 1];
-
     if (!toggleIcons) return;
 
     const [plusBtn, minusBtn] = toggleIcons.querySelectorAll("button");
@@ -15,13 +26,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const fullText = sub.textContent.trim();
 
+    // Only truncate if longer than MAX_CHARS
     if (fullText.length > MAX_CHARS) {
       const shortText = fullText.slice(0, MAX_CHARS) + "…";
 
       sub.dataset.full = fullText;
       sub.dataset.short = shortText;
-
       sub.textContent = shortText;
+
       card.classList.add("is-collapsed");
     }
 
@@ -41,12 +53,19 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
 
-    card.addEventListener("click", toggleCard);
-    // minusBtn.addEventListener("click", toggleCard);
-  });
-});
+    // Only plus/minus control the toggle
 
-document.addEventListener("DOMContentLoaded", () => {
+    card.addEventListener("click", (e) => {
+      toggleCard();
+    });
+  });
+}
+
+/* ===========================
+   GRID / LIST VIEW TABS
+=========================== */
+
+function initViewTabs() {
   const gridTab = document.getElementById("gridViewTab");
   const listTab = document.getElementById("listViewTab");
   const listWrapper = document.querySelector(".faqContentListWrapper");
@@ -71,7 +90,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   gridTab.addEventListener("click", () => setView("grid"));
   listTab.addEventListener("click", () => setView("list"));
-});
+}
+
+/* ===========================
+   FORCE LIST VIEW ON MOBILE
+=========================== */
 
 function enforceMobileView() {
   const listWrapper = document.querySelector(".faqContentListWrapper");
@@ -88,6 +111,3 @@ function enforceMobileView() {
     gridTab.classList.remove("selectedTabContainer");
   }
 }
-
-window.addEventListener("DOMContentLoaded", enforceMobileView);
-window.addEventListener("resize", enforceMobileView);
