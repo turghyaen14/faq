@@ -5,10 +5,6 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("resize", enforceMobileView);
 });
 
-/* ===========================
-   FAQ CARD TOGGLE + TRUNCATE
-=========================== */
-
 function initFaqToggle() {
   const MAX_CHARS = 80;
   const cards = document.querySelectorAll(".faqContentListContainer");
@@ -61,10 +57,6 @@ function initFaqToggle() {
   });
 }
 
-/* ===========================
-   GRID / LIST VIEW TABS
-=========================== */
-
 function initViewTabs() {
   const gridTab = document.getElementById("gridViewTab");
   const listTab = document.getElementById("listViewTab");
@@ -91,10 +83,6 @@ function initViewTabs() {
   gridTab.addEventListener("click", () => setView("grid"));
   listTab.addEventListener("click", () => setView("list"));
 }
-
-/* ===========================
-   FORCE LIST VIEW ON MOBILE
-=========================== */
 
 function enforceMobileView() {
   const listWrapper = document.querySelector(".faqContentListWrapper");

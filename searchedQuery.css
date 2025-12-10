@@ -48,10 +48,6 @@
   color: #ffffff;
 }
 
-/* ===========================
-   LIST / GRID WRAPPER
-=========================== */
-
 .faqContentListWrapper {
   width: 100%;
   padding: 1.5rem;
@@ -62,12 +58,10 @@
   transition: grid-template-columns 0.35s ease;
 }
 
-/* List view = single column */
 .faqContentListWrapper.list-view {
   grid-template-columns: 1fr;
 }
 
-/* Grid view = responsive columns */
 .faqContentListWrapper.grid-view {
   grid-auto-flow: row ;
 
@@ -79,10 +73,6 @@
     grid-template-columns: repeat(2, minmax(260px, 1fr));
   }
 }
-
-/* ===========================
-   CARD / COMPANY ROW
-=========================== */
 
 .faqContentListContainer {
   display: flex;
@@ -103,21 +93,16 @@
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.06);
 }
 
-/* In grid mode you can tweak alignment if you like */
 .faqContentListWrapper.grid-view .faqContentListContainer {
   align-items: flex-start;
 }
-
-/* ===========================
-   CARD LEFT SIDE (LOGO + TEXT)
-=========================== */
 
 .faqContentHeaderWrapper {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  flex: 1 1 auto; /* take remaining width */
-  min-width: 0; /* allow text to wrap instead of forcing overflow */
+  flex: 1 1 auto;
+  min-width: 0;
 }
 
 .faqContentHeaderContainer {
@@ -149,7 +134,7 @@
   flex-direction: column;
   gap: 0.2rem;
   font-size: 0.625rem;
-  min-width: 0; /* allow text to wrap */
+  min-width: 0;
   overflow-wrap: break-word;
 }
 
@@ -176,9 +161,8 @@
   transition: max-height 0.25s ease;
 }
 
-/* Collapsed/expanded states for FAQ text */
 .faqContentListContainer.is-collapsed .faqSub {
-  max-height: 3.6em; /* ~2–3 lines */
+  max-height: 3.6em;
   overflow: hidden;
 }
 
@@ -186,13 +170,9 @@
   max-height: 1000px;
 }
 
-/* ===========================
-   ICONS / VIEW BUTTON
-=========================== */
-
 .faqContentIcon {
   flex: 0 0 auto;
-  margin-left: auto; /* push button to far right */
+  margin-left: auto;
 }
 
 .iconContainer {

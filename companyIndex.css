@@ -1,7 +1,3 @@
-/* ===========================
-   FAQ CONTENT LAYOUT
-=========================== */
-
 .faqContentContainer {
   display: flex;
   flex-direction: column;
@@ -9,10 +5,6 @@
   align-items: center;
   justify-content: center;
 }
-
-/* ===========================
-   VIEW TABS
-=========================== */
 
 .tabWrapper {
   display: flex;
@@ -48,10 +40,6 @@
   color: #ffffff;
 }
 
-/* ===========================
-   LIST / GRID WRAPPER
-=========================== */
-
 .faqContentListWrapper {
   width: 100%;
   padding: 1.5rem;
@@ -77,9 +65,6 @@
     grid-template-columns: repeat(2, minmax(260px, 1fr));
   }
 }
-/* ===========================
-   CARD / COMPANY ROW
-=========================== */
 
 .faqContentListContainer {
   display: flex;
@@ -110,10 +95,6 @@
     grid-column: span 2;
   }
 }
-
-/* ===========================
-   CARD LEFT SIDE (LOGO + TEXT)
-=========================== */
 
 .faqContentHeaderWrapper {
   display: flex;
@@ -243,10 +224,6 @@
 .faqContentListContainer.is-expanded .faqSub {
   max-height: 1000px;
 }
-
-/* ===========================
-   ICONS / VIEW BUTTON
-=========================== */
 
 .faqContentIcon {
   flex: 0 0 auto;
