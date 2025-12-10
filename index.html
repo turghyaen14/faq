@@ -38,34 +38,117 @@
       referrerpolicy="no-referrer"
     />
 
+    <script>
+      const companies = [
+        {
+          name: "Sia Traditional Chinese Medicine",
+          title: "Traditional Chinese Healthcare",
+          desc: "Traditional Chinese Healthcare Traditional Chinese HealthcareTraditional Chinese Healthcare",
+          url: "https://sia-tcm.com",
+          logo: "https://media.istockphoto.com/id/814423752/photo/eye-of-model-with-colorful-art-make-up-close-up.jpg?s=612x612&w=0&k=20&c=l15OdMWjgCKycMMShP8UK94ELVlEGvt7GmB_esHWPYE=",
+        },
+        {
+          name: "Dribbble",
+          title: "Design Inspiration",
+          desc: "Traditional Chinese Healthcare Traditional Chinese HealthcareTraditional Chinese Healthcare",
+          url: "https://dribbble.com",
+          logo: "https://media.istockphoto.com/id/814423752/photo/eye-of-model-with-colorful-art-make-up-close-up.jpg?s=612x612&w=0&k=20&c=l15OdMWjgCKycMMShP8UK94ELVlEGvt7GmB_esHWPYE=",
+        },
+        {
+          name: "Figma",
+          title: "Collaborative Interface Design Tool",
+          desc: "Traditional Chinese Healthcare Traditional Chinese HealthcareTraditional Chinese Healthcare",
+          url: "https://figma.com",
+          logo: "https://media.istockphoto.com/id/814423752/photo/eye-of-model-with-colorful-art-make-up-close-up.jpg?s=612x612&w=0&k=20&c=l15OdMWjgCKycMMShP8UK94ELVlEGvt7GmB_esHWPYE=",
+        },
+      ];
+
+      function renderCompanyCards() {
+        const container = document.getElementById("companyList");
+
+        container.innerHTML = companies
+          .map((item, i) => {
+            return `       
+        <div class="faqContentListContainer shadowSm" data-id="${i}">
+          <div class="faqContentHeaderWrapper">
+            <div class="faqContentHeaderContainer">
+              <div class="companyLogoWrapper">
+                <img src="${item.logo}" class="companyLogo" alt="${item.name}" />
+              </div>
+              <div class="companyDetailWrapper">
+                <span class="companyTitle inter-light">${item.title}</span>
+                <span class="companyUrl">${item.url}</span>
+              </div>
+            </div>
+            <div class="faqContentBodyContainer">
+              <div class="contentHeaderContainer">
+                <h2 class="faqHeader">${item.name}</h2>
+              </div>
+            </div>
+            <div class="faqSub">${item.desc}</div>
+          </div>
+          <div class="faqContentIcon">
+            <button class="viewBtn shadowSm" onclick="window.open('${item.url}', '_blank')">
+              <span class="viewBtnText">View</span>
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </button>
+          </div>
+        </div>
+      `;
+          })
+          .join("");
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        renderCompanyCards();
+      });
+    </script>
     <script src="script.js"></script>
   </head>
 
   <body>
     <div class="faqPageWrapper">
       <div class="faqSplashContainer">
-        <h1 class="faqMainHeader">FAQ Dispenser</h1>
-        <div class="faqSearchBox">
-          <form action="/search" method="get" class="searchContainer shadowSm">
-            <input
-              type="search"
-              id="search-box"
-              name="query"
-              placeholder="Search..."
-              class="searchInput"
-            />
+        <div class="row">
+          <div class="col-lg-12 tagLineWrapper">
+            <div class="tagLineContainer">
+              <h1 class="faqMainHeader">FAQ Dispenser</h1>
 
-            <div class="buttonContainer">
-              <button
-                type="submit"
-                class="btn btn-icon searchButton"
-                aria-label="Search"
-              >
-                <i class="fa-solid fa-magnifying-glass iconSearch"></i>
-              </button>
+              <h2 class="tagLineTitle">Explore answers with confidence.</h2>
+
+              <p class="tagLineSub">
+                Search through curated knowledge and find what you need — fast.
+              </p>
             </div>
-          </form>
+            <button class="mainCTA shadow-sm">Start Exploring</button>
+            <div class="faqSearchBox">
+              <form
+                action="/search"
+                method="get"
+                class="searchContainer shadowSm"
+              >
+                <input
+                  type="search"
+                  id="search-box"
+                  name="query"
+                  placeholder="Search..."
+                  class="searchInput"
+                />
+
+                <div class="buttonContainer">
+                  <button
+                    type="submit"
+                    class="btn btn-icon searchButton"
+                    aria-label="Search"
+                  >
+                    <i class="fa-solid fa-magnifying-glass iconSearch"></i>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
+
         <div class="searchHintWrapper">
           <span class="searchPlaceHolder inter-light">
             Searching for information on
@@ -76,6 +159,23 @@
         </div>
       </div>
     </div>
+
+    <div class="faqContentContainer container">
+      <div class="align-items-end justify-content-end w-100 d-none d-lg-flex">
+        <div class="tabWrapper">
+          <div class="tabContainer" id="gridViewTab">
+            <span><i class="fa-solid fa-table-cells-large faSize"></i></span>
+            <span> Grid View </span>
+          </div>
+          <div class="tabContainer selectedTabContainer" id="listViewTab">
+            <span><i class="fa-solid fa-list faSize"></i></span>
+            <span> List View </span>
+          </div>
+        </div>
+      </div>
+      <div class="faqContentListWrapper" id="companyList"></div>
+    </div>
+
     <footer>
       <div class="footerWrapper">
         <div class="footerContainer container gloock-regular">

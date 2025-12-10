@@ -9,7 +9,7 @@ function initFaqToggle() {
   const MAX_CHARS = 80;
   const cards = document.querySelectorAll(".faqContentListContainer");
 
-  cards.forEach((card) => {
+  cards.forEach((card) => { 
     const sub = card.querySelector(".faqSub");
     if (!sub) return;
 

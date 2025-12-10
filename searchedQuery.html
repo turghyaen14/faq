@@ -44,18 +44,21 @@
         {
           name: "Sia Traditional Chinese Medicine",
           title: "Traditional Chinese Healthcare",
+          desc: "Traditional Chinese Healthcare Traditional Chinese HealthcareTraditional Chinese Healthcare",
           url: "https://sia-tcm.com",
           logo: "https://media.istockphoto.com/id/814423752/photo/eye-of-model-with-colorful-art-make-up-close-up.jpg?s=612x612&w=0&k=20&c=l15OdMWjgCKycMMShP8UK94ELVlEGvt7GmB_esHWPYE=",
         },
         {
           name: "Dribbble",
           title: "Design Inspiration",
+          desc: "Traditional Chinese Healthcare Traditional Chinese HealthcareTraditional Chinese Healthcare",
           url: "https://dribbble.com",
           logo: "https://media.istockphoto.com/id/814423752/photo/eye-of-model-with-colorful-art-make-up-close-up.jpg?s=612x612&w=0&k=20&c=l15OdMWjgCKycMMShP8UK94ELVlEGvt7GmB_esHWPYE=",
         },
         {
           name: "Figma",
           title: "Collaborative Interface Design Tool",
+          desc: "Traditional Chinese Healthcare Traditional Chinese HealthcareTraditional Chinese Healthcare",
           url: "https://figma.com",
           logo: "https://media.istockphoto.com/id/814423752/photo/eye-of-model-with-colorful-art-make-up-close-up.jpg?s=612x612&w=0&k=20&c=l15OdMWjgCKycMMShP8UK94ELVlEGvt7GmB_esHWPYE=",
         },
@@ -83,6 +86,7 @@
                 <h2 class="faqHeader">${item.name}</h2>
               </div>
             </div>
+            <div class="faqSub">${item.desc}</div>
           </div>
           <div class="faqContentIcon">
             <button class="viewBtn shadowSm" onclick="window.open('${item.url}', '_blank')">
@@ -105,39 +109,46 @@
 
   <body>
     <div class="faqPageWrapper">
-      <div class="faqSplashContainer">
-        <h1 class="faqMainHeader">FAQ Dispenser</h1>
-        <div class="faqSearchBox">
-          <form action="/search" method="get" class="searchContainer shadowSm">
-            <input
-              type="search"
-              id="search-box"
-              name="query"
-              placeholder="Search..."
-              class="searchInput"
-            />
-
-            <div class="buttonContainer">
-              <button
-                type="submit"
-                class="btn btn-icon searchButton"
-                aria-label="Search"
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="faqSplashContainer">
+            <h1 class="faqMainHeader">FAQ Dispenser</h1>
+            <div class="faqSearchBox">
+              <form
+                action="/search"
+                method="get"
+                class="searchContainer shadowSm"
               >
-                <i class="fa-solid fa-magnifying-glass iconSearch"></i>
-              </button>
+                <input
+                  type="search"
+                  id="search-box"
+                  name="query"
+                  placeholder="Search..."
+                  class="searchInput"
+                />
+
+                <div class="buttonContainer">
+                  <button
+                    type="submit"
+                    class="btn btn-icon searchButton"
+                    aria-label="Search"
+                  >
+                    <i class="fa-solid fa-magnifying-glass iconSearch"></i>
+                  </button>
+                </div>
+              </form>
             </div>
-          </form>
-        </div>
-        <div class="searchHintWrapper">
-          <span class="searchPlaceHolder inter-light">
-            Searching for information on
-          </span>
-          <span class="searchString inter-semibold"
-            >Lorem Ipsum Ipsum Lorem</span
-          >
+            <div class="searchHintWrapper">
+              <span class="searchPlaceHolder inter-light">
+                Searching for information on
+              </span>
+              <span class="searchString inter-semibold"
+                >Lorem Ipsum Ipsum Lorem</span
+              >
+            </div>
+          </div>
         </div>
       </div>
-
       <div class="faqContentContainer container">
         <div class="align-items-end justify-content-end w-100 d-none d-lg-flex">
           <div class="tabWrapper">

@@ -1,40 +1,61 @@
+/* ===========================
+   GLOBAL BASE STYLES
+=========================== */
+
 body {
   margin: 0;
   background-color: #faf7ef !important;
   font-family: "Inter", system-ui, -apple-system, sans-serif;
   color: #1e2330;
 }
+
 .faqPageWrapper {
-  min-height: 80vh;
+  align-items: center;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
   padding: 2.5rem 1.5rem 3rem;
 }
+
 .faqPageWrapper .faqSplashContainer {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.5rem;
   align-items: center;
   justify-content: center;
   background-image: url(./asset/splashBg.png);
-  background-repeat: repeat-y;
+  background-repeat: repeat;
   background-size: contain;
   background-color: rgba(250, 247, 239, 0.6);
   background-blend-mode: lighten;
   padding: 2rem 1rem;
+  width: fit-content;
 }
 
 .faqPageWrapper .faqSplashContainer .faqMainHeader {
   color: #1b4297;
   font-size: 4rem;
   line-height: 1.1;
-  font-family: "Gloock", serif; 
+  font-family: "Gloock", serif;
 }
 
+/* Search box wrapper under hero */
 .faqSearchBox {
-  width: 60%;
+  width: 100%;
 }
+
+/* Shared container for FAQ content sections */
+.faqContentContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===========================
+   SEARCH BAR & CONTROLS
+=========================== */
 
 .clearButton {
   color: #93afea;
@@ -74,10 +95,9 @@ body {
 .searchContainer {
   display: flex;
   flex-direction: row;
-  border: 2px#1B4297 solid;
-
+  border: 2px solid #1b4297;
   justify-content: space-between;
-  padding: 1rem;
+  padding: 0.5rem;
   width: 100%;
   border-radius: 50px;
   background-color: #faf7ef;
@@ -89,33 +109,6 @@ body {
   gap: 1rem;
   align-items: center;
   justify-content: center;
-}
-
-.gloock-regular {
-  font-family: "Gloock", serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.inter-light {
-  font-family: "Inter", sans-serif;
-  font-weight: 300;
-  font-style: normal;
-}
-.inter-regular {
-  font-family: "Inter", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.inter-semibold {
-  font-family: "Inter", sans-serif;
-  font-weight: 600;
-  font-style: normal;
-}
-
-.shadowSm {
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .searchHintWrapper {
@@ -133,6 +126,58 @@ body {
   color: #1b4297;
 }
 
+/* ===========================
+   TYPOGRAPHY HELPERS
+=========================== */
+
+.gloock-regular {
+  font-family: "Gloock", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.inter-light {
+  font-family: "Inter", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.inter-regular {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.inter-semibold {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* ===========================
+   GENERIC UTILITIES
+=========================== */
+
+.shadowSm {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+
+.footerWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  background-image: url(./asset/splashBg.png);
+  background-color: rgba(250, 247, 239, 0.6);
+  background-blend-mode: lighten;
+  background-repeat: repeat;
+  background-size: contain;
+}
+
 .footerContainer {
   display: flex;
   flex-direction: column;
@@ -143,18 +188,6 @@ body {
   font-weight: 500;
   padding: 2rem 1rem;
   color: #4f4f4f;
-}
-
-.footerWrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem 1rem;
-  background-image: url(./asset/splashBg.png);
-  background-color: rgba(250, 247, 239, 0.6);
-  background-blend-mode: lighten;
-  background-repeat: repeat-y;
-  background-size: cover;
 }
 
 .logoWrapper {
@@ -178,6 +211,10 @@ body {
   color: #1b4297;
 }
 
+/* ===========================
+   PAGINATION
+=========================== */
+
 .paginationWrapper {
   display: flex;
   flex-direction: row;
@@ -186,19 +223,7 @@ body {
   justify-content: center;
 }
 
-.prevButton {
-  background-color: transparent;
-  border: 2px solid #d5d7da;
-  height: fit-content;
-  border-radius: 10px;
-  padding: 0.5rem 1rem;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  width: fit-content;
-}
-
+.prevButton,
 .nextButton {
   background-color: transparent;
   border: 2px solid #d5d7da;
@@ -237,19 +262,286 @@ body {
     rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
+/* ===========================
+   HERO / TAGLINE
+=========================== */
+
+.tagLineWrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.mainCTA {
+  background-color: #1b4297;
+  color: #ffffff;
+  font-size: 1rem;
+  padding: 1rem 3rem;
+  border-radius: 50px;
+  border: none;
+  width: 70%;
+}
+
+.tagLineContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.tagLineTitle {
+  font-size: 2rem;
+  font-weight: 400;
+  color: #1e2330;
+}
+
+.tagLineSub {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #555b6b;
+}
+
+/* ===========================
+   VIEW TABS (LIST / GRID)
+=========================== */
+
+.tabWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: row;
+  border: 2px solid #1b4297;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.tabContainer {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.5rem 0.75rem;
+  width: 10rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #1b4297;
+  background-color: transparent;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.tabContainer .faSize {
+  font-size: 1rem;
+}
+
+.selectedTabContainer,
+.tabContainer.selectedTabContainer {
+  background-color: #1b4297;
+  color: #ffffff;
+}
+
+/* ===========================
+   FAQ CONTENT LIST (RESULTS)
+=========================== */
+
+.faqContentListWrapper {
+  width: 100%;
+  padding: 1.5rem;
+  margin-top: 1.25rem;
+  display: grid;
+  gap: 1.5rem;
+  grid-auto-rows: auto;
+  transition: grid-template-columns 0.35s ease;
+}
+
+.faqContentListWrapper.list-view {
+  grid-template-columns: 1fr;
+}
+
+.faqContentListWrapper.grid-view {
+  grid-auto-flow: row;
+  grid-template-columns: repeat(3, minmax(260px, 1fr));
+}
+
+.faqContentListContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  column-gap: 1rem;
+  padding: 1rem 1.25rem;
+  border-radius: 25px;
+  cursor: default;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease,
+    background-color 0.25s ease;
+}
+
+.faqContentListContainer:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.06);
+}
+
+.faqContentListWrapper.grid-view .faqContentListContainer {
+  align-items: flex-start;
+}
+
+.faqContentHeaderWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.faqContentHeaderContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.companyLogoWrapper {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.companyLogo {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.companyDetailWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  font-size: 0.625rem;
+  min-width: 0;
+  overflow-wrap: break-word;
+}
+
+.companyTitle {
+  font-size: 0.625rem;
+}
+
+.faqContentBodyContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 0.5rem;
+}
+
+.faqHeader {
+  font-size: 1.25rem;
+}
+
+.faqSub {
+  color: #4f4f4f;
+  margin: 0;
+  line-height: 1.4;
+  transition: max-height 0.25s ease;
+}
+
+/* Collapsed / expanded behaviour */
+.faqContentListContainer.is-collapsed .faqSub {
+  max-height: 3.6em;
+  overflow: hidden;
+}
+
+.faqContentListContainer.is-expanded .faqSub {
+  max-height: 1000px;
+}
+
+.faqContentIcon {
+  flex: 0 0 auto;
+  margin-left: auto;
+}
+
+.iconContainer {
+  background-color: transparent;
+  border: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.faqContentIcon .fa-minus {
+  display: none;
+}
+
+.faqContentListContainer.is-expanded .fa-minus {
+  display: inline-flex;
+}
+
+.faqContentListContainer.is-expanded .fa-plus {
+  display: none;
+}
+
+/* "View" / CTA button for each card */
+.viewBtn {
+  border: none;
+  background-color: #1b4297;
+  padding: 0.35rem 0.75rem;
+  display: inline-flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  color: #ffffff;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  transition: background-color 0.2s ease, transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.viewBtn:hover {
+  background-color: #163571;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+}
+
+.viewBtnText {
+  white-space: nowrap;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media (max-width: 1200px) and (min-width: 786px) {
+  .faqContentListWrapper.grid-view {
+    grid-template-columns: repeat(2, minmax(260px, 1fr));
+  }
+}
+
 @media screen and (max-width: 768px) {
   .faqContentListWrapper {
     padding: 0rem !important;
   }
+
   .faqPageWrapper .faqSplashContainer .faqMainHeader {
     font-size: 2rem !important;
   }
+
   .searchContainer {
     padding: 0.5rem !important;
   }
+
   .faqSearchBox {
     width: 100% !important;
   }
+
   .companyDesc {
     text-align: center;
   }
@@ -265,6 +557,10 @@ body {
     flex-direction: column;
     gap: 0.25rem;
   }
+
+  .faqContentListContainer {
+    align-items: flex-start !important;
+  }
 }
 
 @media screen and (max-width: 450px) {
@@ -272,6 +568,7 @@ body {
     flex-direction: column-reverse;
     width: 6rem;
   }
+
   .prevButton {
     flex-direction: column;
     width: 6rem;
