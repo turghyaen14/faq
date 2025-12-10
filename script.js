@@ -6,52 +6,40 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function initFaqToggle() {
-  const MAX_CHARS = 80;
+  const MAX_CHARS = 40;
   const cards = document.querySelectorAll(".faqContentListContainer");
 
-  cards.forEach((card) => { 
+  cards.forEach((card) => {
     const sub = card.querySelector(".faqSub");
     if (!sub) return;
 
-    const iconBlocks = card.querySelectorAll(".faqContentIcon");
-    const toggleIcons = iconBlocks[iconBlocks.length - 1];
-    if (!toggleIcons) return;
-
-    const [plusBtn, minusBtn] = toggleIcons.querySelectorAll("button");
-    if (!plusBtn || !minusBtn) return;
-
     const fullText = sub.textContent.trim();
+    if (fullText.length <= MAX_CHARS) return;
 
-    // Only truncate if longer than MAX_CHARS
-    if (fullText.length > MAX_CHARS) {
-      const shortText = fullText.slice(0, MAX_CHARS) + "…";
+    const shortText = fullText.slice(0, MAX_CHARS) + "…";
 
-      sub.dataset.full = fullText;
-      sub.dataset.short = shortText;
-      sub.textContent = shortText;
-
-      card.classList.add("is-collapsed");
-    }
+    sub.dataset.full = fullText;
+    sub.dataset.short = shortText;
+    sub.textContent = shortText;
+    card.classList.add("is-collapsed");
 
     function toggleCard() {
       const isCollapsed = card.classList.contains("is-collapsed");
 
       if (isCollapsed) {
-        // Expand
-        sub.textContent = sub.dataset.full || fullText;
+        sub.textContent = sub.dataset.full;
         card.classList.remove("is-collapsed");
         card.classList.add("is-expanded");
       } else {
-        // Collapse
-        sub.textContent = sub.dataset.short || fullText;
+        sub.textContent = sub.dataset.short;
         card.classList.remove("is-expanded");
         card.classList.add("is-collapsed");
       }
     }
 
-    // Only plus/minus control the toggle
-
     card.addEventListener("click", (e) => {
+      // optional: don't toggle when clicking the View button
+      if (e.target.closest(".viewBtn")) return;
       toggleCard();
     });
   });

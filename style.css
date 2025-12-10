@@ -463,6 +463,10 @@ body {
 }
 
 .faqContentIcon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
   flex: 0 0 auto;
   margin-left: auto;
 }
@@ -577,4 +581,44 @@ body {
   .footerContainer {
     gap: 1.5rem;
   }
+
+  .tagLineTitle {
+    font-size: 2rem;
+    font-weight: 400;
+    color: #1e2330;
+    text-align: center;
+  }
+
+  .tagLineSub {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #555b6b;
+    text-align: center;
+  }
+}
+
+.viewMoreBtn {
+  border: none;
+  background-color: transparent;
+  padding: 0.35rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  color: #1b4297;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: background-color 0.2s ease, transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.viewBtn:hover {
+  background-color: #163571;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+}
+
+.viewBtnText {
+  white-space: nowrap;
 }
