@@ -74,6 +74,12 @@
   grid-template-columns: repeat(3, minmax(260px, 1fr));
 }
 
+@media (max-width: 1200px) and (min-width: 786px) {
+  .faqContentListWrapper.grid-view {
+    grid-template-columns: repeat(2, minmax(260px, 1fr));
+  }
+}
+
 /* ===========================
    CARD / COMPANY ROW
 =========================== */

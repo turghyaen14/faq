@@ -72,6 +72,11 @@
   grid-template-columns: repeat(3, minmax(260px, 1fr));
 }
 
+@media (max-width: 1200px) and (min-width: 786px) {
+  .faqContentListWrapper.grid-view {
+    grid-template-columns: repeat(2, minmax(260px, 1fr));
+  }
+}
 /* ===========================
    CARD / COMPANY ROW
 =========================== */
@@ -177,6 +182,7 @@
 .companyName {
   font-size: 1.25rem;
   font-weight: 700;
+  width: fit-content;
 }
 
 .companyDesc {
@@ -311,6 +317,7 @@
   align-items: center;
   gap: 1rem;
   color: #1b4297;
+  width: fit-content;
 }
 
 .emailIcon {
@@ -319,6 +326,11 @@
 
 .textContainer {
   font-size: 1.25rem;
+}
+
+.companyDetailWrapper {
+  width: max-content;
+  max-width: 100%;
 }
 
 @media screen and (max-width: 768px) {

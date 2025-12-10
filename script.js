@@ -41,8 +41,8 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
 
-    plusBtn.addEventListener("click", toggleCard);
-    minusBtn.addEventListener("click", toggleCard);
+    card.addEventListener("click", toggleCard);
+    // minusBtn.addEventListener("click", toggleCard);
   });
 });
 
@@ -72,3 +72,22 @@ document.addEventListener("DOMContentLoaded", () => {
   gridTab.addEventListener("click", () => setView("grid"));
   listTab.addEventListener("click", () => setView("list"));
 });
+
+function enforceMobileView() {
+  const listWrapper = document.querySelector(".faqContentListWrapper");
+  const gridTab = document.getElementById("gridViewTab");
+  const listTab = document.getElementById("listViewTab");
+
+  if (!listWrapper || !gridTab || !listTab) return;
+
+  if (window.innerWidth <= 992) {
+    listWrapper.classList.remove("grid-view");
+    listWrapper.classList.add("list-view");
+
+    listTab.classList.add("selectedTabContainer");
+    gridTab.classList.remove("selectedTabContainer");
+  }
+}
+
+window.addEventListener("DOMContentLoaded", enforceMobileView);
+window.addEventListener("resize", enforceMobileView);
