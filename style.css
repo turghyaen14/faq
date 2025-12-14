@@ -373,7 +373,7 @@ body {
   column-gap: 1rem;
   padding: 1rem 1.25rem;
   border-radius: 25px;
-  cursor: default;
+  cursor: pointer;
   overflow: hidden;
   transition: transform 0.25s ease, box-shadow 0.25s ease,
     background-color 0.25s ease;
@@ -621,4 +621,28 @@ body {
 
 .viewBtnText {
   white-space: nowrap;
+}
+
+.companyTagsWrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  align-items: start;
+  justify-content: start;
+}
+
+.tagContainer {
+  padding: 0.2rem 0.5rem;
+  border: 2px solid #163571;
+  color: #163571;
+  font-size: 0.8rem;
+  border-radius: 25px;
+}
+
+@media screen and (max-width: 768px) {
+  .companyTagsWrapper {
+    align-items: center !important;
+    justify-content: center !important;
+  }
 }

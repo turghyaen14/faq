@@ -44,6 +44,16 @@
           name: "Sia Traditional Chinese Medicine",
           title: "Traditional Chinese Healthcare",
           desc: "Traditional Chinese Healthcare Traditional Chinese HealthcareTraditional Chinese Healthcare",
+          tags: [
+            "Chinese",
+            "Healthcare",
+            "Interface",
+            "Inspiration",
+            "Design",
+            "Interface",
+            "Inspiration",
+            "Design",
+          ],
           url: "https://sia-tcm.com",
           logo: "https://media.istockphoto.com/id/814423752/photo/eye-of-model-with-colorful-art-make-up-close-up.jpg?s=612x612&w=0&k=20&c=l15OdMWjgCKycMMShP8UK94ELVlEGvt7GmB_esHWPYE=",
         },
@@ -51,6 +61,7 @@
           name: "Dribbble",
           title: "Design Inspiration",
           desc: "Traditional Chinese Healthcare Traditional Chinese HealthcareTraditional Chinese Healthcare",
+          tags: ["Chinese", "Healthcare", "Interface", "Inspiration", "Design"],
           url: "https://dribbble.com",
           logo: "https://media.istockphoto.com/id/814423752/photo/eye-of-model-with-colorful-art-make-up-close-up.jpg?s=612x612&w=0&k=20&c=l15OdMWjgCKycMMShP8UK94ELVlEGvt7GmB_esHWPYE=",
         },
@@ -58,6 +69,7 @@
           name: "Figma",
           title: "Collaborative Interface Design Tool",
           desc: "Traditional Chinese Healthcare Traditional Chinese HealthcareTraditional Chinese Healthcare",
+          tags: ["Chinese", "Healthcare", "Interface", "Inspiration", "Design"],
           url: "https://figma.com",
           logo: "https://media.istockphoto.com/id/814423752/photo/eye-of-model-with-colorful-art-make-up-close-up.jpg?s=612x612&w=0&k=20&c=l15OdMWjgCKycMMShP8UK94ELVlEGvt7GmB_esHWPYE=",
         },
@@ -83,7 +95,21 @@
             <div class="faqContentBodyContainer">
               <div class="contentHeaderContainer">
                 <h2 class="faqHeader">${item.name}</h2>
+              
               </div>
+            </div>
+            <div class="companyTagsWrapper">
+            ${item.tags
+              .slice(0, 5)
+              .map((tag) => `<span class="tagContainer">${tag}</span>`)
+              .join("")}
+            ${
+              item.tags.length > 5
+                ? `<span class="tagContainer moreTag">+ ${
+                    item.tags.length - 5
+                  }</span>`
+                : ""
+            }
             </div>
             <div class="faqSub">${item.desc}</div>
           </div>

@@ -63,7 +63,7 @@
 }
 
 .faqContentListWrapper.grid-view {
-  grid-auto-flow: row ;
+  grid-auto-flow: row;
 
   grid-template-columns: repeat(3, minmax(260px, 1fr));
 }
@@ -225,5 +225,29 @@
 @media screen and (max-width: 768px) {
   .faqContentListContainer {
     align-items: flex-start !important;
+  }
+}
+
+.companyTagsWrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  align-items: start;
+  justify-content: start;
+}
+
+.tagContainer {
+  padding: 0.2rem 0.5rem;
+  border: 2px solid #163571;
+  color: #163571;
+  font-size: 0.8rem;
+  border-radius: 25px;
+}
+
+@media screen and (max-width: 768px) {
+  .companyTagsWrapper {
+    align-items: center !important;
+    justify-content: center !important;
   }
 }
