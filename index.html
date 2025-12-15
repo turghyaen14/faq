@@ -85,7 +85,9 @@
           <div class="faqContentHeaderWrapper">
             <div class="faqContentHeaderContainer">
               <div class="companyLogoWrapper">
-                <img src="${item.logo}" class="companyLogo" alt="${item.name}" />
+                <img src="${item.logo}" class="companyLogo" alt="${
+              item.name
+            }" />
               </div>
               <div class="companyDetailWrapper">
                 <span class="companyTitle inter-light">${item.title}</span>
@@ -114,7 +116,9 @@
             <div class="faqSub">${item.desc}</div>
           </div>
           <div class="faqContentIcon">
-            <button class="viewBtn shadowSm" onclick="window.open('${item.url}', '_blank')">
+            <button class="viewBtn shadowSm" onclick="window.open('${
+              item.url
+            }', '_blank')">
               <span class="viewBtnText">View</span>
               <i class="fa-solid fa-arrow-up-right-from-square"></i>
             <button class="viewMoreBtn viewMore">
@@ -141,6 +145,45 @@
   <body>
     <div class="faqPageWrapper">
       <div class="faqSplashContainer">
+        <div class="container">
+          <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">
+                <img
+                  src="https://cdn1.npcdn.net/img/1695269593newpagesglobal-logo.png"
+                  alt="icon"
+                  class="navbarLogo"
+                />
+              </a>
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarScroll"
+                aria-controls="navbarScroll"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarScroll">
+                <ul
+                  class="navbar-nav gap-4 me-auto my-2 my-lg-0 navbar-nav-scroll"
+                  style="--bs-scroll-height: 100px"
+                >
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#"
+                      >Home</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </div>
         <div class="row">
           <div class="col-lg-12 tagLineWrapper">
             <div class="tagLineContainer">

@@ -14,7 +14,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  padding: 2.5rem 1.5rem 3rem;
+  padding: 1rem 1.5rem 3rem 1.5rem;
 }
 
 .faqPageWrapper .faqSplashContainer {
@@ -29,7 +29,7 @@ body {
   background-color: rgba(250, 247, 239, 0.6);
   background-blend-mode: lighten;
   padding: 2rem 1rem;
-  width: fit-content;
+  width: 100%;
 }
 
 .faqPageWrapper .faqSplashContainer .faqMainHeader {
@@ -646,3 +646,24 @@ body {
     justify-content: center !important;
   }
 }
+
+.navbar {
+  color: #4f4f4f;
+}
+
+.nav-link {
+  color: #4f4f4f !important;
+}
+
+.navbarLogo {
+  height: 2rem;
+  width: auto;
+}
+
+.navbar-toggler {
+  background-color: #163571 !important;
+}
+.navbar-toggler-icon {
+  color: #ffffff !important;
+}
+
