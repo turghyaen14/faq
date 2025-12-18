@@ -1,72 +1,162 @@
-.faqContentContainer {
+/* =====================================
+   companyIndex.css
+   Page-specific styles only.
+   Depends on style.css for global/shared.
+===================================== */
+
+/* ===========================
+   1) COMPANY HEADER / PROFILE SECTION
+   (the block above the FAQ list)
+=========================== */
+
+/* Scoped so it won't mess with list-card "companyDetailWrapper" usage elsewhere */
+.tagLineWrapper .profileLogoWrapper {
+  width: 8.5rem;
+  height: 8.5rem;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: #bfd3ff 5px solid;
+}
+
+.tagLineWrapper .profileLogo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.tagLineWrapper .companyDetailWrapper {
+  background-color: #faf7ef;
+  padding: 1rem 1.25rem;
+  width: 35rem;
+  box-sizing: border-box;
+
   display: flex;
   flex-direction: column;
-  padding: 0.5rem 2rem;
-  align-items: center;
-  justify-content: center;
+  gap: 1rem;
+
+  overflow-wrap: break-word;
+  justify-content: flex-start;
+  align-items: flex-start;
+  border-radius: 25px;
 }
 
-.tabWrapper {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  flex-direction: row;
-  border: 2px solid #1b4297;
-  border-radius: 10px;
-  overflow: hidden;
+.tagLineWrapper .companyName {
+  font-size: 1.25rem;
+  font-weight: 700;
+  max-width: 20rem;
 }
 
-.tabContainer {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.6rem;
-  padding: 0.5rem 0.75rem;
-  width: 10rem;
-  cursor: pointer;
-  font-size: 0.9rem;
-  color: #1b4297;
-  background-color: transparent;
-  transition: background-color 0.25s ease, color 0.25s ease;
-}
-
-.tabContainer .faSize {
+.tagLineWrapper .companyDesc {
   font-size: 1rem;
+  color: #4f4f4f;
+  font-weight: 300;
+  width: 30rem;
+  margin: 0;
 }
 
-.selectedTabContainer,
-.tabContainer.selectedTabContainer {
-  background-color: #1b4297;
+.tagLineWrapper .iconWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  color: #1b4297;
+  width: fit-content;
+}
+
+.tagLineWrapper .emailIcon {
+  font-size: 1.25rem;
+}
+
+.tagLineWrapper .textContainer {
+  font-size: 1.25rem;
+}
+
+.tagLineWrapper .ctaWrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.tagLineWrapper .ctaToSite {
+  font-size: 1rem;
+  text-decoration: none;
+  background-color: #163571;
   color: #ffffff;
+  border-radius: 12px;
+  padding: 0.5rem 1rem;
 }
 
-.faqContentListWrapper {
-  width: 100%;
-  padding: 1.5rem;
-  margin-top: 1.25rem;
-  display: grid;
-  gap: 1.5rem;
-  grid-auto-rows: auto;
-  transition: grid-template-columns 0.35s ease;
+.tagLineWrapper .ctaToSiteSec {
+  font-size: 1rem;
+  text-decoration: none;
+  background-color: transparent;
+  border: 2px solid #163571;
+  color: #163571;
+  border-radius: 12px;
+  padding: 0.5rem 1rem;
 }
 
-.faqContentListWrapper.list-view {
-  grid-template-columns: 1fr;
-}
+@media screen and (max-width: 992px) {
+  .tagLineWrapper .companyDetailWrapper {
+    gap: 0.5rem !important;
+    align-items: center;
+    width: 100% !important;
+  }
 
-.faqContentListWrapper.grid-view {
-  grid-auto-flow: row;
-
-  grid-template-columns: repeat(3, minmax(260px, 1fr));
-}
-
-@media (max-width: 1200px) and (min-width: 786px) {
-  .faqContentListWrapper.grid-view {
-    grid-template-columns: repeat(2, minmax(260px, 1fr));
+  .tagLineWrapper .companyDesc {
+    width: auto !important;
   }
 }
 
-.faqContentListContainer {
+/* ===========================
+   2) FAQ LIST — GRID EXPAND BEHAVIOR
+   (keep global layout, only add the unique bits)
+=========================== */
+
+.faqContentListWrapper.grid-view .faqContentListContainer {
+  grid-column: span 1;
+}
+
+@media (min-width: 992px) {
+  .faqContentListWrapper.grid-view .faqContentListContainer.is-expanded {
+    grid-column: span 2;
+  }
+}
+
+/* ===========================
+   3) EXPAND / COLLAPSE TOGGLES
+   (this page uses .viewMore/.viewLess classes)
+=========================== */
+
+.faqContentListContainer .viewMore {
+  display: inline-flex;
+}
+.faqContentListContainer .viewLess {
+  display: none;
+}
+.faqContentListContainer.is-expanded .viewMore {
+  display: none;
+}
+.faqContentListContainer.is-expanded .viewLess {
+  display: inline-flex;
+}
+
+/* ===========================
+   4) UNIVERSAL FAQ SPECIAL CARD
+=========================== */
+
+.customFaqContentListContainer {
+  background-color: #eef4ff;
+}
+
+/* Keep it consistent with global card sizing/spacing */
+.faqContentListWrapper .customFaqContentListContainer {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -80,282 +170,22 @@
     background-color 0.25s ease;
 }
 
-.faqContentListContainer:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.06);
-}
-
-.faqContentListWrapper.grid-view .faqContentListContainer {
-  grid-column: span 1;
-  align-items: flex-start;
-}
-
-@media (min-width: 992px) {
-  .faqContentListWrapper.grid-view .faqContentListContainer.is-expanded {
-    grid-column: span 2;
-  }
-}
-
-.faqContentHeaderWrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  flex: 1 1 auto;
-  min-width: 0;
-}
-
-.faqContentHeaderContainer {
-  display: flex;
-  flex-direction: row;
-  gap: 0.5rem;
-  align-items: center;
-  justify-content: flex-start;
-}
-
-.contentHeaderContainer {
+.iconTextWrapper {
   display: flex;
   flex-direction: row;
   gap: 1rem;
-}
-
-.profileLogoWrapper {
-  width: 8.5rem;
-  height: 8.5rem;
-  border-radius: 25px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  border: #bfd3ff 5px solid;
-}
-
-.profileLogo {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center center;
-}
-
-.companyLogoWrapper {
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: 50%;
-  display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.companyLogo {
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-.companyDetailWrapper {
-  background-color: #faf7ef;
-  padding: 1rem 1.25rem;
-  width: 35rem;
-  box-sizing: border-box;
-
+.customTextWrapper {
   display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  font-size: 0.625rem;
-  overflow-wrap: break-word;
-  justify-content: flex-start;
+  flex-direction: column-reverse;
   align-items: flex-start;
-  border-radius: 25px;
-}
-@media screen and (max-width: 992px) {
-  .companyDetailWrapper {
-    gap: 0.5rem !important;
-    align-items: center;
-    width: 100% !important;
-  }
-
-  .companyDesc {
-    width: auto !important;
-  }
-}
-
-.companyName {
-  font-size: 1.25rem;
-  font-weight: 700;
-  max-width: 20rem;
-}
-
-.companyDesc {
-  font-size: 1rem;
-  color: #4f4f4f;
-  font-weight: 300;
-  width: 30rem;
-  margin: 0;
-}
-
-.companyTitle {
-  font-size: 0.625rem;
-}
-
-.faqContentBodyContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: 0.5rem;
-}
-
-.faqHeader {
-  font-size: 1.25rem;
-}
-
-.faqSub {
-  color: #4f4f4f;
-  margin: 0;
-  line-height: 1.4;
-  transition: max-height 0.25s ease;
-}
-
-.faqContentListContainer.is-collapsed .faqSub {
-  max-height: 3.6em;
-  overflow: hidden;
-}
-
-.faqContentListContainer.is-expanded .faqSub {
-  max-height: 1000px;
-}
-
-.faqContentIcon {
-  flex: 0 0 auto;
-  margin-left: auto;
-}
-
-.iconContainer {
-  background-color: transparent;
-  border: none;
-  display: flex;
-  flex-direction: row;
   justify-content: center;
-  align-items: center;
 }
 
-.faqContentListContainer .viewMore {
-  display: inline-flex;
-}
-
-.faqContentListContainer .viewLess {
-  display: none;
-}
-
-.faqContentListContainer.is-expanded .viewMore {
-  display: none;
-}
-
-.faqContentListContainer.is-expanded .viewLess {
-  display: inline-flex;
-}
-
-.viewBtn {
-  border: none;
-  background-color: #1b4297;
-  padding: 0.35rem 0.75rem;
-  display: inline-flex;
-  flex-direction: row;
-  gap: 0.5rem;
-  color: #ffffff;
-  text-decoration: none;
-  align-items: center;
-  justify-content: center;
-  border-radius: 10px;
-  font-size: 0.85rem;
-  transition: background-color 0.2s ease, transform 0.2s ease,
-    box-shadow 0.2s ease;
-}
-
-.viewBtn:hover {
-  background-color: #163571;
-  color: #ffffff;
-
-  transform: translateY(-1px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
-}
-
-.viewBtnText {
-  white-space: nowrap;
-}
-
-.viewMoreBtn {
-  border: none;
-  background-color: transparent;
-  padding: 0.35rem 0.75rem;
-  display: inline-flex;
-  flex-direction: row;
-  gap: 0.5rem;
+.faqIcon {
+  font-size: 2rem;
   color: #1b4297;
-  align-items: center;
-  justify-content: center;
-  border-radius: 10px;
-  font-size: 1rem;
-  transition: background-color 0.2s ease, transform 0.2s ease,
-    box-shadow 0.2s ease;
-}
-
-.viewBtn:hover {
-  background-color: #163571;
-  transform: translateY(-1px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
-}
-
-.viewBtnText {
-  white-space: nowrap;
-}
-
-.iconWrapper {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 1rem;
-  color: #1b4297;
-  width: fit-content;
-}
-
-.emailIcon {
-  font-size: 1.25rem;
-}
-
-.textContainer {
-  font-size: 1.25rem;
-}
-
-@media screen and (max-width: 768px) {
-  .faqContentListContainer {
-    align-items: flex-start !important;
-  }
-}
-
-.ctaWrapper {
-  display: flex;
-  flex-direction: row;
-  gap: 1rem;
-  align-items: flex-start;
-  justify-content: center;
-}
-
-.ctaToSite {
-  font-size: 1rem;
-  text-decoration: none;
-  background-color: #163571;
-  color: #ffffff;
-  border-radius: 12px;
-  padding: 0.5rem 1rem;
-}
-
-.ctaToSiteSec {
-  font-size: 1rem;
-  text-decoration: none;
-  background-color: transparent;
-  border: 2px solid #163571;
-  color: #163571;
-  border-radius: 12px;
-  padding: 0.5rem 1rem;
 }

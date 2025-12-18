@@ -48,6 +48,7 @@
            examples. 26 Mar 2025 — In this article, let's dive into how to create
            a good site search UI and get inspiration from 20 best search UI design examples.`,
           link: "https://getbootstrap.com/docs/5.3/utilities/spacing/",
+          frmUniFaq: true,
         },
         {
           title: "Why UI Design Matters in 2025? 1",
@@ -55,6 +56,7 @@
            site search UI and get inspiration from 20 best search UI design
            examples. 26 Mar 2025 — In this article, let's dive into how to create
            a good site search UI and get inspiration from 20 best search UI design examples.`,
+          frmUniFaq: false,
         },
         {
           title: "Why UI Design Matters in 2025? 2",
@@ -62,6 +64,7 @@
            site search UI and get inspiration from 20 best search UI design
            examples. 26 Mar 2025 — In this article, let's dive into how to create
            a good site search UI and get inspiration from 20 best search UI design examples.`,
+          frmUniFaq: true,
         },
         {
           title: "Why UI Design Matters in 2025? 3",
@@ -69,6 +72,7 @@
            site search UI and get inspiration from 20 best search UI design
            examples. 26 Mar 2025 — In this article, let's dive into how to create
            a good site search UI and get inspiration from 20 best search UI design examples.`,
+          frmUniFaq: true,
         },
       ];
 
@@ -77,28 +81,73 @@
 
         faqList.innerHTML = faqData
           .map((item, i) => {
+            if (item.frmUniFaq) {
+              return `
+                <div class="customFaqContentListContainer shadowSm is-collapsed" data-id="uni-${
+                  i + "frm"
+                }">
+                  <div class="faqContentHeaderWrapper">
+                    <div class="faqContentBodyContainer">
+                      <div class="iconTextWrapper">
+                        <i class="fa-regular fa-comment-dots faqIcon"></i>
+                        <div class="customTextWrapper">
+                          <span class="customtext">Most Asked Question</span>
+                          <span class="customtext">Answered By Universal FAQ</span>
+                        </div>
+                      </div>
+
+                      <div class="contentHeaderContainer">
+                        <h2 class="faqHeader">${item.title}</h2>
+                      </div>
+                    </div>
+
+                    <div class="faqSub">${item.desc}</div>
+  
+                  </div>
+
+                  <div class="faqContentIcon">
+                    <button class="viewBtn shadowSm" onclick="window.open('${
+                      item.url
+                    }', '_blank')">
+                      <span class="viewBtnText">View</span>
+                      <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </button>
+                    <button type="button" class="viewMoreBtn viewMore">
+                      <i class="fa-solid fa-plus"></i>
+                    </button>
+
+                    <button type="button" class="viewMoreBtn viewLess">
+                      <i class="fa-solid fa-minus"></i>
+                    </button>
+                  </div>
+                </div>
+
+        `;
+            }
+
+            // else → normal FAQ card
             return `
-        <div class="faqContentListContainer shadowSm is-collapsed"  data-id="${i}">
+        <div class="faqContentListContainer shadowSm is-collapsed" data-id="${i}">
           <div class="faqContentHeaderWrapper">
             <div class="faqContentBodyContainer">
               <div class="contentHeaderContainer">
                 <h2 class="faqHeader">${item.title}</h2>
-                <div class="faqContentIcon" >
-                  <a class="viewBtn shadowSm" href="${item.link}" target=_blank >
-                    <span class="viewBtnText">View</span>
-                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                  </a>
-                </div>
               </div>
             </div>
+
             <div class="faqSub">${item.desc}</div>
           </div>
 
           <div class="faqContentIcon">
-            <button class="viewMoreBtn viewMore">
+            <button class="viewBtn shadowSm" onclick="window.open('${item.url}', '_blank')">
+              <span class="viewBtnText">View</span>
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </button>
+            <button type="button" class="viewMoreBtn viewMore">
               <i class="fa-solid fa-plus"></i>
             </button>
-            <button class="viewMoreBtn viewLess">
+
+            <button type="button" class="viewMoreBtn viewLess">
               <i class="fa-solid fa-minus"></i>
             </button>
           </div>
@@ -113,7 +162,7 @@
     <script src="script.js"></script>
   </head>
 
-  <body>
+  <body class="customBg">
     <div class="faqPageWrapper">
       <div class="faqSplashContainer">
         <div class="container">
@@ -121,7 +170,7 @@
             <div class="container-fluid">
               <a class="navbar-brand" href="#">
                 <img
-                  src="https://cdn1.npcdn.net/img/1695269593newpagesglobal-logo.png"
+                  src="https://www.newpages2u.com/img/1766038267faqLogo.png"
                   alt="icon"
                   class="navbarLogo"
                 />
@@ -135,7 +184,10 @@
                 aria-expanded="false"
                 aria-label="Toggle navigation"
               >
-                <span class="navbar-toggler-icon"></span>
+                <span
+                  class="navbar-toggler-icon d-flex justify-content-center align-items-center"
+                  ><i class="fa-solid fa-bars"></i
+                ></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarScroll">
                 <ul
@@ -146,9 +198,6 @@
                     <a class="nav-link active" aria-current="page" href="#"
                       >Home</a
                     >
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
                   </li>
                 </ul>
               </div>
@@ -228,8 +277,12 @@
                     </div>
                   </div>
                   <div class="ctaWrapper">
-                    <a class="ctaToSite shadow-sm" href="#companySite">Visit Website</a>
-                    <a class="ctaToSiteSec shadow-sm" href="#home">Back to All FAQs</a>
+                    <a class="ctaToSite shadow-sm" href="#companySite"
+                      >Visit Website</a
+                    >
+                    <a class="ctaToSiteSec shadow-sm" href="#home"
+                      >Back to All FAQs</a
+                    >
                   </div>
                 </div>
               </div>
@@ -237,7 +290,9 @@
           </div>
         </div>
       </div>
+    </div>
 
+    <div class="primaryContainer">
       <div class="faqContentContainer container">
         <div class="align-items-end justify-content-end w-100 d-none d-lg-flex">
           <div class="tabWrapper">
@@ -251,24 +306,9 @@
             </div>
           </div>
         </div>
-
-        <div class="faqContentListWrapper" id="faqList"></div>
       </div>
 
-      <div class="paginationWrapper">
-        <button class="prevButton shadowSm">
-          <i class="fa-solid fa-arrow-left me-2"></i> Previous
-        </button>
-        <ul class="pageWrapper">
-          <li class="pageNum currentPage">1</li>
-          <li class="pageNum">2</li>
-          <li class="pageNum">3</li>
-          <li class="pageNum">4</li>
-        </ul>
-        <button class="nextButton shadowSm">
-          Next <i class="fa-solid fa-arrow-right ms-2"></i>
-        </button>
-      </div>
+      <div class="faqContentListWrapper container" id="faqList"></div>
     </div>
 
     <footer>

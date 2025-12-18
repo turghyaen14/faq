@@ -119,8 +119,6 @@
             <div class="faqSub">${item.desc}</div>
 
           </div>
-
-
           <div class="faqContentIcon">
             <button class="viewBtn shadowSm" onclick="window.open('${
               item.url
@@ -142,7 +140,7 @@
     <script src="script.js"></script>
   </head>
 
-  <body>
+  <body class="customBg">
     <div class="faqPageWrapper">
       <div class="faqSplashContainer">
         <div class="container">
@@ -150,7 +148,7 @@
             <div class="container-fluid">
               <a class="navbar-brand" href="#">
                 <img
-                  src="https://cdn1.npcdn.net/img/1695269593newpagesglobal-logo.png"
+                  src="https://www.newpages2u.com/img/1766038267faqLogo.png"
                   alt="icon"
                   class="navbarLogo"
                 />
@@ -164,7 +162,10 @@
                 aria-expanded="false"
                 aria-label="Toggle navigation"
               >
-                <span class="navbar-toggler-icon"></span>
+                <span
+                  class="navbar-toggler-icon d-flex justify-content-center align-items-center"
+                  ><i class="fa-solid fa-bars"></i
+                ></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarScroll">
                 <ul
@@ -175,9 +176,6 @@
                     <a class="nav-link active" aria-current="page" href="#"
                       >Home</a
                     >
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
                   </li>
                 </ul>
               </div>
@@ -224,7 +222,10 @@
           </div>
         </div>
       </div>
-      <div class="faqContentContainer container">
+    </div>
+
+    <div class="primaryContainer">
+      <div class="faqContentContainer container gap-4">
         <div class="align-items-end justify-content-end w-100 d-none d-lg-flex">
           <div class="tabWrapper">
             <div class="tabContainer" id="gridViewTab">
@@ -237,21 +238,21 @@
             </div>
           </div>
         </div>
-        <div class="faqContentListWrapper" id="companyList"></div>
-      </div>
+        <div class="faqContentListWrapper container" id="companyList"></div>
 
-      <div class="paginationWrapper">
-        <button class="prevButton shadowSm">
-          <i class="fa-solid fa-arrow-left me-2"></i> Previous
-        </button>
-        <ul class="pageWrapper">
-          <li class="pageNum currentPage">1</li>
-          <li class="pageNum">2</li>
-          <li class="pageNum">3</li>
-        </ul>
-        <button class="nextButton shadowSm">
-          Next <i class="fa-solid fa-arrow-right ms-2"></i>
-        </button>
+        <div class="paginationWrapper">
+          <button class="prevButton shadowSm">
+            <i class="fa-solid fa-arrow-left me-2"></i> Previous
+          </button>
+          <ul class="pageWrapper">
+            <li class="pageNum currentPage">1</li>
+            <li class="pageNum">2</li>
+            <li class="pageNum">3</li>
+          </ul>
+          <button class="nextButton shadowSm">
+            Next <i class="fa-solid fa-arrow-right ms-2"></i>
+          </button>
+        </div>
       </div>
     </div>
     <footer>

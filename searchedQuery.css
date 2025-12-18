@@ -1,253 +1,30 @@
-/* ===========================
-   FAQ CONTENT LAYOUT
-=========================== */
+/* =====================================
+   searchedQuery.css
+   Page-specific overrides only.
+   Depends on style.css for shared styles.
+===================================== */
 
-.faqContentContainer {
-  display: flex;
-  flex-direction: column;
-  padding: 0.5rem 2rem;
-  align-items: center;
-  justify-content: center;
+/* Parent -> children */
+
+/* Results list */
+.faqContentListWrapper .faqContentListContainer {
+  cursor: default; /* searched results cards aren't expandable/clickable as a whole */
 }
 
-/* ===========================
-   VIEW TABS
-=========================== */
+/* Tags: "+ N" */
+/* .faqContentListWrapper .companyTagsWrapper .tagContainer.moreTag {
+  opacity: 0.75;
+  border-style: dashed;
+} */
 
-.tabWrapper {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  flex-direction: row;
-  border: 2px solid #1b4297;
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-.tabContainer {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.6rem;
-  padding: 0.5rem 0.75rem;
-  width: 10rem;
-  cursor: pointer;
-  font-size: 0.9rem;
-  color: #1b4297;
-  background-color: transparent;
-  transition: background-color 0.25s ease, color 0.25s ease;
-}
-
-.tabContainer .faSize {
-  font-size: 1rem;
-}
-
-.selectedTabContainer,
-.tabContainer.selectedTabContainer {
-  background-color: #1b4297;
-  color: #ffffff;
-}
-
-.faqContentListWrapper {
-  width: 100%;
-  padding: 1.5rem;
-  margin-top: 1.25rem;
-  display: grid;
-  gap: 1.5rem;
-  grid-auto-rows: auto;
-  transition: grid-template-columns 0.35s ease;
-}
-
-.faqContentListWrapper.list-view {
-  grid-template-columns: 1fr;
-}
-
-.faqContentListWrapper.grid-view {
-  grid-auto-flow: row;
-
-  grid-template-columns: repeat(3, minmax(260px, 1fr));
-}
-
-@media (max-width: 1200px) and (min-width: 786px) {
-  .faqContentListWrapper.grid-view {
-    grid-template-columns: repeat(2, minmax(260px, 1fr));
-  }
-}
-
-.faqContentListContainer {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  column-gap: 1rem;
-  padding: 1rem 1.25rem;
-  border-radius: 25px;
-  cursor: default;
-  overflow: hidden;
-  transition: transform 0.25s ease, box-shadow 0.25s ease,
-    background-color 0.25s ease;
-}
-
-.faqContentListContainer:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.06);
-}
-
-.faqContentListWrapper.grid-view .faqContentListContainer {
-  align-items: flex-start;
-}
-
-.faqContentHeaderWrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  flex: 1 1 auto;
-  min-width: 0;
-}
-
-.faqContentHeaderContainer {
-  display: flex;
-  flex-direction: row;
-  gap: 0.5rem;
-  align-items: center;
-  justify-content: flex-start;
-}
-
-.companyLogoWrapper {
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.companyLogo {
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-.companyDetailWrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
-  font-size: 0.625rem;
-  min-width: 0;
-  overflow-wrap: break-word;
-}
-
-.companyTitle {
-  font-size: 0.625rem;
-}
-
-.faqContentBodyContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: 0.5rem;
-}
-
-.faqHeader {
-  font-size: 1.25rem;
-}
-
-.faqSub {
-  color: #4f4f4f;
-  margin: 0;
-  line-height: 1.4;
-  transition: max-height 0.25s ease;
-}
-
-.faqContentListContainer.is-collapsed .faqSub {
-  max-height: 3.6em;
-  overflow: hidden;
-}
-
-.faqContentListContainer.is-expanded .faqSub {
-  max-height: 1000px;
-}
-
-.faqContentIcon {
-  flex: 0 0 auto;
-  margin-left: auto;
-}
-
-.iconContainer {
-  background-color: transparent;
-  border: none;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-
-.faqContentIcon .fa-minus {
-  display: none;
-}
-
-.faqContentListContainer.is-expanded .fa-minus {
-  display: inline-flex;
-}
-
-.faqContentListContainer.is-expanded .fa-plus {
-  display: none;
-}
-
-.viewBtn {
-  border: none;
-  background-color: #1b4297;
-  padding: 0.35rem 0.75rem;
-  display: inline-flex;
-  flex-direction: row;
-  gap: 0.5rem;
-  color: #ffffff;
-  align-items: center;
-  justify-content: center;
-  border-radius: 10px;
-  font-size: 0.85rem;
-  transition: background-color 0.2s ease, transform 0.2s ease,
-    box-shadow 0.2s ease;
-}
-
-.viewBtn:hover {
-  background-color: #163571;
-  transform: translateY(-1px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
-}
-
-.viewBtnText {
-  white-space: nowrap;
-}
-
+/* Responsive (keep overrides at the end) */
 @media screen and (max-width: 768px) {
-  .faqContentListContainer {
+  .faqContentListWrapper .faqContentListContainer {
     align-items: flex-start !important;
   }
-}
 
-.companyTagsWrapper {
-  display: flex;
-  flex-direction: row;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-  align-items: start;
-  justify-content: start;
-}
-
-.tagContainer {
-  padding: 0.2rem 0.5rem;
-  border: 2px solid #163571;
-  color: #163571;
-  font-size: 0.8rem;
-  border-radius: 25px;
-}
-
-@media screen and (max-width: 768px) {
-  .companyTagsWrapper {
+  .faqContentListWrapper .companyTagsWrapper {
     align-items: center !important;
-    justify-content: center !important;
+    justify-content: start !important;
   }
 }

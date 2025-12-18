@@ -1,5 +1,5 @@
 /* ===========================
-   GLOBAL BASE STYLES
+   1) GLOBAL BASE
 =========================== */
 
 body {
@@ -9,127 +9,20 @@ body {
   color: #1e2330;
 }
 
-.faqPageWrapper {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  padding: 1rem 1.5rem 3rem 1.5rem;
-}
-
-.faqPageWrapper .faqSplashContainer {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  align-items: center;
-  justify-content: center;
-  background-image: url(./asset/splashBg.png);
+.customBg {
+  background: url("./asset/splashBg.png");
   background-repeat: repeat;
   background-size: contain;
-  background-color: rgba(250, 247, 239, 0.6);
-  background-blend-mode: lighten;
-  padding: 2rem 1rem;
+  background-blend-mode: hard-light;
+}
+
+.primaryContainer {
   width: 100%;
-}
-
-.faqPageWrapper .faqSplashContainer .faqMainHeader {
-  color: #1b4297;
-  font-size: 4rem;
-  line-height: 1.1;
-  font-family: "Gloock", serif;
-}
-
-/* Search box wrapper under hero */
-.faqSearchBox {
-  width: 100%;
-}
-
-/* Shared container for FAQ content sections */
-.faqContentContainer {
-  display: flex;
-  flex-direction: column;
-  padding: 0.5rem 2rem;
-  align-items: center;
-  justify-content: center;
-}
-
-/* ===========================
-   SEARCH BAR & CONTROLS
-=========================== */
-
-.clearButton {
-  color: #93afea;
-  background-color: transparent;
-  border: none;
-  font-size: 1rem;
-  border-radius: 50%;
-}
-
-.searchInput {
-  border: none;
-  background-color: transparent;
-  width: 100%;
-  padding: 0rem 1rem;
-  color: #1b4297;
-}
-
-.searchInput:focus-visible {
-  border: none;
-  background-color: transparent;
-  outline: none;
-}
-
-.searchButton {
-  color: #1b4297;
-  background-color: transparent;
-  border: none;
-  font-size: 1rem;
-  border-radius: 50%;
-}
-
-.searchButton:focus-visible {
-  border: none;
-  outline: none;
-}
-
-.searchContainer {
-  display: flex;
-  flex-direction: row;
-  border: 2px solid #1b4297;
-  justify-content: space-between;
-  padding: 0.5rem;
-  width: 100%;
-  border-radius: 50px;
   background-color: #faf7ef;
+  padding: 1rem;
 }
 
-.buttonContainer {
-  display: flex;
-  flex-direction: row;
-  gap: 1rem;
-  align-items: center;
-  justify-content: center;
-}
-
-.searchHintWrapper {
-  display: flex;
-  flex-direction: row;
-  gap: 0.5rem;
-  padding: auto 0.5rem;
-}
-
-.searchPlaceHolder {
-  color: #828282;
-}
-
-.iconSearch {
-  color: #1b4297;
-}
-
-/* ===========================
-   TYPOGRAPHY HELPERS
-=========================== */
-
+/* Typography helpers */
 .gloock-regular {
   font-family: "Gloock", serif;
   font-weight: 400;
@@ -154,116 +47,78 @@ body {
   font-style: normal;
 }
 
-/* ===========================
-   GENERIC UTILITIES
-=========================== */
-
+/* Utilities */
 .shadowSm {
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 /* ===========================
-   FOOTER
+   2) NAVBAR (shared)
 =========================== */
 
-.footerWrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem 1rem;
-  background-image: url(./asset/splashBg.png);
-  background-color: rgba(250, 247, 239, 0.6);
-  background-blend-mode: lighten;
-  background-repeat: repeat;
-  background-size: contain;
-}
-
-.footerContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 100%;
-  gap: 1rem;
-  align-items: start;
-  font-weight: 500;
-  padding: 2rem 1rem;
+.navbar {
   color: #4f4f4f;
 }
 
-.logoWrapper {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
+.nav-link {
+  color: #4f4f4f !important;
 }
 
-.joinNowBtn {
-  background-color: #1b4297;
-  color: #ffffff;
-  font-size: 1rem;
-  padding: 0.5rem 2rem;
-  border-radius: 50px;
+.navbarLogo {
+  height: auto;
+  width: 3.5rem;
 }
 
-.logoContainer {
-  font-size: 2rem;
-  color: #1b4297;
+.navbar-toggler {
+  background-color: #163571 !important;
+}
+
+.navbar-toggler-icon {
+  color: #ffffff !important;
 }
 
 /* ===========================
-   PAGINATION
+   3) PAGE LAYOUT WRAPPERS
 =========================== */
 
-.paginationWrapper {
+.faqPageWrapper {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1rem 1.5rem 3rem 1.5rem;
+}
+
+.faqPageWrapper .faqSplashContainer {
+  display: flex;
+  flex-direction: column;
   gap: 1.5rem;
   align-items: center;
   justify-content: center;
+  background-repeat: repeat;
+  background-size: contain;
+  padding: 2rem 1rem;
+  width: 100%;
 }
 
-.prevButton,
-.nextButton {
-  background-color: transparent;
-  border: 2px solid #d5d7da;
-  height: fit-content;
-  border-radius: 10px;
-  padding: 0.5rem 1rem;
+.faqPageWrapper .faqSplashContainer .faqMainHeader {
+  color: #1b4297;
+  font-size: 4rem;
+  line-height: 1.1;
+  font-family: "Gloock", serif;
+}
+
+/* Shared container for content sections */
+.faqContentContainer {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  padding: 0.5rem 2rem;
   align-items: center;
   justify-content: center;
-  width: fit-content;
-}
-
-.pageWrapper {
-  display: flex;
-  flex-direction: row;
-  gap: 1rem;
-  padding: 0rem;
-  margin: 0;
-  list-style: none;
-}
-
-.pageNum {
-  padding: 0.5rem;
-  cursor: pointer;
-}
-
-.currentPage {
-  width: 2.5rem;
-  height: 2.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 10px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
-    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 
 /* ===========================
-   HERO / TAGLINE
+   4) HERO / TAGLINE (index usage)
 =========================== */
 
 .tagLineWrapper {
@@ -272,16 +127,6 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 2rem;
-}
-
-.mainCTA {
-  background-color: #1b4297;
-  color: #ffffff;
-  font-size: 1rem;
-  padding: 1rem 3rem;
-  border-radius: 50px;
-  border: none;
-  width: 70%;
 }
 
 .tagLineContainer {
@@ -304,8 +149,97 @@ body {
   color: #555b6b;
 }
 
+.mainCTA {
+  background-color: #1b4297;
+  color: #ffffff;
+  font-size: 1rem;
+  padding: 1rem 3rem;
+  border-radius: 50px;
+  border: none;
+  width: 70%;
+}
+
 /* ===========================
-   VIEW TABS (LIST / GRID)
+   5) SEARCH BAR & CONTROLS
+=========================== */
+
+/* Search box wrapper under hero */
+.faqSearchBox {
+  width: 30rem;
+}
+
+.searchContainer {
+  display: flex;
+  flex-direction: row;
+  border: 2px solid #1b4297;
+  justify-content: space-between;
+  padding: 0.5rem;
+  width: 100%;
+  border-radius: 50px;
+  background-color: #faf7ef;
+}
+
+.searchContainer .searchInput {
+  border: none;
+  background-color: transparent;
+  width: 100%;
+  padding: 0rem 1rem;
+  color: #1b4297;
+}
+
+.searchContainer .searchInput:focus-visible {
+  border: none;
+  background-color: transparent;
+  outline: none;
+}
+
+.searchContainer .buttonContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.searchContainer .searchButton {
+  color: #1b4297;
+  background-color: transparent;
+  border: none;
+  font-size: 1rem;
+  border-radius: 50%;
+}
+
+.searchContainer .searchButton:focus-visible {
+  border: none;
+  outline: none;
+}
+
+/* Optional: only keep if you actually use a clear button somewhere */
+.clearButton {
+  color: #93afea;
+  background-color: transparent;
+  border: none;
+  font-size: 1rem;
+  border-radius: 50%;
+}
+
+.searchHintWrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  padding: auto 0.5rem;
+}
+
+.searchHintWrapper .searchPlaceHolder {
+  color: #828282;
+}
+
+.iconSearch {
+  color: #1b4297;
+}
+
+/* ===========================
+   6) VIEW TABS (LIST / GRID)
 =========================== */
 
 .tabWrapper {
@@ -318,7 +252,7 @@ body {
   overflow: hidden;
 }
 
-.tabContainer {
+.tabWrapper .tabContainer {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -332,18 +266,18 @@ body {
   transition: background-color 0.25s ease, color 0.25s ease;
 }
 
-.tabContainer .faSize {
+.tabWrapper .tabContainer .faSize {
   font-size: 1rem;
 }
 
-.selectedTabContainer,
-.tabContainer.selectedTabContainer {
+.tabWrapper .selectedTabContainer,
+.tabWrapper .tabContainer.selectedTabContainer {
   background-color: #1b4297;
   color: #ffffff;
 }
 
 /* ===========================
-   FAQ CONTENT LIST (RESULTS)
+   7) FAQ CONTENT LIST (RESULT CARDS)
 =========================== */
 
 .faqContentListWrapper {
@@ -365,7 +299,7 @@ body {
   grid-template-columns: repeat(3, minmax(260px, 1fr));
 }
 
-.faqContentListContainer {
+.faqContentListWrapper .faqContentListContainer {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -379,7 +313,7 @@ body {
     background-color 0.25s ease;
 }
 
-.faqContentListContainer:hover {
+.faqContentListWrapper .faqContentListContainer:hover {
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.06);
 }
@@ -388,7 +322,7 @@ body {
   align-items: flex-start;
 }
 
-.faqContentHeaderWrapper {
+.faqContentListWrapper .faqContentListContainer .faqContentHeaderWrapper {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -396,7 +330,8 @@ body {
   min-width: 0;
 }
 
-.faqContentHeaderContainer {
+.faqContentListWrapper .faqContentListContainer .faqContentHeaderWrapper
+  .faqContentHeaderContainer {
   display: flex;
   flex-direction: row;
   gap: 0.5rem;
@@ -462,6 +397,7 @@ body {
   max-height: 1000px;
 }
 
+/* Right-side icons + expand/collapse */
 .faqContentIcon {
   display: flex;
   flex-direction: column;
@@ -492,7 +428,25 @@ body {
   display: none;
 }
 
-/* "View" / CTA button for each card */
+/* Tags */
+.companyTagsWrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  align-items: start;
+  justify-content: start;
+}
+
+.tagContainer {
+  padding: 0.2rem 0.5rem;
+  border: 2px solid #163571;
+  color: #163571;
+  font-size: 0.8rem;
+  border-radius: 25px;
+}
+
+/* Card button */
 .viewBtn {
   border: none;
   background-color: #1b4297;
@@ -519,8 +473,122 @@ body {
   white-space: nowrap;
 }
 
+/* Optional button used in some pages */
+.viewMoreBtn {
+  border: none;
+  background-color: transparent;
+  padding: 0.35rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  color: #1b4297;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: background-color 0.2s ease, transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
 /* ===========================
-   RESPONSIVE
+   8) PAGINATION
+=========================== */
+
+.paginationWrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.prevButton,
+.nextButton {
+  background-color: transparent;
+  border: 2px solid #d5d7da;
+  height: fit-content;
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+}
+
+.pageWrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  padding: 0rem;
+  margin: 0;
+  list-style: none;
+}
+
+.pageNum {
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.currentPage {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+/* ===========================
+   9) FOOTER
+=========================== */
+
+.footerWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  background-repeat: repeat;
+  background-size: contain;
+}
+
+.footerContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  gap: 1rem;
+  align-items: start;
+  font-weight: 500;
+  padding: 2rem 1rem;
+  color: #4f4f4f;
+}
+
+.logoWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.logoContainer {
+  font-size: 2rem;
+  color: #1b4297;
+}
+
+.joinNowBtn {
+  background-color: #1b4297;
+  color: #ffffff;
+  font-size: 1rem;
+  padding: 0.5rem 2rem;
+  border-radius: 50px;
+}
+
+/* ===========================
+   10) RESPONSIVE (ALL AT END)
 =========================== */
 
 @media (max-width: 1200px) and (min-width: 786px) {
@@ -546,10 +614,6 @@ body {
     width: 100% !important;
   }
 
-  .companyDesc {
-    text-align: center;
-  }
-
   .footerContainer {
     font-size: 0.825rem !important;
     font-weight: 400 !important;
@@ -564,6 +628,11 @@ body {
 
   .faqContentListContainer {
     align-items: flex-start !important;
+  }
+
+  .companyTagsWrapper {
+    align-items: center !important;
+    justify-content: start !important;
   }
 }
 
@@ -582,88 +651,13 @@ body {
     gap: 1.5rem;
   }
 
-  .tagLineTitle {
-    font-size: 2rem;
-    font-weight: 400;
-    color: #1e2330;
-    text-align: center;
-  }
-
+  .tagLineTitle,
   .tagLineSub {
-    font-size: 1rem;
-    font-weight: 400;
-    color: #555b6b;
     text-align: center;
   }
-}
 
-.viewMoreBtn {
-  border: none;
-  background-color: transparent;
-  padding: 0.35rem 0.75rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  color: #1b4297;
-  align-items: center;
-  justify-content: center;
-  border-radius: 10px;
-  font-size: 1rem;
-  transition: background-color 0.2s ease, transform 0.2s ease,
-    box-shadow 0.2s ease;
-}
-
-.viewBtn:hover {
-  background-color: #163571;
-  transform: translateY(-1px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
-}
-
-.viewBtnText {
-  white-space: nowrap;
-}
-
-.companyTagsWrapper {
-  display: flex;
-  flex-direction: row;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-  align-items: start;
-  justify-content: start;
-}
-
-.tagContainer {
-  padding: 0.2rem 0.5rem;
-  border: 2px solid #163571;
-  color: #163571;
-  font-size: 0.8rem;
-  border-radius: 25px;
-}
-
-@media screen and (max-width: 768px) {
-  .companyTagsWrapper {
+    .companyTagsWrapper {
     align-items: center !important;
-    justify-content: center !important;
+    justify-content:start !important;
   }
 }
-
-.navbar {
-  color: #4f4f4f;
-}
-
-.nav-link {
-  color: #4f4f4f !important;
-}
-
-.navbarLogo {
-  height: 2rem;
-  width: auto;
-}
-
-.navbar-toggler {
-  background-color: #163571 !important;
-}
-.navbar-toggler-icon {
-  color: #ffffff !important;
-}
-

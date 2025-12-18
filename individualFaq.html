@@ -68,101 +68,18 @@
             </div>
             <div class="faqSubs">${item.desc}</div>
           </div>
-        </div>
-      `;
-          })
-          .join("");
-      }
-
-      document.addEventListener("DOMContentLoaded", renderFAQ);
-    </script>
-    <script src="script.js"></script>
-  </head>
-
-  <body>
-    <div class="faqPageWrapper" style="padding: 1rem 1rem 0rem 1rem ;">
-      <div class="faqSplashContainer">
-        <div class="container">
-          <nav class="navbar navbar-expand-lg bg-body-tertiary">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="#">
-                <img
-                  src="https://cdn1.npcdn.net/img/1695269593newpagesglobal-logo.png"
-                  alt="icon"
-                  class="navbarLogo"
-                />
-              </a>
-              <button
-                class="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarScroll"
-                aria-controls="navbarScroll"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-              >
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarScroll">
-                <ul
-                  class="navbar-nav gap-4 me-auto my-2 my-lg-0 navbar-nav-scroll"
-                  style="--bs-scroll-height: 100px"
-                >
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#"
-                      >Home</a
-                    >
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </nav>
-        </div>
-        <div class="row">
-          <div class="col-lg-12 tagLineWrapper">
-            <h1 class="faqMainHeader">FAQ Dispenser</h1>
-            <div class="row">
-              <div class="col-lg-12">
-                <div class="faqSearchBox">
-                  <form
-                    action="/search"
-                    method="get"
-                    class="searchContainer shadowSm"
-                  >
-                    <input
-                      type="search"
-                      id="search-box"
-                      name="query"
-                      placeholder="Search..."
-                      class="searchInput"
-                    />
-
-                    <div class="buttonContainer">
-                      <button
-                        type="submit"
-                        class="btn btn-icon searchButton"
-                        aria-label="Search"
-                      >
-                        <i class="fa-solid fa-magnifying-glass iconSearch"></i>
-                      </button>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-
-            <div class="row w-100">
-              <div class="col-lg-4">
-                <div class="companyDetailWrapper shadowSm">
-                  <div class="profileLogoWrapper shadowSm">
+                        <div class="col-lg-12 col-md-12 col-sm-12 my-3">
+                          
+                <div class="companyDetailWrapper">
+                 
+                 <div class="d-flex flex-md-row flex-column gap-4 align-items-center justify-content-center">
+                   <div class="profileLogoWrapper ">
                     <img
                       src="https://media.istockphoto.com/id/814423752/photo/eye-of-model-with-colorful-art-make-up-close-up.jpg?s=612x612&w=0&k=20&c=l15OdMWjgCKycMMShP8UK94ELVlEGvt7GmB_esHWPYE="
                       class="profileLogo"
                     />
                   </div>
+                  <div class="d-flex flex-column gap-2">
                   <span class="companyName">
                     Sia Traditional Chinese Medicine
                   </span>
@@ -177,6 +94,8 @@
                       <span class="textContainer"> +6010-824 7333 </span>
                     </div>
                   </div>
+                  </div>
+                  </div>
                   <div class="ctaWrapper">
                     <a class="ctaToSite shadow-sm" href="#companySite"
                       >Visit Website</a
@@ -187,10 +106,88 @@
                   </div>
                 </div>
               </div>
-              <div class="col-lg-8 d-flex justify-content-start align-content-start">
-                <div class="faqContentContainer container">
-                  <div class="faqContentListWrapper" id="faqList"></div>
-                </div>
+        </div>
+      `;
+          })
+          .join("");
+      }
+
+      document.addEventListener("DOMContentLoaded", renderFAQ);
+    </script>
+    <script src="script.js"></script>
+  </head>
+
+  <body class="customBg">
+    <div class="faqPageWrapper" style="padding: 1rem 1rem 0rem 1rem">
+      <div class="faqSplashContainer" style="background-image: none">
+        <div class="container">
+          <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">
+                <img
+                  src="https://www.newpages2u.com/img/1766038267faqLogo.png"
+                  alt="icon"
+                  class="navbarLogo"
+                />
+              </a>
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarScroll"
+                aria-controls="navbarScroll"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span
+                  class="navbar-toggler-icon d-flex justify-content-center align-items-center"
+                  ><i class="fa-solid fa-bars"></i
+                ></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarScroll">
+                <ul
+                  class="navbar-nav gap-4 me-auto my-2 my-lg-0 navbar-nav-scroll"
+                  style="--bs-scroll-height: 100px"
+                >
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#"
+                      >Home</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </div>
+
+        <div class="col-lg-12 tagLineWrapper">
+          <h1 class="faqMainHeader">FAQ Dispenser</h1>
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="faqSearchBox">
+                <form
+                  action="/search"
+                  method="get"
+                  class="searchContainer shadowSm"
+                >
+                  <input
+                    type="search"
+                    id="search-box"
+                    name="query"
+                    placeholder="Search..."
+                    class="searchInput"
+                  />
+
+                  <div class="buttonContainer">
+                    <button
+                      type="submit"
+                      class="btn btn-icon searchButton"
+                      aria-label="Search"
+                    >
+                      <i class="fa-solid fa-magnifying-glass iconSearch"></i>
+                    </button>
+                  </div>
+                </form>
               </div>
             </div>
           </div>
@@ -198,8 +195,19 @@
       </div>
     </div>
 
+    <div
+      class="primaryContainer d-flex align-items-center justify-content-center py-4"
+    >
+      <div class="container">
+        <div class="row">
+          <div class="faqContentContainer">
+            <div class="faqContentListWrapper" id="faqList"></div>
+          </div>
+        </div>
+      </div>
+    </div>
     <footer>
-      <div class="footerWrapper">
+      <div class="footerWrapper" style="background-image: none">
         <div class="footerContainer container gloock-regular">
           <div class="logoWrapper">
             <span class="logoContainer gloock-regular"> Logo. </span>

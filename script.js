@@ -5,45 +5,90 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("resize", enforceMobileView);
 });
 
+/* ===========================
+   FAQ COLLAPSE / EXPAND
+=========================== */
+
 function initFaqToggle() {
   const MAX_CHARS = 40;
-  const cards = document.querySelectorAll(".faqContentListContainer");
+
+  const cards = document.querySelectorAll(
+    ".faqContentListContainer, .customFaqContentListContainer"
+  );
 
   cards.forEach((card) => {
     const sub = card.querySelector(".faqSub");
     if (!sub) return;
 
     const fullText = sub.textContent.trim();
-    if (fullText.length <= MAX_CHARS) return;
+    const shouldTruncate = fullText.length > MAX_CHARS;
 
-    const shortText = fullText.slice(0, MAX_CHARS) + "…";
+    const shortText = shouldTruncate
+      ? fullText.slice(0, MAX_CHARS) + "…"
+      : fullText;
 
     sub.dataset.full = fullText;
     sub.dataset.short = shortText;
     sub.textContent = shortText;
+
+    const plusBtn = card.querySelector(".viewMoreBtn.viewMore");
+    const minusBtn = card.querySelector(".viewMoreBtn.viewLess");
+
+    // initial state
     card.classList.add("is-collapsed");
+    card.classList.remove("is-expanded");
+    setButtons(false);
 
-    function toggleCard() {
-      const isCollapsed = card.classList.contains("is-collapsed");
-
-      if (isCollapsed) {
-        sub.textContent = sub.dataset.full;
-        card.classList.remove("is-collapsed");
-        card.classList.add("is-expanded");
-      } else {
-        sub.textContent = sub.dataset.short;
-        card.classList.remove("is-expanded");
-        card.classList.add("is-collapsed");
-      }
+    function setButtons(isExpanded) {
+      if (plusBtn) plusBtn.style.display = isExpanded ? "none" : "inline-flex";
+      if (minusBtn)
+        minusBtn.style.display = isExpanded ? "inline-flex" : "none";
     }
 
+    function expand() {
+      sub.textContent = sub.dataset.full;
+      card.classList.remove("is-collapsed");
+      card.classList.add("is-expanded");
+      setButtons(true);
+    }
+
+    function collapse() {
+      sub.textContent = sub.dataset.short;
+      card.classList.remove("is-expanded");
+      card.classList.add("is-collapsed");
+      setButtons(false);
+    }
+
+    // Card click toggle (ignore buttons + links)
     card.addEventListener("click", (e) => {
-      // optional: don't toggle when clicking the View button
       if (e.target.closest(".viewBtn")) return;
-      toggleCard();
+      if (e.target.closest(".viewMoreBtn")) return;
+
+      if (card.classList.contains("is-collapsed")) expand();
+      else collapse();
     });
+
+    if (plusBtn) {
+      plusBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        expand();
+      });
+    }
+
+    if (minusBtn) {
+      minusBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        collapse();
+      });
+    }
   });
 }
+
+/* ===========================
+   VIEW MODE TABS
+=========================== */
 
 function initViewTabs() {
   const gridTab = document.getElementById("gridViewTab");
@@ -56,13 +101,11 @@ function initViewTabs() {
     if (mode === "grid") {
       listWrapper.classList.remove("list-view");
       listWrapper.classList.add("grid-view");
-
       gridTab.classList.add("selectedTabContainer");
       listTab.classList.remove("selectedTabContainer");
     } else {
       listWrapper.classList.remove("grid-view");
       listWrapper.classList.add("list-view");
-
       listTab.classList.add("selectedTabContainer");
       gridTab.classList.remove("selectedTabContainer");
     }
@@ -71,6 +114,10 @@ function initViewTabs() {
   gridTab.addEventListener("click", () => setView("grid"));
   listTab.addEventListener("click", () => setView("list"));
 }
+
+/* ===========================
+   MOBILE ENFORCED LIST VIEW
+=========================== */
 
 function enforceMobileView() {
   const listWrapper = document.querySelector(".faqContentListWrapper");
@@ -82,7 +129,6 @@ function enforceMobileView() {
   if (window.innerWidth <= 992) {
     listWrapper.classList.remove("grid-view");
     listWrapper.classList.add("list-view");
-
     listTab.classList.add("selectedTabContainer");
     gridTab.classList.remove("selectedTabContainer");
   }
