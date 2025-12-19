@@ -5,16 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FAQ Dispenser</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="individualFaq.css" />
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
       crossorigin="anonymous"
     />
     <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
+      integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
       crossorigin="anonymous"
     ></script>
     <link
@@ -86,11 +94,11 @@
 
                   <div class="d-flex flex-column justify-content-start gap-2">
                     <div class="iconWrapper">
-                      <i class="fa-regular fa-envelope emailIcon"></i>
+                      <i class="bi bi-envelope emailIcon"></i>
                       <span class="textContainer"> sia@sia.com </span>
                     </div>
                     <div class="iconWrapper">
-                      <i class="fa-regular fa-address-book emailIcon"></i>
+                      <i class="bi bi-telephone emailIcon"></i>
                       <span class="textContainer"> +6010-824 7333 </span>
                     </div>
                   </div>
@@ -117,11 +125,191 @@
     <script src="script.js"></script>
   </head>
 
+  <style>
+    /* ===========================
+   individualFaq.css (FIX)
+   override global list-card row layout
+=========================== */
+
+    /* Make the container stretch full width on this page */
+    .faqContentContainer {
+      width: 100%;
+      align-items: stretch;
+      justify-content: flex-start;
+    }
+
+    /* Force single column grid */
+    .faqContentListWrapper {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      padding: 0;
+      margin-top: 0;
+    }
+
+    /* IMPORTANT: override global ".faqContentListWrapper .faqContentListContainer" */
+    .faqContentListWrapper .faqContentListContainer {
+      width: 100%;
+      display: flex;
+      flex-direction: column; /* ✅ stops the squeeze */
+      align-items: stretch;
+      justify-content: flex-start;
+      background-color: #faf7ef;
+    }
+
+    /* Your page styles */
+    .faqContentHeaderWrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      min-width: 0;
+    }
+
+    .contentHeaderContainer {
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+
+    .faqHeader {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    .faqSubs {
+      color: #4f4f4f;
+      font-size: 1.1rem;
+      margin: 0;
+      line-height: 1.5;
+      white-space: normal;
+      word-break: break-word;
+    }
+
+    /* Company panel */
+    .companyDetailWrapper {
+      background-color: #faf7ef;
+      padding: 0.5rem 1.25rem;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 25px;
+    }
+
+    .profileLogoWrapper {
+      width: 4.5rem;
+      height: 4.5rem;
+      border-radius: 25px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .profileLogo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .companyName {
+      font-size: 1.25rem;
+      font-weight: 400;
+      max-width: 20rem;
+    }
+
+    .iconWrapper {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 1rem;
+      color: #1b4297;
+      width: fit-content;
+    }
+
+    .emailIcon {
+      font-size: 1.25rem;
+    }
+
+    .textContainer {
+      font-size: 1.1rem;
+    }
+
+    /* CTAs */
+    .ctaWrapper {
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+      align-items: flex-start;
+      justify-content: center;
+    }
+
+    .ctaToSite {
+      font-size: 1rem;
+      text-decoration: none;
+      background-color: #163571;
+      color: #ffffff;
+      border-radius: 12px;
+      padding: 0.5rem 1rem;
+    }
+
+    .ctaToSiteSec {
+      font-size: 1rem;
+      text-decoration: none;
+      background-color: transparent;
+      border: 2px solid #163571;
+      color: #163571;
+      border-radius: 12px;
+      padding: 0.5rem 1rem;
+    }
+
+    /* Responsive */
+    @media screen and (max-width: 992px) {
+      .companyDetailWrapper {
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media screen and (max-width: 450px) {
+      .ctaWrapper {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .ctaToSite,
+      .ctaToSiteSec {
+        width: 100%;
+        text-align: center;
+      }
+
+      .profileLogoWrapper {
+        width: 4.5rem;
+        height: 4.5rem;
+        border-radius: 15px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .companyDetailWrapper {
+        padding: 0.5rem 1rem !important;
+      }
+    }
+  </style>
   <body class="customBg">
     <div class="faqPageWrapper" style="padding: 1rem 1rem 0rem 1rem">
       <div class="faqSplashContainer" style="background-image: none">
         <div class="container">
-          <nav class="navbar navbar-expand-lg bg-body-tertiary">
+          <nav class="navbar navbar-expand-lg bg-transparent">
             <div class="container-fluid">
               <a class="navbar-brand" href="#">
                 <img
@@ -141,7 +329,7 @@
               >
                 <span
                   class="navbar-toggler-icon d-flex justify-content-center align-items-center"
-                  ><i class="fa-solid fa-bars"></i
+                  ><i class="bi bi-list"></i
                 ></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarScroll">
@@ -184,7 +372,7 @@
                       class="btn btn-icon searchButton"
                       aria-label="Search"
                     >
-                      <i class="fa-solid fa-magnifying-glass iconSearch"></i>
+                      <i class="bi bi-search iconSearch"></i>
                     </button>
                   </div>
                 </form>
