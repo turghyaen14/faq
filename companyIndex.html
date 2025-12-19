@@ -291,12 +291,15 @@
       (keep global layout, only add the unique bits)
     =========================== */
 
-    .faqContentListWrapper.grid-view .faqContentListContainer {
+    .faqContentListWrapper.grid-view .faqContentListContainer,
+    .faqContentListWrapper.grid-view .customFaqContentListContainer {
       grid-column: span 1;
     }
 
     @media (min-width: 992px) {
-      .faqContentListWrapper.grid-view .faqContentListContainer.is-expanded {
+      .faqContentListWrapper.grid-view .faqContentListContainer.is-expanded,
+      .faqContentListWrapper.grid-view
+        .customFaqContentListContainer.is-expanded {
         grid-column: span 2;
       }
     }
@@ -318,6 +321,21 @@
     .faqContentListContainer.is-expanded .viewLess {
       display: inline-flex;
     }
+
+    .customFaqContentListContainer  .viewMore {
+      display: inline-flex;
+    }
+    .customFaqContentListContainer  .viewLess {
+      display: none;
+    }
+    .customFaqContentListContainer.is-expanded .viewMore {
+      display: none;
+    }
+    .customFaqContentListContainer .is-expanded .viewLess {
+      display: inline-flex;
+    }
+
+    
 
     /* ===========================
       4) UNIVERSAL FAQ SPECIAL CARD

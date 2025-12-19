@@ -417,15 +417,15 @@ body {
   align-items: center;
 }
 
-.faqContentIcon .fa-minus {
+.faqContentIcon .bi-dash-lg {
   display: none;
 }
 
-.faqContentListContainer.is-expanded .fa-minus {
+.faqContentListContainer.is-expanded .bi-dash-lg {
   display: inline-flex;
 }
 
-.faqContentListContainer.is-expanded .fa-plus {
+.faqContentListContainer.is-expanded .bi-plus-lg {
   display: none;
 }
 
