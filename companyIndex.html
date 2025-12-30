@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FAQ Dispenser</title>
+    <title>Universal FAQ</title>
     <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
@@ -322,10 +322,10 @@
       display: inline-flex;
     }
 
-    .customFaqContentListContainer  .viewMore {
+    .customFaqContentListContainer .viewMore {
       display: inline-flex;
     }
-    .customFaqContentListContainer  .viewLess {
+    .customFaqContentListContainer .viewLess {
       display: none;
     }
     .customFaqContentListContainer.is-expanded .viewMore {
@@ -334,8 +334,6 @@
     .customFaqContentListContainer .is-expanded .viewLess {
       display: inline-flex;
     }
-
-    
 
     /* ===========================
       4) UNIVERSAL FAQ SPECIAL CARD
@@ -385,6 +383,9 @@
     }
   </style>
   <body class="customBg">
+    <button id="scrollToTopBtn" aria-label="Scroll to top">
+      <i class="bi bi-arrow-up"></i>
+    </button>
     <div class="faqPageWrapper">
       <div class="faqSplashContainer">
         <div class="container">
@@ -428,7 +429,7 @@
         </div>
         <div class="row">
           <div class="col-lg-12 tagLineWrapper">
-            <h1 class="faqMainHeader">FAQ Dispenser</h1>
+            <h1 class="faqMainHeader">Universal FAQ</h1>
             <div class="faqSearchBox">
               <form
                 action="/search"
@@ -534,21 +535,30 @@
     </div>
 
     <footer>
-      <div class="footerWrapper">
+      <div class="footerWrapper container">
         <div class="footerContainer container gloock-regular">
           <div class="logoWrapper">
-            <span class="logoContainer gloock-regular"> Logo. </span>
-            <button class="joinNowBtn gloock-regular">Join Us Now!</button>
+            <span class="logoContainer gloock-regular"> Universal FAQ </span>
           </div>
 
-          <span> Maximize Your Business's Online Presence with Us </span>
+          <span> Explore answers with confidence. </span>
           <span>
-            Elevate your online presence effortlessly with Us, Malaysia's
-            leading company in scraping FAQ across the internet.
+            A curated knowledge platform designed to surface accurate FAQs—fast.
             <br />
-             Simply manage your company faq, and we'll boost your online
-            exposure across our platform
+            Built for businesses, teams, and curious minds.
           </span>
+        </div>
+        <div class="footerLegalRow footerContainer container">
+          <div class="footerLegalLeft">
+            <strong>Universal Faq</strong> © 2018–2025
+          </div>
+
+          <div class="gloock-regular p-0">
+            Designed for accuracy over assumptions below
+          </div>
+          <div class="footerLegalRight">
+            Powered By <a href="https://www.newpages.net/" class="footerLink" target="_blank">NEWPAGES</a>
+          </div>
         </div>
       </div>
     </footer>

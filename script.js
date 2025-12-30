@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initFaqToggle();
   initViewTabs();
   enforceMobileView();
+  initScrollToTop(); // ✅ add this
   window.addEventListener("resize", enforceMobileView);
 });
 
@@ -132,4 +133,32 @@ function enforceMobileView() {
     listTab.classList.add("selectedTabContainer");
     gridTab.classList.remove("selectedTabContainer");
   }
+}
+
+/* ===========================
+   Scroll to top
+=========================== */
+
+function initScrollToTop() {
+  const scrollBtn = document.getElementById("scrollToTopBtn");
+  if (!scrollBtn) return; // button not in DOM
+
+  function toggleScrollBtn() {
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    const docHeight =
+      document.documentElement.scrollHeight -
+      document.documentElement.clientHeight;
+
+    const scrollPercent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+
+    if (scrollPercent > 30) scrollBtn.classList.add("show");
+    else scrollBtn.classList.remove("show");
+  }
+
+  window.addEventListener("scroll", toggleScrollBtn, { passive: true });
+  toggleScrollBtn(); // run once at load
+
+  scrollBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
 }
