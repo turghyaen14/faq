@@ -294,6 +294,14 @@
       justify-content: flex-start;
       align-items: baseline;
     }
+
+    .totalResultText {
+      font-weight: 300;
+      font-style: italic;
+      font-size: 0.8rem;
+      color: #3b3b3b;
+    }
+
     .queryText {
       font-size: 1rem;
       font-weight: 700;
@@ -385,9 +393,18 @@
 
     <div class="primaryContainer">
       <div class="faqContentContainer container gap-4">
-        <div class="d-flex align-items-end justify-content-end w-100 container">
-          <div class="searchedQueryWrapper">
-            Search Result of<span class="queryText">Lorem Ipsum and So On</span>
+        <div
+          class="d-flex align-items-end justify-content-between w-100 container"
+        >
+          <div class="d-flex flex-column">
+            <div class="searchedQueryWrapper">
+              Search Result of<span class="queryText"
+                >Lorem Ipsum and So On</span
+              >
+            </div>
+            <span class="totalResultText">
+              Showing the total result of 35
+            </span>
           </div>
           <div class="tabWrapper d-none d-lg-flex">
             <div class="tabContainer" id="gridViewTab">
@@ -441,7 +458,13 @@
             Designed for accuracy over assumptions below
           </div>
           <div class="footerLegalRight">
-            Powered By <a href="https://www.newpages.net/" class="footerLink" target="_blank">NEWPAGES</a>
+            Powered By
+            <a
+              href="https://www.newpages.net/"
+              class="footerLink"
+              target="_blank"
+              >NEWPAGES</a
+            >
           </div>
         </div>
       </div>
