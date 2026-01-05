@@ -314,6 +314,7 @@ body {
 .faqContentListWrapper .faqContentListContainer {
   display: flex;
   flex-direction: row;
+  height: fit-content;
   align-items: center;
   justify-content: flex-start;
   column-gap: 1rem;
@@ -331,7 +332,7 @@ body {
 }
 
 .faqContentListWrapper.grid-view .faqContentListContainer {
-  align-items: center;
+  align-items: start;
 }
 
 .faqContentListWrapper .faqContentListContainer .faqContentHeaderWrapper {
@@ -403,6 +404,7 @@ body {
 .faqSub {
   color: #4f4f4f;
   margin: 0;
+  padding: 0.5rem 1.5rem 0.5rem 0.5rem;
   line-height: 1.4;
   transition: max-height 0.25s ease;
 }
@@ -410,6 +412,7 @@ body {
 /* Collapsed / expanded behaviour */
 .faqContentListContainer.is-collapsed .faqSub {
   max-height: 3.6em;
+  padding: 0.5rem;
   overflow: hidden;
 }
 

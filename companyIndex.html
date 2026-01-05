@@ -114,9 +114,7 @@
                   </div>
 
                   <div class="faqContentIcon">
-                    <button class="viewBtn shadowSm" onclick="window.open('${
-                      item.url
-                    }', '_blank')">
+                    <button class="viewBtn shadowSm" onclick="window.open('${item.url}', '_blank')">
                       <span class="viewBtnText">View</span>
                       <i class="bi bi-arrow-up-right-square"></i>
                     </button>
@@ -125,7 +123,7 @@
                     </button>
 
                     <button type="button" class="viewMoreBtn viewLess">
-                      <i class="bi bi-dash-lg"></i>
+                      <i class="bi bi-dash"></i>
                     </button>
                   </div>
                 </div>
@@ -304,36 +302,7 @@
       }
     }
 
-    /* ===========================
-      3) EXPAND / COLLAPSE TOGGLES
-      (this page uses .viewMore/.viewLess classes)
-    =========================== */
 
-    .faqContentListContainer .viewMore {
-      display: inline-flex;
-    }
-    .faqContentListContainer .viewLess {
-      display: none;
-    }
-    .faqContentListContainer.is-expanded .viewMore {
-      display: none;
-    }
-    .faqContentListContainer.is-expanded .viewLess {
-      display: inline-flex;
-    }
-
-    .customFaqContentListContainer .viewMore {
-      display: inline-flex;
-    }
-    .customFaqContentListContainer .viewLess {
-      display: none;
-    }
-    .customFaqContentListContainer.is-expanded .viewMore {
-      display: none;
-    }
-    .customFaqContentListContainer .is-expanded .viewLess {
-      display: inline-flex;
-    }
 
     /* ===========================
       4) UNIVERSAL FAQ SPECIAL CARD

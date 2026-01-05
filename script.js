@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
 =========================== */
 
 function initFaqToggle() {
-  const MAX_CHARS = 40;
+  const MAX_CHARS = 450;
 
   const cards = document.querySelectorAll(
     ".faqContentListContainer, .customFaqContentListContainer"
