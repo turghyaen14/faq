@@ -93,53 +93,75 @@
         <div class="faqContentListContainer shadowSm" data-id="${i}">
           <div class="faqContentHeaderWrapper">
             <div class="faqContentHeaderContainer">
-                                        <div class="faqCompanyWrapper">
+              <div class="faqCompanyWrapper">
+                <div class="companyLogoWrapper">
+                  <img
+                    src="${item.logo}"
+                    class="companyLogo"
+                    alt="${item.name}"
+                  />
+                </div>
 
-              <div class="companyLogoWrapper">
-                <img src="${item.logo}" class="companyLogo" alt="${
-              item.name
-            }" />
+                <div class="companyDetailWrapper">
+                  <span class="companyTitle inter-light">
+                    ${item.title}
+                  </span>
+                  <span class="companyUrl">
+                    ${item.url}
+                  </span>
+                </div>
               </div>
-              <div class="companyDetailWrapper">
-                <span class="companyTitle inter-light">${item.title}</span>
-                <span class="companyUrl">${item.url}</span>
+
+              <div class="companyTagsWrapper">
+                ${item.tags
+                  .slice(0, 4)
+                  .map((tag) => `<span class="tagContainer">${tag}</span>`)
+                  .join("")}
+
+                ${
+                  item.tags.length > 4
+                    ? `<span class="tagContainer moreTag">
+                        + ${item.tags.length - 4}
+                      </span>`
+                    : ""
+                }
               </div>
-              </div>
+
             </div>
-            <div class="faqContentBodyContainer">
-              <div class="contentHeaderContainer">
-                <h2 class="faqHeader">${item.name}</h2>
-              
+
+            <div class="d-flex flex-row justify-content-between">
+
+              <div class="faqContentBodyContainer">
+                <div class="contentHeaderContainer">
+                  <h2 class="faqHeader">
+                    ${item.name}
+                  </h2>
+                </div>
+
+                <div class="faqSub">
+                  ${item.desc}
+                </div>
               </div>
+
+              <div class="faqContentIcon">
+                <button
+                  class="viewBtn shadowSm"
+                  onclick="window.open('${item.url}', '_blank')"
+                >
+                  <span class="viewBtnText">View</span>
+                  <i class="bi bi-arrow-up-right-square"></i>
+                </button>
+
+                <button type="button" class="viewMoreBtn viewMore">
+                  <i class="bi bi-plus-lg"></i>
+                </button>
+
+                <button type="button" class="viewMoreBtn viewLess">
+                  <i class="bi bi-dash-lg"></i>
+                </button>
+              </div>
+
             </div>
-            <div class="companyTagsWrapper">
-            ${item.tags
-              .slice(0, 5)
-              .map((tag) => `<span class="tagContainer">${tag}</span>`)
-              .join("")}
-            ${
-              item.tags.length > 5
-                ? `<span class="tagContainer moreTag">+ ${
-                    item.tags.length - 5
-                  }</span>`
-                : ""
-            }
-            </div>
-            <div class="faqSub">${item.desc}</div>
-          </div>
-          <div class="faqContentIcon">
-            <button class="viewBtn shadowSm" onclick="window.open('${
-              item.url
-            }', '_blank')">
-              <span class="viewBtnText">View</span>
-              <i class="bi bi-arrow-up-right-square"></i>
-            <button class="viewMoreBtn viewMore">
-              <i class="bi bi-plus-lg"></i>
-            </button>
-            <button class="viewMoreBtn viewLess">
-              <i class="bi bi-dash-lg"></i>
-            </button>
-            </button>
           </div>
         </div>
       `;
