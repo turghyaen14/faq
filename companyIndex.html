@@ -46,184 +46,6 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-
-    <script>
-      const faqData = [
-        {
-          title: "Kimi No Nawa NawaNawa Nawa NawaNawaNawa ?",
-          desc: `26 Mar 2025 — In this article, let's dive into how to create a good
-           site search UI and get inspiration from 20 best search UI design
-           examples. 26 Mar 2025 — In this article, let's dive into how to create
-           a good site search UI and get inspiration from 20 best search UI design examples. 26 Mar 2025 — In this article, let's dive into how to create a good
-           site search UI and get inspiration from 20 best search UI design
-           examples. 26 Mar 2025 — In this article, let's dive into how to create
-           a good site search UI and get inspiration from 20 best search UI design examples.26 Mar 2025 — In this article, let's dive into how to create a good
-           site search UI and get inspiration from 20 best search UI design
-           examples. 26 Mar 2025 — In this article, let's dive into how to create
-           a good site search UI and get inspiration from 20 best search UI design examples.26 Mar 2025 — In this article, let's dive into how to create a good
-           site search UI and get inspiration from 20 best search UI design
-           examples. 26 Mar 2025 — In this article, let's dive into how to create
-           a good site search UI and get inspiration from 20 best search UI design examples.`,
-          link: "https://getbootstrap.com/docs/5.3/utilities/spacing/",
-          frmUniFaq: true,
-        },
-        {
-          title: "Why UI Design Matters in 2025? 1",
-          desc: `26 Mar 2025 — In this article, let's dive into how to create a good
-           site search UI and get inspiration from 20 best search UI design
-           examples. 26 Mar 2025 — In this article, let's dive into how to create
-           a good site search UI and get inspiration from 20 best search UI design examples. 26 Mar 2025 — In this article, let's dive into how to create a good
-           site search UI and get inspiration from 20 best search UI design
-           examples. 26 Mar 2025 — In this article, let's dive into how to create
-           a good site search UI and get inspiration from 20 best search UI design examples.26 Mar 2025 — In this article, let's dive into how to create a good
-           site search UI and get inspiration from 20 best search UI design
-           examples. 26 Mar 2025 — In this article, let's dive into how to create
-           a good site search UI and get inspiration from 20 best search UI design examples.26 Mar 2025 — In this article, let's dive into how to create a good
-           site search UI and get inspiration from 20 best search UI design
-           examples. 26 Mar 2025 — In this article, let's dive into how to create
-           a good site search UI and get inspiration from 20 best search UI design examples.`,
-          frmUniFaq: false,
-        },
-        {
-          title: "Why UI Design Matters in 2025? 1",
-          desc: `26 Mar 2025 — In this article, let's dive into how to create a good
-           site search UI and get inspiration from 20 best search UI design
-           examples. 26 Mar 2025 — In this article, let's dive into how to create
-           a good site search UI and get inspiration from 20 best search UI design examples.`,
-          frmUniFaq: false,
-        },
-        {
-          title: "Why UI Design Matters in 2025? 1",
-          desc: `26 Mar 2025 — In this article, let's dive into how to create a good
-           site search UI and get inspiration from 20 best search UI design
-           examples. 26 Mar 2025 — In this article, let's dive into how to create
-           a good site search UI and get inspiration from 20 best search UI design examples.`,
-          frmUniFaq: false,
-        },
-        {
-          title: "Why UI Design Matters in 2025? 1",
-          desc: `26 Mar 2025 — In this article, let's dive into how to create a good
-           site search UI and get inspiration from 20 best search UI design
-           examples. 26 Mar 2025 — In this article, let's dive into how to create
-           a good site search UI and get inspiration from 20 best search UI design examples.`,
-          frmUniFaq: false,
-        },
-        {
-          title: "Why UI Design Matters in 2025? 2",
-          desc: `26 Mar 2025 — In this article, let's dive into how to create a good
-           site search UI and get inspiration from 20 best search UI design
-           examples. 26 Mar 2025 — In this article, let's dive into how to create
-           a good site search UI and get inspiration from 20 best search UI design examples.`,
-          frmUniFaq: true,
-        },
-        {
-          title: "Why UI Design Matters in 2025? 3",
-          desc: `26 Mar 2025 — In this article, let's dive into how to create a good
-           site search UI and get inspiration from 20 best search UI design
-           examples. 26 Mar 2025 — In this article, let's dive into how to create
-           a good site search UI and get inspiration from 20 best search UI design examples.`,
-          frmUniFaq: true,
-        },
-      ];
-
-      function renderFAQ() {
-        const faqList = document.getElementById("faqList");
-
-        faqList.innerHTML = faqData
-          .map((item, i) => {
-            if (item.frmUniFaq) {
-              return `
-                <div class="customFaqContentListContainer shadowSm is-collapsed" data-id="uni-${
-                  i + "frm"
-                }">
-                      <div class="iconTextWrapper">
-                        <i class="bi bi-chat-dots faqIcon"></i>
-                        <div class="customTextWrapper">
-                          <span class="customtext">Most Asked Question</span>
-                          <span class="customtext">Answered By Universal FAQ</span>
-                        </div>
-                      </div>
-
-
-            <div class="d-flex flex-row justify-content-between w-100">
-
-              <div class="faqContentBodyContainer">
-                <div class="contentHeaderContainer ">
-                  <h2 class="faqHeader">
-                    ${item.title}
-                  </h2>
-                </div>
-
-                <div class="faqSub">
-                  ${item.desc}
-                </div>
-              </div>
-
-              <div class="faqContentIcon">
-                <button
-                  class="viewBtn shadowSm"
-                  onclick="window.open('${item.url}', '_blank')"
-                >
-                  <span class="viewBtnText">View</span>
-                  <i class="bi bi-arrow-up-right-square"></i>
-                </button>
-
-                <button type="button" class="viewMoreBtn viewMore">
-                  <i class="bi bi-plus-lg"></i>
-                </button>
-
-                <button type="button" class="viewMoreBtn viewLess">
-                  <i class="bi bi-dash-lg"></i>
-                </button>
-              </div>
-
-            </div>
-          </div>
-        </div>
-
-        `;
-            }
-
-            // else → normal FAQ card
-            return `
-              <div class="faqContentListContainer shadowSm" data-id="${i}">
-                <div class="faqContentHeaderWrapper">
-                  <div class="d-flex flex-row justify-content-between w-100">
-                    <div class="faqContentBodyContainer">
-                      <div class="contentHeaderContainer ">
-                        <h2 class="faqHeader">
-                          ${item.title}
-                        </h2>
-                      </div>
-                      <div class="faqSub">
-                        ${item.desc}
-                      </div>
-                    </div>
-                    <div class="faqContentIcon">
-                      <button
-                        class="viewBtn shadowSm"
-                        onclick="window.open('${item.url}', '_blank')"
-                      >
-                        <span class="viewBtnText">View</span>
-                        <i class="bi bi-arrow-up-right-square"></i>
-                      </button>
-                      <button type="button" class="viewMoreBtn viewMore">
-                        <i class="bi bi-plus-lg"></i>
-                      </button>
-                      <button type="button" class="viewMoreBtn viewLess">
-                        <i class="bi bi-dash-lg"></i>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            `;
-          })
-          .join("");
-      }
-
-      document.addEventListener("DOMContentLoaded", renderFAQ);
-    </script>
     <script src="script.js"></script>
   </head>
   <style>
@@ -343,12 +165,19 @@
       }
     }
 
+    .resultCard .faqContentHeaderContainer {
+      min-height: 50px !important;
+    }
     /* ===========================
       4) UNIVERSAL FAQ SPECIAL CARD
     =========================== */
 
     .customFaqContentListContainer {
       background-color: #eef4ff;
+      background-color: #eef4ff;
+      position: relative;
+      padding-top: 3.25rem;
+      overflow: visible;
     }
 
     /* Keep it consistent with global card sizing/spacing */
@@ -540,7 +369,254 @@
           </div>
         </div>
       </div>
-      <div class="faqContentListWrapper" id="faqList"></div>
+      <div class="faqContentListWrapper container grid-view">
+        <div
+          class="faqContentListContainer resultCard shadowSm is-collapsed"
+          data-id="0"
+        >
+          <div class="faqContentHeaderWrapper">
+            <!-- Header row -->
+            <div class="faqContentHeaderContainer">
+              <div class="faqCompanyWrapper">
+                <div class="companyLogoWrapper">
+                  <img
+                    src="https://cdn1.npcdn.net/images/"
+                    class="companyLogo"
+                    alt="Is it better to invest in new or subsale property?"
+                  />
+                </div>
+
+                <div class="companyDetailWrapper">
+                  <span class="companyTitle inter-light"> </span>
+                  <span class="companyUrl"> </span>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Content + actions row -->
+            <div class="cardContentRow">
+              <div class="faqContentBodyContainer">
+                <div class="contentHeaderContainer">
+                  <h2 class="faqHeader">
+                    Is it better to invest in new or subsale property?
+                  </h2>
+                </div>
+
+                <div class="faqSub">
+                  New properties may offer modern designs, incentives, and lower
+                  maintenance, while subsale properties provide clearer rental
+                  history and immediate occupancy. The best choice depends on
+                  budget, timeline, and investment strategy.
+                </div>
+              </div>
+
+              <div class="cardActionsRow">
+                <div class="faqContentIcon">
+                  <button
+                    class="viewBtn shadowSm"
+                    onclick="window.open('', '_blank')"
+                  >
+                    <span class="viewBtnText">View</span>
+                    <i class="bi bi-arrow-up-right-square"></i>
+                  </button>
+
+                  <button type="button" class="viewMoreBtn viewMore">
+                    <i class="bi bi-plus-lg"></i>
+                  </button>
+
+                  <button type="button" class="viewMoreBtn viewLess">
+                    <i class="bi bi-dash-lg"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="customFaqContentListContainer resultCard shadowSm is-collapsed"
+          data-id="uni-1frm"
+        >
+          <div class="faqContentHeaderWrapper">
+            <div class="faqContentHeaderContainer">
+              <div class="iconTextWrapper">
+                <i class="bi bi-chat-dots faqIcon"></i>
+                <div class="customTextWrapper">
+                  <span class="customtext">Most Asked Question</span>
+                  <span class="customtext">Answered By Universal FAQ</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="cardContentRow">
+              <div class="faqContentBodyContainer">
+                <div class="contentHeaderContainer">
+                  <h2 class="faqHeader">
+                    Kimi No Nawa NawaNawa Nawa NawaNawaNawa ?
+                  </h2>
+                </div>
+
+                <div class="faqSub">
+                  26 Mar 2025 — In this article, let's dive into how to create a
+                  good site search UI and get inspiration from 20 best search UI
+                  design examples. 26 Mar 2025 — In this article, let's dive
+                  into how to create a good site search UI and get inspiration
+                  from 20 best search UI design examples. 26 Mar 2025 — In this
+                  article, let's dive into how to create a good site search UI
+                  and get inspiration from 20 best search UI design examples.
+                </div>
+              </div>
+
+              <div class="cardActionsRow">
+                <div class="faqContentIcon">
+                  <button
+                    class="viewBtn shadowSm"
+                    onclick="window.open('https://getbootstrap.com/docs/5.3/utilities/spacing/', '_blank')"
+                  >
+                    <span class="viewBtnText">View</span>
+                    <i class="bi bi-arrow-up-right-square"></i>
+                  </button>
+
+                  <button type="button" class="viewMoreBtn viewMore">
+                    <i class="bi bi-plus-lg"></i>
+                  </button>
+
+                  <button type="button" class="viewMoreBtn viewLess">
+                    <i class="bi bi-dash-lg"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="faqContentListContainer resultCard shadowSm is-collapsed"
+          data-id="2"
+        >
+          <div class="faqContentHeaderWrapper">
+            <div class="faqContentHeaderContainer">
+              <div class="faqCompanyWrapper">
+                <div class="companyLogoWrapper">
+                  <img
+                    src="https://media.istockphoto.com/id/814423752/photo/eye-of-model-with-colorful-art-make-up-close-up.jpg?s=612x612&w=0&k=20&c=l15OdMWjgCKycMMShP8UK94ELVlEGvt7GmB_esHWPYE="
+                    class="companyLogo"
+                    alt="What’s one habit that improves focus instantly?"
+                  />
+                </div>
+
+                <div class="companyDetailWrapper">
+                  <span class="companyTitle inter-light"
+                    >Design Inspiration</span
+                  >
+                  <span class="companyUrl">https://dribbble.com</span>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="cardContentRow">
+              <div class="faqContentBodyContainer">
+                <div class="contentHeaderContainer">
+                  <h2 class="faqHeader">
+                    What’s one habit that improves focus instantly?
+                  </h2>
+                </div>
+
+                <div class="faqSub">
+                  Removing just one distraction (like notifications) works
+                  better than trying to add productivity hacks.
+                </div>
+              </div>
+
+              <div class="cardActionsRow">
+                <div class="faqContentIcon">
+                  <button
+                    class="viewBtn shadowSm"
+                    onclick="window.open('https://dribbble.com', '_blank')"
+                  >
+                    <span class="viewBtnText">View</span>
+                    <i class="bi bi-arrow-up-right-square"></i>
+                  </button>
+
+                  <button type="button" class="viewMoreBtn viewMore">
+                    <i class="bi bi-plus-lg"></i>
+                  </button>
+
+                  <button type="button" class="viewMoreBtn viewLess">
+                    <i class="bi bi-dash-lg"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="faqContentListContainer resultCard shadowSm is-collapsed"
+          data-id="3"
+        >
+          <div class="faqContentHeaderWrapper">
+            <div class="faqContentHeaderContainer">
+              <div class="faqCompanyWrapper">
+                <div class="companyLogoWrapper">
+                  <img
+                    src="https://media.istockphoto.com/id/814423752/photo/eye-of-model-with-colorful-art-make-up-close-up.jpg?s=612x612&w=0&k=20&c=l15OdMWjgCKycMMShP8UK94ELVlEGvt7GmB_esHWPYE="
+                    class="companyLogo"
+                    alt="Why do simple designs often feel more premium?"
+                  />
+                </div>
+
+                <div class="companyDetailWrapper">
+                  <span class="companyTitle inter-light">
+                    Collaborative Interface Design Tool
+                  </span>
+                  <span class="companyUrl">https://figma.com</span>
+                </div>
+              </div>
+
+
+            </div>
+
+            <div class="cardContentRow">
+              <div class="faqContentBodyContainer">
+                <div class="contentHeaderContainer">
+                  <h2 class="faqHeader">
+                    Why do simple designs often feel more premium?
+                  </h2>
+                </div>
+
+                <div class="faqSub">
+                  Because simplicity reduces cognitive load—fewer elements means
+                  clearer hierarchy, stronger whitespace, and a more intentional
+                  feel that reads “premium” faster.
+                </div>
+              </div>
+
+              <div class="cardActionsRow">
+                <div class="faqContentIcon">
+                  <button
+                    class="viewBtn shadowSm"
+                    onclick="window.open('https://figma.com', '_blank')"
+                  >
+                    <span class="viewBtnText">View</span>
+                    <i class="bi bi-arrow-up-right-square"></i>
+                  </button>
+
+                  <button type="button" class="viewMoreBtn viewMore">
+                    <i class="bi bi-plus-lg"></i>
+                  </button>
+
+                  <button type="button" class="viewMoreBtn viewLess">
+                    <i class="bi bi-dash-lg"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <footer>

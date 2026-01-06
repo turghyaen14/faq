@@ -42,190 +42,58 @@
       referrerpolicy="no-referrer"
     />
 
-    <script>
-      const companies = [
-        {
-          name: "Is it better to invest in new or subsale property?",
-          desc: "New properties may offer modern designs, incentives, and lower maintenance, while subsale properties provide clearer rental history and immediate occupancy. The best choice depends on budget, timeline, and investment strategy.",
-          tags: [],
-          company_name: "",
-          url: "",
-          logo: "https://cdn1.npcdn.net/images/",
-        },
-        {
-          name: "Is it better to buy new launch or subsale property?",
-          desc: "Choosing between a new launch and a subsale property depends on your financial goals, timeline, and the type of ownership experience you prefer. New launch properties typically offer a lower entry cost because buyers pay progressively during construction rather than the full loan instalment immediately. Developers also provide attractive incentives such as rebates, early-bird pricing, furnishing packages, and free legal fees. New launches come with modern layouts, new facilities, and a warranty/defect liability period, giving buyers peace of mind on workmanship quality. Another major advantage is that most reputable new projects in Johor have already obtained Foreign Consent for minimum prices below RM1 million, allowing foreign buyers—including Singaporeans—to purchase units starting from RM500,000, depending on state regulations.\n\nOn the other hand, subsale (resale) properties offer immediate visibility—you can inspect the actual unit, environment, management quality, and view before buying. Subsale properties are also ideal for buyers who want faster rental income, since the unit is already completed and can be tenanted quickly. However, foreign buyers must be aware that many subsale units in Johor require a minimum purchase price of RM1 million for foreign ownership, depending on property type and location. This makes some subsale options less accessible to foreigners compared to new launches with pre-approved lower thresholds.\n\nUltimately, the choice comes down to your personal strategy:\n- Choose new launch if you want: lower upfront cost, better incentives, modern facilities, developer warranty, and easier foreigner eligibility.\n- Choose subsale if you prefer: immediate viewing, faster rental returns, established communities, and the ability to evaluate real conditions.\n\nBoth options can be good investments—the key is aligning the property type with your cash flow, goals, and target tenant market.",
-          tags: [],
-          company_name: "",
-          url: "",
-          logo: "https://cdn1.npcdn.net/images/",
-        },
-        {
-          name: "What’s one habit that improves focus instantly?",
-          title: "Design Inspiration",
-          desc: "Removing just one distraction (like notifications) works better than trying to add productivity hacks.",
-          tags: ["Chinese", "Healthcare", "Interface", "Inspiration", "Design"],
-          url: "https://dribbble.com",
-          logo: "https://media.istockphoto.com/id/814423752/photo/eye-of-model-with-colorful-art-make-up-close-up.jpg?s=612x612&w=0&k=20&c=l15OdMWjgCKycMMShP8UK94ELVlEGvt7GmB_esHWPYE=",
-        },
-        {
-          name: "Why do simple designs often feel more premium?",
-          title: "Collaborative Interface Design Tool",
-          desc: "ecause they’re conserving energy for short bursts of hunting instincts—even house cats run on factory settings. ecause they’re conserving energy for short bursts of hunting instincts—even house cats run on factory settings. ecause they’re conserving energy for short bursts of hunting instincts—even house cats run on factory settings. ecause they’re conserving energy for short bursts of hunting instincts—even house cats run on factory settings. ecause they’re conserving energy for short bursts of hunting instincts—even house cats run on factory settings. ecause they’re conserving energy for short bursts of hunting instincts—even house cats run on factory settings. ecause they’re conserving energy for short bursts of hunting instincts—even house cats run on factory settings.",
-          tags: ["Chinese", "Healthcare", "Interface", "Inspiration", "Design"],
-          url: "https://figma.com",
-          logo: "https://media.istockphoto.com/id/814423752/photo/eye-of-model-with-colorful-art-make-up-close-up.jpg?s=612x612&w=0&k=20&c=l15OdMWjgCKycMMShP8UK94ELVlEGvt7GmB_esHWPYE=",
-        },
-        {
-          name: "What is the difference between freehold and leasehold?",
-          desc: "Freehold gives perpetual ownership. Leasehold ownership lasts for a fixed term (often 99 years), and renewal may require government approval and fees.",
-          tags: [],
-          company_name: "",
-          url: "",
-          logo: "https://cdn1.npcdn.net/images/",
-        },
-        {
-          name: "Does Chiropractic Treatment Hurt?",
-          desc: "Chiropractic manipulation generally causes minimal to no pain. You may hear pops or cracks, but you should not feel intense pain. Some patients who are new to chiropractic care may involuntarily stiffen or resist during an adjustment, which may cause slight discomfort until they are able to relax. Mild soreness or minor aches may occur after a session due to the repositioning of vertebrae.\n\nYour muscles need time to adapt to the bone movement, which may cause temporary soreness lasting 24–48 hours. We encourage patients to rest and apply moist heat to the sore muscles if needed.",
-          tags: [],
-          company_name: "",
-          url: "",
-          logo: "https://cdn1.npcdn.net/images/",
-        },
-        {
-          name: "Can I upgrade to a newer model in the future?",
-          desc: "Definitely. We give you flexible upgrade choices so you can move to a newer copier when your business grows or needs change.",
-          tags: [],
-          company_name: "",
-          url: "",
-          logo: "https://cdn1.npcdn.net/images/",
-        },
-        {
-          name: "What is the difference between refurbished and used copiers?",
-          desc: "Refurbished copiers are cleaned and repaired by professionals, with worn parts replaced and the machine fully tested so it works like new. Used copiers usually aren’t restored this way, so their condition can be different from one unit to another.",
-          tags: [],
-          company_name: "",
-          url: "",
-          logo: "https://cdn1.npcdn.net/images/",
-        },
-        {
-          name: "How often should I update my Will?",
-          desc: "After major life changes (e.g., marriage, divorce, a new child, buying property, or business changes).",
-          tags: [],
-          company_name: "",
-          url: "",
-          logo: "https://cdn1.npcdn.net/images/",
-        },
-        {
-          name: "Are there seasonal promotions or festive discounts?",
-          desc: "Yes, VKGolf runs campaigns during Deepavali, Chinese New Year, and Black Friday.",
-          tags: [],
-          company_name: "Aoak Demo Website",
-          url: "https://www.newpages.email",
-          logo: "https://cdn1.npcdn.net/images/167783536415823779651548130803apple-touch-icon.png",
-        },
-        {
-          name: "What are the latest golf drivers available at VKGolf?",
-          desc: "VKGolf regularly updates its lineup with the newest releases from TaylorMade, XXIO, Srixon, and Bridgestone. Limited editions like the Qi35 Team USA & Team Europe drivers are also available for collectors and performance seekers.",
-          tags: [],
-          company_name: "Aoak Demo Website",
-          url: "https://www.newpages.email",
-          logo: "https://cdn1.npcdn.net/images/167783536415823779651548130803apple-touch-icon.png",
-        },
-      ];
-
-      function renderCompanyCards() {
-        const container = document.getElementById("companyList");
-
-        container.innerHTML = companies
-          .map((item, i) => {
-            return `
-        <div class="faqContentListContainer shadowSm" data-id="${i}">
-          <div class="faqContentHeaderWrapper">
-            <div class="faqContentHeaderContainer">
-              <div class="faqCompanyWrapper">
-                <div class="companyLogoWrapper">
-                  <img
-                    src="${item.logo}"
-                    class="companyLogo"
-                    alt="${item.name}"
-                  />
-                </div>
-
-                <div class="companyDetailWrapper">
-                  <span class="companyTitle inter-light">
-                    ${item.title}
-                  </span>
-                  <span class="companyUrl">
-                    ${item.url}
-                  </span>
-                </div>
-              </div>
-
-              <div class="companyTagsWrapper">
-                ${item.tags
-                  .slice(0, 4)
-                  .map((tag) => `<span class="tagContainer">${tag}</span>`)
-                  .join("")}
-
-                ${
-                  item.tags.length > 4
-                    ? `<span class="tagContainer moreTag">
-                        + ${item.tags.length - 4}
-                      </span>`
-                    : ""
-                }
-              </div>
-
-            </div>
-
-            <div class="d-flex flex-row justify-content-between w-100">
-
-              <div class="faqContentBodyContainer">
-                <div class="contentHeaderContainer">
-                  <h2 class="faqHeader">
-                    ${item.name}
-                  </h2>
-                </div>
-
-                <div class="faqSub">
-                  ${item.desc}
-                </div>
-              </div>
-
-              <div class="faqContentIcon">
-                <button
-                  class="viewBtn shadowSm"
-                  onclick="window.open('${item.url}', '_blank')"
-                >
-                  <span class="viewBtnText">View</span>
-                  <i class="bi bi-arrow-up-right-square"></i>
-                </button>
-
-                <button type="button" class="viewMoreBtn viewMore">
-                  <i class="bi bi-plus-lg"></i>
-                </button>
-
-                <button type="button" class="viewMoreBtn viewLess">
-                  <i class="bi bi-dash-lg"></i>
-                </button>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      `;
-          })
-          .join("");
-      }
-
-      document.addEventListener("DOMContentLoaded", () => {
-        renderCompanyCards();
-      });
-    </script>
     <script src="script.js"></script>
   </head>
+
   <style>
+    /* ===========================
+      4) UNIVERSAL FAQ SPECIAL CARD
+    =========================== */
+
+    .customFaqContentListContainer {
+      background-color: #eef4ff;
+    }
+
+    /* Keep it consistent with global card sizing/spacing */
+    .faqContentListWrapper .customFaqContentListContainer {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      height: 100%;
+      justify-content: flex-start;
+      column-gap: 1rem;
+      gap: 0.5rem;
+      padding: 1rem 1.25rem;
+      border-radius: 25px;
+      cursor: pointer;
+      overflow: hidden;
+      transition: transform 0.25s ease, box-shadow 0.25s ease,
+        background-color 0.25s ease;
+    }
+
+    .iconTextWrapper {
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    .customTextWrapper {
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: flex-start;
+      justify-content: center;
+    }
+
+    .faqIcon {
+      width: 2rem;
+      height: auto;
+      color: #1b4297;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
     /* =====================================
         searchedQuery.css
         Page-specific overrides only.
@@ -291,6 +159,7 @@
     <button id="scrollToTopBtn" aria-label="Scroll to top">
       <i class="bi bi-arrow-up"></i>
     </button>
+
     <div class="faqPageWrapper">
       <div class="faqSplashContainer">
         <div class="container">
@@ -303,6 +172,7 @@
                   class="navbarLogo"
                 />
               </a>
+
               <button
                 class="navbar-toggler"
                 type="button"
@@ -314,9 +184,11 @@
               >
                 <span
                   class="navbar-toggler-icon d-flex justify-content-center align-items-center"
-                  ><i class="bi bi-list"></i
-                ></span>
+                >
+                  <i class="bi bi-list"></i>
+                </span>
               </button>
+
               <div class="collapse navbar-collapse" id="navbarScroll">
                 <ul
                   class="navbar-nav gap-4 me-auto my-2 my-lg-0 navbar-nav-scroll"
@@ -336,6 +208,7 @@
         <div class="row">
           <div class="col-lg-12 tagLineWrapper">
             <h1 class="faqMainHeader">Universal FAQ</h1>
+
             <div class="faqSearchBox">
               <form
                 action="/search"
@@ -349,7 +222,6 @@
                   placeholder="Search..."
                   class="searchInput"
                 />
-
                 <div class="buttonContainer">
                   <button
                     type="submit"
@@ -377,10 +249,9 @@
                 >Lorem Ipsum and So On</span
               >
             </div>
-            <span class="totalResultText">
-              Showing the total result of 35
-            </span>
+            <span class="totalResultText"> Showing the total result of 4 </span>
           </div>
+
           <div class="tabWrapper d-none d-lg-flex">
             <div class="tabContainer" id="gridViewTab">
               <span><i class="bi bi-grid faSize"></i></span>
@@ -393,23 +264,291 @@
           </div>
         </div>
 
-        <div class="faqContentListWrapper container" id="companyList"></div>
+        <div class="faqContentListWrapper container grid-view">
+          <div
+            class="faqContentListContainer resultCard shadowSm is-collapsed"
+            data-id="0"
+          >
+            <div class="faqContentHeaderWrapper">
+              <!-- Header row -->
+              <div class="faqContentHeaderContainer">
+                <div class="faqCompanyWrapper">
+                  <div class="companyLogoWrapper">
+                    <img
+                      src="https://cdn1.npcdn.net/images/"
+                      class="companyLogo"
+                      alt="Is it better to invest in new or subsale property?"
+                    />
+                  </div>
+
+                  <div class="companyDetailWrapper">
+                    <span class="companyTitle inter-light"> </span>
+                    <span class="companyUrl"> </span>
+                  </div>
+                </div>
+
+                <div class="companyTagsWrapper">
+                  <span class="tagContainer">Chinese</span>
+                  <span class="tagContainer">Healthcare</span>
+                  <span class="tagContainer">Interface</span>
+                  <span class="tagContainer">Inspiration</span>
+                </div>
+              </div>
+
+              <!-- Content + actions row -->
+              <div class="cardContentRow">
+                <div class="faqContentBodyContainer">
+                  <div class="contentHeaderContainer">
+                    <h2 class="faqHeader">
+                      Is it better to invest in new or subsale property?
+                    </h2>
+                  </div>
+
+                  <div class="faqSub">
+                    New properties may offer modern designs, incentives, and
+                    lower maintenance, while subsale properties provide clearer
+                    rental history and immediate occupancy. The best choice
+                    depends on budget, timeline, and investment strategy.
+                  </div>
+                </div>
+
+                <div class="cardActionsRow">
+                  <div class="faqContentIcon">
+                    <button
+                      class="viewBtn shadowSm"
+                      onclick="window.open('', '_blank')"
+                    >
+                      <span class="viewBtnText">View</span>
+                      <i class="bi bi-arrow-up-right-square"></i>
+                    </button>
+
+                    <button type="button" class="viewMoreBtn viewMore">
+                      <i class="bi bi-plus-lg"></i>
+                    </button>
+
+                    <button type="button" class="viewMoreBtn viewLess">
+                      <i class="bi bi-dash-lg"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="customFaqContentListContainer resultCard shadowSm is-collapsed"
+            data-id="uni-1frm"
+          >
+            <div class="faqContentHeaderWrapper">
+              <div class="faqContentHeaderContainer">
+                <div class="iconTextWrapper">
+                  <i class="bi bi-chat-dots faqIcon"></i>
+                  <div class="customTextWrapper">
+                    <span class="customtext">Most Asked Question</span>
+                    <span class="customtext">Answered By Universal FAQ</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="cardContentRow">
+                <div class="faqContentBodyContainer">
+                  <div class="contentHeaderContainer">
+                    <h2 class="faqHeader">
+                      Kimi No Nawa NawaNawa Nawa NawaNawaNawa ?
+                    </h2>
+                  </div>
+
+                  <div class="faqSub">
+                    26 Mar 2025 — In this article, let's dive into how to create
+                    a good site search UI and get inspiration from 20 best
+                    search UI design examples. 26 Mar 2025 — In this article,
+                    let's dive into how to create a good site search UI and get
+                    inspiration from 20 best search UI design examples. 26 Mar
+                    2025 — In this article, let's dive into how to create a good
+                    site search UI and get inspiration from 20 best search UI
+                    design examples.
+                  </div>
+                </div>
+
+                <div class="cardActionsRow">
+                  <div class="faqContentIcon">
+                    <button
+                      class="viewBtn shadowSm"
+                      onclick="window.open('https://getbootstrap.com/docs/5.3/utilities/spacing/', '_blank')"
+                    >
+                      <span class="viewBtnText">View</span>
+                      <i class="bi bi-arrow-up-right-square"></i>
+                    </button>
+
+                    <button type="button" class="viewMoreBtn viewMore">
+                      <i class="bi bi-plus-lg"></i>
+                    </button>
+
+                    <button type="button" class="viewMoreBtn viewLess">
+                      <i class="bi bi-dash-lg"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="faqContentListContainer resultCard shadowSm is-collapsed"
+            data-id="2"
+          >
+            <div class="faqContentHeaderWrapper">
+              <div class="faqContentHeaderContainer">
+                <div class="faqCompanyWrapper">
+                  <div class="companyLogoWrapper">
+                    <img
+                      src="https://media.istockphoto.com/id/814423752/photo/eye-of-model-with-colorful-art-make-up-close-up.jpg?s=612x612&w=0&k=20&c=l15OdMWjgCKycMMShP8UK94ELVlEGvt7GmB_esHWPYE="
+                      class="companyLogo"
+                      alt="What’s one habit that improves focus instantly?"
+                    />
+                  </div>
+
+                  <div class="companyDetailWrapper">
+                    <span class="companyTitle inter-light"
+                      >Design Inspiration</span
+                    >
+                    <span class="companyUrl">https://dribbble.com</span>
+                  </div>
+                </div>
+
+                <div class="companyTagsWrapper">
+                  <span class="tagContainer">Chinese</span>
+                  <span class="tagContainer">Healthcare</span>
+                  <span class="tagContainer">Interface</span>
+                  <span class="tagContainer">Inspiration</span>
+                </div>
+              </div>
+
+              <div class="cardContentRow">
+                <div class="faqContentBodyContainer">
+                  <div class="contentHeaderContainer">
+                    <h2 class="faqHeader">
+                      What’s one habit that improves focus instantly?
+                    </h2>
+                  </div>
+
+                  <div class="faqSub">
+                    Removing just one distraction (like notifications) works
+                    better than trying to add productivity hacks.
+                  </div>
+                </div>
+
+                <div class="cardActionsRow">
+                  <div class="faqContentIcon">
+                    <button
+                      class="viewBtn shadowSm"
+                      onclick="window.open('https://dribbble.com', '_blank')"
+                    >
+                      <span class="viewBtnText">View</span>
+                      <i class="bi bi-arrow-up-right-square"></i>
+                    </button>
+
+                    <button type="button" class="viewMoreBtn viewMore">
+                      <i class="bi bi-plus-lg"></i>
+                    </button>
+
+                    <button type="button" class="viewMoreBtn viewLess">
+                      <i class="bi bi-dash-lg"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="faqContentListContainer resultCard shadowSm is-collapsed"
+            data-id="3"
+          >
+            <div class="faqContentHeaderWrapper">
+              <div class="faqContentHeaderContainer">
+                <div class="faqCompanyWrapper">
+                  <div class="companyLogoWrapper">
+                    <img
+                      src="https://media.istockphoto.com/id/814423752/photo/eye-of-model-with-colorful-art-make-up-close-up.jpg?s=612x612&w=0&k=20&c=l15OdMWjgCKycMMShP8UK94ELVlEGvt7GmB_esHWPYE="
+                      class="companyLogo"
+                      alt="Why do simple designs often feel more premium?"
+                    />
+                  </div>
+
+                  <div class="companyDetailWrapper">
+                    <span class="companyTitle inter-light">
+                      Collaborative Interface Design Tool
+                    </span>
+                    <span class="companyUrl">https://figma.com</span>
+                  </div>
+                </div>
+
+                <div class="companyTagsWrapper">
+                  <span class="tagContainer">Chinese</span>
+                  <span class="tagContainer">Healthcare</span>
+                  <span class="tagContainer">Interface</span>
+                  <span class="tagContainer">Inspiration</span>
+                </div>
+              </div>
+
+              <div class="cardContentRow">
+                <div class="faqContentBodyContainer">
+                  <div class="contentHeaderContainer">
+                    <h2 class="faqHeader">
+                      Why do simple designs often feel more premium?
+                    </h2>
+                  </div>
+
+                  <div class="faqSub">
+                    Because simplicity reduces cognitive load—fewer elements
+                    means clearer hierarchy, stronger whitespace, and a more
+                    intentional feel that reads “premium” faster.
+                  </div>
+                </div>
+
+                <div class="cardActionsRow">
+                  <div class="faqContentIcon">
+                    <button
+                      class="viewBtn shadowSm"
+                      onclick="window.open('https://figma.com', '_blank')"
+                    >
+                      <span class="viewBtnText">View</span>
+                      <i class="bi bi-arrow-up-right-square"></i>
+                    </button>
+
+                    <button type="button" class="viewMoreBtn viewMore">
+                      <i class="bi bi-plus-lg"></i>
+                    </button>
+
+                    <button type="button" class="viewMoreBtn viewLess">
+                      <i class="bi bi-dash-lg"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
         <div class="paginationWrapper">
           <button class="prevButton shadowSm">
             <i class="bi bi-arrow-left me-2"></i> Previous
           </button>
+
           <ul class="pageWrapper">
             <li class="pageNum currentPage">1</li>
             <li class="pageNum">2</li>
             <li class="pageNum">3</li>
           </ul>
+
           <button class="nextButton shadowSm">
             Next <i class="bi bi-arrow-right ms-2"></i>
           </button>
         </div>
       </div>
     </div>
+
     <footer>
       <div class="footerWrapper container">
         <div class="footerContainer container gloock-regular">
@@ -424,6 +563,7 @@
             Built for businesses, teams, and curious minds.
           </span>
         </div>
+
         <div class="footerLegalRow footerContainer container">
           <div class="footerLegalLeft">
             <strong>Universal Faq</strong> © 2018–2025
@@ -432,14 +572,16 @@
           <div class="gloock-regular p-0">
             Designed for accuracy over assumptions below
           </div>
+
           <div class="footerLegalRight">
             Powered By
             <a
               href="https://www.newpages.net/"
               class="footerLink"
               target="_blank"
-              >NEWPAGES</a
             >
+              NEWPAGES
+            </a>
           </div>
         </div>
       </div>

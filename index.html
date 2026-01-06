@@ -46,133 +46,6 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-
-    <script>
-      const companies = [
-        {
-          name: "Sia Traditional Chinese Medicine",
-          title: "Traditional Chinese Healthcare",
-          desc: "Traditional Chinese Healthcare Traditional Chinese HealthcareTraditional Chinese Healthcare Traditional Chinese Healthcare Traditional Chinese HealthcareTraditional Chinese HealthcareTraditional Chinese Healthcare Traditional Chinese HealthcareTraditional Chinese HealthcareTraditional Chinese Healthcare Traditional Chinese HealthcareTraditional Chinese HealthcareTraditional Chinese Healthcare Traditional Chinese HealthcareTraditional Chinese HealthcareTraditional Chinese Healthcare Traditional Chinese HealthcareTraditional Chinese HealthcareTraditional Chinese Healthcare Traditional Chinese HealthcareTraditional Chinese HealthcareTraditional Chinese Healthcare Traditional Chinese HealthcareTraditional Chinese HealthcareTraditional Chinese Healthcare Traditional Chinese HealthcareTraditional Chinese HealthcareTraditional Chinese Healthcare Traditional Chinese HealthcareTraditional Chinese HealthcareTraditional Chinese Healthcare Traditional Chinese HealthcareTraditional Chinese HealthcareTraditional Chinese Healthcare Traditional Chinese HealthcareTraditional Chinese HealthcareTraditional Chinese Healthcare Traditional Chinese HealthcareTraditional Chinese HealthcareTraditional Chinese Healthcare Traditional Chinese HealthcareTraditional Chinese HealthcareTraditional Chinese Healthcare Traditional Chinese HealthcareTraditional Chinese HealthcareTraditional Chinese Healthcare Traditional Chinese HealthcareTraditional Chinese HealthcareTraditional Chinese Healthcare Traditional Chinese HealthcareTraditional Chinese HealthcareTraditional Chinese Healthcare Traditional Chinese HealthcareTraditional Chinese HealthcareTraditional Chinese Healthcare Traditional Chinese HealthcareTraditional Chinese HealthcareTraditional Chinese Healthcare Traditional Chinese HealthcareTraditional Chinese HealthcareTraditional Chinese Healthcare Traditional Chinese HealthcareTraditional Chinese Healthcare",
-          tags: [
-            "Chinese",
-            "Healthcare",
-            "Interface",
-            "Inspiration",
-            "Design",
-            "Interface",
-            "Inspiration",
-            "Design",
-          ],
-          url: "https://sia-tcm.com",
-          logo: "https://media.istockphoto.com/id/814423752/photo/eye-of-model-with-colorful-art-make-up-close-up.jpg?s=612x612&w=0&k=20&c=l15OdMWjgCKycMMShP8UK94ELVlEGvt7GmB_esHWPYE=",
-        },
-        {
-          name: "Dribbble",
-          title: "Design Inspiration",
-          desc: "Traditional Chinese Healthcare Traditional Chinese HealthcareTraditional Chinese Healthcare",
-          tags: ["Chinese", "Healthcare", "Interface", "Inspiration", "Design"],
-          url: "https://dribbble.com",
-          logo: "https://media.istockphoto.com/id/814423752/photo/eye-of-model-with-colorful-art-make-up-close-up.jpg?s=612x612&w=0&k=20&c=l15OdMWjgCKycMMShP8UK94ELVlEGvt7GmB_esHWPYE=",
-        },
-        {
-          name: "Figma",
-          title: "Collaborative Interface Design Tool",
-          desc: "Traditional Chinese Healthcare Traditional Chinese HealthcareTraditional Chinese Healthcare",
-          tags: ["Chinese", "Healthcare", "Interface", "Inspiration", "Design"],
-          url: "https://figma.com",
-          logo: "https://media.istockphoto.com/id/814423752/photo/eye-of-model-with-colorful-art-make-up-close-up.jpg?s=612x612&w=0&k=20&c=l15OdMWjgCKycMMShP8UK94ELVlEGvt7GmB_esHWPYE=",
-        },
-      ];
-
-      function renderCompanyCards() {
-        const container = document.getElementById("companyList");
-
-        container.innerHTML = companies
-          .map((item, i) => {
-            return `       
-        <div class="faqContentListContainer shadowSm" data-id="${i}">
-          <div class="faqContentHeaderWrapper">
-            <div class="faqContentHeaderContainer">
-              <div class="faqCompanyWrapper">
-                <div class="companyLogoWrapper">
-                  <img
-                    src="${item.logo}"
-                    class="companyLogo"
-                    alt="${item.name}"
-                  />
-                </div>
-
-                <div class="companyDetailWrapper">
-                  <span class="companyTitle inter-light">
-                    ${item.title}
-                  </span>
-                  <span class="companyUrl">
-                    ${item.url}
-                  </span>
-                </div>
-              </div>
-
-              <div class="companyTagsWrapper">
-                ${item.tags
-                  .slice(0, 4)
-                  .map((tag) => `<span class="tagContainer">${tag}</span>`)
-                  .join("")}
-
-                ${
-                  item.tags.length > 4
-                    ? `<span class="tagContainer moreTag">
-                        + ${item.tags.length - 4}
-                      </span>`
-                    : ""
-                }
-              </div>
-
-            </div>
-
-            <div class="d-flex flex-row justify-content-between w-100">
-
-              <div class="faqContentBodyContainer">
-                <div class="contentHeaderContainer ">
-                  <h2 class="faqHeader">
-                    ${item.name}
-                  </h2>
-                </div>
-
-                <div class="faqSub">
-                  ${item.desc}
-                </div>
-              </div>
-
-              <div class="faqContentIcon">
-                <button
-                  class="viewBtn shadowSm"
-                  onclick="window.open('${item.url}', '_blank')"
-                >
-                  <span class="viewBtnText">View</span>
-                  <i class="bi bi-arrow-up-right-square"></i>
-                </button>
-
-                <button type="button" class="viewMoreBtn viewMore">
-                  <i class="bi bi-plus-lg"></i>
-                </button>
-
-                <button type="button" class="viewMoreBtn viewLess">
-                  <i class="bi bi-dash-lg"></i>
-                </button>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      `;
-          })
-          .join("");
-      }
-
-      document.addEventListener("DOMContentLoaded", () => {
-        renderCompanyCards();
-      });
-    </script>
     <script src="script.js"></script>
   </head>
 
@@ -180,6 +53,7 @@
     <button id="scrollToTopBtn" aria-label="Scroll to top">
       <i class="bi bi-arrow-up"></i>
     </button>
+
     <div class="faqPageWrapper">
       <div class="faqSplashContainer">
         <div class="container">
@@ -192,6 +66,7 @@
                   class="navbarLogo"
                 />
               </a>
+
               <button
                 class="navbar-toggler"
                 type="button"
@@ -203,9 +78,11 @@
               >
                 <span
                   class="navbar-toggler-icon d-flex justify-content-center align-items-center"
-                  ><i class="bi bi-list"></i
-                ></span>
+                >
+                  <i class="bi bi-list"></i>
+                </span>
               </button>
+
               <div class="collapse navbar-collapse" id="navbarScroll">
                 <ul
                   class="navbar-nav gap-4 me-auto my-2 my-lg-0 navbar-nav-scroll"
@@ -221,6 +98,7 @@
             </div>
           </nav>
         </div>
+
         <div class="row">
           <div class="col-lg-12 tagLineWrapper">
             <div class="tagLineContainer">
@@ -232,7 +110,9 @@
                 Search through curated knowledge and find what you need — fast.
               </p>
             </div>
+
             <button class="mainCTA shadow-sm">Start Exploring</button>
+
             <div class="faqSearchBox">
               <form
                 action="/search"
@@ -262,6 +142,7 @@
         </div>
       </div>
     </div>
+
     <div class="primaryContainer">
       <div class="faqContentContainer container">
         <div class="align-items-end justify-content-end w-100 d-none d-lg-flex">
@@ -276,7 +157,225 @@
             </div>
           </div>
         </div>
-        <div class="faqContentListWrapper container" id="companyList"></div>
+
+        <!-- ✅ HARDCODED CARDS (no JS loop) -->
+        <div class="faqContentListWrapper container">
+          <!-- Card 1 -->
+          <div class="faqContentListContainer resultCard  shadowSm" data-id="0">
+            <div class="faqContentHeaderWrapper">
+              <div class="faqContentHeaderContainer">
+                <div class="faqCompanyWrapper">
+                  <div class="companyLogoWrapper">
+                    <img
+                      src="https://media.istockphoto.com/id/814423752/photo/eye-of-model-with-colorful-art-make-up-close-up.jpg?s=612x612&w=0&k=20&c=l15OdMWjgCKycMMShP8UK94ELVlEGvt7GmB_esHWPYE="
+                      class="companyLogo"
+                      alt="Sia Traditional Chinese Medicine"
+                    />
+                  </div>
+
+                  <div class="companyDetailWrapper">
+                    <span class="companyTitle inter-light">
+                      Traditional Chinese Healthcare
+                    </span>
+                    <span class="companyUrl">https://sia-tcm.com</span>
+                  </div>
+                </div>
+
+                <div class="companyTagsWrapper">
+                  <span class="tagContainer">Chinese</span>
+                  <span class="tagContainer">Healthcare</span>
+                  <span class="tagContainer">Interface</span>
+                  <span class="tagContainer">Inspiration</span>
+                  <span class="tagContainer moreTag">+ 4</span>
+                </div>
+              </div>
+
+              <div class="d-flex flex-row justify-content-between w-100">
+                <div class="faqContentBodyContainer">
+                  <div class="contentHeaderContainer">
+                    <h2 class="faqHeader">Sia Traditional Chinese Medicine</h2>
+                  </div>
+
+                  <div class="faqSub">
+                    Traditional Chinese Healthcare Traditional Chinese
+                    HealthcareTraditional Chinese Healthcare Traditional Chinese
+                    Healthcare Traditional Chinese HealthcareTraditional Chinese
+                    HealthcareTraditional Chinese Healthcare Traditional Chinese
+                    HealthcareTraditional Chinese HealthcareTraditional Chinese
+                    Healthcare Traditional Chinese HealthcareTraditional Chinese
+                    HealthcareTraditional Chinese Healthcare Traditional Chinese
+                    HealthcareTraditional Chinese HealthcareTraditional Chinese
+                    Healthcare Traditional Chinese HealthcareTraditional Chinese
+                    HealthcareTraditional Chinese Healthcare Traditional Chinese
+                    HealthcareTraditional Chinese HealthcareTraditional Chinese
+                    Healthcare Traditional Chinese HealthcareTraditional Chinese
+                    HealthcareTraditional Chinese Healthcare Traditional Chinese
+                    HealthcareTraditional Chinese HealthcareTraditional Chinese
+                    Healthcare Traditional Chinese HealthcareTraditional Chinese
+                    HealthcareTraditional Chinese Healthcare Traditional Chinese
+                    HealthcareTraditional Chinese HealthcareTraditional Chinese
+                    Healthcare Traditional Chinese HealthcareTraditional Chinese
+                    HealthcareTraditional Chinese Healthcare Traditional Chinese
+                    HealthcareTraditional Chinese HealthcareTraditional Chinese
+                    Healthcare Traditional Chinese HealthcareTraditional Chinese
+                    HealthcareTraditional Chinese Healthcare Traditional Chinese
+                    HealthcareTraditional Chinese HealthcareTraditional Chinese
+                    Healthcare Traditional Chinese HealthcareTraditional Chinese
+                    HealthcareTraditional Chinese Healthcare Traditional Chinese
+                    HealthcareTraditional Chinese HealthcareTraditional Chinese
+                    Healthcare Traditional Chinese HealthcareTraditional Chinese
+                    Healthcare
+                  </div>
+                </div>
+
+                <div class="faqContentIcon">
+                  <button
+                    class="viewBtn shadowSm"
+                    onclick="window.open('https://sia-tcm.com', '_blank')"
+                  >
+                    <span class="viewBtnText">View</span>
+                    <i class="bi bi-arrow-up-right-square"></i>
+                  </button>
+
+                  <button type="button" class="viewMoreBtn viewMore">
+                    <i class="bi bi-plus-lg"></i>
+                  </button>
+
+                  <button type="button" class="viewMoreBtn viewLess">
+                    <i class="bi bi-dash-lg"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="faqContentListContainer shadowSm" data-id="1">
+            <div class="faqContentHeaderWrapper">
+              <div class="faqContentHeaderContainer">
+                <div class="faqCompanyWrapper">
+                  <div class="companyLogoWrapper">
+                    <img
+                      src="https://media.istockphoto.com/id/814423752/photo/eye-of-model-with-colorful-art-make-up-close-up.jpg?s=612x612&w=0&k=20&c=l15OdMWjgCKycMMShP8UK94ELVlEGvt7GmB_esHWPYE="
+                      class="companyLogo"
+                      alt="Dribbble"
+                    />
+                  </div>
+
+                  <div class="companyDetailWrapper">
+                    <span class="companyTitle inter-light"
+                      >Design Inspiration</span
+                    >
+                    <span class="companyUrl">https://dribbble.com</span>
+                  </div>
+                </div>
+
+                <div class="companyTagsWrapper">
+                  <span class="tagContainer">Chinese</span>
+                  <span class="tagContainer">Healthcare</span>
+                  <span class="tagContainer">Interface</span>
+                  <span class="tagContainer">Inspiration</span>
+                  <span class="tagContainer moreTag">+ 1</span>
+                </div>
+              </div>
+
+              <div class="d-flex flex-row justify-content-between w-100">
+                <div class="faqContentBodyContainer">
+                  <div class="contentHeaderContainer">
+                    <h2 class="faqHeader">Dribbble</h2>
+                  </div>
+
+                  <div class="faqSub">
+                    Traditional Chinese Healthcare Traditional Chinese
+                    HealthcareTraditional Chinese Healthcare
+                  </div>
+                </div>
+
+                <div class="faqContentIcon">
+                  <button
+                    class="viewBtn shadowSm"
+                    onclick="window.open('https://dribbble.com', '_blank')"
+                  >
+                    <span class="viewBtnText">View</span>
+                    <i class="bi bi-arrow-up-right-square"></i>
+                  </button>
+
+                  <button type="button" class="viewMoreBtn viewMore">
+                    <i class="bi bi-plus-lg"></i>
+                  </button>
+
+                  <button type="button" class="viewMoreBtn viewLess">
+                    <i class="bi bi-dash-lg"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="faqContentListContainer shadowSm" data-id="2">
+            <div class="faqContentHeaderWrapper">
+              <div class="faqContentHeaderContainer">
+                <div class="faqCompanyWrapper">
+                  <div class="companyLogoWrapper">
+                    <img
+                      src="https://media.istockphoto.com/id/814423752/photo/eye-of-model-with-colorful-art-make-up-close-up.jpg?s=612x612&w=0&k=20&c=l15OdMWjgCKycMMShP8UK94ELVlEGvt7GmB_esHWPYE="
+                      class="companyLogo"
+                      alt="Figma"
+                    />
+                  </div>
+
+                  <div class="companyDetailWrapper">
+                    <span class="companyTitle inter-light">
+                      Collaborative Interface Design Tool
+                    </span>
+                    <span class="companyUrl">https://figma.com</span>
+                  </div>
+                </div>
+
+                <div class="companyTagsWrapper">
+                  <span class="tagContainer">Chinese</span>
+                  <span class="tagContainer">Healthcare</span>
+                  <span class="tagContainer">Interface</span>
+                  <span class="tagContainer">Inspiration</span>
+                  <span class="tagContainer moreTag">+ 1</span>
+                </div>
+              </div>
+
+              <div class="d-flex flex-row justify-content-between w-100">
+                <div class="faqContentBodyContainer">
+                  <div class="contentHeaderContainer">
+                    <h2 class="faqHeader">Figma</h2>
+                  </div>
+
+                  <div class="faqSub">
+                    Traditional Chinese Healthcare Traditional Chinese
+                    HealthcareTraditional Chinese Healthcare
+                  </div>
+                </div>
+
+                <div class="faqContentIcon">
+                  <button
+                    class="viewBtn shadowSm"
+                    onclick="window.open('https://figma.com', '_blank')"
+                  >
+                    <span class="viewBtnText">View</span>
+                    <i class="bi bi-arrow-up-right-square"></i>
+                  </button>
+
+                  <button type="button" class="viewMoreBtn viewMore">
+                    <i class="bi bi-plus-lg"></i>
+                  </button>
+
+                  <button type="button" class="viewMoreBtn viewLess">
+                    <i class="bi bi-dash-lg"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- ✅ END HARD-CODED LIST -->
       </div>
     </div>
 
@@ -294,6 +393,7 @@
             Built for businesses, teams, and curious minds.
           </span>
         </div>
+
         <div class="footerLegalRow footerContainer container">
           <div class="footerLegalLeft">
             <strong>Universal Faq</strong> © 2018–2025
@@ -302,8 +402,15 @@
           <div class="gloock-regular p-0">
             Designed for accuracy over assumptions below
           </div>
+
           <div class="footerLegalRight">
-            Powered By <a href="https://www.newpages.net/" class="footerLink" target="_blank">NEWPAGES</a>
+            Powered By
+            <a
+              href="https://www.newpages.net/"
+              class="footerLink"
+              target="_blank"
+              >NEWPAGES</a
+            >
           </div>
         </div>
       </div>
