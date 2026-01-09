@@ -41,24 +41,30 @@
     <script src="script.js"></script>
     <style>
       /* =====================================
-      companyIndex.css
-      Page-specific styles only.
-      Depends on style.css for global/shared.
-    ===================================== */
+            companyIndex.css
+            Page-specific styles only.
+            Depends on style.css for global/shared.
+          ===================================== */
 
       /* ===========================
-      1) COMPANY HEADER / PROFILE SECTION
-      (the block above the FAQ list)
-    =========================== */
+            1) COMPANY HEADER / PROFILE SECTION
+            (the block above the FAQ list)
+          =========================== */
 
       /* Scoped so it won't mess with list-card "companyDetailWrapper" usage elsewhere */
 
       .categoryContainer {
         width: fit-content;
         height: fit-content;
-        border-bottom: #163571 2px solid;
       }
 
+      .divider {
+        margin: 0rem;
+        content: "";
+        flex: 1;
+        height: 1px;
+        background: linear-gradient(to right, #7e84f100, #1b429767, #7e84f100);
+      }
       .categoryHeader {
         color: #1b4297;
         line-height: 1.1;
@@ -176,8 +182,8 @@
         min-height: 50px !important;
       }
       /* ===========================
-      4) UNIVERSAL FAQ SPECIAL CARD
-    =========================== */
+            4) UNIVERSAL FAQ SPECIAL CARD
+          =========================== */
 
       .customFaqContentListContainer {
         background-color: #eef4ff;
@@ -501,6 +507,7 @@
                 >
                   <div class="categoryContainer">
                     <h4 class="categoryHeader" id="technology">Technology</h4>
+                    <div class="divider"></div>
                   </div>
                   <div class="tabWrapper d-none d-lg-flex">
                     <div class="align-items-end justify-content-between">
