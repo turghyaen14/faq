@@ -52,6 +52,22 @@
     =========================== */
 
       /* Scoped so it won't mess with list-card "companyDetailWrapper" usage elsewhere */
+
+      .categoryContainer {
+        width: fit-content;
+        height: fit-content;
+        border-bottom: #163571 2px solid;
+      }
+
+      .categoryHeader {
+        color: #1b4297;
+        line-height: 1.1;
+        font-family: "Gloock", serif;
+        letter-spacing: 0.1rem;
+      }
+      .faqContentListWrapper.grid-view .faqGridHeader {
+        grid-column: 1 / -1; /* spans full grid */
+      }
       .tagLineWrapper .profileLogoWrapper {
         width: 8.5rem;
         height: 8.5rem;
@@ -146,8 +162,8 @@
 
       @media screen and (max-width: 992px) {
         .tagLineWrapper .companyDetailWrapper {
-          gap: 0.5rem !important;
-          align-items: center;
+          gap: 1rem !important;
+          align-items: start;
           width: 100% !important;
         }
 
@@ -246,7 +262,7 @@
               </button>
               <div class="collapse navbar-collapse" id="navbarScroll">
                 <ul
-                  class="navbar-nav gap-4 me-auto my-2 my-lg-0 navbar-nav-scroll"
+                  class="navbar-nav gap-3 me-auto my-2 my-lg-0 navbar-nav-scroll"
                   style="--bs-scroll-height: 100px"
                 >
                   <li class="nav-item">
@@ -362,20 +378,6 @@
     </div>
 
     <div class="primaryContainer">
-      <div class="faqContentContainer container">
-        <div class="align-items-end justify-content-end w-100 d-none d-lg-flex">
-          <div class="tabWrapper">
-            <div class="tabContainer" id="gridViewTab">
-              <span><i class="bi bi-grid faSize"></i></span>
-              <span> Grid View </span>
-            </div>
-            <div class="tabContainer selectedTabContainer" id="listViewTab">
-              <span><i class="bi bi-list-ul faSize"></i></span>
-              <span> List View </span>
-            </div>
-          </div>
-        </div>
-      </div>
       <div class="container">
         <!-- ✅ Mobile category dropdown -->
         <div class="d-lg-none mb-3">
@@ -492,9 +494,31 @@
             </div>
           </div>
           <div class="col-lg-9 col-md-12 col-sm-12">
-            <h4 class="categoryHeader" id="technology">Technology</h4>
-
-            <div class="faqContentListWrapper list-view">
+            <div class="faqContentListWrapper list-view pt-0 mt-0">
+              <div class="faqContentContainer container faqGridHeader">
+                <div
+                  class="tabContainer align-items-end justify-content-between w-100 d-flex"
+                >
+                  <div class="categoryContainer">
+                    <h4 class="categoryHeader" id="technology">Technology</h4>
+                  </div>
+                  <div class="tabWrapper d-none d-lg-flex">
+                    <div class="align-items-end justify-content-between">
+                      <div class="tabContainer" id="gridViewTab">
+                        <span><i class="bi bi-grid faSize"></i></span>
+                        <span> Grid View </span>
+                      </div>
+                    </div>
+                    <div
+                      class="tabContainer selectedTabContainer"
+                      id="listViewTab"
+                    >
+                      <span><i class="bi bi-list-ul faSize"></i></span>
+                      <span> List View </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
               <div
                 class="faqContentListContainer resultCard shadowSm is-collapsed"
                 data-id="0"
@@ -512,8 +536,10 @@
                       </div>
 
                       <div class="companyDetailWrapper">
-                        <span class="companyTitle inter-light"> </span>
-                        <span class="companyUrl"> </span>
+                        <span class="companyTitle inter-light"
+                          >Traditional Chinese Healthcare
+                        </span>
+                        <span class="companyUrl">https://sia-tcm.com </span>
                       </div>
                     </div>
                   </div>
@@ -580,7 +606,24 @@
                     <div class="faqContentBodyContainer">
                       <div class="contentHeaderContainer">
                         <h2 class="faqHeader">
-                          Kimi No Nawa NawaNawa Nawa NawaNawaNawa ?
+                          Is it better to invest in new or subsale property? Is
+                          it better to invest in new or subsale property? Is it
+                          better to invest in new or subsale property? Is it
+                          better to invest in new or subsale property? Is it
+                          better to invest in new or subsale property? Is it
+                          better to invest in new or subsale property? Is it
+                          better to invest in new or subsale property? Is it
+                          better to invest in new or subsale property? Is it
+                          better to invest in new or subsale property? Is it
+                          better to invest in new or subsale property? Is it
+                          better to invest in new or subsale property? Is it
+                          better to invest in new or subsale property? Is it
+                          better to invest in new or subsale property? Is it
+                          better to invest in new or subsale property? Is it
+                          better to invest in new or subsale property? Is it
+                          better to invest in new or subsale property? Is it
+                          better to invest in new or subsale property? Is it
+                          better to invest in new or subsale property?
                         </h2>
                       </div>
 
@@ -630,8 +673,10 @@
                       </div>
 
                       <div class="companyDetailWrapper">
-                        <span class="companyTitle inter-light"> </span>
-                        <span class="companyUrl"> </span>
+                        <span class="companyTitle inter-light"
+                          >Traditional Chinese Healthcare
+                        </span>
+                        <span class="companyUrl">https://sia-tcm.com </span>
                       </div>
                     </div>
                   </div>
@@ -641,7 +686,12 @@
                     <div class="faqContentBodyContainer">
                       <div class="contentHeaderContainer">
                         <h2 class="faqHeader">
-                          Is it better to invest in new or subsale property?
+                          Is it better to invest in new or subsale property? Is
+                          it better to invest in new or subsale property? Is it
+                          better to invest in new or subsale property? Is it
+                          better to invest in new or subsale property? Is it
+                          better to invest in new or subsale property? Is it
+                          better to invest in new or subsale property?
                         </h2>
                       </div>
 

@@ -455,6 +455,18 @@ body {
   min-height: calc(1.25rem * 1.4 * 2);
 }
 
+.faqContentListContainer.is-expanded .faqHeader,
+.customFaqContentListContainer.is-expanded .faqHeader {
+  font-size: 1.25rem;
+  line-height: 1.4;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: unset;
+  overflow: visible;
+  min-height: calc(1.25rem * 1.4 * 2);
+}
+
 .faqSub {
   color: #4f4f4f;
   margin: 0;
@@ -479,7 +491,7 @@ body {
 /* ✅ NEW: allow full text when expanded */
 .faqContentListContainer.is-expanded .faqSub,
 .customFaqContentListContainer.is-expanded .faqSub {
-  max-height: 1000px;
+  max-height: unset;
   -webkit-line-clamp: unset;
   display: block;
 }
