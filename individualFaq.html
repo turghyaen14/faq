@@ -25,6 +25,10 @@
       integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
       crossorigin="anonymous"
     ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -34,212 +38,273 @@
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
       integrity="sha512-h20CPMrzrerdqFqW1vvgkjz3Y5t15ScolN+ZIg4mpVABq8IknnP4a06f71Q2dbzWYHd8PSP7ZzkUvZ1sjYgCnw=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+
+    <script>
+      const faqData = [
+        {
+          title: "Kimi No Nawa NawaNawa Nawa NawaNawaNawa ?",
+          desc: `26 Mar 2025 — In this article, let's dive into how to create a good
+           site search UI and get inspiration from 20 best search UI design
+           examples. 26 Mar 2025 — In this article, let's dive into how to create
+           a good site search UI and get inspiration from 20 best search UI design examples.`,
+          link: "https://getbootstrap.com/docs/5.3/utilities/spacing/",
+        },
+      ];
+
+      function renderFAQ() {
+        const faqList = document.getElementById("faqList");
+
+        faqList.innerHTML = faqData
+          .map((item, i) => {
+            return `
+        <div class="faqContentListContainer shadowSm is-collapsed"  data-id="${i}">
+          <div class="faqContentHeaderWrapper">
+            <div class="faqContentBodyContainer">
+              <div class="contentHeaderContainer">
+                <h2 class="faqHeader">${item.title}</h2>
+                <div class="faqContentIcon" >
+                </div>
+              </div>
+            </div>
+            <div class="faqSubs">${item.desc}</div>
+          </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 my-3">
+                          
+                <div class="companyDetailWrapper">
+                 
+                 <div class="d-flex flex-md-row flex-column gap-4 align-items-center justify-content-center">
+                   <div class="profileLogoWrapper ">
+                    <img
+                      src="https://media.istockphoto.com/id/814423752/photo/eye-of-model-with-colorful-art-make-up-close-up.jpg?s=612x612&w=0&k=20&c=l15OdMWjgCKycMMShP8UK94ELVlEGvt7GmB_esHWPYE="
+                      class="profileLogo"
+                    />
+                  </div>
+                  <div class="d-flex flex-column gap-2">
+                  <span class="companyName">
+                    Sia Traditional Chinese Medicine
+                  </span>
+
+                  <div class="d-flex flex-column justify-content-start gap-2">
+                    <div class="iconWrapper">
+                      <i class="bi bi-envelope emailIcon"></i>
+                      <span class="textContainer"> sia@sia.com </span>
+                    </div>
+                    <div class="iconWrapper">
+                      <i class="bi bi-telephone emailIcon"></i>
+                      <span class="textContainer"> +6010-824 7333 </span>
+                    </div>
+                  </div>
+                  </div>
+                  </div>
+                  <div class="ctaWrapper">
+                    <a class="ctaToSite shadow-sm" href="#companySite"
+                      >Visit Website</a
+                    >
+                    <a class="ctaToSiteSec shadow-sm" href="#home"
+                      >Back to All FAQs</a
+                    >
+                  </div>
+                </div>
+              </div>
+        </div>
+      `;
+          })
+          .join("");
+      }
+
+      document.addEventListener("DOMContentLoaded", renderFAQ);
+    </script>
     <script src="script.js"></script>
-    <style>
-      /* ===========================
+  </head>
+
+  <style>
+    /* ===========================
    individualFaq.css (FIX)
    override global list-card row layout
 =========================== */
 
-      /* Make the container stretch full width on this page */
-      .faqContentContainer {
-        width: 100%;
-        align-items: stretch;
-        justify-content: flex-start;
-      }
+    /* Make the container stretch full width on this page */
+    .faqContentContainer {
+      width: 100%;
+      align-items: stretch;
+      justify-content: flex-start;
+    }
 
-      /* Force single column grid */
-      .faqContentListWrapper {
-        width: 100%;
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-        padding: 0;
-        margin-top: 0;
-      }
+    /* Force single column grid */
+    .faqContentListWrapper {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      padding: 0;
+      margin-top: 0;
+    }
 
-      /* IMPORTANT: override global ".faqContentListWrapper .faqContentListContainer" */
-      .faqContentListWrapper .faqContentListContainer {
-        width: 100%;
-        display: flex;
-        flex-direction: column; /* ✅ stops the squeeze */
-        align-items: stretch;
-        justify-content: flex-start;
-        background-color: #faf7ef;
-      }
+    /* IMPORTANT: override global ".faqContentListWrapper .faqContentListContainer" */
+    .faqContentListWrapper .faqContentListContainer {
+      width: 100%;
+      display: flex;
+      flex-direction: column; /* ✅ stops the squeeze */
+      align-items: stretch;
+      justify-content: flex-start;
+      background-color: #faf7ef;
+    }
 
-      /* Your page styles */
-      .faqContentHeaderWrapper {
-        display: flex;
-        flex-direction: column;
-        gap: 0.75rem;
-        min-width: 0;
-      }
+    /* Your page styles */
+    .faqContentHeaderWrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      min-width: 0;
+    }
 
-      .contentHeaderContainer {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-      }
+    .contentHeaderContainer {
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
 
-      .faqHeader {
-        font-size: 1.25rem;
-        font-weight: 700;
-        margin: 0;
-        min-height: unset;
-      }
+    .faqHeader {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin: 0;
+    }
 
-      .faqSubs {
-        color: #4f4f4f;
-        font-size: 1.1rem;
-        margin: 0;
-        line-height: 1.5;
-        white-space: normal;
-        word-break: break-word;
-      }
+    .faqSubs {
+      color: #4f4f4f;
+      font-size: 1.1rem;
+      margin: 0;
+      line-height: 1.5;
+      white-space: normal;
+      word-break: break-word;
+    }
 
-      .customCategoryBadgeContainer {
-        min-height: unset;
-      }
+    /* Company panel */
+    .companyDetailWrapper {
+      background-color: #faf7ef;
+      padding: 0.5rem 1.25rem;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 25px;
+    }
 
-      /* Company panel */
+    .profileLogoWrapper {
+      width: 4.5rem;
+      height: 4.5rem;
+      border-radius: 25px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .profileLogo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .companyName {
+      font-size: 1.25rem;
+      font-weight: 400;
+      max-width: 20rem;
+    }
+
+    .iconWrapper {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 1rem;
+      color: #1b4297;
+      width: fit-content;
+    }
+
+    .emailIcon {
+      font-size: 1.25rem;
+    }
+
+    .textContainer {
+      font-size: 1.1rem;
+    }
+
+    /* CTAs */
+    .ctaWrapper {
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+      align-items: flex-start;
+      justify-content: center;
+    }
+
+    .ctaToSite {
+      font-size: 1rem;
+      text-decoration: none;
+      background-color: #163571;
+      color: #ffffff;
+      border-radius: 12px;
+      padding: 0.5rem 1rem;
+    }
+
+    .ctaToSiteSec {
+      font-size: 1rem;
+      text-decoration: none;
+      background-color: transparent;
+      border: 2px solid #163571;
+      color: #163571;
+      border-radius: 12px;
+      padding: 0.5rem 1rem;
+    }
+
+    /* Responsive */
+    @media screen and (max-width: 992px) {
       .companyDetailWrapper {
-        background-color: #faf7ef;
-        padding: 0.5rem 1.25rem;
-        box-sizing: border-box;
-        display: flex;
+        width: 100%;
         flex-direction: column;
-        gap: 1rem;
-        justify-content: space-between;
-        align-items: end;
-        border-radius: 25px;
+        align-items: flex-start;
+      }
+    }
+
+    @media screen and (max-width: 450px) {
+      .ctaWrapper {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .ctaToSite,
+      .ctaToSiteSec {
+        width: 100%;
+        text-align: center;
       }
 
       .profileLogoWrapper {
         width: 4.5rem;
         height: 4.5rem;
-        border-radius: 25px;
+        border-radius: 15px;
         overflow: hidden;
         display: flex;
         align-items: center;
         justify-content: center;
       }
 
-      .profileLogo {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+      .companyDetailWrapper {
+        padding: 0.5rem 1rem !important;
       }
-
-      .companyName {
-        font-size: 1.25rem;
-        font-weight: 400;
-        max-width: 20rem;
-      }
-
-      .iconWrapper {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 1rem;
-        color: #1b4297;
-        width: fit-content;
-      }
-
-      .emailIcon {
-        font-size: 1rem;
-      }
-
-      .textContainer {
-        font-size: 1rem;
-      }
-
-      /* CTAs */
-      .ctaWrapper {
-        display: flex;
-        flex-direction: row;
-        gap: 1rem;
-        align-items: flex-start;
-        justify-content: center;
-      }
-
-      .ctaToSite {
-        font-size: 1rem;
-        text-decoration: none;
-        background-color: #163571;
-        color: #ffffff;
-        border-radius: 12px;
-        text-align: center;
-        padding: 0.5rem 1rem;
-      }
-
-      .ctaToSiteSec {
-        font-size: 1rem;
-        text-align: center;
-        text-decoration: none;
-        background-color: transparent;
-        border: 2px solid #163571;
-        color: #163571;
-        border-radius: 12px;
-        padding: 0.5rem 1rem;
-      }
-
-      /* Responsive */
-      @media screen and (max-width: 992px) {
-        .companyDetailWrapper {
-          width: 100%;
-          flex-direction: column;
-          align-items: flex-start;
-        }
-      }
-
-      @media screen and (max-width: 450px) {
-        .ctaWrapper {
-          flex-direction: column;
-          width: 100%;
-        }
-
-        .ctaToSite,
-        .ctaToSiteSec {
-          width: 100%;
-          text-align: center;
-        }
-
-        .profileLogoWrapper {
-          width: 4.5rem;
-          height: 4.5rem;
-          border-radius: 15px;
-          overflow: hidden;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-
-        .companyDetailWrapper {
-          padding: 0.5rem 1rem !important;
-        }
-      }
-
-      .companyDesc {
-        color: #4f4f4f;
-        font-size: 1rem;
-        margin: 0;
-      }
-
-      .divider {
-        margin: 1rem 0rem 1rem 0rem;
-        content: "";
-        flex: 1;
-        height: 2px;
-        background: linear-gradient(to right, #7e84f100, #1b429767, #7e84f100);
-      }
-    </style>
-  </head>
-
+    }
+  </style>
   <body class="customBg">
     <button id="scrollToTopBtn" aria-label="Scroll to top">
       <i class="bi bi-arrow-up"></i>
@@ -272,7 +337,7 @@
               </button>
               <div class="collapse navbar-collapse" id="navbarScroll">
                 <ul
-                  class="navbar-nav gap-3 me-auto my-2 my-lg-0 navbar-nav-scroll"
+                  class="navbar-nav gap-4 me-auto my-2 my-lg-0 navbar-nav-scroll"
                   style="--bs-scroll-height: 100px"
                 >
                   <li class="nav-item">
@@ -327,111 +392,7 @@
       <div class="container">
         <div class="row">
           <div class="faqContentContainer">
-            <div class="faqContentListWrapper" id="faqList">
-              <div
-                class="faqContentListContainer shadowSm is-collapsed"
-                data-id="${i}"
-              >
-                <div class="faqContentHeaderWrapper">
-                  <div class="faqContentBodyContainer">
-                    <div class="contentHeaderContainer">
-                      <h2 class="faqHeader">
-                        Kimi No Nawa NawaNawa Nawa NawaNawaNawa ?
-                      </h2>
-                      <div class="customCategoryBadgeContainer">
-                        <span class="customCategoryBadge">Technology</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="faqSubs">
-                    26 Mar 2025 — In this article, let's dive into how to create
-                    a good site search UI and get inspiration from 20 best
-                    search UI design examples. 26 Mar 2025 — In this article,
-                    let's dive into how to create a good site search UI and get
-                    inspiration from 20 best search UI design examples.
-                  </div>
-                </div>
-                <div class="col-lg-12 col-md-12 col-sm-12 my-3">
-                  <div class="divider"></div>
-                  <div class="companyDetailWrapper">
-                    <div
-                      class="d-flex flex-column gap-3 align-items-start justify-content-center"
-                    >
-                      <div
-                        class="d-flex flex-md-row flex-column gap-3 align-items-center justify-content-start"
-                      >
-                        <div class="profileLogoWrapper">
-                          <img
-                            src="https://media.istockphoto.com/id/814423752/photo/eye-of-model-with-colorful-art-make-up-close-up.jpg?s=612x612&w=0&k=20&c=l15OdMWjgCKycMMShP8UK94ELVlEGvt7GmB_esHWPYE="
-                            class="profileLogo"
-                          />
-                        </div>
-                        <div class="d-flex flex-column gap-2">
-                          <span class="companyName">
-                            Sia Traditional Chinese Medicine
-                          </span>
-
-                          <div
-                            class="d-flex flex-column justify-content-start gap-2"
-                          >
-                            <div class="iconWrapper">
-                              <i class="bi bi-envelope emailIcon"></i>
-                              <span class="textContainer"> sia@sia.com </span>
-                            </div>
-                            <div class="iconWrapper">
-                              <i class="bi bi-telephone emailIcon"></i>
-                              <span class="textContainer">
-                                +6010-824 7333
-                              </span>
-                            </div>
-                            <div class="iconWrapper">
-                              <i class="bi bi-geo-alt emailIcon"></i>
-                              <div
-                                class="d-flex flex-column align-items-start justify-content-start gap-3"
-                              >
-                                <a
-                                  class="textContainer text-decoration-none"
-                                  style="color: #1b4297"
-                                >
-                                  83, Jalan Flora 1/9, Taman Pulai Flora, 81300
-                                  Skudai, Johor Darul Ta'zim
-                                </a>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="companyTagsWrapper">
-                        <span class="tagContainer">faciaL</span>
-                        <span class="tagContainer">tcm</span>
-                        <span class="tagContainer">Rejuvenation</span>
-                        <span class="tagContainer">Gua Sha</span>
-                        <span class="tagContainer">Rejuvenation</span>
-                        <span class="tagContainer">Gua Sha</span>
-                        <span class="tagContainer">Rejuvenation</span>
-                        <span class="tagContainer">Gua Sha</span>
-                      </div>
-                      <p class="companyDesc">
-                        Sia Traditional Chinese Medicine - TCM Spinal
-                        Manipulation, Traditional Chinese Massage Therapy,
-                        Acupuncture, Moxibustion, Cupping, Facial Gua Sha,
-                        Facial Rejuvenation Acupuncture
-                      </p>
-                    </div>
-
-                    <div class="ctaWrapper">
-                      <a class="ctaToSite shadow-sm" href="#companySite"
-                        >Visit Website</a
-                      >
-                      <a class="ctaToSiteSec shadow-sm" href="#home"
-                        >Back to All FAQs</a
-                      >
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <div class="faqContentListWrapper" id="faqList"></div>
           </div>
         </div>
       </div>
@@ -459,13 +420,7 @@
             Designed for accuracy over assumptions below
           </div>
           <div class="footerLegalRight">
-            Powered By
-            <a
-              href="https://www.newpages.net/"
-              class="footerLink"
-              target="_blank"
-              >NEWPAGES</a
-            >
+            Powered By <a href="https://www.newpages.net/" class="footerLink" target="_blank">NEWPAGES</a>
           </div>
         </div>
       </div>

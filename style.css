@@ -292,13 +292,6 @@ body {
   justify-content: space-between;
 }
 
-.contentHeaderContainer {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  gap: 1rem;
-  align-items: flex-start;
-}
 .faqContentListWrapper {
   width: 100%;
   padding: 1.5rem;
@@ -317,7 +310,7 @@ body {
 /* ✅ align grid items full height */
 .faqContentListWrapper.grid-view {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1.5rem;
   padding: 1.5rem;
   width: 100%;
@@ -327,7 +320,7 @@ body {
 /* Base card container */
 .faqContentListWrapper .faqContentListContainer {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   height: 100%;
   align-items: center;
   justify-content: flex-start;
@@ -356,23 +349,6 @@ body {
   flex: 1 1 auto;
   min-width: 0;
   width: 100%;
-}
-
-.customCategoryBadgeContainer {
-  min-height: 34px;
-  display: flex;
-  align-items: start;
-  justify-content: start;
-}
-
-.customCategoryBadge {
-  font-size: 12px;
-  padding: 4px 10px;
-  border-radius: 999px;
-  background: rgba(0, 0, 0, 0.04);
-  color: #2b2b2b;
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  font-weight: 500;
 }
 
 /* Header row */
@@ -446,25 +422,13 @@ body {
 
 .faqHeader {
   font-size: 1.25rem;
-  line-height: 1.4;
   margin: 0;
+
+  /* ✅ NEW: keep titles same height */
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   overflow: hidden;
-  min-height: calc(1.25rem * 1.4 * 2);
-}
-
-.faqContentListContainer.is-expanded .faqHeader,
-.customFaqContentListContainer.is-expanded .faqHeader {
-  font-size: 1.25rem;
-  line-height: 1.4;
-  margin: 0;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: unset;
-  overflow: visible;
-  min-height: calc(1.25rem * 1.4 * 2);
 }
 
 .faqSub {
@@ -491,14 +455,14 @@ body {
 /* ✅ NEW: allow full text when expanded */
 .faqContentListContainer.is-expanded .faqSub,
 .customFaqContentListContainer.is-expanded .faqSub {
-  max-height: unset;
+  max-height: 1000px;
   -webkit-line-clamp: unset;
   display: block;
 }
 
 .faqContentListContainer.is-collapsed .faqSub,
 .customFaqContentListContainer.is-collapsed .faqSub {
-  max-height: 5em;
+  max-height: 4.6em;
   padding: 0.5rem 0.5rem 0.5rem 0rem;
   overflow: hidden;
 }
@@ -674,13 +638,6 @@ body {
 
 .faqContentListWrapper.list-view .resultCard .faqContentHeaderContainer {
   min-height: unset;
-}
-.faqContentListWrapper.list-view .faqHeader {
-  min-height: unset !important;
-}
-
-.faqContentListWrapper.list-view .customCategoryBadgeContainer {
-  min-height: unset !important;
 }
 
 /* Keep header consistent even if company data missing */
@@ -998,122 +955,5 @@ body {
 @media (max-width: 768px) {
   .customFaqContentListContainer {
     padding-top: 3rem;
-  }
-}
-
-/* ===========================
-   FAQ SIDEBAR
-=========================== */
-
-.faqSidebar {
-  background: transparent;
-  border-radius: 20px;
-  padding: 1.25rem 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.sidebarTitle {
-  font-size: 0.75rem;
-  letter-spacing: 0.08em;
-  color: #8a94ad;
-  margin-bottom: 0.75rem;
-}
-
-.sidebarItem {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 0.65rem 0.9rem;
-  border-radius: 12px;
-  text-decoration: none;
-  color: #4f4f4f;
-  font-size: 0.95rem;
-  transition: background-color 0.2s ease, color 0.2s ease;
-}
-
-.sidebarItem i {
-  font-size: 1rem;
-  color: #9aa4bf;
-}
-
-.sidebarItem:hover {
-  background-color: #eef4ff;
-  color: #163571;
-}
-
-.sidebarItem:hover i {
-  color: #163571;
-}
-
-.sidebarItem.active {
-  background-color: #1b4297;
-  color: #ffffff;
-}
-
-.sidebarItem.active i {
-  color: #ffffff;
-}
-
-/* ===========================
-      MOBILE CATEGORY DROPDOWN
-    =========================== */
-
-.categoryDropdownBtn {
-  background-color: #faf7ef;
-  border: 1px solid rgba(22, 53, 113, 0.12);
-  border-radius: 14px;
-  padding: 0.85rem 1rem;
-  text-align: left;
-  color: #163571;
-  font-weight: 600;
-}
-
-.categoryDropdownBtn:focus,
-.categoryDropdownBtn:active {
-  box-shadow: none !important;
-}
-
-.categoryDropdownMenu {
-  border-radius: 14px;
-  border: 1px solid rgba(22, 53, 113, 0.12);
-  padding: 0.35rem;
-  background-color: #faf7ef;
-}
-
-.categoryDDItem {
-  border-radius: 12px;
-  padding: 0.7rem 0.85rem;
-  color: #4f4f4f;
-  font-weight: 500;
-}
-
-.categoryDDItem i {
-  color: #9aa4bf;
-}
-
-.categoryDDItem:hover {
-  background: #eef4ff;
-  color: #163571;
-}
-
-.categoryDDItem:hover i {
-  color: #163571;
-}
-
-.categoryDDItem.active {
-  background: #1b4297;
-  color: #ffffff;
-}
-
-.categoryDDItem.active i {
-  color: #ffffff;
-}
-
-/* Mobile: hide sidebar */
-@media (max-width: 991px) {
-  .faqSidebar {
-    display: none;
   }
 }

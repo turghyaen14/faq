@@ -20,11 +20,19 @@
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Gloock&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
       rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
     />
     <link
       rel="stylesheet"
@@ -35,120 +43,117 @@
     />
 
     <script src="script.js"></script>
+  </head>
 
-    <style>
-      /* ===========================
+  <style>
+    /* ===========================
       4) UNIVERSAL FAQ SPECIAL CARD
     =========================== */
 
-      .faqContentListWrapper.grid-view {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-      .customFaqContentListContainer {
-        background-color: #eef4ff;
-      }
+    .customFaqContentListContainer {
+      background-color: #eef4ff;
+    }
 
-      /* Keep it consistent with global card sizing/spacing */
-      .faqContentListWrapper .customFaqContentListContainer {
-        display: flex;
-        flex-direction: column;
-        align-items: start;
-        height: 100%;
-        justify-content: flex-start;
-        column-gap: 1rem;
-        gap: 0.5rem;
-        padding: 1rem 1.25rem;
-        border-radius: 25px;
-        cursor: pointer;
-        overflow: hidden;
-        transition: transform 0.25s ease, box-shadow 0.25s ease,
-          background-color 0.25s ease;
-      }
+    /* Keep it consistent with global card sizing/spacing */
+    .faqContentListWrapper .customFaqContentListContainer {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      height: 100%;
+      justify-content: flex-start;
+      column-gap: 1rem;
+      gap: 0.5rem;
+      padding: 1rem 1.25rem;
+      border-radius: 25px;
+      cursor: pointer;
+      overflow: hidden;
+      transition: transform 0.25s ease, box-shadow 0.25s ease,
+        background-color 0.25s ease;
+    }
 
-      .iconTextWrapper {
-        display: flex;
-        flex-direction: row;
-        gap: 1rem;
-        align-items: center;
-        justify-content: flex-start;
-      }
+    .iconTextWrapper {
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+      align-items: center;
+      justify-content: flex-start;
+    }
 
-      .customTextWrapper {
-        display: flex;
-        flex-direction: column-reverse;
-        align-items: flex-start;
-        justify-content: center;
-      }
+    .customTextWrapper {
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: flex-start;
+      justify-content: center;
+    }
 
-      .faqIcon {
-        width: 2rem;
-        height: auto;
-        color: #1b4297;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      /* =====================================
+    .faqIcon {
+      width: 2rem;
+      height: auto;
+      color: #1b4297;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    /* =====================================
         searchedQuery.css
         Page-specific overrides only.
         Depends on style.css for shared styles.
       ===================================== */
 
-      /* Parent -> children */
+    /* Parent -> children */
 
-      /* Results list */
-      .faqContentListWrapper .faqContentListContainer {
-        cursor: default; /* searched results cards aren't expandable/clickable as a whole */
-      }
+    /* Results list */
+    .faqContentListWrapper .faqContentListContainer {
+      cursor: default; /* searched results cards aren't expandable/clickable as a whole */
+    }
 
-      /* Tags: "+ N" */
-      /* .faqContentListWrapper .companyTagsWrapper .tagContainer.moreTag {
+    /* Tags: "+ N" */
+    /* .faqContentListWrapper .companyTagsWrapper .tagContainer.moreTag {
         opacity: 0.75;
         border-style: dashed;
       } */
 
-      /* Responsive (keep overrides at the end) */
-      @media screen and (max-width: 768px) {
-        .faqContentListWrapper .faqContentListContainer {
-          align-items: flex-start !important;
-        }
-
-        .faqContentListWrapper .companyTagsWrapper {
-          align-items: center !important;
-          justify-content: start !important;
-        }
+    /* Responsive (keep overrides at the end) */
+    @media screen and (max-width: 768px) {
+      .faqContentListWrapper .faqContentListContainer {
+        align-items: flex-start !important;
       }
 
-      @media screen and (max-width: 768px) {
-        .companyTagsWrapper {
-          display: none;
-        }
+      .faqContentListWrapper .companyTagsWrapper {
+        align-items: center !important;
+        justify-content: start !important;
       }
+    }
 
-      .searchedQueryWrapper {
-        display: flex;
-        font-size: 1.25rem;
-        width: 100%;
-        justify-content: flex-start;
-        align-items: baseline;
+    @media screen and (max-width: 768px) {
+      .companyTagsWrapper {
+        display: none;
       }
+    }
 
-      .totalResultText {
-        font-weight: 300;
-        font-style: italic;
-        font-size: 0.8rem;
-        color: #3b3b3b;
-      }
+    .searchedQueryWrapper {
+      display: flex;
+      font-size: 1.25rem;
+      width: 100%;
+      justify-content: flex-start;
+      align-items: baseline;
+    }
 
-      .queryText {
-        font-size: 1rem;
-        font-weight: 700;
-        margin-left: 0.5rem;
-        font-style: italic;
-        color: #3b3b3b;
-      }
-    </style>
-  </head>
+    .totalResultText {
+      font-weight: 300;
+      font-style: italic;
+      font-size: 0.8rem;
+      color: #3b3b3b;
+    }
+
+    .queryText {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-left: 0.5rem;
+      font-style: italic;
+      color: #3b3b3b;
+    }
+  </style>
 
   <body class="customBg">
     <button id="scrollToTopBtn" aria-label="Scroll to top">
@@ -186,7 +191,7 @@
 
               <div class="collapse navbar-collapse" id="navbarScroll">
                 <ul
-                  class="navbar-nav gap-3 me-auto my-2 my-lg-0 navbar-nav-scroll"
+                  class="navbar-nav gap-4 me-auto my-2 my-lg-0 navbar-nav-scroll"
                   style="--bs-scroll-height: 100px"
                 >
                   <li class="nav-item">
@@ -234,7 +239,7 @@
     </div>
 
     <div class="primaryContainer">
-      <div class="faqContentContainer container gap-3">
+      <div class="faqContentContainer container gap-4">
         <div
           class="d-flex align-items-end justify-content-between w-100 container"
         >
@@ -297,9 +302,6 @@
                     <h2 class="faqHeader">
                       Is it better to invest in new or subsale property?
                     </h2>
-                    <div class="customCategoryBadgeContainer">
-                      <span class="customCategoryBadge">Technology</span>
-                    </div>
                   </div>
 
                   <div class="faqSub">
@@ -354,9 +356,6 @@
                     <h2 class="faqHeader">
                       Kimi No Nawa NawaNawa Nawa NawaNawaNawa ?
                     </h2>
-                    <div class="customCategoryBadgeContainer">
-                      <span class="customCategoryBadge">Technology</span>
-                    </div>
                   </div>
 
                   <div class="faqSub">
@@ -425,9 +424,6 @@
                     <h2 class="faqHeader">
                       What’s one habit that improves focus instantly?
                     </h2>
-                    <div class="customCategoryBadgeContainer">
-                      <span class="customCategoryBadge">Technology</span>
-                    </div>
                   </div>
 
                   <div class="faqSub">
@@ -496,9 +492,6 @@
                     <h2 class="faqHeader">
                       Why do simple designs often feel more premium?
                     </h2>
-                    <div class="customCategoryBadgeContainer">
-                      <span class="customCategoryBadge">Technology</span>
-                    </div>
                   </div>
 
                   <div class="faqSub">

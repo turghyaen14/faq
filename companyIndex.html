@@ -25,6 +25,10 @@
       integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
       crossorigin="anonymous"
     ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -34,208 +38,189 @@
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
       integrity="sha512-h20CPMrzrerdqFqW1vvgkjz3Y5t15ScolN+ZIg4mpVABq8IknnP4a06f71Q2dbzWYHd8PSP7ZzkUvZ1sjYgCnw=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
     <script src="script.js"></script>
-    <style>
-      /* =====================================
-            companyIndex.css
-            Page-specific styles only.
-            Depends on style.css for global/shared.
-          ===================================== */
+  </head>
+  <style>
+    /* =====================================
+      companyIndex.css
+      Page-specific styles only.
+      Depends on style.css for global/shared.
+    ===================================== */
 
-      /* ===========================
-            1) COMPANY HEADER / PROFILE SECTION
-            (the block above the FAQ list)
-          =========================== */
+    /* ===========================
+      1) COMPANY HEADER / PROFILE SECTION
+      (the block above the FAQ list)
+    =========================== */
 
-      /* Scoped so it won't mess with list-card "companyDetailWrapper" usage elsewhere */
+    /* Scoped so it won't mess with list-card "companyDetailWrapper" usage elsewhere */
+    .tagLineWrapper .profileLogoWrapper {
+      width: 8.5rem;
+      height: 8.5rem;
+      border-radius: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      border: #bfd3ff 5px solid;
+    }
 
-      .categoryContainer {
-        width: fit-content;
-        height: fit-content;
-      }
+    .tagLineWrapper .profileLogo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+    }
 
-      .divider {
-        margin: 0rem;
-        content: "";
-        flex: 1;
-        height: 1px;
-        background: linear-gradient(to right, #7e84f100, #1b429767, #7e84f100);
-      }
-      .categoryHeader {
-        color: #1b4297;
-        line-height: 1.1;
-        font-family: "Gloock", serif;
-        letter-spacing: 0.1rem;
-      }
-      .faqContentListWrapper.grid-view .faqGridHeader {
-        grid-column: 1 / -1; /* spans full grid */
-      }
-      .tagLineWrapper .profileLogoWrapper {
-        width: 8.5rem;
-        height: 8.5rem;
-        border-radius: 25px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        overflow: hidden;
-        border: #bfd3ff 5px solid;
-      }
+    .tagLineWrapper .companyDetailWrapper {
+      background-color: #faf7ef;
+      padding: 1rem 1.25rem;
+      width: 35rem;
+      box-sizing: border-box;
 
-      .tagLineWrapper .profileLogo {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center center;
-      }
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
 
+      overflow-wrap: break-word;
+      justify-content: flex-start;
+      align-items: flex-start;
+      border-radius: 25px;
+    }
+
+    .tagLineWrapper .companyName {
+      font-size: 1.25rem;
+      font-weight: 700;
+      max-width: 20rem;
+    }
+
+    .tagLineWrapper .companyDesc {
+      font-size: 1rem;
+      color: #4f4f4f;
+      font-weight: 300;
+      width: 30rem;
+      margin: 0;
+    }
+
+    .tagLineWrapper .iconWrapper {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 1rem;
+      color: #1b4297;
+      width: fit-content;
+    }
+
+    .tagLineWrapper .emailIcon {
+      font-size: 1.25rem;
+    }
+
+    .tagLineWrapper .textContainer {
+      font-size: 1.25rem;
+    }
+
+    .tagLineWrapper .ctaWrapper {
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+      align-items: flex-start;
+      justify-content: center;
+    }
+
+    .tagLineWrapper .ctaToSite {
+      font-size: 1rem;
+      text-decoration: none;
+      background-color: #163571;
+      color: #ffffff;
+      border-radius: 12px;
+      padding: 0.5rem 1rem;
+    }
+
+    .tagLineWrapper .ctaToSiteSec {
+      font-size: 1rem;
+      text-decoration: none;
+      background-color: transparent;
+      border: 2px solid #163571;
+      color: #163571;
+      border-radius: 12px;
+      padding: 0.5rem 1rem;
+    }
+
+    @media screen and (max-width: 992px) {
       .tagLineWrapper .companyDetailWrapper {
-        background-color: #faf7ef;
-        padding: 1rem 1.25rem;
-        width: 35rem;
-        box-sizing: border-box;
-
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-
-        overflow-wrap: break-word;
-        justify-content: flex-start;
-        align-items: flex-start;
-        border-radius: 25px;
-      }
-
-      .tagLineWrapper .companyName {
-        font-size: 1.25rem;
-        font-weight: 700;
-        max-width: 20rem;
+        gap: 0.5rem !important;
+        align-items: center;
+        width: 100% !important;
       }
 
       .tagLineWrapper .companyDesc {
-        font-size: 1rem;
-        color: #4f4f4f;
-        font-weight: 300;
-        width: 30rem;
-        margin: 0;
+        width: auto !important;
       }
+    }
 
-      .tagLineWrapper .iconWrapper {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 1rem;
-        color: #1b4297;
-        width: fit-content;
-      }
+    .resultCard .faqContentHeaderContainer {
+      min-height: 50px !important;
+    }
+    /* ===========================
+      4) UNIVERSAL FAQ SPECIAL CARD
+    =========================== */
 
-      .tagLineWrapper .emailIcon {
-        font-size: 1rem;
-      }
+    .customFaqContentListContainer {
+      background-color: #eef4ff;
+      background-color: #eef4ff;
+      position: relative;
+      padding-top: 3.25rem;
+      overflow: visible;
+    }
 
-      .tagLineWrapper .textContainer {
-        font-size: 1rem;
-      }
+    /* Keep it consistent with global card sizing/spacing */
+    .faqContentListWrapper .customFaqContentListContainer {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      height: fit-content;
+      justify-content: flex-start;
+      column-gap: 1rem;
+      gap: 0.5rem;
+      padding: 1rem 1.25rem;
+      border-radius: 25px;
+      cursor: pointer;
+      overflow: hidden;
+      transition: transform 0.25s ease, box-shadow 0.25s ease,
+        background-color 0.25s ease;
+    }
 
-      .tagLineWrapper .ctaWrapper {
-        display: flex;
-        flex-direction: row;
-        gap: 1rem;
-        align-items: flex-start;
-        justify-content: center;
-      }
+    .iconTextWrapper {
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+      align-items: center;
+      justify-content: flex-start;
+    }
 
-      .tagLineWrapper .ctaToSite {
-        font-size: 1rem;
-        text-decoration: none;
-        background-color: #163571;
-        color: #ffffff;
-        border-radius: 12px;
-        padding: 0.5rem 1rem;
-      }
+    .customTextWrapper {
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: flex-start;
+      justify-content: center;
+    }
 
-      .tagLineWrapper .ctaToSiteSec {
-        font-size: 1rem;
-        text-decoration: none;
-        background-color: transparent;
-        border: 2px solid #163571;
-        color: #163571;
-        border-radius: 12px;
-        padding: 0.5rem 1rem;
-      }
-
-      @media screen and (max-width: 992px) {
-        .tagLineWrapper .companyDetailWrapper {
-          gap: 1rem !important;
-          align-items: start;
-          width: 100% !important;
-        }
-
-        .tagLineWrapper .companyDesc {
-          width: auto !important;
-        }
-      }
-
-      .resultCard .faqContentHeaderContainer {
-        min-height: 50px !important;
-      }
-      /* ===========================
-            4) UNIVERSAL FAQ SPECIAL CARD
-          =========================== */
-
-      .customFaqContentListContainer {
-        background-color: #eef4ff;
-        background-color: #eef4ff;
-        position: relative;
-        padding-top: 3.25rem;
-        overflow: visible;
-      }
-
-      /* Keep it consistent with global card sizing/spacing */
-      .faqContentListWrapper .customFaqContentListContainer {
-        display: flex;
-        flex-direction: column;
-        align-items: start;
-        height: fit-content;
-        justify-content: flex-start;
-        column-gap: 1rem;
-        gap: 0.5rem;
-        padding: 1rem 1.25rem;
-        border-radius: 25px;
-        cursor: pointer;
-        overflow: hidden;
-        transition: transform 0.25s ease, box-shadow 0.25s ease,
-          background-color 0.25s ease;
-      }
-
-      .iconTextWrapper {
-        display: flex;
-        flex-direction: row;
-        gap: 1rem;
-        align-items: center;
-        justify-content: flex-start;
-      }
-
-      .customTextWrapper {
-        display: flex;
-        flex-direction: column-reverse;
-        align-items: flex-start;
-        justify-content: center;
-      }
-
-      .faqIcon {
-        width: 2rem;
-        height: auto;
-        color: #1b4297;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-    </style>
-  </head>
-
+    .faqIcon {
+      width: 2rem;
+      height: auto;
+      color: #1b4297;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
   <body class="customBg">
     <button id="scrollToTopBtn" aria-label="Scroll to top">
       <i class="bi bi-arrow-up"></i>
@@ -268,7 +253,7 @@
               </button>
               <div class="collapse navbar-collapse" id="navbarScroll">
                 <ul
-                  class="navbar-nav gap-3 me-auto my-2 my-lg-0 navbar-nav-scroll"
+                  class="navbar-nav gap-4 me-auto my-2 my-lg-0 navbar-nav-scroll"
                   style="--bs-scroll-height: 100px"
                 >
                   <li class="nav-item">
@@ -352,20 +337,6 @@
                       <i class="bi bi-telephone emailIcon"></i>
                       <span class="textContainer"> +6010-824 7333 </span>
                     </div>
-                    <div class="iconWrapper">
-                      <i class="bi bi-geo-alt emailIcon"></i>
-                      <div
-                        class="d-flex flex-column align-items-start justify-content-start gap-3"
-                      >
-                        <a
-                          class="textContainer text-decoration-none"
-                          style="color: #1b4297"
-                        >
-                          83, Jalan Flora 1/9, Taman Pulai Flora, 81300 Skudai,
-                          Johor Darul Ta'zim
-                        </a>
-                      </div>
-                    </div>
                   </div>
                   <div class="ctaWrapper">
                     <a class="ctaToSite shadow-sm" href="#companySite"
@@ -384,407 +355,257 @@
     </div>
 
     <div class="primaryContainer">
-      <div class="container">
-        <!-- ✅ Mobile category dropdown -->
-        <div class="d-lg-none mb-3">
-          <div class="dropdown w-100">
-            <button
-              class="btn categoryDropdownBtn dropdown-toggle w-100 shadowSm"
-              type="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              <span id="mobileCategoryLabel">All Topics</span>
-            </button>
+      <div class="faqContentContainer container">
+        <div class="align-items-end justify-content-end w-100 d-none d-lg-flex">
+          <div class="tabWrapper">
+            <div class="tabContainer" id="gridViewTab">
+              <span><i class="bi bi-grid faSize"></i></span>
+              <span> Grid View </span>
+            </div>
+            <div class="tabContainer selectedTabContainer" id="listViewTab">
+              <span><i class="bi bi-list-ul faSize"></i></span>
+              <span> List View </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="faqContentListWrapper container list-view">
+        <div
+          class="faqContentListContainer resultCard shadowSm is-collapsed"
+          data-id="0"
+        >
+          <div class="faqContentHeaderWrapper">
+            <!-- Header row -->
+            <div class="faqContentHeaderContainer">
+              <div class="faqCompanyWrapper">
+                <div class="companyLogoWrapper">
+                  <img
+                    src="https://cdn1.npcdn.net/images/"
+                    class="companyLogo"
+                    alt="Is it better to invest in new or subsale property?"
+                  />
+                </div>
 
-            <ul class="dropdown-menu w-100 categoryDropdownMenu shadowSm">
-              <li>
-                <a
-                  class="dropdown-item categoryDDItem active"
-                  href="#all"
-                  data-label="All Topics"
-                >
-                  All Topics
-                </a>
-              </li>
-              <li>
-                <a
-                  class="dropdown-item categoryDDItem"
-                  href="#technology"
-                  data-label="Technology"
-                >
-                  Technology
-                </a>
-              </li>
-              <li>
-                <a
-                  class="dropdown-item categoryDDItem"
-                  href="#health"
-                  data-label="Health"
-                >
-                  Health
-                </a>
-              </li>
-              <li>
-                <a
-                  class="dropdown-item categoryDDItem"
-                  href="#finance"
-                  data-label="Finance"
-                >
-                  Finance
-                </a>
-              </li>
-              <li>
-                <a
-                  class="dropdown-item categoryDDItem"
-                  href="#lifestyle"
-                  data-label="Lifestyle"
-                >
-                  Lifestyle
-                </a>
-              </li>
-              <li>
-                <a
-                  class="dropdown-item categoryDDItem"
-                  href="#real-estate"
-                  data-label="Real Estate"
-                >
-                  Real Estate
-                </a>
-              </li>
-              <li>
-                <a
-                  class="dropdown-item categoryDDItem"
-                  href="#design"
-                  data-label="Design"
-                >
-                  Design
-                </a>
-              </li>
-            </ul>
+                <div class="companyDetailWrapper">
+                  <span class="companyTitle inter-light"> </span>
+                  <span class="companyUrl"> </span>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Content + actions row -->
+            <div class="cardContentRow">
+              <div class="faqContentBodyContainer">
+                <div class="contentHeaderContainer">
+                  <h2 class="faqHeader">
+                    Is it better to invest in new or subsale property?
+                  </h2>
+                </div>
+
+                <div class="faqSub">
+                  New properties may offer modern designs, incentives, and lower
+                  maintenance, while subsale properties provide clearer rental
+                  history and immediate occupancy. The best choice depends on
+                  budget, timeline, and investment strategy.
+                </div>
+              </div>
+
+              <div class="cardActionsRow">
+                <div class="faqContentIcon">
+                  <button
+                    class="viewBtn shadowSm"
+                    onclick="window.open('', '_blank')"
+                  >
+                    <span class="viewBtnText">View</span>
+                    <i class="bi bi-arrow-up-right-square"></i>
+                  </button>
+
+                  <button type="button" class="viewMoreBtn viewMore">
+                    <i class="bi bi-plus-lg"></i>
+                  </button>
+
+                  <button type="button" class="viewMoreBtn viewLess">
+                    <i class="bi bi-dash-lg"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="row">
-          <div class="col-lg-3 d-lg-block d-md-none">
-            <div class="faqSidebar shadowSm">
-              <span class="sidebarTitle inter-semibold">CATEGORIES</span>
+        <div
+          class="customFaqContentListContainer resultCard shadowSm is-collapsed"
+          data-id="uni-1frm"
+        >
+          <div class="faqContentHeaderWrapper">
+            <div class="faqContentHeaderContainer">
+              <div class="iconTextWrapper">
+                <i class="bi bi-chat-dots faqIcon"></i>
+                <div class="customTextWrapper">
+                  <span class="customtext">Most Asked Question</span>
+                  <span class="customtext">Answered By Universal FAQ</span>
+                </div>
+              </div>
+            </div>
 
-              <a href="#all" class="sidebarItem active">
-                <span>All Topics</span>
-              </a>
+            <div class="cardContentRow">
+              <div class="faqContentBodyContainer">
+                <div class="contentHeaderContainer">
+                  <h2 class="faqHeader">
+                    Kimi No Nawa NawaNawa Nawa NawaNawaNawa ?
+                  </h2>
+                </div>
 
-              <a href="#technology" class="sidebarItem">
-                <span>Technology</span>
-              </a>
+                <div class="faqSub">
+                  26 Mar 2025 — In this article, let's dive into how to create a
+                  good site search UI and get inspiration from 
+                </div>
+              </div>
 
-              <a href="#health" class="sidebarItem">
-                <span>Health</span>
-              </a>
+              <div class="cardActionsRow">
+                <div class="faqContentIcon">
+                  <button
+                    class="viewBtn shadowSm"
+                    onclick="window.open('https://getbootstrap.com/docs/5.3/utilities/spacing/', '_blank')"
+                  >
+                    <span class="viewBtnText">View</span>
+                    <i class="bi bi-arrow-up-right-square"></i>
+                  </button>
 
-              <a href="#finance" class="sidebarItem">
-                <span>Finance</span>
-              </a>
+                  <button type="button" class="viewMoreBtn viewMore">
+                    <i class="bi bi-plus-lg"></i>
+                  </button>
 
-              <a href="#lifestyle" class="sidebarItem">
-                <span>Lifestyle</span>
-              </a>
-
-              <a href="#real-estate" class="sidebarItem">
-                <span>Real Estate</span>
-              </a>
-
-              <a href="#design" class="sidebarItem">
-                <span>Design</span>
-              </a>
+                  <button type="button" class="viewMoreBtn viewLess">
+                    <i class="bi bi-dash-lg"></i>
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="col-lg-9 col-md-12 col-sm-12">
-            <div class="faqContentListWrapper list-view pt-0 mt-0">
-              <div class="faqContentContainer container faqGridHeader">
-                <div
-                  class="tabContainer align-items-end justify-content-between w-100 d-flex"
-                >
-                  <div class="categoryContainer">
-                    <h4 class="categoryHeader" id="technology">Technology</h4>
-                    <div class="divider"></div>
-                  </div>
-                  <div class="tabWrapper d-none d-lg-flex">
-                    <div class="align-items-end justify-content-between">
-                      <div class="tabContainer" id="gridViewTab">
-                        <span><i class="bi bi-grid faSize"></i></span>
-                        <span> Grid View </span>
-                      </div>
-                    </div>
-                    <div
-                      class="tabContainer selectedTabContainer"
-                      id="listViewTab"
-                    >
-                      <span><i class="bi bi-list-ul faSize"></i></span>
-                      <span> List View </span>
-                    </div>
-                  </div>
+        </div>
+
+        <div
+          class="faqContentListContainer resultCard shadowSm is-collapsed"
+          data-id="2"
+        >
+          <div class="faqContentHeaderWrapper">
+            <div class="faqContentHeaderContainer">
+              <div class="faqCompanyWrapper">
+                <div class="companyLogoWrapper">
+                  <img
+                    src="https://media.istockphoto.com/id/814423752/photo/eye-of-model-with-colorful-art-make-up-close-up.jpg?s=612x612&w=0&k=20&c=l15OdMWjgCKycMMShP8UK94ELVlEGvt7GmB_esHWPYE="
+                    class="companyLogo"
+                    alt="What’s one habit that improves focus instantly?"
+                  />
                 </div>
-              </div>
-              <div
-                class="faqContentListContainer resultCard shadowSm is-collapsed"
-                data-id="0"
-              >
-                <div class="faqContentHeaderWrapper">
-                  <!-- Header row -->
-                  <div class="faqContentHeaderContainer">
-                    <div class="faqCompanyWrapper">
-                      <div class="companyLogoWrapper">
-                        <img
-                          src="https://cdn1.npcdn.net/images/"
-                          class="companyLogo"
-                          alt="Is it better to invest in new or subsale property?"
-                        />
-                      </div>
 
-                      <div class="companyDetailWrapper">
-                        <span class="companyTitle inter-light"
-                          >Traditional Chinese Healthcare
-                        </span>
-                        <span class="companyUrl">https://sia-tcm.com </span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Content + actions row -->
-                  <div class="cardContentRow">
-                    <div class="faqContentBodyContainer">
-                      <div class="contentHeaderContainer">
-                        <h2 class="faqHeader">
-                          Is it better to invest in new or subsale property?
-                        </h2>
-                      </div>
-
-                      <div class="faqSub">
-                        New properties may offer modern designs, incentives, and
-                        lower maintenance, while subsale properties provide
-                        clearer rental history and immediate occupancy. The best
-                        choice depends on budget, timeline, and investment
-                        strategy.
-                      </div>
-                    </div>
-
-                    <div class="cardActionsRow">
-                      <div class="faqContentIcon">
-                        <button
-                          class="viewBtn shadowSm"
-                          onclick="window.open('', '_blank')"
-                        >
-                          <span class="viewBtnText">View</span>
-                          <i class="bi bi-arrow-up-right-square"></i>
-                        </button>
-
-                        <button type="button" class="viewMoreBtn viewMore">
-                          <i class="bi bi-plus-lg"></i>
-                        </button>
-
-                        <button type="button" class="viewMoreBtn viewLess">
-                          <i class="bi bi-dash-lg"></i>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
+                <div class="companyDetailWrapper">
+                  <span class="companyTitle inter-light"
+                    >Design Inspiration</span
+                  >
+                  <span class="companyUrl">https://dribbble.com</span>
                 </div>
               </div>
 
-              <div
-                class="customFaqContentListContainer resultCard shadowSm is-collapsed"
-                data-id="uni-1frm"
-              >
-                <div class="faqContentHeaderWrapper">
-                  <div class="faqContentHeaderContainer">
-                    <div class="iconTextWrapper">
-                      <i class="bi bi-chat-dots faqIcon"></i>
-                      <div class="customTextWrapper">
-                        <span class="customtext">Most Asked Question</span>
-                        <span class="customtext"
-                          >Answered By Universal FAQ</span
-                        >
-                      </div>
-                    </div>
-                  </div>
+            </div>
 
-                  <div class="cardContentRow">
-                    <div class="faqContentBodyContainer">
-                      <div class="contentHeaderContainer">
-                        <h2 class="faqHeader">
-                          Is it better to invest in new or subsale property? Is
-                          it better to invest in new or subsale property? Is it
-                          better to invest in new or subsale property? Is it
-                          better to invest in new or subsale property? Is it
-                          better to invest in new or subsale property? Is it
-                          better to invest in new or subsale property? Is it
-                          better to invest in new or subsale property? Is it
-                          better to invest in new or subsale property? Is it
-                          better to invest in new or subsale property? Is it
-                          better to invest in new or subsale property? Is it
-                          better to invest in new or subsale property? Is it
-                          better to invest in new or subsale property? Is it
-                          better to invest in new or subsale property? Is it
-                          better to invest in new or subsale property? Is it
-                          better to invest in new or subsale property? Is it
-                          better to invest in new or subsale property? Is it
-                          better to invest in new or subsale property? Is it
-                          better to invest in new or subsale property?
-                        </h2>
-                      </div>
+            <div class="cardContentRow">
+              <div class="faqContentBodyContainer">
+                <div class="contentHeaderContainer">
+                  <h2 class="faqHeader">
+                    What’s one habit that improves focus instantly?
+                  </h2>
+                </div>
 
-                      <div class="faqSub">
-                        26 Mar 2025 — In this article, let's dive into how to
-                        create a good site search UI and get inspiration from
-                      </div>
-                    </div>
-
-                    <div class="cardActionsRow">
-                      <div class="faqContentIcon">
-                        <button
-                          class="viewBtn shadowSm"
-                          onclick="window.open('https://getbootstrap.com/docs/5.3/utilities/spacing/', '_blank')"
-                        >
-                          <span class="viewBtnText">View</span>
-                          <i class="bi bi-arrow-up-right-square"></i>
-                        </button>
-
-                        <button type="button" class="viewMoreBtn viewMore">
-                          <i class="bi bi-plus-lg"></i>
-                        </button>
-
-                        <button type="button" class="viewMoreBtn viewLess">
-                          <i class="bi bi-dash-lg"></i>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
+                <div class="faqSub">
+                  Removing just one distraction (like notifications) works
+                  better than trying to add productivity hacks.
                 </div>
               </div>
 
-              <div
-                class="faqContentListContainer resultCard shadowSm is-collapsed"
-                data-id="0"
-              >
-                <div class="faqContentHeaderWrapper">
-                  <!-- Header row -->
-                  <div class="faqContentHeaderContainer">
-                    <div class="faqCompanyWrapper">
-                      <div class="companyLogoWrapper">
-                        <img
-                          src="https://cdn1.npcdn.net/images/"
-                          class="companyLogo"
-                          alt="Is it better to invest in new or subsale property?"
-                        />
-                      </div>
+              <div class="cardActionsRow">
+                <div class="faqContentIcon">
+                  <button
+                    class="viewBtn shadowSm"
+                    onclick="window.open('https://dribbble.com', '_blank')"
+                  >
+                    <span class="viewBtnText">View</span>
+                    <i class="bi bi-arrow-up-right-square"></i>
+                  </button>
 
-                      <div class="companyDetailWrapper">
-                        <span class="companyTitle inter-light"
-                          >Traditional Chinese Healthcare
-                        </span>
-                        <span class="companyUrl">https://sia-tcm.com </span>
-                      </div>
-                    </div>
-                  </div>
+                  <button type="button" class="viewMoreBtn viewMore">
+                    <i class="bi bi-plus-lg"></i>
+                  </button>
 
-                  <!-- Content + actions row -->
-                  <div class="cardContentRow">
-                    <div class="faqContentBodyContainer">
-                      <div class="contentHeaderContainer">
-                        <h2 class="faqHeader">
-                          Is it better to invest in new or subsale property? Is
-                          it better to invest in new or subsale property? Is it
-                          better to invest in new or subsale property? Is it
-                          better to invest in new or subsale property? Is it
-                          better to invest in new or subsale property? Is it
-                          better to invest in new or subsale property?
-                        </h2>
-                      </div>
+                  <button type="button" class="viewMoreBtn viewLess">
+                    <i class="bi bi-dash-lg"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-                      <div class="faqSub">
-                        New properties may offer modern designs, incentives, and
-                        lower maintenance, while subsale properties provide
-                        clearer rental history and immediate occupancy. The best
-                        choice depends on budget, timeline, and investment
-                        strategy.
-                      </div>
-                    </div>
+        <div
+          class="faqContentListContainer resultCard shadowSm is-collapsed"
+          data-id="3"
+        >
+          <div class="faqContentHeaderWrapper">
+            <div class="faqContentHeaderContainer">
+              <div class="faqCompanyWrapper">
+                <div class="companyLogoWrapper">
+                  <img
+                    src="https://media.istockphoto.com/id/814423752/photo/eye-of-model-with-colorful-art-make-up-close-up.jpg?s=612x612&w=0&k=20&c=l15OdMWjgCKycMMShP8UK94ELVlEGvt7GmB_esHWPYE="
+                    class="companyLogo"
+                    alt="Why do simple designs often feel more premium?"
+                  />
+                </div>
 
-                    <div class="cardActionsRow">
-                      <div class="faqContentIcon">
-                        <button
-                          class="viewBtn shadowSm"
-                          onclick="window.open('', '_blank')"
-                        >
-                          <span class="viewBtnText">View</span>
-                          <i class="bi bi-arrow-up-right-square"></i>
-                        </button>
-
-                        <button type="button" class="viewMoreBtn viewMore">
-                          <i class="bi bi-plus-lg"></i>
-                        </button>
-
-                        <button type="button" class="viewMoreBtn viewLess">
-                          <i class="bi bi-dash-lg"></i>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
+                <div class="companyDetailWrapper">
+                  <span class="companyTitle inter-light">
+                    Collaborative Interface Design Tool
+                  </span>
+                  <span class="companyUrl">https://figma.com</span>
                 </div>
               </div>
 
-              <div
-                class="customFaqContentListContainer resultCard shadowSm is-collapsed"
-                data-id="uni-1frm"
-              >
-                <div class="faqContentHeaderWrapper">
-                  <div class="faqContentHeaderContainer">
-                    <div class="iconTextWrapper">
-                      <i class="bi bi-chat-dots faqIcon"></i>
-                      <div class="customTextWrapper">
-                        <span class="customtext">Most Asked Question</span>
-                        <span class="customtext"
-                          >Answered By Universal FAQ</span
-                        >
-                      </div>
-                    </div>
-                  </div>
 
-                  <div class="cardContentRow">
-                    <div class="faqContentBodyContainer">
-                      <div class="contentHeaderContainer">
-                        <h2 class="faqHeader">
-                          Kimi No Nawa NawaNawa Nawa NawaNawaNawa ?
-                        </h2>
-                      </div>
+            </div>
 
-                      <div class="faqSub">
-                        26 Mar 2025 — In this article, let's dive into how to
-                        create a good site search UI and get inspiration from
-                      </div>
-                    </div>
+            <div class="cardContentRow">
+              <div class="faqContentBodyContainer">
+                <div class="contentHeaderContainer">
+                  <h2 class="faqHeader">
+                    Why do simple designs often feel more premium?
+                  </h2>
+                </div>
 
-                    <div class="cardActionsRow">
-                      <div class="faqContentIcon">
-                        <button
-                          class="viewBtn shadowSm"
-                          onclick="window.open('https://getbootstrap.com/docs/5.3/utilities/spacing/', '_blank')"
-                        >
-                          <span class="viewBtnText">View</span>
-                          <i class="bi bi-arrow-up-right-square"></i>
-                        </button>
+                <div class="faqSub">
+                  Because simplicity reduces cognitive load—fewer elements means
+                  clearer hierarchy, stronger whitespace, and a more intentional
+                  feel that reads “premium” faster.
+                </div>
+              </div>
 
-                        <button type="button" class="viewMoreBtn viewMore">
-                          <i class="bi bi-plus-lg"></i>
-                        </button>
+              <div class="cardActionsRow">
+                <div class="faqContentIcon">
+                  <button
+                    class="viewBtn shadowSm"
+                    onclick="window.open('https://figma.com', '_blank')"
+                  >
+                    <span class="viewBtnText">View</span>
+                    <i class="bi bi-arrow-up-right-square"></i>
+                  </button>
 
-                        <button type="button" class="viewMoreBtn viewLess">
-                          <i class="bi bi-dash-lg"></i>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
+                  <button type="button" class="viewMoreBtn viewMore">
+                    <i class="bi bi-plus-lg"></i>
+                  </button>
+
+                  <button type="button" class="viewMoreBtn viewLess">
+                    <i class="bi bi-dash-lg"></i>
+                  </button>
                 </div>
               </div>
             </div>
@@ -792,6 +613,7 @@
         </div>
       </div>
     </div>
+
     <footer>
       <div class="footerWrapper container-lg">
         <div class="footerContainer container gloock-regular">
