@@ -34,6 +34,8 @@ function initFaqToggle() {
 
     const plusBtn = card.querySelector(".viewMoreBtn.viewMore");
     const minusBtn = card.querySelector(".viewMoreBtn.viewLess");
+    const mblPlusBtn = card.querySelector(".mblViewWrapper.mblViewMore");
+    const mblMinusBtn = card.querySelector(".mblViewWrapper.mblViewLess");
 
     // initial state
     card.classList.add("is-collapsed");
@@ -44,6 +46,10 @@ function initFaqToggle() {
       if (plusBtn) plusBtn.style.display = isExpanded ? "none" : "inline-flex";
       if (minusBtn)
         minusBtn.style.display = isExpanded ? "inline-flex" : "none";
+      if (mblPlusBtn)
+        mblPlusBtn.style.display = isExpanded ? "none" : "inline-flex";
+      if (mblMinusBtn)
+        mblMinusBtn.style.display = isExpanded ? "inline-flex" : "none";
     }
 
     function expand() {
@@ -69,7 +75,7 @@ function initFaqToggle() {
       else collapse();
     });
 
-    if (plusBtn) {
+    if (plusBtn || mblPlusBtn) {
       plusBtn.addEventListener("click", (e) => {
         e.preventDefault();
         e.stopPropagation();
@@ -77,7 +83,7 @@ function initFaqToggle() {
       });
     }
 
-    if (minusBtn) {
+    if (minusBtn || mblMinusBtn) {
       minusBtn.addEventListener("click", (e) => {
         e.preventDefault();
         e.stopPropagation();

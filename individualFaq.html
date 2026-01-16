@@ -64,6 +64,7 @@
 
       /* IMPORTANT: override global ".faqContentListWrapper .faqContentListContainer" */
       .faqContentListWrapper .faqContentListContainer {
+        padding: 2rem;
         width: 100%;
         display: flex;
         flex-direction: column; /* ✅ stops the squeeze */
@@ -82,7 +83,7 @@
 
       .contentHeaderContainer {
         display: flex;
-        flex-direction: row;
+        flex-direction: column-reverse;
         justify-content: space-between;
       }
 
@@ -91,6 +92,8 @@
         font-weight: 700;
         margin: 0;
         min-height: unset;
+        display: block !important;
+        overflow: visible !important;
       }
 
       .faqSubs {
@@ -100,6 +103,7 @@
         line-height: 1.5;
         white-space: normal;
         word-break: break-word;
+        text-align: justify;
       }
 
       .customCategoryBadgeContainer {
@@ -127,6 +131,8 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        min-width: 4.5rem;
+        min-height: 4.5rem;
       }
 
       .profileLogo {
@@ -138,7 +144,7 @@
       .companyName {
         font-size: 1.25rem;
         font-weight: 400;
-        max-width: 20rem;
+        max-width: unset;
       }
 
       .iconWrapper {
@@ -163,7 +169,7 @@
         display: flex;
         flex-direction: row;
         gap: 1rem;
-        align-items: flex-start;
+        align-items: flex-end;
         justify-content: center;
       }
 
@@ -198,6 +204,13 @@
       }
 
       @media screen and (max-width: 450px) {
+        .faqContentListWrapper .faqContentListContainer {
+          padding: 1rem !important;
+        }
+        .contentHeaderContainer {
+          flex-direction: column-reverse;
+          justify-content: space-between;
+        }
         .ctaWrapper {
           flex-direction: column;
           width: 100%;
@@ -227,6 +240,7 @@
       .companyDesc {
         color: #4f4f4f;
         font-size: 1rem;
+        text-align: justify;
         margin: 0;
       }
 
@@ -333,10 +347,14 @@
                 data-id="${i}"
               >
                 <div class="faqContentHeaderWrapper">
-                  <div class="faqContentBodyContainer">
+                  <div class="faqContentBodyContainer p-0">
                     <div class="contentHeaderContainer">
                       <h2 class="faqHeader">
-                        Kimi No Nawa NawaNawa Nawa NawaNawaNawa ?
+                        Kimi No Nawa NawaNawa Nawa NawaNawaNawa ?  26 Mar 2025 — In this article, let's dive into how to create
+                    a good site search UI and get inspiration from 20 best
+                    search UI design examples.  26 Mar 2025 — In this article, let's dive into how to create
+                    a good site search UI and get inspiration from 20 best
+                    search UI design examples. 
                       </h2>
                       <div class="customCategoryBadgeContainer">
                         <span class="customCategoryBadge">Technology</span>
@@ -356,7 +374,7 @@
                   <div class="divider"></div>
                   <div class="companyDetailWrapper">
                     <div
-                      class="d-flex flex-column gap-3 align-items-start justify-content-center"
+                      class="d-flex flex-column gap-3 align-items-start justify-content-center w-100"
                     >
                       <div
                         class="d-flex flex-md-row flex-column gap-3 align-items-center justify-content-start"
