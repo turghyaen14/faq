@@ -12,31 +12,60 @@ class IndividualPageController extends BaseTemplateController
         $FOR_COMPANY_TAG_ARRAY = new TEMPLATE();
         $INDIVIDUALPAGE_TEMPLATE->getTemplate("view/individualFaq.html");
 
+        global $USE_DUMMY_DATA;
         $faq_id = $array['id'];
         $Faq = new Faq();
         $Company = new Company();
         $Article = new Article();
 
-        $faq_data = $Faq->getFaqDetailsByID($faq_id);
-        if (empty($faq_data['faq_question_en']) || $faq_data['faq_question_en'] == '') {
-            $this->redirectTo404();
+        $article_detail = $Article->getDetailByFaqId($faq_id);
+        $splash_image = $article_detail['splash_image'];
+
+        if ($USE_DUMMY_DATA) {
+            // Dummy article IDs don't exist as real ex_faq rows, so the real
+            // lookup below would 404 every time. While stubbed, source
+            // everything from the Article dummy instead (see docs/DATA_CONTRACT.md).
+            $ques = $article_detail['question'];
+            $answ = $article_detail['answer'];
+            $company_id = $article_detail['company']['company_id'];
+            $category_name = $article_detail['category'];
+            $company_name = $article_detail['company']['name'];
+            $company_name_check = Helper::slugifyCompanyName($company_name);
+            $company_desc = $article_detail['company']['description'];
+            $email_list = $article_detail['company']['emails'];
+            $company_logo_image = $article_detail['company']['logo'];
+            $company_website = $article_detail['company']['website'];
+            $company_address = $article_detail['company']['address'];
+            $tag_list = $article_detail['company']['tags'];
+            $company_area = '';
+            $mapUrl = $article_detail['company']['map_url'];
+        } else {
+            $faq_data = $Faq->getFaqDetailsByID($faq_id);
+            if (empty($faq_data['faq_question_en']) || $faq_data['faq_question_en'] == '') {
+                $this->redirectTo404();
+            }
+            $ques = $faq_data['faq_question_en'];
+            $answ = $faq_data['faq_answer_en'];
+            $company_id = $faq_data['company_id'];
+            $category_name = $faq_data['category_name'];
+            $company_data = $Company->getCompanyDetails($company_id);
+            $company_name = Helper::switchLang($company_data['company_name'], $company_data['company_name_cn'], $company_data['company_name_bm']);
+            $company_name_check = Helper::slugifyCompanyName($company_data['company_name']);
+            $company_desc = Helper::switchLang($company_data['shortservices'], $company_data['shortservices_cn'], $company_data['shortservices_bm']);
+            $company_email = $company_data['email'];
+            $email_list = array_map('trim', explode(',', $company_email));
+            $company_logo_image = $IMG_PATH . $company_data['logo'];
+            $company_website = $company_data['website'];
+            $company_address = $company_data['address'];
+            $company_tag = $company_data['pages_title'];
+            $tag_list = array_map('trim', explode(',', $company_tag));
+            $company_area = $company_data['area'];
+
+            $lat = $company_data['lat'];
+            $lng = $company_data['lng'];
+            $mapUrl = "https://www.google.com/maps/search/?api=1&query={$lat},{$lng}";
+            $company_address = Helper::iconvUtf8($company_address);
         }
-        $ques = $faq_data['faq_question_en'];
-        $answ = $faq_data['faq_answer_en'];
-        $company_id = $faq_data['company_id'];
-        $category_name = $faq_data['category_name'];
-        $company_data = $Company->getCompanyDetails($company_id);
-        $company_name = Helper::switchLang($company_data['company_name'], $company_data['company_name_cn'], $company_data['company_name_bm']);
-        $company_name_check = Helper::slugifyCompanyName($company_data['company_name']);
-        $company_desc = Helper::switchLang($company_data['shortservices'], $company_data['shortservices_cn'], $company_data['shortservices_bm']);
-        $company_email = $company_data['email'];
-        $email_list = array_map('trim', explode(',', $company_email));
-        $company_logo_image = $IMG_PATH . $company_data['logo'];
-        $company_website = $company_data['website'];
-        $company_address = $company_data['address'];
-        $company_tag = $company_data['pages_title'];
-        $tag_list = array_map('trim', explode(',', $company_tag));
-        $company_area = $company_data['area'];
 
         foreach ($email_list as $key => $email) {
             $FOR_EMAIL_ARRAY->renew("/{START_IF_MULTIPLE_EMAIL}(.+){END_IF_MULTIPLE_EMAIL}/s", $INDIVIDUALPAGE_TEMPLATE->content());
@@ -57,17 +86,8 @@ class IndividualPageController extends BaseTemplateController
             $all_tag_item .= $FOR_COMPANY_TAG_ARRAY->content();
         }
 
-        $lat = $company_data['lat'];
-        $lng = $company_data['lng'];
-
-        $mapUrl = "https://www.google.com/maps/search/?api=1&query={$lat},{$lng}";
-        $company_address = Helper::iconvUtf8($company_address);
-
         $ques = Helper::normalizeSentence($ques);
         $answ = Helper::normalizeSentence($answ);
-
-        $article_detail = $Article->getDetailByFaqId($faq_id);
-        $splash_image = $article_detail['splash_image'];
 
         $FOR_BODY_PARA = new TEMPLATE();
         $all_body_para_item = '';
