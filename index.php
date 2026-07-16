@@ -61,6 +61,10 @@ $routes = [
         'controller' => 'AboutUsPageController',
         'method' => 'displayAboutUsPage'
     ],
+    'blog' => [
+        'controller' => 'BlogPageController',
+        'method' => 'displayBlogPage'
+    ],
     'notfound404' => [
         'controller' => 'NotFound404PageController',
         'method' => 'displayNotFound404Page'

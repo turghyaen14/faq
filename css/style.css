@@ -1230,6 +1230,194 @@ box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px
   }
 }
 
+/* ===========================
+   HOME — HERO CARD + ARTICLES/FAQS COLUMNS
+   (enhancement: layout only, existing skin/tokens reused)
+=========================== */
+
+.homeHeroCard {
+  display: block;
+  background-color: #faf7ef;
+  border: 1px solid rgba(27, 66, 151, 0.12);
+  border-radius: 25px;
+  overflow: hidden;
+  padding: 2rem 2rem 0;
+  margin-bottom: 1.5rem;
+  text-decoration: none;
+}
+
+.homeHeroTitle {
+  color: #1b4297;
+  font-size: 2rem;
+  line-height: 1.25;
+  margin: 0 0 1.25rem;
+}
+
+.homeHeroImage {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  display: block;
+  border-radius: 15px 15px 0 0;
+}
+
+.homeMainRow {
+  margin-top: 0;
+}
+
+.homeColHeader {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.homeColTitle {
+  color: #1b4297;
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.homeViewAllLink {
+  font-size: 0.8rem;
+  color: #555b6b;
+  text-decoration: none;
+}
+
+.homeViewAllLink:hover {
+  color: #1b4297;
+}
+
+.homeArticlesGrid {
+  --bs-gutter-y: 1.5rem;
+}
+
+.articleCard {
+  display: block;
+  height: 100%;
+  background-color: #faf7ef;
+  border: 1px solid rgba(27, 66, 151, 0.12);
+  border-radius: 20px;
+  overflow: hidden;
+  padding: 1.25rem 1.25rem 0;
+  text-decoration: none;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.articleCard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.06);
+}
+
+.articleCardTitle {
+  color: #1b4297;
+  font-size: 1.15rem;
+  line-height: 1.35;
+  margin: 0 0 0.5rem;
+}
+
+.articleCardMeta {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #4f4f4f;
+  margin-bottom: 1rem;
+}
+
+.articleCardDot {
+  color: #c9c2ac;
+}
+
+.articleCardDate {
+  color: #828282;
+  text-transform: none;
+  font-weight: 400;
+}
+
+.articleCardImageWrapper {
+  width: 100%;
+  height: 150px;
+  background-color: rgba(27, 66, 151, 0.05);
+}
+
+.articleCardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.homeFaqList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.homeFaqItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: #faf7ef;
+  border: 1px solid rgba(27, 66, 151, 0.12);
+  border-radius: 12px;
+  padding: 0.75rem 0.9rem;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.homeFaqItem:hover {
+  background-color: #eef4ff;
+}
+
+.homeFaqItemText {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.homeFaqItemCompany {
+  font-size: 0.7rem;
+  color: #828282;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.homeFaqItemQuestion {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #1e2330;
+  line-height: 1.3;
+}
+
+.homeFaqItemIcon {
+  flex-shrink: 0;
+  color: #1b4297;
+}
+
+@media screen and (max-width: 768px) {
+  .homeHeroCard {
+    padding: 1.25rem 1.25rem 0;
+  }
+
+  .homeHeroTitle {
+    font-size: 1.5rem;
+  }
+
+  .homeHeroImage {
+    height: 200px;
+  }
+
+  .homeColHeader {
+    margin-bottom: 0.75rem;
+  }
+}
+
 /* 404 Error */
 
 .title {

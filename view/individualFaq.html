@@ -1,4 +1,7 @@
 <link rel="stylesheet" href="{RYANTEST_FAQ_PATH}/css/individualFaq.css" />
+<div class="articleSplashWrapper container">
+  <img src="{SPLASH_IMAGE}" class="articleSplashImage shadowSm" alt="{FAQ_QUESTION}" />
+</div>
 <div class="primaryContainer d-flex align-items-center justify-content-center py-4">
   <div class="container">
     <div class="row">
@@ -19,6 +22,12 @@
 
               <div class="faqSubs">
                 Answer: {FAQ_ANSWER}
+              </div>
+
+              <div class="articleBodyWrapper">
+                {START_BODY_PARA:00}
+                <p class="articleBodyPara">{BODY_PARAGRAPH}</p>
+                {END_BODY_PARA:00}
               </div>
             </div>
             <div class="col-lg-12 col-md-12 col-sm-12 my-3">
@@ -82,10 +91,17 @@
                   </div>
                   <div class="companyCardFooter">
                     <div class="ctaWrapper">
-                      <a class="ctaToSite shadow-sm" href="{FAQ_COMPANY_PAGE}">View this company’s FAQs</a>
-                      <a class="ctaToSiteSec shadow-sm" href="{COMPANY_WEBSITE}">Visit Official Website</a>
-                      <a class="ctaToSiteSec shadow-sm" href="../">Back to All FAQs</a>
+                      <a class="ctaToSite shadow-sm" href="{CTA_COMPANY_FAQS_URL}">View this company's FAQs</a>
+                      <a class="ctaToSiteSec shadow-sm" href="{CTA_WEBSITE_URL}">Visit Official Website</a>
+                      <a class="ctaToSiteSec shadow-sm" href="{CTA_BACK_URL}">Back to All FAQs</a>
                     </div>
+                  </div>
+                  <div class="relatedFaqDivider"></div>
+                  <div class="relatedFaqHeader">Other FAQs from {COMPANY_NAME}</div>
+                  <div class="relatedFaqList">
+                    {START_RELATED_FAQ:00}
+                    <a href="{RELATED_FAQ_URL}" class="relatedFaqItem">{RELATED_FAQ_QUESTION}</a>
+                    {END_RELATED_FAQ:00}
                   </div>
                   </div>
                 </div>

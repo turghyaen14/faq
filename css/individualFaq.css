@@ -111,6 +111,35 @@
   color: #0f172a;
   line-height: 1.2;
 }
+/* Article splash (hero image, below header) */
+.articleSplashWrapper {
+  margin-bottom: 1.5rem;
+}
+
+.articleSplashImage {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  display: block;
+  border-radius: 25px;
+}
+
+/* Article long-form body (between Answer and the company divider) */
+.articleBodyWrapper {
+  color: #4f4f4f;
+  font-size: 1rem;
+  line-height: 1.65;
+  text-align: justify;
+}
+
+.articleBodyPara {
+  margin: 0 0 1rem;
+}
+
+.articleBodyPara:last-child {
+  margin-bottom: 0;
+}
+
 /* Company panel */
 .companyDetailWrapper {
   background-color: #faf7ef;
@@ -120,7 +149,7 @@
   flex-direction: row;
   gap: 1rem;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   border-radius: 25px;
 }
 
@@ -185,8 +214,49 @@
 .companyCtaWrapper {
   border-radius: 18px;
   padding: 1rem;
-  position: relative;
+  position: sticky;
+  top: 24px;
   box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+.relatedFaqDivider {
+  margin: 1rem 0;
+  height: 1px;
+  background-color: rgba(27, 66, 151, 0.12);
+}
+
+.relatedFaqHeader {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #828282;
+  margin-bottom: 0.75rem;
+}
+
+.relatedFaqList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.relatedFaqItem {
+  display: block;
+  background-color: #ffffff;
+  border: 1px solid rgba(27, 66, 151, 0.12);
+  border-radius: 10px;
+  padding: 0.6rem 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: #1e2330;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.relatedFaqItem:hover {
+  background-color: #eef4ff;
+  color: #163571;
 }
 
 .companyCardBody {
@@ -241,6 +311,11 @@
   }
   .companyCtaWrapper {
     width: 100%;
+    position: static;
+  }
+
+  .articleSplashImage {
+    height: 220px;
   }
 }
 

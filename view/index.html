@@ -2,81 +2,55 @@
 
 <div class="primaryContainer">
   <div class="faqContentContainer container">
-    <div class="align-items-end justify-content-end w-100 d-none d-lg-flex">
-      <div class="tabWrapper">
-        <div class="tabContainer" id="gridViewTab">
-          <span><i class="bi bi-grid faSize"></i></span>
-          <span> Grid View </span>
+
+    <a href="{FEATURED_URL}" class="homeHeroCard shadowSm">
+      <h2 class="homeHeroTitle gloock-regular">{FEATURED_TITLE}</h2>
+      <img src="{FEATURED_IMAGE}" class="homeHeroImage" alt="{FEATURED_TITLE}" />
+    </a>
+
+    <div class="row homeMainRow">
+      <div class="col-lg-8" id="articles">
+        <div class="homeColHeader">
+          <h2 class="homeColTitle gloock-regular">Articles</h2>
+          <a href="/blog" class="homeViewAllLink">View all →</a>
         </div>
-        <div class="tabContainer selectedTabContainer" id="listViewTab">
-          <span><i class="bi bi-list-ul faSize"></i></span>
-          <span> List View </span>
+        <div class="row homeArticlesGrid">
+          {START_ARTICLE_CARD:00}
+          <div class="col-md-6 homeArticleCol">
+            <a href="{ARTICLE_URL}" class="articleCard shadowSm">
+              <h3 class="articleCardTitle gloock-regular">{ARTICLE_TITLE}</h3>
+              <div class="articleCardMeta">
+                <span class="articleCardCategory">{ARTICLE_CATEGORY}</span>
+                <span class="articleCardDot">&bull;</span>
+                <span class="articleCardDate">{ARTICLE_DATE}</span>
+              </div>
+              <div class="articleCardImageWrapper">
+                <img src="{ARTICLE_IMAGE}" class="articleCardImage" alt="{ARTICLE_TITLE}" />
+              </div>
+            </a>
+          </div>
+          {END_ARTICLE_CARD:00}
+        </div>
+      </div>
+
+      <div class="col-lg-4" id="faqs">
+        <div class="homeColHeader">
+          <h2 class="homeColTitle gloock-regular">FAQs</h2>
+          <a href="/search" class="homeViewAllLink">View all →</a>
+        </div>
+        <div class="homeFaqList">
+          {START_FAQ_ITEM:00}
+          <a href="{FAQ_URL}" class="homeFaqItem shadowSm">
+            <div class="homeFaqItemText">
+              <span class="homeFaqItemCompany">{FAQ_COMPANY_NAME}</span>
+              <span class="homeFaqItemQuestion">{FAQ_QUESTION}</span>
+            </div>
+            <i class="bi bi-arrow-up-right homeFaqItemIcon"></i>
+          </a>
+          {END_FAQ_ITEM:00}
         </div>
       </div>
     </div>
-    <div class="faqContentListWrapper list-view">
-      {START_FOR_FAQ_LIST:00}
-      <div class="faqContentListContainer resultCard shadowSm" data-id="{FAQ_ID}">
-        <div class="faqContentHeaderWrapper">
-          <div class="faqContentHeaderContainer">
-            <div class="faqCompanyWrapper">
-              <div class="companyLogoWrapper" onclick="window.location.href='{FAQ_COMPANY_PAGE}'">
-                <img src=" {COMPANY_LOGO}" class="companyLogo" alt="{COMPANY_NAME}" />
-              </div>
 
-              <div class="companyDetailWrapper">
-                <span class="companyTitle inter-light" onclick="window.location.href='{FAQ_COMPANY_PAGE}'">
-                  {COMPANY_NAME}
-                </span>
-
-                <span class=" companyUrl" onclick="window.open('{COMPANY_URL}')">
-                  {COMPANY_URL}
-                </span>
-              </div>
-            </div>
-
-            <div class="companyTagsWrapper">
-              {START_TAG_LIST:00}
-              <span class="tagContainer">{COMPANY_TAG}</span>
-              {END_TAG_LIST:00}
-            </div>
-          </div>
-
-          <div class="cardContentRow">
-            <div class="faqContentBodyContainer">
-              <div class="contentHeaderContainer">
-                <h2 class="faqHeader" onclick="window.location.href='{FAQ_URL}'">{FAQ_QUES}</h2>
-                <div class="customCategoryBadgeContainer">
-                  <span class="customCategoryBadge">{CATEGORY_NAME}</span>
-                </div>
-              </div>
-              <div class="faqSub">
-                {FAQ_ANS}
-              </div>
-              <div class="mobileViewToggle">
-                <button class="mblViewWrapper mblViewMore">Read More</button>
-                <button class="mblViewWrapper mblViewLess">Read Less</button>
-              </div>
-            </div>
-
-            <div class="faqContentIcon">
-              <button class="viewBtn shadowSm" onclick="window.location.href='{FAQ_URL}'">
-                <span class="viewBtnText">View</span>
-                <i class="bi bi-arrow-up-right-square"></i>
-              </button>
-
-              <button type="button" class="viewMoreBtn viewMore">
-                <i class="bi bi-plus-lg"></i>
-              </button>
-
-              <button type="button" class="viewMoreBtn viewLess">
-                <i class="bi bi-dash-lg"></i>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-      {END_FOR_FAQ_LIST:00}
-    </div>
   </div>
 </div>

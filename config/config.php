@@ -5,6 +5,10 @@ $META_TITLE = 'FAQ2U | Trusted & Professional FAQ Platform';
 $META_DESC = 'FAQ2U brings all frequently asked questions into one easy-to-search platform, helping users quickly find clear answers without contacting support.';
 $_OBJECT_CACHE_PATH = 'cache_object/';
 
+// Frontend/backend seam (see docs/DATA_CONTRACT.md). true = serve dummy data,
+// false = data-access methods run their real queries. Backend flips this per method.
+$USE_DUMMY_DATA = true;
+
 // SECURITY: never hardcode the key here. Set the OPENAI_API_KEY env var instead.
 // See docs/DEPLOYMENT_NOTES.md before deploying.
 $OPENAI_API_KEY = getenv('OPENAI_API_KEY') ? getenv('OPENAI_API_KEY') : '';

@@ -1,0 +1,68 @@
+<link rel="stylesheet" href="{RYANTEST_FAQ_PATH}/css/blog.css" />
+</div>
+
+<div class="primaryContainer">
+  <div class="faqContentContainer container gap-4">
+
+    <a href="{FEATURED_URL}" class="homeHeroCard shadowSm">
+      <h2 class="homeHeroTitle gloock-regular">{FEATURED_TITLE}</h2>
+      <img src="{FEATURED_IMAGE}" class="homeHeroImage" alt="{FEATURED_TITLE}" />
+    </a>
+
+    <div class="d-flex align-items-end justify-content-end w-100 d-none d-lg-flex">
+      <div class="tabWrapper">
+        <div class="tabContainer" id="gridViewTab">
+          <span><i class="bi bi-grid faSize"></i></span>
+          <span> Grid View </span>
+        </div>
+        <div class="tabContainer selectedTabContainer" id="listViewTab">
+          <span><i class="bi bi-list-ul faSize"></i></span>
+          <span> List View </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="faqContentListWrapper list-view">
+      {START_BLOG_CARD:00}
+      <div class="blogCard resultCard shadowSm">
+        <div class="blogCardHeader">
+          <div class="faqCompanyWrapper">
+            <div class="companyLogoWrapper" onclick="window.location.href='{BLOG_URL}'">
+              <img src="{BLOG_COMPANY_LOGO}" class="companyLogo" alt="{BLOG_COMPANY_NAME}" />
+            </div>
+            <div class="companyDetailWrapper">
+              <span class="companyTitle inter-light" onclick="window.location.href='{BLOG_URL}'" style="cursor: pointer;">
+                {BLOG_COMPANY_NAME}
+              </span>
+              <span class="companyUrl">{BLOG_COMPANY_URL}</span>
+            </div>
+          </div>
+          <span class="customCategoryBadge">{BLOG_CATEGORY}</span>
+        </div>
+
+        <div class="articleCardImageWrapper">
+          <img src="{BLOG_IMAGE}" class="articleCardImage" alt="{BLOG_TITLE}" />
+        </div>
+
+        <div class="blogCardMetaRow">
+          <span class="blogSlugTag">{BLOG_SLUG}</span>
+          <button class="viewBtn shadowSm" onclick="window.location.href='{BLOG_URL}'">
+            <span class="viewBtnText">Read</span>
+            <i class="bi bi-arrow-up-right-square"></i>
+          </button>
+        </div>
+
+        <h3 class="articleCardTitle gloock-regular blogCardTitle" onclick="window.location.href='{BLOG_URL}'" style="cursor: pointer;">{BLOG_TITLE}</h3>
+        <p class="faqSub blogCardExcerpt">{BLOG_EXCERPT}</p>
+
+        <div class="companyTagsWrapper">
+          {START_BLOG_TAG:00}
+          <span class="tagContainer">{BLOG_TAG}</span>
+          {END_BLOG_TAG:00}
+        </div>
+      </div>
+      {END_BLOG_CARD:00}
+    </div>
+
+  </div>
+</div>

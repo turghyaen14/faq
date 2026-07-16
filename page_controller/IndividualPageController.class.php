@@ -15,6 +15,7 @@ class IndividualPageController extends BaseTemplateController
         $faq_id = $array['id'];
         $Faq = new Faq();
         $Company = new Company();
+        $Article = new Article();
 
         $faq_data = $Faq->getFaqDetailsByID($faq_id);
         if (empty($faq_data['faq_question_en']) || $faq_data['faq_question_en'] == '') {
@@ -65,6 +66,34 @@ class IndividualPageController extends BaseTemplateController
         $ques = Helper::normalizeSentence($ques);
         $answ = Helper::normalizeSentence($answ);
 
+        $article_detail = $Article->getDetailByFaqId($faq_id);
+        $splash_image = $article_detail['splash_image'];
+
+        $FOR_BODY_PARA = new TEMPLATE();
+        $all_body_para_item = '';
+        foreach ($article_detail['body'] as $paragraph) {
+            $FOR_BODY_PARA->renew("/{START_BODY_PARA:00}(.+){END_BODY_PARA:00}/s", $INDIVIDUALPAGE_TEMPLATE->content());
+            $FOR_BODY_PARA->replace(
+                array(
+                    "/{BODY_PARAGRAPH}/s" => $paragraph,
+                )
+            );
+            $all_body_para_item .= $FOR_BODY_PARA->content();
+        }
+
+        $FOR_RELATED_FAQ = new TEMPLATE();
+        $all_related_faq_item = '';
+        foreach ($article_detail['related_faqs'] as $related) {
+            $FOR_RELATED_FAQ->renew("/{START_RELATED_FAQ:00}(.+){END_RELATED_FAQ:00}/s", $INDIVIDUALPAGE_TEMPLATE->content());
+            $FOR_RELATED_FAQ->replace(
+                array(
+                    "/{RELATED_FAQ_URL}/s" => $related['url'],
+                    "/{RELATED_FAQ_QUESTION}/s" => $related['question'],
+                )
+            );
+            $all_related_faq_item .= $FOR_RELATED_FAQ->content();
+        }
+
         $cache_file_name = "schema_individual_" . $faq_id;
         if (!ObjectCache::isCached($cache_file_name)) {
             $schema = [
@@ -108,6 +137,12 @@ class IndividualPageController extends BaseTemplateController
             "/{COMPANY_LOGO_IMAGE}/s" => $company_logo_image,
             "/{START_IF_MULTIPLE_EMAIL}(.+){END_IF_MULTIPLE_EMAIL}/s" => $all_email_item,
             "/{START_COMPANY_TAG:00}(.+){END_COMPANY_TAG:00}/s" => $all_tag_item,
+            "/{SPLASH_IMAGE}/s" => $splash_image,
+            "/{START_BODY_PARA:00}(.+){END_BODY_PARA:00}/s" => $all_body_para_item,
+            "/{START_RELATED_FAQ:00}(.+){END_RELATED_FAQ:00}/s" => $all_related_faq_item,
+            "/{CTA_COMPANY_FAQS_URL}/s" => "../company/$company_id/$company_name_check",
+            "/{CTA_WEBSITE_URL}/s" => $company_website,
+            "/{CTA_BACK_URL}/s" => "../",
             "/{RYANTEST_FAQ_PATH}/s" => $faq_path,
         ));
 

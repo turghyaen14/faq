@@ -2,7 +2,7 @@
 # Internal directory - deny all HTTP access.
 # Covers: header.html, footer.html, index.html, companyIndex.html,
 #         individualFaq.html, searchedQuery.html, aboutUs.html,
-#         notfound404.html, test.html
+#         notfound404.html, test.html, blog.html
 
 <IfModule mod_authz_core.c>
     Require all denied
