@@ -81,7 +81,8 @@ printed with the exact keys from Section A. Then DELETE `test_dummy.php`.
 ## STEP 2 — Home page (`view/index.html` + `IndexPageController`)
 
 **Goal:** restructure the homepage into: hero card → search → 2 columns (Articles grid + FAQs list).
-Reference layout: `docs/screenshots/home.png` (structure only — keep current skin).
+Reference layout: `.claude/design_handoff_faq_blog_layout/screenshots/home.png`
+(**local only — not in the repo**; structure only, keep the current skin).
 
 1. Edit `view/index.html`:
    - Keep the existing header/search markup already produced by `view/header.html`.
@@ -112,7 +113,8 @@ skin (cream bg, blue accents, Inter/Gloock). No `{TAGS}` visible on screen.
 ## STEP 3 — Article detail (redesign `view/individualFaq.html` + `IndividualPageController`)
 
 **Goal:** turn the individual FAQ page into the article layout: splash image → 2-column card
-(left: article; right: sticky sidebar). Reference: `docs/screenshots/article.png`.
+(left: article; right: sticky sidebar).
+Reference: `.claude/design_handoff_faq_blog_layout/screenshots/article.png` (local only — not in the repo).
 
 1. Edit `page_controller/IndividualPageController.class.php`:
    - Keep the existing 404 guard (`redirectTo404()` when the FAQ is empty).
@@ -140,7 +142,8 @@ CTA buttons + the "Other FAQs from {company}" list. Sidebar sticks on desktop. C
 
 ## STEP 4 — Blog listing (NEW `blog` route + `BlogPageController` + `view/blog.html`)
 
-**Goal:** a new `/blog` index page with a Grid/List toggle. Reference: `docs/screenshots/blog.png`.
+**Goal:** a new `/blog` index page with a Grid/List toggle.
+Reference: `.claude/design_handoff_faq_blog_layout/screenshots/blog.png` (local only — not in the repo).
 
 1. Add the route in `index.php` `$routes` array (copy the shape of the other entries):
    ```php
