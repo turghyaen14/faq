@@ -15,7 +15,7 @@ sitemaps/*
 .sitemap_last_run
 
 # ── Local tooling / editor ────────────────────────────────────────────
-.claude/settings.json
+.claude/
 
 # ── OS junk ───────────────────────────────────────────────────────────
 Thumbs.db
