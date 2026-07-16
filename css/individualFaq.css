@@ -1,0 +1,301 @@
+/* ===========================
+   individualFaq.css (FIX)
+   override global list-card row layout
+=========================== */
+
+/* Make the container stretch full width on this page */
+.faqContentContainer {
+  width: 100%;
+  align-items: stretch;
+  justify-content: flex-start;
+}
+
+/* Force single column grid */
+.faqContentListWrapper {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  padding: 0;
+  margin-top: 0;
+}
+
+/* IMPORTANT: override global ".faqContentListWrapper .faqContentListContainer" */
+.faqContentListWrapper .faqContentListContainer {
+  padding: 2rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  /* ✅ stops the squeeze */
+  align-items: stretch;
+  justify-content: flex-start;
+  background-color: #faf7ef;
+}
+
+/* Your page styles */
+.faqContentHeaderWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  min-width: 0;
+}
+
+.contentHeaderContainer {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+}
+
+.faqHeader {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0;
+  min-height: unset;
+  display: block !important;
+  overflow: visible !important;
+}
+
+.faqSubs {
+  color: #4f4f4f;
+  font-size: 1.1rem;
+  margin: 0;
+  line-height: 1.5;
+  white-space: normal;
+  word-break: break-word;
+  text-align: justify;
+}
+
+.customCategoryBadgeContainer {
+  min-height: unset;
+}
+
+.companyTextWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 0.5rem;
+}
+
+.companyIconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #1b4297;
+  width: 3rem;
+  background: linear-gradient(
+    180deg,
+    rgba(27, 66, 151, 0.08),
+    rgba(255, 255, 255, 0.9)
+  );
+  height: 3rem;
+}
+
+.questionIcon {
+  color: #1b4297;
+  font-size: 2rem;
+  padding: 1rem;
+}
+
+.wrapperHeader {
+  font-size: 1rem;
+  font-weight: 400;
+  color: rgba(27, 66, 151, 0.9);
+  letter-spacing: 0.2px;
+  text-transform: uppercase;
+}
+
+.wrapperSub {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.2;
+}
+/* Company panel */
+.companyDetailWrapper {
+  background-color: #faf7ef;
+  padding: 0.5rem 1.25rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 25px;
+}
+
+.profileLogoWrapper {
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 25px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 4.5rem;
+  min-height: 4.5rem;
+}
+
+.profileLogo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.companyName {
+  font-size: 1.25rem;
+  font-weight: 400;
+  max-width: 20rem;
+  max-width: unset;
+}
+
+.iconWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  color: #1b4297;
+  width: fit-content;
+}
+
+.emailIcon {
+  font-size: 1rem;
+}
+
+.textContainer {
+  font-size: 1rem;
+}
+
+/* CTAs */
+.companyIconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem;
+  border-radius: 15px;
+}
+.ctaWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: flex-end;
+  justify-content: center;
+  width: 100%;
+}
+.companyCtaWrapper {
+  border-radius: 18px;
+  padding: 1rem;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+.companyCardBody {
+  margin: 8px 0 14px;
+  font-size: 13px;
+  color: #334155;
+  line-height: 1.45;
+  text-align: center;
+}
+
+.companyCardHeader {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  padding: 1rem 0rem;
+  justify-content: center;
+}
+
+.ctaToSite {
+  font-size: 1rem;
+  text-decoration: none;
+  background-color: #163571;
+  color: #ffffff;
+  border-radius: 12px;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  width: 100%;
+  white-space: nowrap;
+}
+
+.ctaToSiteSec {
+  font-size: 1rem;
+  text-align: center;
+  text-decoration: none;
+  background-color: transparent;
+  border: 2px solid #163571;
+  color: #163571;
+  border-radius: 12px;
+  padding: 0.5rem 1rem;
+  width: 100%;
+  white-space: nowrap;
+
+}
+
+/* Responsive */
+@media screen and (max-width: 992px) {
+  .companyDetailWrapper {
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .companyCtaWrapper {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .faqContentListWrapper .faqContentListContainer {
+    padding: 1rem !important;
+  }
+
+  .contentHeaderContainer {
+    flex-direction: column-reverse;
+    justify-content: space-between;
+  }
+
+  .ctaWrapper {
+    flex-direction: column;
+    width: 100%;
+    padding: 1rem 0rem;
+  }
+
+  .ctaToSite,
+  .ctaToSiteSec {
+    width: 100%;
+    text-align: center;
+  }
+
+  .profileLogoWrapper {
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .companyDetailWrapper {
+    padding: 0.5rem 1rem !important;
+  }
+}
+
+.companyDesc {
+  color: #4f4f4f;
+  font-size: 1rem;
+  text-align: justify;
+  margin: 0;
+}
+
+.divider {
+  margin: 1rem 0rem 1rem 0rem;
+  content: "";
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(to right, #7e84f100, #1b429767, #7e84f100);
+}
+
+.companyName:hover {
+  color: #163571;
+}

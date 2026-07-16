@@ -1,0 +1,114 @@
+<link rel="stylesheet" href="{RYANTEST_FAQ_PATH}/css/individualFaq.css" />
+<div class="primaryContainer d-flex align-items-center justify-content-center py-4">
+  <div class="container">
+    <div class="row">
+      <div class="faqContentContainer">
+        <div class="faqContentListWrapper" id="faqList">
+          <div class="faqContentListContainer shadowSm is-collapsed" data-id="{FAQ_ID}">
+            <div class="faqContentHeaderWrapper">
+              <div class="faqContentBodyContainer p-">
+                <div class="contentHeaderContainer">
+                  <h2 class="faqHeader">
+                    Question: {FAQ_QUESTION}
+                  </h2>
+                  <div class="customCategoryBadgeContainer">
+                    <span class="customCategoryBadge">{FAQ_CATEGORY_NAME}</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="faqSubs">
+                Answer: {FAQ_ANSWER}
+              </div>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 my-3">
+              <div class="divider"></div>
+              <div class="companyDetailWrapper">
+                <div class="d-flex flex-column gap-3 align-items-start justify-content-between h-100"
+                  data-company-page="{FAQ_COMPANY_PAGE}">
+                  <div class="d-flex flex-md-row flex-column gap-3 align-items-center justify-content-start">
+                    <div class="profileLogoWrapper">
+                      <img src="{COMPANY_LOGO_IMAGE}" class="profileLogo" alt="{COMPANY_NAME}" />
+                    </div>
+                    <div class="d-flex flex-column gap-2">
+                      <span class="companyName" onclick="window.location.href='{FAQ_COMPANY_PAGE}'">
+                        {COMPANY_NAME}
+                      </span>
+
+                      <div class="d-flex flex-column justify-content-start gap-2">
+                        <div class="iconWrapper">
+                          <i class="bi bi-envelope emailIcon"></i>
+                          <span class="textContainer">
+                            {START_IF_MULTIPLE_EMAIL}
+                            <a href="mailto:{COMPANY_EMAIL}?subject=Inquiry%20About%20Your%20Services%20and%20Products&body=Hello%2C%0A%0AI%20found%20your%20business%20through%20FAQ2u%20and%20I%E2%80%99m%20interested%20in%20learning%20more%20about%20your%20offerings.%0A%0ACould%20you%20please%20share%20details%20about%20your%20services%2C%20products%2C%20and%20any%20other%20relevant%20information%3F%0A%0AThank%20you"
+                              target="_blank" rel="noopener" class="text-decoration-none" style="color: #1b4297">
+                              {COMPANY_EMAIL}
+                            </a>
+                            {END_IF_MULTIPLE_EMAIL}
+                          </span>
+                        </div>
+                        <div class="iconWrapper">
+                          <i class="bi bi-geo-alt emailIcon"></i>
+                          <div class="d-flex flex-column align-items-start justify-content-start gap-3">
+                            <a class="textContainer text-decoration-none" style="color: #1b4297" href="{COMPANY_MAP}"
+                              target="_blank">
+                              {COMPANY_ADDRESS}
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="companyTagsWrapper">
+                    {START_COMPANY_TAG:00}
+                    <span class="tagContainer">{COMPANY_TAG}</span>
+                    {END_COMPANY_TAG:00}
+                  </div>
+                  <p class="companyDesc">
+                    {COMPANY_DESC}
+                  </p>
+
+                </div>
+                <div class="companyCtaWrapper">
+                  <div class="d-flex flex-row gap-4 align-items-center justify-content-center ">
+                    <div class="companyCardHeader">
+                      <div class="companyIconWrapper">
+                          <i class="bi bi-info-circle-fill questionIcon"></i>
+                      </div>
+                    </div>
+                    <div class="companyCardBody">
+                      Explore More 
+                    </div>
+                  </div>
+                  <div class="companyCardFooter">
+                    <div class="ctaWrapper">
+                      <a class="ctaToSite shadow-sm" href="{FAQ_COMPANY_PAGE}">View this company’s FAQs</a>
+                      <a class="ctaToSiteSec shadow-sm" href="{COMPANY_WEBSITE}">Visit Official Website</a>
+                      <a class="ctaToSiteSec shadow-sm" href="../">Back to All FAQs</a>
+                    </div>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  $(document).ready(function () {
+    $('.profileLogoWrapper, .companyName').on('click', function (e) {
+      e.preventDefault();
+
+      const url = $(this)
+        .closest('.companyDetailWrapper')
+        .data('company-page');
+
+      if (url) {
+        window.open(url, '_blank');
+      }
+    });
+  });
+</script>

@@ -1,0 +1,40 @@
+# 7.3.2 Static Asset Directory Control
+# CSS directory - allow .css files only.
+# PHP execution, directory listing, and all other file types are denied.
+
+Options -Indexes -ExecCGI -Includes -MultiViews
+
+<IfModule mod_php.c>
+    php_flag engine off
+</IfModule>
+
+Header set X-Content-Type-Options "nosniff"
+
+# Deny everything by default
+<IfModule mod_authz_core.c>
+    Require all denied
+</IfModule>
+<IfModule !mod_authz_core.c>
+    Order deny,allow
+    Deny from all
+</IfModule>
+
+# Allow only .css files
+<FilesMatch "\.css$">
+    <IfModule mod_authz_core.c>
+        Require all granted
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Allow from all
+    </IfModule>
+</FilesMatch>
+
+# Defense in depth: explicitly block executables
+<FilesMatch "\.(php|phtml|php[0-9]?|phar|cgi|pl|asp|aspx|jsp|py|sh)$">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Deny from all
+    </IfModule>
+</FilesMatch>

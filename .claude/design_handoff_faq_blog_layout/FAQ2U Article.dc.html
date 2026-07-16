@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+  body{margin:0;background:#F6F1E7;}
+  ::selection{background:#1B2A56;color:#fff;}
+  a{color:#1B2A56;text-decoration:none;}
+  a:hover{color:#3B4E85;}
+</style>
+</helmet>
+
+<div style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;background:#F6F1E7;background-image:linear-gradient(rgba(27,42,86,0.035) 1px,transparent 1px),linear-gradient(90deg,rgba(27,42,86,0.035) 1px,transparent 1px);background-size:56px 56px;min-height:100vh;color:#232323;">
+
+  <header style="max-width:1240px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:{{ headerPadding }};flex-wrap:wrap;gap:12px;">
+    <div style="display:flex;align-items:center;gap:{{ navGap }};flex-wrap:wrap;">
+      <div style="display:flex;align-items:center;gap:8px;font-family:'Lora',serif;font-weight:700;font-size:21px;color:#1B2A56;">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M3 11L12 4L21 11V20H14V14H10V20H3V11Z" stroke="#1B2A56" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        FAQ2U
+      </div>
+      <nav style="display:flex;gap:{{ navGap }};font-size:15px;color:#4b4636;flex-wrap:wrap;">
+        <a href="#">Home</a>
+        <a href="#">FAQs</a>
+        <a href="#" style="color:#232323;font-weight:500;">Blog</a>
+        <a href="#">About Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <section style="max-width:1240px;margin:{{ heroMargin }};padding:{{ heroPadding }};">
+    <image-slot id="article-splash" shape="rect" placeholder="Drop article splash image" style="width:100%;height:{{ splashHeight }};display:block;border-radius:20px;box-shadow:0 20px 50px -20px rgba(27,42,86,0.25);"></image-slot>
+  </section>
+
+  <section style="max-width:1240px;margin:0 auto;padding:{{ bodySectionPadding }};">
+    <div style="background:#FBF8F1;border:1px solid #E4DDC9;border-radius:20px;box-shadow:0 20px 50px -20px rgba(27,42,86,0.25);padding:{{ cardPadding }};">
+
+      <div style="display:grid;grid-template-columns:{{ columnTemplate }};gap:16px;align-items:start;">
+
+        <div style="min-width:0;">
+          <span style="display:inline-block;font-size:12px;font-weight:600;color:#736c5a;background:#EFE8D6;border-radius:999px;padding:5px 14px;margin-bottom:16px;">{{ article.category }}</span>
+          <h2 style="font-family:'Lora',serif;font-weight:700;font-size:{{ questionSize }};margin:0 0 10px;color:#1B2A56;">Question: {{ article.question }}</h2>
+          <p style="font-size:15px;color:#4b4636;line-height:1.6;margin:0 0 24px;">Answer: {{ article.answer }}</p>
+
+          <div style="font-size:15px;color:#4b4636;line-height:1.75;margin-bottom:24px;">
+            <sc-for list="{{ article.body }}" as="paragraph" hint-placeholder-count="3">
+              <p style="margin:0 0 16px;">{{ paragraph }}</p>
+            </sc-for>
+          </div>
+
+          <div style="height:1px;background:#E4DDC9;margin-bottom:24px;"></div>
+
+          <div style="display:flex;gap:14px;margin-bottom:16px;flex-wrap:wrap;">
+            <image-slot id="company-logo" shape="rounded" radius="12" placeholder="Logo" style="width:64px;height:64px;flex-shrink:0;"></image-slot>
+            <div>
+              <h3 style="font-size:15px;font-weight:700;letter-spacing:0.01em;text-transform:uppercase;margin:0 0 8px;color:#232323;">{{ article.companyName }}</h3>
+              <div style="display:flex;align-items:center;gap:8px;font-size:13.5px;color:#1B2A56;margin-bottom:4px;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M3 6L12 13L21 6" stroke="#1B2A56" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><rect x="3" y="4" width="18" height="16" rx="2" stroke="#1B2A56" stroke-width="1.6"/></svg>
+                {{ article.email }}
+              </div>
+              <div style="display:flex;align-items:flex-start;gap:8px;font-size:13.5px;color:#4b4636;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" style="margin-top:2px;flex-shrink:0;"><path d="M12 21C12 21 19 14.5 19 9.5C19 5.36 15.64 2 12 2C8.36 2 5 5.36 5 9.5C5 14.5 12 21 12 21Z" stroke="#1B2A56" stroke-width="1.6"/><circle cx="12" cy="9.5" r="2.5" stroke="#1B2A56" stroke-width="1.6"/></svg>
+                {{ article.address }}
+              </div>
+            </div>
+          </div>
+
+          <div style="display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap;">
+            <sc-for list="{{ article.tags }}" as="tag" hint-placeholder-count="2">
+              <span style="font-size:12.5px;font-weight:500;color:#1B2A56;border:1px solid #1B2A56;border-radius:999px;padding:5px 14px;">{{ tag }}</span>
+            </sc-for>
+          </div>
+
+          <p style="font-size:14.5px;color:#4b4636;line-height:1.65;margin:0;">{{ article.description }}</p>
+        </div>
+
+        <div style="background:#F6F1E7;border:1px solid #E4DDC9;border-radius:16px;padding:20px;position:{{ sidebarPosition }};top:24px;">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
+            <div style="width:26px;height:26px;border-radius:50%;background:#1B2A56;display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:700;flex-shrink:0;">i</div>
+            <span style="font-size:14px;font-weight:600;color:#232323;">Explore More</span>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <a href="#" style="text-align:center;background:#1B2A56;color:#fff;font-size:14px;font-weight:600;border-radius:10px;padding:12px;">View this company's FAQs</a>
+            <a href="#" style="text-align:center;background:#FBF8F1;color:#1B2A56;border:1px solid #1B2A56;font-size:14px;font-weight:600;border-radius:10px;padding:12px;">Visit Official Website</a>
+            <a href="#" style="text-align:center;background:#FBF8F1;color:#1B2A56;border:1px solid #1B2A56;font-size:14px;font-weight:600;border-radius:10px;padding:12px;">Back to All FAQs</a>
+          </div>
+
+          <div style="height:1px;background:#E4DDC9;margin:20px 0;"></div>
+
+          <h4 style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.04em;color:#736c5a;margin:0 0 14px;">Other FAQs from {{ article.companyName }}</h4>
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <sc-for list="{{ companyFaqs }}" as="faq" hint-placeholder-count="4">
+              <a href="#" style="display:block;background:#FBF8F1;border:1px solid #E4DDC9;border-radius:10px;padding:11px 13px;font-size:13px;font-weight:600;color:#232323;line-height:1.35;">{{ faq.question }}</a>
+            </sc-for>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer style="border-top:1px solid #E4DDC9;margin-top:48px;">
+    <div style="max-width:1240px;margin:0 auto;padding:{{ footerPadding }};display:flex;justify-content:space-between;align-items:{{ footerAlign }};flex-direction:{{ footerDirection }};flex-wrap:wrap;gap:20px;">
+      <div>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" style="margin-bottom:14px;"><path d="M3 11L12 4L21 11V20H14V14H10V20H3V11Z" stroke="#1B2A56" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        <p style="font-family:'Lora',serif;font-style:italic;font-size:15px;color:#1B2A56;margin:0 0 8px;">Explore answers with confidence.</p>
+        <p style="font-size:13px;color:#9a9484;margin:0;max-width:360px;line-height:1.5;">A curated knowledge platform designed to surface accurate FAQs — fast. Built for businesses, teams, and curious minds.</p>
+      </div>
+      <div style="text-align:{{ footerTextAlign }};font-size:13px;color:#9a9484;">
+        <div style="font-weight:700;color:#232323;">FAQ2u <span style="font-weight:400;color:#9a9484;">© 2026</span></div>
+        <div style="margin-top:6px;">Designed for accuracy over assumptions</div>
+        <div style="margin-top:6px;">Powered By <strong style="color:#232323;">NEWPAGES</strong></div>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1240}}">
+class Component extends DCLogic {
+  state = { bp: 'lg' };
+
+  componentDidMount() {
+    this.updateBp();
+    this._onResize = () => this.updateBp();
+    window.addEventListener('resize', this._onResize);
+  }
+  componentWillUnmount() {
+    window.removeEventListener('resize', this._onResize);
+  }
+  updateBp() {
+    const w = window.innerWidth;
+    const bp = w < 640 ? 'sm' : w < 1024 ? 'md' : 'lg';
+    if (bp !== this.state.bp) this.setState({ bp });
+  }
+
+  renderVals() {
+    const bp = this.state.bp;
+    const article = {
+      category: 'Everything You Need to Know',
+      question: 'What is Paint Protection Film (PPF)?',
+      answer: 'PPF is a protective film that shields car paint from scratches, chips, stains, and minor damage.',
+      companyName: 'M 8 Car Accessories and Tinted (M) Sdn Bhd',
+      email: 'info@m8car.com.my',
+      address: '15, Jalan Keruing 1, Taman Rinting, 81750 Masai, Johor, Malaysia.',
+      tags: ['Services', 'Specialist'],
+      description: 'We provided high-quality & affordable tinted window films, professional workmanship and excellent customer service won us many customers and made us one of the popular and leading tinted film companies in Johor Bahru, Kuala Lumpur & Selangor. We ensure only the finest films get installed on your vehicle.',
+      body: [
+        'Paint Protection Film has become the go-to solution for car owners looking to preserve their vehicle\'s finish without altering its appearance. Unlike a wax or sealant, PPF is a physical layer that absorbs impact from road debris, gravel chips, and minor abrasions before they ever reach the paint underneath.',
+        'Most installers apply the film to high-impact zones — the front bumper, hood, mirrors, and door edges — though full-body coverage is increasingly common for owners who want long-term protection across every panel. A quality installation is virtually invisible, with a self-healing top coat that shrugs off light swirl marks when exposed to heat.',
+        'Beyond the cosmetic benefit, PPF also helps protect resale value: a car that has spent years shielded from chips and scratches tends to retain a cleaner, more original-looking paint job than one left unprotected.',
+      ],
+    };
+    const companyFaqs = [
+      { question: 'How long does PPF installation take?' },
+      { question: 'Does PPF affect the factory paint warranty?' },
+      { question: 'How do I maintain a PPF-coated vehicle?' },
+      { question: 'What is the difference between PPF and ceramic coating?' },
+    ];
+    return {
+      article,
+      companyFaqs,
+      headerPadding: bp === 'sm' ? '20px 16px 0' : bp === 'md' ? '28px 20px 0' : '32px 24px 0',
+      navGap: bp === 'sm' ? '14px' : bp === 'md' ? '20px' : '32px',
+      heroMargin: bp === 'sm' ? '24px auto 0' : '44px auto 0',
+      heroPadding: bp === 'sm' ? '0 16px' : bp === 'md' ? '0 20px' : '0 24px',
+      splashHeight: bp === 'sm' ? '220px' : bp === 'md' ? '320px' : '420px',
+      bodySectionPadding: bp === 'sm' ? '16px 16px 0' : bp === 'md' ? '20px 20px 0' : '32px 24px 0',
+      cardPadding: bp === 'sm' ? '20px' : bp === 'md' ? '28px' : '36px',
+      columnTemplate: bp === 'lg' ? '2fr 1fr' : '1fr',
+      questionSize: bp === 'sm' ? '19px' : '22px',
+      sidebarPosition: bp === 'lg' ? 'sticky' : 'static',
+      footerPadding: bp === 'sm' ? '32px 16px' : '40px 24px',
+      footerDirection: bp === 'sm' ? 'column' : 'row',
+      footerAlign: bp === 'sm' ? 'flex-start' : 'flex-end',
+      footerTextAlign: bp === 'sm' ? 'left' : 'right',
+    };
+  }
+}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{META_TITLE}</title>
+    <meta name="title" content="{META_TITLE}" />
+    <meta name="description" content="{META_DESCRIPTION}" />
+    <meta property="og:title" content="{OG_TITLE}">
+    <meta property="og:site_name" content="{OG_TITLE}">
+    <meta property="og:type" content="{OG_TYPE}">
+    <meta property="og:url" content="{OG_URL}" />
+    <meta property="og:description" content="{OG_DESC}">
+    <meta property="og:image" content="{OG_IMAGE}">
+    <link rel="stylesheet" href="{RYANTEST_FAQ_PATH}/css/style.css" />
+    <link rel="stylesheet" href="{RYANTEST_FAQ_PATH}/assets/icons-1.13.1/font/bootstrap-icons.css">
+    <link href="{RYANTEST_FAQ_PATH}/assets/bootstrap-5.3.8/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="{RYANTEST_FAQ_PATH}/assets/all.min.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Gloock&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-h20CPMrzrerdqFqW1vvgkjz3Y5t15ScolN+ZIg4mpVABq8IknnP4a06f71Q2dbzWYHd8PSP7ZzkUvZ1sjYgCnw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" type="image/png" href="https://cdn1.npcdn.net/img/1769068962FAQ2uLogo.png" />
+    <script src="{RYANTEST_FAQ_PATH}/js/jquery-3.7.1.min.js"></script>
+    <script src="{RYANTEST_FAQ_PATH}/js/script.js"></script>
+    {START_SCHEMA_JSON_LD}
+    <script type="application/ld+json">
+    {FAQ_SCHEMA_JSONLD}
+    </script>
+    {END_SCHEMA_JSON_LD}
+</head>
+
+<body class="customBg">
+    {START_HEADER_COMPONENT}
+    <button id="scrollToTopBtn" aria-label="Scroll to top">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+    <div class="faqPageWrapper">
+        <div class="faqSplashContainer">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg bg-transparent">
+                    <div class="container-fluid">
+                        <div class="d-flex gap-4 align-items-center">
+                        <a class="navbar-brand homeWrapper" href="/..{RYANTEST_FAQ_PATH}">
+                            <img src="https://www.newpages2u.com/img/1769068962FAQ2uLogo.png" alt="icon"
+                                class="navbarLogo" />
+                            FAQ2U
+                        </a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon d-flex justify-content-center align-items-center"><i
+                                    class="bi bi-list"></i></span>
+                        </button>
+                        </div>
+                        <div class="collapse navbar-collapse" id="navbarScroll">
+                            <ul class="navbar-nav gap-4 me-auto my-2 my-lg-0 navbar-nav-scroll"
+                                style="--bs-scroll-height: 100px">
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page"
+                                        href="/..{RYANTEST_FAQ_PATH}">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page"
+                                        href="/..{RYANTEST_FAQ_PATH}/aboutus">About Us</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <div class=" tagLineWrapper">
+                <div class="tagLineContainer mt-3">
+                    <!-- <div class="logoSplashWrapper">
+                        <img src="https://www.newpages2u.com/img/1769068962FAQ2uLogo.png" width="200" height="200"
+                            border="0" class="logoSplashImage" />
+                    </div> -->
+
+                    <h1 class="tagLineTitle">Explore answers with confidence.</h1>
+
+                    <p class="tagLineSub">
+                        Search through curated knowledge and find what you need — fast.
+                    </p>
+                </div>
+                <div class="faqSearchBox">
+                    <form action="/search" method="get" class="searchContainer shadowSm">
+                        <input type="search" id="search-box" name="query" placeholder="Search..." class="searchInput" />
+
+                        <div class="buttonContainer">
+                            <button type="submit" class="btn btn-icon searchButton" aria-label="Search">
+                                <i class="bi bi-search iconSearch"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    {END_HEADER_COMPONENT}

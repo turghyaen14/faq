@@ -1,0 +1,46 @@
+<div class="row">
+            <div class="col-lg-3 d-flex align-items-center justify-content-center p-2">
+              <div class="profileLogoWrapper shadowSm">
+                <img src="{COMPANY_LOGO_IMAGE}" class="profileLogo" />
+              </div>
+            </div>
+            <div class="col-lg-9 p-2 justify-content-md-center just d-flex">
+              <div class="companyDetailWrapper shadowSm">
+                <span class="companyName">
+                  {COMPANY_NAME}
+                </span>
+                <p class="companyDesc">
+                  {COMPANY_DESC}
+                </p>
+
+                <div class="companyTagsWrapper">
+                  {START_COMPANY_TAG:00}
+                  <span class="tagContainer">{COMPANY_TAG}</span>
+                  {END_COMPANY_TAG:00}
+                </div>
+
+                <div class="d-flex flex-column justify-content-start gap-2">
+                  <div class="iconWrapper">
+                    <i class="fa-regular fa-envelope emailIcon"></i>
+                    <span class="textContainer"> <a
+                        href="mailto:{COMPANY_EMAIL}?subject=Inquiry%20About%20Your%20Services%20and%20Products&body=Hello%2C%0A%0AI%20found%20your%20business%20through%20Universal%20FAQ%20and%20I%E2%80%99m%20interested%20in%20learning%20more%20about%20your%20offerings.%0A%0ACould%20you%20please%20share%20details%20about%20your%20services%2C%20products%2C%20and%20any%20other%20relevant%20information%3F%0A%0AThank%20you%2C%0ARyan"
+                        target="_blank" rel="noopener">
+                        {COMPANY_EMAIL}
+                      </a> </span>
+                  </div>
+                  <div class="iconWrapper">
+                    <i class="fa-regular fa-address-book emailIcon"></i>
+                    <span class="textContainer"> <a
+                        href="https://wa.me/{COMPANY_WHATSAPP_CONTACT}?text=Hello%2C%20I%20found%20your%20business%20through%20Universal%20FAQ%20and%20I%E2%80%99m%20interested%20in%20learning%20more%20about%20your%20services%2C%20products%2C%20and%20other%20offerings.%20Could%20you%20please%20share%20more%20details%3F%20Thank%20you."
+                        target="_blank" rel="noopener">
+                        {COMPANY_FORMATTED_WHATSAPP_CONTACT}
+                      </a> </span>
+                  </div>
+                </div>
+                <div class="ctaWrapper">
+                  <a class="ctaToSite shadow-sm" href="{COMPANY_WEBSITE}">Visit Website</a>
+                  <a class="ctaToSiteSec shadow-sm" href="#home">Back to All FAQs</a>
+                </div>
+              </div>
+            </div>
+          </div>

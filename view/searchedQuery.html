@@ -1,0 +1,201 @@
+<link rel="stylesheet" href="{RYANTEST_FAQ_PATH}/css/searchedQuery.css" />
+</div>
+
+<div class="primaryContainer">
+  <div class="faqContentContainer container gap-4">
+    <div class="d-flex align-items-end justify-content-between w-100">
+      <div class="d-flex flex-column">
+        {START_SEARCH_INPUT_COMPONENT}
+        <div class="searchedQueryWrapper">
+          Search Result of<span class="queryText">{SEARCH_INPUT}</span>
+        </div>
+        <span class="totalResultText">
+          Showing the total result of {TOTAL_SEARCH_RESULT}
+        </span>
+        {END_SEARCH_INPUT_COMPONENT}
+      </div>
+      <div class="tabWrapper d-none d-lg-flex">
+        <div class="tabContainer" id="gridViewTab">
+          <span><i class="bi bi-grid faSize"></i></span>
+          <span> Grid View </span>
+        </div>
+        <div class="tabContainer selectedTabContainer" id="listViewTab">
+          <span><i class="bi bi-list-ul faSize"></i></span>
+          <span> List View </span>
+        </div>
+      </div>
+    </div>
+    <div class="faqContentListWrapper list-view">
+      {START_FOR_FAQ_LIST:00}
+      {START_UNIQUE_COMPONENT}
+      <div class="customFaqContentListContainer resultCard shadowSm is-collapsed" data-id="uni-{FAQ_ID}">
+        <div class="faqContentHeaderWrapper">
+          <div class="faqContentHeaderContainer">
+            <div class="iconTextWrapper">
+              <i class="bi bi-chat-dots faqIcon"></i>
+              <div class="customTextWrapper">
+                <span class="customtext">Most Asked Question</span>
+                <span class="customtext">Answered By FAQ2u</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="cardContentRow">
+            <div class="faqContentBodyContainer">
+              <div class="contentHeaderContainer">
+                <h2 class="faqHeader">
+                  {FAQ_QUE}
+                </h2>
+                <div class="customCategoryBadgeContainer">
+                  <span class="customCategoryBadge">Technology</span>
+                </div>
+              </div>
+
+              <div class="faqSub">
+                {FAQ_ANS}
+              </div>
+              <div class="mobileViewToggle">
+                <button class="mblViewWrapper mblViewMore">Read More</button>
+                <button class="mblViewWrapper mblViewLess">Read Less</button>
+              </div>
+            </div>
+
+            <div class="cardActionsRow">
+              <div class="faqContentIcon">
+                <button class="viewBtn shadowSm" onclick="window.open('{FAQ_URL}')">
+                  <span class="viewBtnText">View</span>
+                  <i class="bi bi-arrow-up-right-square"></i>
+                </button>
+
+                <button type="button" class="viewMoreBtn viewMore">
+                  <i class="bi bi-plus-lg"></i>
+                </button>
+
+                <button type="button" class="viewMoreBtn viewLess">
+                  <i class="bi bi-dash-lg"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {END_UNIQUE_COMPONENT}
+      {START_FAQ_COMPONENT}
+      <div class="faqContentListContainer resultCard shadowSm is-collapsed" data-id="{FAQ_ID}">
+        <div class="faqContentHeaderWrapper">
+          <div class="faqContentHeaderContainer">
+            <div class="faqCompanyWrapper">
+              <div class="companyLogoWrapper" onclick="window.location.href='{FAQ_COMPANY_PAGE}'">
+                <img src="{COMPANY_LOGO}" class="companyLogo" alt="Sia Traditional Chinese Medicine" />
+              </div>
+
+              <div class="companyDetailWrapper">
+                <span class="companyTitle inter-light" onclick="window.location.href='{FAQ_COMPANY_PAGE}'"
+                  style="cursor: pointer;">
+                  {COMPANY_NAME}
+                </span>
+
+                <span class="companyUrl" onclick="window.location.href='{COMPANY_URL}'" style="cursor: pointer;">
+                  {COMPANY_URL}
+                </span>
+              </div>
+            </div>
+
+            <div class="companyTagsWrapper">
+              {START_TAG_LIST:00}
+              <span class="tagContainer">{COMPANY_TAG}</span>
+              {END_TAG_LIST:00}
+            </div>
+          </div>
+
+          <div class="cardContentRow">
+            <div class="faqContentBodyContainer">
+              <div class="contentHeaderContainer">
+                <h2 class="faqHeader" onclick="window.location.href='{FAQ_URL}'" style="cursor: pointer;">{FAQ_QUES}
+                </h2>
+                <div class="customCategoryBadgeContainer">
+                  <span class="customCategoryBadge">{FAQ_CATEGORY_NAME}</span>
+                </div>
+              </div>
+
+              <div class="faqSub">
+                {FAQ_ANS}
+              </div>
+              <div class="mobileViewToggle">
+                <button class="mblViewWrapper mblViewMore">Read More</button>
+                <button class="mblViewWrapper mblViewLess">Read Less</button>
+              </div>
+            </div>
+            <div class="cardActionsRow">
+              <div class="faqContentIcon">
+                <button class="viewBtn shadowSm" onclick="window.location.href='{FAQ_URL}'">
+                  <span class="viewBtnText">View</span>
+                  <i class="bi bi-arrow-up-right-square"></i>
+                </button>
+
+                <button type="button" class="viewMoreBtn viewMore">
+                  <i class="bi bi-plus-lg"></i>
+                </button>
+
+                <button type="button" class="viewMoreBtn viewLess">
+                  <i class="bi bi-dash-lg"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {END_FAQ_COMPONENT}
+      {END_FOR_FAQ_LIST:00}
+    </div>
+    {SERACH_QUERY_PAGINATION_COMPONENT}
+  </div>
+</div>
+
+<script>
+  $(document).on("click", ".pageNum", function (e) {
+    e.preventDefault();
+
+    // Ignore dots
+    if ($(this).hasClass("dots")) {
+      return;
+    }
+
+    var $btn = $(this).find(".js-page-btn");
+
+    if (!$btn.length || $btn.hasClass("disabled")) {
+      return;
+    }
+
+    var page = parseInt($btn.attr("data-page"), 10);
+    if (!page || page < 1) {
+      return;
+    }
+
+    var url = new URL(window.location.href);
+    url.searchParams.set("page", page);
+
+    window.location.href = url.toString();
+  });
+
+  // Keep prev / next working
+  $(document).on("click", ".prevButton, .nextButton", function (e) {
+    e.preventDefault();
+
+    var $btn = $(this);
+
+    if ($btn.hasClass("disabled") || $btn.attr("aria-disabled") === "true") {
+      return;
+    }
+
+    var page = parseInt($btn.attr("data-page"), 10);
+    if (!page || page < 1) {
+      return;
+    }
+
+    var url = new URL(window.location.href);
+    url.searchParams.set("page", page);
+
+    window.location.href = url.toString();
+  });
+</script>
