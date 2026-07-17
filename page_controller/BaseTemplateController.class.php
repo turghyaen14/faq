@@ -55,6 +55,14 @@ class BaseTemplatecontroller
         if ($_GET['route'] == 'notfound404') {
             $HEADER_TEMPLATE->remove("/{START_HEADER_COMPONENT}(.+){END_HEADER_COMPONENT}/s");
         }
+
+        // Tagline text ("Explore answers with confidence...") only shows on
+        // Home; every other page keeps it exactly as before. Search box
+        // stays on every page - only this text is route-conditional.
+        if (empty($_GET['route'])) {
+            $HEADER_TEMPLATE->remove("/{START_HOME_TAGLINE_TEXT}(.+){END_HOME_TAGLINE_TEXT}/s");
+        }
+
         $HEADER_TEMPLATE->replace(array(
             "/{META_TITLE}/s" => $this->meta_title,
             "/{META_DESCRIPTION}/s" => $this->meta_description,
