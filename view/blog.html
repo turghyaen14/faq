@@ -64,5 +64,53 @@
       {END_BLOG_CARD:00}
     </div>
 
+    {BLOG_PAGINATION_COMPONENT}
+
   </div>
 </div>
+
+<script>
+  $(document).on("click", ".pageNum", function (e) {
+    e.preventDefault();
+
+    if ($(this).hasClass("dots")) {
+      return;
+    }
+
+    var $btn = $(this).find(".js-page-btn");
+
+    if (!$btn.length || $btn.hasClass("disabled")) {
+      return;
+    }
+
+    var page = parseInt($btn.attr("data-page"), 10);
+    if (!page || page < 1) {
+      return;
+    }
+
+    var url = new URL(window.location.href);
+    url.searchParams.set("page", page);
+
+    window.location.href = url.toString();
+  });
+
+  $(document).on("click", ".prevButton, .nextButton", function (e) {
+    e.preventDefault();
+
+    var $btn = $(this);
+
+    if ($btn.hasClass("disabled") || $btn.attr("aria-disabled") === "true") {
+      return;
+    }
+
+    var page = parseInt($btn.attr("data-page"), 10);
+    if (!page || page < 1) {
+      return;
+    }
+
+    var url = new URL(window.location.href);
+    url.searchParams.set("page", page);
+
+    window.location.href = url.toString();
+  });
+</script>

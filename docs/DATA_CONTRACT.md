@@ -185,7 +185,8 @@ order_column, order_dir, group_by`. Backend MAY add optional keys **without remo
 
 | Method | Params | Returns (Section A shape) |
 |---|---|---|
-| `Article::getCards($options)` | `['limit'=>int,'page'=>int,'search'=>string,'category'=>string,'company_id'=>int]` | array of `articleCard` (A2) |
+| `Article::getCards($options)` | `['limit'=>int,'page'=>int,'search'=>string,'category'=>string,'company_id'=>int]` | array of `articleCard` (A2), paginated (page/limit) |
+| `Article::getTotalCards($options)` | same filter keys as `getCards` (no limit/page) | int total count, for `Helper::paginationComponent()` |
 | `Article::getFeatured()` | none | one `featured` (A3) |
 | `Article::getDetailByFaqId($faq_id)` | `int $faq_id` | one `articleDetail` (A4) |
 

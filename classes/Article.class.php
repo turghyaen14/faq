@@ -19,14 +19,29 @@ class Article
         if ($USE_DUMMY_DATA) {
             $cards = DummyData::articleCards();
             $limit = isset($options['limit']) ? intval($options['limit']) : 0;
+            $page = isset($options['page']) ? intval($options['page']) : 1;
+            if ($page < 1) {
+                $page = 1;
+            }
             if ($limit > 0) {
-                $cards = array_slice($cards, 0, $limit);
+                $start = ($page - 1) * $limit;
+                $cards = array_slice($cards, $start, $limit);
             }
             return $cards;
         }
         // BACKEND: real query here. $options may include limit, page, search, category, company_id.
         // Must return an array of articleCard (docs/DATA_CONTRACT.md Section A2).
         return [];
+    }
+
+    function getTotalCards($options = [])
+    {
+        global $USE_DUMMY_DATA;
+        if ($USE_DUMMY_DATA) {
+            return count(DummyData::articleCards());
+        }
+        // BACKEND: real query here (COUNT), same filters as getCards minus limit/page.
+        return 0;
     }
 
     function getFeatured()

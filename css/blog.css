@@ -30,6 +30,12 @@
   gap: 0.75rem;
 }
 
+/* taller image than the Home Articles grid uses (scoped here only,
+   .articleCardImageWrapper/.articleCardImage stay shared/untouched) */
+.blogCard .articleCardImageWrapper {
+  height: 220px;
+}
+
 .blogCardMetaRow {
   display: flex;
   align-items: center;

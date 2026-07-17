@@ -632,7 +632,7 @@ box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px
   flex-direction: row;
   gap: 0.5rem;
   flex-wrap: wrap;
-  align-items: start;
+  align-items: center;
   justify-content: start;
 
   /* ✅ NEW: reserve height so tags align even when missing */
@@ -1254,11 +1254,12 @@ box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px
 }
 
 .homeHeroImage {
-  width: 100%;
+  width: calc(100% + 4rem);
+  margin-left: -2rem;
+  margin-right: -2rem;
   height: 320px;
   object-fit: cover;
   display: block;
-  border-radius: 15px 15px 0 0;
 }
 
 .homeMainRow {
@@ -1288,8 +1289,8 @@ box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px
   color: #1b4297;
 }
 
-.homeArticlesGrid {
-  --bs-gutter-y: 1.5rem;
+.homeArticleCol {
+  margin-bottom: 1.5rem;
 }
 
 .articleCard {
@@ -1338,7 +1339,9 @@ box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px
 }
 
 .articleCardImageWrapper {
-  width: 100%;
+  width: calc(100% + 2.5rem);
+  margin-left: -1.25rem;
+  margin-right: -1.25rem;
   height: 150px;
   background-color: rgba(27, 66, 151, 0.05);
 }
@@ -1432,6 +1435,9 @@ box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px
   }
 
   .homeHeroImage {
+    width: calc(100% + 2.5rem);
+    margin-left: -1.25rem;
+    margin-right: -1.25rem;
     height: 200px;
   }
 

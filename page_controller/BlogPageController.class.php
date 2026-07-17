@@ -12,7 +12,12 @@ class BlogPageController extends BaseTemplateController
         $Article = new Article();
         $featured = $Article->getFeatured();
         $search_input = isset($_GET['input']) ? trim($_GET['input']) : '';
-        $blog_cards = $Article->getCards(['search' => $search_input]);
+        $limit = 16;
+        $currentPage = isset($_GET['page']) ? (int) $_GET['page'] : 1;
+        if ($currentPage < 1) {
+            $currentPage = 1;
+        }
+        $blog_cards = $Article->getCards(['search' => $search_input, 'page' => $currentPage, 'limit' => $limit]);
 
         $all_blog_card_item = '';
         foreach ($blog_cards as $card) {
@@ -45,6 +50,9 @@ class BlogPageController extends BaseTemplateController
             $all_blog_card_item .= $FOR_BLOG_CARD->content();
         }
 
+        $total_blog_result = $Article->getTotalCards(['search' => $search_input]);
+        $pagination_component = Helper::paginationComponent($currentPage, $total_blog_result, $limit, 3);
+
         $host = $_SERVER['HTTP_HOST'];
         $faq_path = '';
         if ($host === 'ryantest.newpages.com.my') {
@@ -56,6 +64,7 @@ class BlogPageController extends BaseTemplateController
             "/{FEATURED_IMAGE}/s" => $featured['image'],
             "/{FEATURED_URL}/s" => $featured['url'],
             "/{START_BLOG_CARD:00}(.+){END_BLOG_CARD:00}/s" => $all_blog_card_item,
+            "/{BLOG_PAGINATION_COMPONENT}/s" => $pagination_component,
             "/{RYANTEST_FAQ_PATH}/s" => $faq_path,
         ));
         return $BLOGPAGE_TEMPLATE->content(false, true);
