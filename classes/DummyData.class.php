@@ -3,19 +3,9 @@
 // Every key here must match the contract exactly. Values are placeholders.
 class DummyData
 {
-    public static function faqItems()
-    {
-        return [
-            ['faq_id' => 11063, 'question' => 'What is a refurbished iPhone?', 'company_name' => 'Newlife Mobile Tech Pit', 'url' => 'id/11063'],
-            ['faq_id' => 11070, 'question' => 'What types of LCD screens does Bemax offer?', 'company_name' => 'Mars Mobile Distribution Sdn Bhd', 'url' => 'id/11070'],
-            ['faq_id' => 11081, 'question' => 'When can i start my aligner journey?', 'company_name' => 'EZ Dental Studio Sdn Bhd', 'url' => 'id/11081'],
-            ['faq_id' => 11092, 'question' => 'What products does KSW Castors & Wheels supply?', 'company_name' => 'KSW Castors & Wheels Sdn. Bhd.', 'url' => 'id/11092'],
-            ['faq_id' => 11105, 'question' => 'Do you provide security door installation?', 'company_name' => 'THC Metal Engineering Sdn Bhd', 'url' => 'id/11105'],
-            ['faq_id' => 11118, 'question' => 'What is your minimum order quantity (MOQ)?', 'company_name' => 'MAC Apparels', 'url' => 'id/11118'],
-            ['faq_id' => 11124, 'question' => 'What is the minimum size for each unit of blinds?', 'company_name' => 'QingTing Industrial Sdn Bhd', 'url' => 'id/11124'],
-            ['faq_id' => 11139, 'question' => 'Which brands and components do you handle?', 'company_name' => 'L-Tech Automation Sdn Bhd', 'url' => 'id/11139'],
-        ];
-    }
+    // NOTE: no faqItems() here — Home's FAQs column uses real backend data
+    // (Faq::getLimitFaqList + Company::getCompanyDetails), same as the rest
+    // of the site. Only genuinely-missing article fields are stubbed below.
 
     public static function articleCards()
     {

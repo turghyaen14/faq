@@ -35,7 +35,6 @@ to do in each step. Do the steps in order. Do not skip. After each step, run its
    ```
 2. Create `classes/DummyData.class.php`. It is a class with static methods that return arrays.
    Fill each method with the dummy rows for its schema in `docs/DATA_CONTRACT.md` Section A:
-   - `public static function faqItems()` → array of 8 `faqItem` (A1)
    - `public static function articleCards()` → array of 8 `articleCard` (A2)
    - `public static function featured()` → one `featured` object (A3)
    - `public static function articleDetail()` → one `articleDetail` object (A4)
@@ -92,20 +91,26 @@ Reference layout: `.claude/design_handoff_faq_blog_layout/screenshots/home.png`
      `1fr` under 992px (add the rule to `css/style.css`, follow the existing media-query style there).
    - Articles grid: repeatable block `{START_ARTICLE_CARD:00} ... {END_ARTICLE_CARD:00}` with tags
      from Section C1. Style each card with the existing `.resultCard`/`.faqContentListContainer` look.
-   - FAQs list: repeatable block `{START_FAQ_ITEM:00} ... {END_FAQ_ITEM:00}` — compact rows, reuse
-     `.faqContentListContainer` compact styling. Tags from Section C1.
+   - FAQs list: **real data, not stubbed** — reuse the full existing FAQ card component verbatim
+     (`.faqContentListContainer.resultCard`, same markup as `view/searchedQuery.html`), wrapped in
+     `.faqContentListWrapper.list-view`. Repeatable block `{START_FOR_FAQ_LIST:00} ...
+     {END_FOR_FAQ_LIST:00}` with a `{START_TAG_LIST:00}...{END_TAG_LIST:00}` tags sub-block. See
+     Section C1 for the full tag list.
 2. Edit `page_controller/IndexPageController.class.php`:
    - `$Article = new Article();` → `$featured = $Article->getFeatured();` and
      `$article_cards = $Article->getCards(['limit' => 4]);`
-   - `$Faq = new Faq();` → reuse existing `getLimitFaqList([...])` OR use dummy `faqItems`; the FAQs
-     column needs the `faqItem` (A1) shape. Simplest for now: `DummyData::faqItems()`.
-     (Backend will later point this at a real `getLimitFaqList` call.)
-   - Loop `$article_cards` into the `{START_ARTICLE_CARD:00}` block; loop the faq items into the
-     `{START_FAQ_ITEM:00}` block — copy the loop mechanics from the existing foreach in this same file.
+   - `$Faq = new Faq(); $Company = new Company();` → real data, same pattern as the original
+     `IndexPageController`/`SearchPageController`: `Faq::getLimitFaqList(['group_by' =>
+     'company_id', 'limit' => 5])`, then per row `Company::getCompanyDetails()` +
+     `Faq::getFaqCategoryNameByID()` + a tags sub-loop. No dummy branch needed here — this data
+     already exists live.
+   - Loop `$article_cards` into the `{START_ARTICLE_CARD:00}` block; loop the FAQ rows into the
+     `{START_FOR_FAQ_LIST:00}` block — copy the loop mechanics from the existing foreach in this
+     same file (and from `SearchPageController` for the tags sub-loop).
    - One final `->replace([...])` mapping all tags. `return ->content(false, true)`.
 
 **CHECK:** Load the site root `/`. You must see: hero card with the featured title + image slot,
-the search bar, an Articles grid of 4 cards, and a FAQs list of 8 rows — all in the current FAQ2U
+the search bar, an Articles grid of 4 cards, and a FAQs list of 5 real (live-DB) FAQ cards — all in the current FAQ2U
 skin (cream bg, blue accents, Inter/Gloock). No `{TAGS}` visible on screen.
 
 ---

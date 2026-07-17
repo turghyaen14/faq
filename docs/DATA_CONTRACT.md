@@ -35,25 +35,10 @@ real query is ready. Frontend never has to change.
 > Keep the **keys exactly as written**. Values are free (fake but realistic).
 > Where a value should be empty for now (images we don't have), use an empty string `""`.
 
-## A1. `faqItem` — compact FAQ row
-Used by: **Home → FAQs column** (list of 8).
-
-```json
-{
-  "faq_id": 11063,
-  "question": "What is a refurbished iPhone?",
-  "company_name": "Newlife Mobile Tech Pit",
-  "url": "id/11063"
-}
-```
-Generate: **8 rows** → `DummyData::faqItems()`
-
-| key | type | notes |
-|---|---|---|
-| `faq_id` | int | real FAQ id; used to build the link |
-| `question` | string | the FAQ question text |
-| `company_name` | string | display name of the company |
-| `url` | string | always `"id/{faq_id}"` (links to the article/individual page) |
+## A1. ~~`faqItem`~~ — REMOVED, not stubbed
+**Home → FAQs column** uses **real backend data**, not a dummy schema — `Faq::getLimitFaqList()` +
+`Company::getCompanyDetails()` already exist and work today, so there's nothing to stub here. See
+Section B "Existing methods" and Section C1 for the actual (real) tag names this column uses.
 
 ## A2. `articleCard` — blog/article card
 Used by: **Home → Articles grid** (4 rows) and **Blog listing** (6–8 rows).
@@ -223,8 +208,12 @@ Repeatable rows use the existing block convention `{START_X:00} ... {END_X:00}`.
 Hero (from `featured`): `{FEATURED_TITLE}`, `{FEATURED_IMAGE}`, `{FEATURED_URL}`
 Articles grid block `{START_ARTICLE_CARD:00}...{END_ARTICLE_CARD:00}` (from `articleCard`):
 `{ARTICLE_URL}`, `{ARTICLE_TITLE}`, `{ARTICLE_CATEGORY}`, `{ARTICLE_DATE}`, `{ARTICLE_IMAGE}`
-FAQs list block `{START_FAQ_ITEM:00}...{END_FAQ_ITEM:00}` (from `faqItem`):
-`{FAQ_URL}`, `{FAQ_QUESTION}`, `{FAQ_COMPANY_NAME}`
+FAQs list block — **real data**, reuses the site's existing full FAQ card component
+(`.faqContentListContainer.resultCard`, same markup as `view/searchedQuery.html`), sourced from
+`Faq::getLimitFaqList()` + `Company::getCompanyDetails()` + `Faq::getFaqCategoryNameByID()`:
+`{START_FOR_FAQ_LIST:00}...{END_FOR_FAQ_LIST:00}`, `{FAQ_ID}`, `{FAQ_QUES}`, `{FAQ_ANS}`, `{FAQ_URL}`,
+`{FAQ_COMPANY_PAGE}`, `{COMPANY_NAME}`, `{COMPANY_URL}`, `{COMPANY_LOGO}`, `{CATEGORY_NAME}`, tags
+sub-block `{START_TAG_LIST:00}...{END_TAG_LIST:00}` → `{COMPANY_TAG}`.
 
 ## C2. `view/blog.html` (Blog listing — NEW)
 Grid/List toggle: reuse existing `.tabWrapper` markup from `view/index.html`.
