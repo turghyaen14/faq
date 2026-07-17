@@ -52,6 +52,9 @@ class IndexPageController extends BaseTemplateController
             $extra_tag_count = count($tag_list) > 1 ? count($tag_list) - 1 : 0;
 
             $FOR_FAQ_DATA->renew("/{START_FOR_FAQ_LIST:00}(.+){END_FOR_FAQ_LIST:00}/s", $INDEXPAGE_TEMPLATE->content());
+            if ($first_tag === '') {
+                $FOR_FAQ_DATA->remove("/{START_FIRST_TAG}(.+){END_FIRST_TAG}/s");
+            }
             if ($extra_tag_count <= 0) {
                 $FOR_FAQ_DATA->remove("/{START_EXTRA_TAG_BADGE}(.+){END_EXTRA_TAG_BADGE}/s");
             }
@@ -61,7 +64,7 @@ class IndexPageController extends BaseTemplateController
                     "/{FAQ_QUES}/s" => Helper::normalizeSentence($faq['faq_question_en']),
                     "/{FAQ_URL}/s" => "id/" . $faq['id'],
                     "/{FAQ_COMPANY_PAGE}/s" => "company/" . $company_id . "/" . $company_name_check,
-                    "/{FIRST_TAG}/s" => $first_tag,
+                    "/{START_FIRST_TAG}(.+){END_FIRST_TAG}/s" => "<span class=\"tagContainer\">$first_tag</span>",
                     "/{START_EXTRA_TAG_BADGE}(.+){END_EXTRA_TAG_BADGE}/s" => "<span class=\"tagCountBadge\">+$extra_tag_count</span>",
                     "/{COMPANY_NAME}/s" => $company_name,
                     "/{COMPANY_URL}/s" => $company_url,
