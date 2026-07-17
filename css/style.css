@@ -1342,12 +1342,21 @@ box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px
   font-size: 1.15rem;
   line-height: 1.35;
   margin: 0;
+  min-height: calc(1.15rem * 1.35 * 2);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
 }
 
 .articleCardExcerpt {
   margin: 0;
   padding: 0;
   text-align: left;
+  /* reserve full height for .faqSub's 3-line clamp so shorter excerpts
+     don't leave the card shorter than its row neighbors */
+  min-height: 4.2em;
 }
 
 .articleCardImageWrapper {
