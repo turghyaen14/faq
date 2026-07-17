@@ -57,6 +57,10 @@ $routes = [
         'controller' => 'SearchPageController',
         'method' => 'displaySearchPage'
     ],
+    'faqs' => [
+        'controller' => 'FaqsPageController',
+        'method' => 'displayFaqsPage'
+    ],
     'aboutus' => [
         'controller' => 'AboutUsPageController',
         'method' => 'displayAboutUsPage'

@@ -1,0 +1,82 @@
+</div>
+
+<div class="primaryContainer">
+  <div class="faqContentContainer container">
+    <div class="align-items-end justify-content-end w-100 d-none d-lg-flex">
+      <div class="tabWrapper">
+        <div class="tabContainer" id="gridViewTab">
+          <span><i class="bi bi-grid faSize"></i></span>
+          <span> Grid View </span>
+        </div>
+        <div class="tabContainer selectedTabContainer" id="listViewTab">
+          <span><i class="bi bi-list-ul faSize"></i></span>
+          <span> List View </span>
+        </div>
+      </div>
+    </div>
+    <div class="faqContentListWrapper list-view">
+      {START_FOR_FAQ_LIST:00}
+      <div class="faqContentListContainer resultCard shadowSm" data-id="{FAQ_ID}">
+        <div class="faqContentHeaderWrapper">
+          <div class="faqContentHeaderContainer">
+            <div class="faqCompanyWrapper">
+              <div class="companyLogoWrapper" onclick="window.location.href='{FAQ_COMPANY_PAGE}'">
+                <img src=" {COMPANY_LOGO}" class="companyLogo" alt="{COMPANY_NAME}" />
+              </div>
+
+              <div class="companyDetailWrapper">
+                <span class="companyTitle inter-light" onclick="window.location.href='{FAQ_COMPANY_PAGE}'">
+                  {COMPANY_NAME}
+                </span>
+
+                <span class=" companyUrl" onclick="window.open('{COMPANY_URL}')">
+                  {COMPANY_URL}
+                </span>
+              </div>
+            </div>
+
+            <div class="companyTagsWrapper">
+              {START_TAG_LIST:00}
+              <span class="tagContainer">{COMPANY_TAG}</span>
+              {END_TAG_LIST:00}
+            </div>
+          </div>
+
+          <div class="cardContentRow">
+            <div class="faqContentBodyContainer">
+              <div class="contentHeaderContainer">
+                <h2 class="faqHeader" onclick="window.location.href='{FAQ_URL}'">{FAQ_QUES}</h2>
+                <div class="customCategoryBadgeContainer">
+                  <span class="customCategoryBadge">{CATEGORY_NAME}</span>
+                </div>
+              </div>
+              <div class="faqSub">
+                {FAQ_ANS}
+              </div>
+              <div class="mobileViewToggle">
+                <button class="mblViewWrapper mblViewMore">Read More</button>
+                <button class="mblViewWrapper mblViewLess">Read Less</button>
+              </div>
+            </div>
+
+            <div class="faqContentIcon">
+              <button class="viewBtn shadowSm" onclick="window.location.href='{FAQ_URL}'">
+                <span class="viewBtnText">View</span>
+                <i class="bi bi-arrow-up-right-square"></i>
+              </button>
+
+              <button type="button" class="viewMoreBtn viewMore">
+                <i class="bi bi-plus-lg"></i>
+              </button>
+
+              <button type="button" class="viewMoreBtn viewLess">
+                <i class="bi bi-dash-lg"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      {END_FOR_FAQ_LIST:00}
+    </div>
+  </div>
+</div>

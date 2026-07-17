@@ -8,7 +8,6 @@ class IndexPageController extends BaseTemplateController
         $INDEXPAGE_TEMPLATE = new TEMPLATE();
         $FOR_ARTICLE_CARD = new TEMPLATE();
         $FOR_FAQ_DATA = new TEMPLATE();
-        $FOR_COMPANY_TAG_ARRAY = new TEMPLATE();
         $INDEXPAGE_TEMPLATE->getTemplate("view/index.html");
 
         $Article = new Article();
@@ -48,28 +47,22 @@ class IndexPageController extends BaseTemplateController
             $category_id = $faq['faq_category_id'];
             $category_name = $Faq->getFaqCategoryNameByID($category_id);
             $category_name = Helper::slugify($category_name['category_title_en']);
-            $tag_list = explode(',', $company_tag);
-            $all_tag_item = '';
-            if (!empty(array_filter($tag_list))) {
-                foreach ($tag_list as $key => $tag) {
-                    $FOR_COMPANY_TAG_ARRAY->renew("/{START_TAG_LIST:00}(.+){END_TAG_LIST:00}/s", $INDEXPAGE_TEMPLATE->content());
-                    $FOR_COMPANY_TAG_ARRAY->replace(
-                        array(
-                            "/{COMPANY_TAG}/s" => $tag,
-                        )
-                    );
-                    $all_tag_item .= $FOR_COMPANY_TAG_ARRAY->content();
-                }
-            }
+            $tag_list = array_values(array_filter(array_map('trim', explode(',', $company_tag))));
+            $first_tag = isset($tag_list[0]) ? $tag_list[0] : '';
+            $extra_tag_count = count($tag_list) > 1 ? count($tag_list) - 1 : 0;
+
             $FOR_FAQ_DATA->renew("/{START_FOR_FAQ_LIST:00}(.+){END_FOR_FAQ_LIST:00}/s", $INDEXPAGE_TEMPLATE->content());
+            if ($extra_tag_count <= 0) {
+                $FOR_FAQ_DATA->remove("/{START_EXTRA_TAG_BADGE}(.+){END_EXTRA_TAG_BADGE}/s");
+            }
             $FOR_FAQ_DATA->replace(
                 array(
                     "/{FAQ_ID}/s" => $faq['id'],
                     "/{FAQ_QUES}/s" => Helper::normalizeSentence($faq['faq_question_en']),
-                    "/{FAQ_ANS}/s" => Helper::normalizeSentence($faq['faq_answer_en']),
                     "/{FAQ_URL}/s" => "id/" . $faq['id'],
                     "/{FAQ_COMPANY_PAGE}/s" => "company/" . $company_id . "/" . $company_name_check,
-                    "/{START_TAG_LIST:00}(.+){END_TAG_LIST:00}/s" => $all_tag_item,
+                    "/{FIRST_TAG}/s" => $first_tag,
+                    "/{START_EXTRA_TAG_BADGE}(.+){END_EXTRA_TAG_BADGE}/s" => "<span class=\"tagCountBadge\">+$extra_tag_count</span>",
                     "/{COMPANY_NAME}/s" => $company_name,
                     "/{COMPANY_URL}/s" => $company_url,
                     "/{COMPANY_LOGO}/s" => $company_logo,
