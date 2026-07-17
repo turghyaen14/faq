@@ -1294,13 +1294,15 @@ box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px
 }
 
 .articleCard {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
   height: 100%;
   background-color: #faf7ef;
   border: 1px solid rgba(27, 66, 151, 0.12);
   border-radius: 20px;
   overflow: hidden;
-  padding: 1.25rem 1.25rem 0;
+  padding: 1.25rem;
   text-decoration: none;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
@@ -1310,32 +1312,38 @@ box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.06);
 }
 
+.articleCardHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.articleCardMetaRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.articleSlugTag {
+  font-size: 0.7rem;
+  color: #736c5a;
+  background: rgba(0, 0, 0, 0.04);
+  border-radius: 6px;
+  padding: 3px 8px;
+}
+
 .articleCardTitle {
   color: #1b4297;
   font-size: 1.15rem;
   line-height: 1.35;
-  margin: 0 0 0.5rem;
+  margin: 0;
 }
 
-.articleCardMeta {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-size: 0.7rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  color: #4f4f4f;
-  margin-bottom: 1rem;
-}
-
-.articleCardDot {
-  color: #c9c2ac;
-}
-
-.articleCardDate {
-  color: #828282;
-  text-transform: none;
-  font-weight: 400;
+.articleCardExcerpt {
+  margin: 0;
+  padding: 0;
 }
 
 .articleCardImageWrapper {

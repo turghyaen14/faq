@@ -207,8 +207,12 @@ Repeatable rows use the existing block convention `{START_X:00} ... {END_X:00}`.
 
 ## C1. `view/index.html` (Home)
 Hero (from `featured`): `{FEATURED_TITLE}`, `{FEATURED_IMAGE}`, `{FEATURED_URL}`
-Articles grid block `{START_ARTICLE_CARD:00}...{END_ARTICLE_CARD:00}` (from `articleCard`):
-`{ARTICLE_URL}`, `{ARTICLE_TITLE}`, `{ARTICLE_CATEGORY}`, `{ARTICLE_DATE}`, `{ARTICLE_IMAGE}`
+Articles grid block `{START_ARTICLE_CARD:00}...{END_ARTICLE_CARD:00}` (from `articleCard`) — matches
+the Blog card layout exactly (same underlying schema): `{ARTICLE_URL}`, `{ARTICLE_TITLE}`,
+`{ARTICLE_CATEGORY}`, `{ARTICLE_IMAGE}`, `{ARTICLE_EXCERPT}`, `{ARTICLE_SLUG}`,
+`{ARTICLE_COMPANY_NAME}`, `{ARTICLE_COMPANY_URL}`, `{ARTICLE_COMPANY_LOGO}`, tags sub-block
+`{START_ARTICLE_TAG:00}...{END_ARTICLE_TAG:00}` → `{ARTICLE_TAG}`. (`date` exists in the data but
+isn't rendered — Blog's card doesn't show it either.)
 FAQs list block — **real data**, reuses the site's existing full FAQ card component
 (`.faqContentListContainer.resultCard`, same markup as `view/searchedQuery.html`), sourced from
 `Faq::getLimitFaqList()` + `Company::getCompanyDetails()` + `Faq::getFaqCategoryNameByID()`:

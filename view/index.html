@@ -18,14 +18,38 @@
           {START_ARTICLE_CARD:00}
           <div class="col-md-6 homeArticleCol">
             <a href="{ARTICLE_URL}" class="articleCard shadowSm">
-              <h3 class="articleCardTitle gloock-regular">{ARTICLE_TITLE}</h3>
-              <div class="articleCardMeta">
-                <span class="articleCardCategory">{ARTICLE_CATEGORY}</span>
-                <span class="articleCardDot">&bull;</span>
-                <span class="articleCardDate">{ARTICLE_DATE}</span>
+              <div class="articleCardHeader">
+                <div class="faqCompanyWrapper">
+                  <div class="companyLogoWrapper">
+                    <img src="{ARTICLE_COMPANY_LOGO}" class="companyLogo" alt="{ARTICLE_COMPANY_NAME}" />
+                  </div>
+                  <div class="companyDetailWrapper">
+                    <span class="companyTitle inter-light">{ARTICLE_COMPANY_NAME}</span>
+                    <span class="companyUrl">{ARTICLE_COMPANY_URL}</span>
+                  </div>
+                </div>
+                <span class="customCategoryBadge">{ARTICLE_CATEGORY}</span>
               </div>
+
               <div class="articleCardImageWrapper">
                 <img src="{ARTICLE_IMAGE}" class="articleCardImage" alt="{ARTICLE_TITLE}" />
+              </div>
+
+              <div class="articleCardMetaRow">
+                <span class="articleSlugTag">{ARTICLE_SLUG}</span>
+                <span class="viewBtn shadowSm">
+                  <span class="viewBtnText">Read</span>
+                  <i class="bi bi-arrow-up-right-square"></i>
+                </span>
+              </div>
+
+              <h3 class="articleCardTitle gloock-regular">{ARTICLE_TITLE}</h3>
+              <p class="faqSub articleCardExcerpt">{ARTICLE_EXCERPT}</p>
+
+              <div class="companyTagsWrapper">
+                {START_ARTICLE_TAG:00}
+                <span class="tagContainer">{ARTICLE_TAG}</span>
+                {END_ARTICLE_TAG:00}
               </div>
             </a>
           </div>

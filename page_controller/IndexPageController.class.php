@@ -7,6 +7,7 @@ class IndexPageController extends BaseTemplateController
         global $IMG_PATH;
         $INDEXPAGE_TEMPLATE = new TEMPLATE();
         $FOR_ARTICLE_CARD = new TEMPLATE();
+        $FOR_ARTICLE_TAG = new TEMPLATE();
         $FOR_FAQ_DATA = new TEMPLATE();
         $INDEXPAGE_TEMPLATE->getTemplate("view/index.html");
 
@@ -16,14 +17,30 @@ class IndexPageController extends BaseTemplateController
 
         $all_article_card_item = '';
         foreach ($article_cards as $article) {
+            $all_article_tag_item = '';
+            foreach ($article['tags'] as $tag) {
+                $FOR_ARTICLE_TAG->renew("/{START_ARTICLE_TAG:00}(.+){END_ARTICLE_TAG:00}/s", $INDEXPAGE_TEMPLATE->content());
+                $FOR_ARTICLE_TAG->replace(
+                    array(
+                        "/{ARTICLE_TAG}/s" => $tag,
+                    )
+                );
+                $all_article_tag_item .= $FOR_ARTICLE_TAG->content();
+            }
+
             $FOR_ARTICLE_CARD->renew("/{START_ARTICLE_CARD:00}(.+){END_ARTICLE_CARD:00}/s", $INDEXPAGE_TEMPLATE->content());
             $FOR_ARTICLE_CARD->replace(
                 array(
                     "/{ARTICLE_URL}/s" => $article['url'],
                     "/{ARTICLE_TITLE}/s" => $article['title'],
                     "/{ARTICLE_CATEGORY}/s" => $article['category'],
-                    "/{ARTICLE_DATE}/s" => $article['date'],
                     "/{ARTICLE_IMAGE}/s" => $article['image'],
+                    "/{ARTICLE_EXCERPT}/s" => $article['excerpt'],
+                    "/{ARTICLE_SLUG}/s" => $article['slug'],
+                    "/{ARTICLE_COMPANY_NAME}/s" => $article['company_name'],
+                    "/{ARTICLE_COMPANY_URL}/s" => $article['company_url'],
+                    "/{ARTICLE_COMPANY_LOGO}/s" => $article['company_logo'],
+                    "/{START_ARTICLE_TAG:00}(.+){END_ARTICLE_TAG:00}/s" => $all_article_tag_item,
                 )
             );
             $all_article_card_item .= $FOR_ARTICLE_CARD->content();
