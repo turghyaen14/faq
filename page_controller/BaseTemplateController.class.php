@@ -255,13 +255,23 @@ class BaseTemplatecontroller
             $all_body_para_item .= $FOR_BODY_PARA->content();
         }
 
+        $host = $_SERVER['HTTP_HOST'];
+        $faq_path = '';
+        if ($host === 'ryantest.newpages.com.my') {
+            $faq_path = "/faq";
+        }
+
+        // Absolute paths (not "../"-relative): this method is shared by two
+        // routes at different URL depths (/id/{id} vs /blog/id/{id}), so a
+        // relative link would resolve to a different place depending on
+        // which one the visitor is actually on.
         $FOR_RELATED_FAQ = new TEMPLATE();
         $all_related_faq_item = '';
         foreach ($article_detail['related_faqs'] as $related) {
             $FOR_RELATED_FAQ->renew("/{START_RELATED_FAQ:00}(.+){END_RELATED_FAQ:00}/s", $INDIVIDUALPAGE_TEMPLATE->content());
             $FOR_RELATED_FAQ->replace(
                 array(
-                    "/{RELATED_FAQ_URL}/s" => $related['url'],
+                    "/{RELATED_FAQ_URL}/s" => $faq_path . "/" . $related['url'],
                     "/{RELATED_FAQ_QUESTION}/s" => $related['question'],
                 )
             );
@@ -290,16 +300,10 @@ class BaseTemplatecontroller
             $schema = ObjectCache::getCache($cache_file_name);
         }
 
-        $host = $_SERVER['HTTP_HOST'];
-        $faq_path = '';
-        if ($host === 'ryantest.newpages.com.my') {
-            $faq_path = "/faq";
-        }
-
         $INDIVIDUALPAGE_TEMPLATE->replace(array(
             "/{FAQ_QUESTION}/s" => $ques,
             "/{FAQ_ANSWER}/s" => $answ,
-            "/{FAQ_COMPANY_PAGE}/s" => "../company/$company_id/$company_name_check",
+            "/{FAQ_COMPANY_PAGE}/s" => "$faq_path/company/$company_id/$company_name_check",
             "/{FAQ_CATEGORY_NAME}/s" => $category_name,
             "/{COMPANY_ID}/s" => $company_id,
             "/{COMPANY_NAME}/s" => $company_name,
@@ -313,9 +317,9 @@ class BaseTemplatecontroller
             "/{SPLASH_IMAGE}/s" => $splash_image,
             "/{START_BODY_PARA:00}(.+){END_BODY_PARA:00}/s" => $all_body_para_item,
             "/{START_RELATED_FAQ:00}(.+){END_RELATED_FAQ:00}/s" => $all_related_faq_item,
-            "/{CTA_COMPANY_FAQS_URL}/s" => "../company/$company_id/$company_name_check",
+            "/{CTA_COMPANY_FAQS_URL}/s" => "$faq_path/company/$company_id/$company_name_check",
             "/{CTA_WEBSITE_URL}/s" => $company_website,
-            "/{CTA_BACK_URL}/s" => "../",
+            "/{CTA_BACK_URL}/s" => "$faq_path/",
             "/{RYANTEST_FAQ_PATH}/s" => $faq_path,
         ));
 

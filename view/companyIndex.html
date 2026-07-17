@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="{RYANTEST_FAQ_PATH}/css/companyIndex.css" />
+<link rel="stylesheet" href="{RYANTEST_FAQ_PATH}/css/blog.css" />
 
 <div class="row">
   <div class="col-lg-12 tagLineWrapper">
@@ -53,276 +54,136 @@
 </div>
 </div>
 <div class="primaryContainer">
-  <div class="container">
-    <div class="d-lg-none mb-3">
-      <div class="dropdown w-100">
-        <button class="btn categoryDropdownBtn dropdown-toggle w-100 shadowSm" type="button" data-bs-toggle="dropdown"
-          aria-expanded="false">
-          <span id="mobileCategoryLabel">All Topics</span>
-        </button>
+  <div class="faqContentContainer container gap-4">
 
-        <ul class="dropdown-menu w-100 categoryDropdownMenu shadowSm">
-          <li>
-            <a class="dropdown-item categoryDDItem active" href="#all" data-label="All Topics">
-              All Topics
-            </a>
-          </li>
-          {START_FOR_MOBILE_CATEGORY_NAME_LIST:00}
-          <li>
-            <a class="dropdown-item categoryDDItem" href="#{CATGEGORY_NAME_SLUG}" data-label="{CATGEGORY_NAME}">
-              {CATGEGORY_NAME}
-            </a>
-          </li>
-          {END_FOR_MOBILE_CATEGORY_NAME_LIST:00}
-        </ul>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-lg-3 d-lg-block d-md-none">
-        <div class="faqSidebar shadowSm">
-          <span class="sidebarTitle inter-semibold">CATEGORIES</span>
-
-          <a href="#all" class="sidebarItem active">
-            <span>All Category</span>
-          </a>
-          {START_FOR_CATEGORY_NAME_LIST:00}
-          <a href="#{CATGEGORY_NAME_SLUG}" class="sidebarItem">
-            <span>{CATGEGORY_NAME}</span>
-          </a>
-          {END_FOR_CATEGORY_NAME_LIST:00}
+    <div class="d-flex align-items-end justify-content-end w-100">
+      <div class="tabWrapper">
+        <div class="tabContainer selectedTabContainer" id="companyBlogTab">
+          <span> Blog </span>
         </div>
-      </div>
-      <div class="col-lg-9 col-md-12 col-sm-12">
-        <div class="faqContentListWrapper list-view pt-0 mt-0">
-          <div class="faqContentContainer faqGridHeader">
-            <div class="tabContainer align-items-end justify-content-between w-100 d-flex">
-              <div class="categoryContainer">
-                <h4 class="categoryHeader" id="categoryName">All Category</h4>
-                <div class="divider"></div>
-              </div>
-              <div class="tabWrapper d-none d-lg-flex">
-                <div class="align-items-end justify-content-between">
-                  <div class="tabContainer" id="gridViewTab">
-                    <span><i class="bi bi-grid faSize"></i></span>
-                    <span> Grid View </span>
-                  </div>
-                </div>
-                <div class="tabContainer selectedTabContainer" id="listViewTab">
-                  <span><i class="bi bi-list-ul faSize"></i></span>
-                  <span> List View </span>
-                </div>
-              </div>
-            </div>
-          </div>
-          {START_FOR_FAQ_LIST:00} {START_UNIQUE_COMPONENT}
-          <div class="customFaqContentListContainer resultCard shadowSm is-collapsed" data-id="uni-{FAQ_ID}"
-            data-category="{CATEGORY_NAME}">
-            <div class="faqContentHeaderWrapper">
-              <div class="faqContentHeaderContainer">
-                <div class="iconTextWrapper">
-                  <i class="bi bi-chat-dots faqIcon"></i>
-                  <div class="customTextWrapper">
-                    <span class="customtext">Most Asked Question</span>
-                    <span class="customtext">Answered By FAQ2u</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="cardContentRow">
-                <div class="faqContentBodyContainer">
-                  <div class="contentHeaderContainer">
-                    <h2 class="faqHeader">{FAQ_QUE}</h2>
-                  </div>
-
-                  <div class="faqSub">{FAQ_ANS}</div>
-                  <div class="mobileViewToggle">
-                    <button class="mblViewWrapper mblViewMore">
-                      Read More
-                    </button>
-                    <button class="mblViewWrapper mblViewLess">
-                      Read Less
-                    </button>
-                  </div>
-                </div>
-
-                <div class="cardActionsRow">
-                  <div class="faqContentIcon">
-                    <button class="viewBtn shadowSm" onclick="window.location.href = '{FAQ_URL}'">
-                      <span class="viewBtnText">View</span>
-                      <i class="bi bi-arrow-up-right-square"></i>
-                    </button>
-
-                    <button type="button" class="viewMoreBtn viewMore">
-                      <i class="bi bi-plus-lg"></i>
-                    </button>
-
-                    <button type="button" class="viewMoreBtn viewLess">
-                      <i class="bi bi-dash-lg"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          {END_UNIQUE_COMPONENT} {START_FAQ_COMPONENT}
-          <div class="faqContentListContainer resultCard shadowSm is-collapsed" data-id="{FAQ_ID}"
-            data-category="{CATEGORY_NAME}">
-            <div class="faqContentHeaderWrapper">
-              <div class="faqContentHeaderContainer">
-                <div class="faqCompanyWrapper">
-                  <div class="companyLogoWrapper">
-                    <img src="{COMPANY_LOGO_IMAGE}" class="companyLogo" alt="{COMPANY_NAME}" />
-                  </div>
-
-                  <div class="companyDetailWrapper">
-                    <span class="companyTitle inter-light">{COMPANY_NAME}
-                    </span>
-                    <span class="companyUrl">
-                      <a class="ctaToSite shadow-sm" target="_blank" href="{COMPANY_WEBSITE}">{COMPANY_WEBSITE}</a>
-                    </span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="cardContentRow">
-                <div class="faqContentBodyContainer">
-                  <div class="contentHeaderContainer">
-                    <h2 class="faqHeader" onclick="window.location.href = '{FAQ_URL}'">
-                      {FAQ_QUE}
-                    </h2>
-                  </div>
-
-                  <div class="faqSub">{FAQ_ANS}</div>
-                  <div class="mobileViewToggle">
-                    <button class="mblViewWrapper mblViewMore">
-                      Read More
-                    </button>
-                    <button class="mblViewWrapper mblViewLess">
-                      Read Less
-                    </button>
-                  </div>
-                </div>
-
-                <div class="cardActionsRow">
-                  <div class="faqContentIcon">
-                    <button class="viewBtn shadowSm" onclick="window.location.href = '{FAQ_URL}'">
-                      <span class="viewBtnText">View</span>
-                      <i class="bi bi-arrow-up-right-square"></i>
-                    </button>
-
-                    <button type="button" class="viewMoreBtn viewMore">
-                      <i class="bi bi-plus-lg"></i>
-                    </button>
-
-                    <button type="button" class="viewMoreBtn viewLess">
-                      <i class="bi bi-dash-lg"></i>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          {END_FAQ_COMPONENT} {END_FOR_FAQ_LIST:00}
+        <div class="tabContainer" id="companyFaqTab">
+          <span> FAQ </span>
         </div>
       </div>
     </div>
+
+    <div class="companyTabPanel" id="companyBlogPanel">
+      <div class="row homeArticlesGrid">
+        {START_BLOG_CARD:00}
+        <div class="col-md-6 homeArticleCol">
+          <div class="blogCard resultCard shadowSm">
+            <div class="blogCardHeader">
+              <div class="faqCompanyWrapper">
+                <div class="companyLogoWrapper" onclick="window.location.href='{BLOG_URL}'">
+                  <img src="{BLOG_COMPANY_LOGO}" class="companyLogo" alt="{BLOG_COMPANY_NAME}" />
+                </div>
+                <div class="companyDetailWrapper">
+                  <span class="companyTitle inter-light" onclick="window.location.href='{BLOG_URL}'" style="cursor: pointer;">
+                    {BLOG_COMPANY_NAME}
+                  </span>
+                  <span class="companyUrl">{BLOG_COMPANY_URL}</span>
+                </div>
+              </div>
+              <span class="customCategoryBadge">{BLOG_CATEGORY}</span>
+            </div>
+
+            <div class="articleCardImageWrapper">
+              <img src="{BLOG_IMAGE}" class="articleCardImage" alt="{BLOG_TITLE}" />
+            </div>
+
+            <div class="blogCardMetaRow">
+              <span class="blogSlugTag">{BLOG_SLUG}</span>
+              <button class="viewBtn shadowSm" onclick="window.location.href='{BLOG_URL}'">
+                <span class="viewBtnText">Read</span>
+                <i class="bi bi-arrow-up-right-square"></i>
+              </button>
+            </div>
+
+            <h3 class="articleCardTitle gloock-regular blogCardTitle" onclick="window.location.href='{BLOG_URL}'" style="cursor: pointer;">{BLOG_TITLE}</h3>
+            <p class="faqSub blogCardExcerpt">{BLOG_EXCERPT}</p>
+
+            <div class="companyTagsWrapper">
+              {START_BLOG_TAG:00}
+              <span class="tagContainer">{BLOG_TAG}</span>
+              {END_BLOG_TAG:00}
+            </div>
+          </div>
+        </div>
+        {END_BLOG_CARD:00}
+      </div>
+    </div>
+
+    <div class="companyTabPanel d-none" id="companyFaqPanel">
+      <div class="faqContentListWrapper list-view">
+        {START_FOR_FAQ_LIST:00}
+        <div class="faqContentListContainer resultCard shadowSm" data-id="{FAQ_ID}">
+          <div class="faqContentHeaderWrapper">
+            <div class="faqContentHeaderContainer">
+              <div class="faqCompanyWrapper">
+                <div class="companyLogoWrapper">
+                  <img src="{COMPANY_LOGO}" class="companyLogo" alt="{COMPANY_NAME}" />
+                </div>
+                <div class="companyDetailWrapper">
+                  <span class="companyTitle inter-light">{COMPANY_NAME}</span>
+                  <span class="companyUrl">{COMPANY_URL}</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="cardContentRow">
+              <div class="faqContentBodyContainer">
+                <div class="contentHeaderContainer">
+                  <h2 class="faqHeader" onclick="window.location.href='{FAQ_URL}'">{FAQ_QUES}</h2>
+                  <div class="customCategoryBadgeContainer">
+                    <span class="customCategoryBadge">{CATEGORY_NAME}</span>
+                  </div>
+                </div>
+                <div class="faqSub">
+                  {FAQ_ANS}
+                </div>
+                <div class="mobileViewToggle">
+                  <button class="mblViewWrapper mblViewMore">Read More</button>
+                  <button class="mblViewWrapper mblViewLess">Read Less</button>
+                </div>
+              </div>
+
+              <div class="faqContentIcon">
+                <button class="viewBtn shadowSm" onclick="window.location.href='{FAQ_URL}'">
+                  <span class="viewBtnText">View</span>
+                  <i class="bi bi-arrow-up-right-square"></i>
+                </button>
+
+                <button type="button" class="viewMoreBtn viewMore">
+                  <i class="bi bi-plus-lg"></i>
+                </button>
+
+                <button type="button" class="viewMoreBtn viewLess">
+                  <i class="bi bi-dash-lg"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        {END_FOR_FAQ_LIST:00}
+      </div>
+    </div>
+
   </div>
 </div>
 <script>
-  document.addEventListener("click", function (e) {
-    const btn = e.target.closest(".viewBtn");
-    if (!btn) return;
-
-    const faqId = btn.getAttribute("data-faq");
-    if (!faqId) return;
-
-    const pathParts = window.location.pathname.split("/").filter(Boolean);
-
-    if (pathParts.length >= 3 && pathParts[0] === "faq") {
-      pathParts[1] = "individual";
-      pathParts[2] = encodeURIComponent(faqId);
-    }
-
-    const newPath = "/" + pathParts.join("/");
-    window.open(newPath);
-  });
-
-  function normalizeCategory(value) {
-    value = (value || "").toString();
-    value = value.replace(/&amp;/g, "&");
-    value = value.toLowerCase().trim();
-    value = value.replace(/&/g, "and");
-    value = value.replace(/[^a-z0-9]+/g, "-");
-    value = value.replace(/-+/g, "-");
-    value = value.replace(/^-|-$/g, "");
-    return value || "all";
-  }
-
   $(function () {
-    function getCategoryFromHash() {
-      var hash = window.location.hash || "#all";
-      return normalizeCategory(hash.replace("#", ""));
-    }
-
-    function setActiveSidebar(category) {
-      $(".faqSidebar .sidebarItem").removeClass("active");
-
-      $(".faqSidebar .sidebarItem").each(function () {
-        var raw = ($(this).attr("href") || "#all").replace("#", "");
-        var linkCategory = normalizeCategory(raw);
-
-        if (linkCategory === category) {
-          $(this).addClass("active");
-        }
-      });
-    }
-
-    function filterCards(category) {
-      var $cards = $(".resultCard");
-
-      if (category === "all") {
-        $cards.show();
-        return;
-      }
-
-      $cards.hide();
-      $cards
-        .filter(function () {
-          return normalizeCategory($(this).data("category")) === category;
-        })
-        .show();
-    }
-
-    function updateCategoryHeader(category) {
-      var text = "All Category";
-
-      $(".faqSidebar .sidebarItem").each(function () {
-        var raw = ($(this).attr("href") || "#all").replace("#", "");
-        var slug = normalizeCategory(raw);
-
-        if (slug === category) {
-          text = $(this).find("span").text().trim();
-        }
-      });
-
-      $("#categoryName").text(text);
-    }
-
-    function applyCategory(category) {
-      setActiveSidebar(category);
-      filterCards(category);
-      updateCategoryHeader(category);
-    }
-
-    $(".faqSidebar").on("click", ".sidebarItem", function () {
-      var raw = ($(this).attr("href") || "#all").replace("#", "");
-      applyCategory(normalizeCategory(raw));
+    $("#companyBlogTab").on("click", function () {
+      $(this).addClass("selectedTabContainer");
+      $("#companyFaqTab").removeClass("selectedTabContainer");
+      $("#companyBlogPanel").removeClass("d-none");
+      $("#companyFaqPanel").addClass("d-none");
     });
 
-    $(window).on("hashchange", function () {
-      applyCategory(getCategoryFromHash());
+    $("#companyFaqTab").on("click", function () {
+      $(this).addClass("selectedTabContainer");
+      $("#companyBlogTab").removeClass("selectedTabContainer");
+      $("#companyFaqPanel").removeClass("d-none");
+      $("#companyBlogPanel").addClass("d-none");
     });
-
-    applyCategory(getCategoryFromHash());
   });
 </script>

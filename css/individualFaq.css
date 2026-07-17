@@ -118,10 +118,10 @@
 
 .articleSplashImage {
   width: 100%;
-  height: 320px;
+  height: 420px;
   object-fit: cover;
   display: block;
-  border-radius: 25px;
+  border-radius: 20px;
 }
 
 /* Article long-form body (between Answer and the company divider) */
@@ -314,6 +314,12 @@
     position: static;
   }
 
+  .articleSplashImage {
+    height: 320px;
+  }
+}
+
+@media screen and (max-width: 768px) {
   .articleSplashImage {
     height: 220px;
   }

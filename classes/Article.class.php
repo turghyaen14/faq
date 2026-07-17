@@ -13,11 +13,36 @@ class Article
         $this->db_8_np2u = $db_8_np2u;
     }
 
+    // Applies the same filter options both getCards and getTotalCards accept
+    // (search, company_id) so the two can never drift apart on what counts as
+    // a match.
+    private function filterCards($options = [])
+    {
+        $cards = DummyData::articleCards();
+
+        if (!empty($options['company_id'])) {
+            $company_id = intval($options['company_id']);
+            $cards = array_values(array_filter($cards, function ($card) use ($company_id) {
+                return intval($card['company_id']) === $company_id;
+            }));
+        }
+
+        if (!empty($options['search'])) {
+            $search = mb_strtolower(trim($options['search']));
+            $cards = array_values(array_filter($cards, function ($card) use ($search) {
+                return strpos(mb_strtolower($card['title']), $search) !== false
+                    || strpos(mb_strtolower($card['excerpt']), $search) !== false;
+            }));
+        }
+
+        return $cards;
+    }
+
     function getCards($options = [])
     {
         global $USE_DUMMY_DATA;
         if ($USE_DUMMY_DATA) {
-            $cards = DummyData::articleCards();
+            $cards = $this->filterCards($options);
             $limit = isset($options['limit']) ? intval($options['limit']) : 0;
             $page = isset($options['page']) ? intval($options['page']) : 1;
             if ($page < 1) {
@@ -38,7 +63,7 @@ class Article
     {
         global $USE_DUMMY_DATA;
         if ($USE_DUMMY_DATA) {
-            return count(DummyData::articleCards());
+            return count($this->filterCards($options));
         }
         // BACKEND: real query here (COUNT), same filters as getCards minus limit/page.
         return 0;
