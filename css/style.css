@@ -1347,13 +1347,14 @@ box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px
 .articleCardExcerpt {
   margin: 0;
   padding: 0;
+  text-align: left;
 }
 
 .articleCardImageWrapper {
   width: calc(100% + 2.5rem);
   margin-left: -1.25rem;
   margin-right: -1.25rem;
-  height: 150px;
+  height: 250px;
   background-color: rgba(27, 66, 151, 0.05);
 }
 
