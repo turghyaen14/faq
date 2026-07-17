@@ -24,24 +24,33 @@ if (isset($segments[0]) && $segments[0] !== '') {
     $context['route'] = $segments[0];
 }
 
-/* parse params (start AFTER route) */
-$i = 0;
-$count = count($segments);
+/* special case: /blog/id/{id} - a blog article's own detail page.
+   The generic parser below can't express this (it reuses segment 0 as
+   both the route AND the first param key, which only works for 2-segment
+   URLs like /id/{id}). */
+if (isset($segments[0], $segments[1], $segments[2]) && $segments[0] === 'blog' && $segments[1] === 'id') {
+    $context['route'] = 'blog';
+    $context['params'] = ['id' => $segments[2]];
+} else {
+    /* parse params (start AFTER route) */
+    $i = 0;
+    $count = count($segments);
 
-while ($i < $count) {
-    $key = $segments[$i];
+    while ($i < $count) {
+        $key = $segments[$i];
 
-    if ($key === '') {
-        $i++;
-        continue;
+        if ($key === '') {
+            $i++;
+            continue;
+        }
+
+        if (!isset($segments[$i + 1])) {
+            break;
+        }
+
+        $context['params'][$key] = $segments[$i + 1];
+        $i += 2;
     }
-
-    if (!isset($segments[$i + 1])) {
-        break;
-    }
-
-    $context['params'][$key] = $segments[$i + 1];
-    $i += 2;
 }
 
 $routes = [

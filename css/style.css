@@ -1237,6 +1237,8 @@ box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px
 
 .homeHeroCard {
   display: block;
+  width: 100%;
+  box-sizing: border-box;
   background-color: #faf7ef;
   border: 1px solid rgba(27, 66, 151, 0.12);
   border-radius: 25px;
@@ -1263,6 +1265,7 @@ box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px
 }
 
 .homeMainRow {
+  width: 100%;
   margin-top: 0;
 }
 

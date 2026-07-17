@@ -36,6 +36,12 @@
   height: 220px;
 }
 
+/* grid view (2 columns, narrower cards) gets an even taller image than
+   list view (single column, wider cards) */
+.faqContentListWrapper.grid-view .blogCard .articleCardImageWrapper {
+  height: 300px;
+}
+
 .blogCardMetaRow {
   display: flex;
   align-items: center;

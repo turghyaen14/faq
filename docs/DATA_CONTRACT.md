@@ -73,7 +73,7 @@ Generate: **8 rows** → `DummyData::articleCards()`
 | `date` | string | `"YYYY-MM-DD"` |
 | `excerpt` | string | 1–2 sentence summary |
 | `image` | string | full image URL, or `""` if none yet |
-| `url` | string | always `"id/{article_id}"` |
+| `url` | string | always `"blog/id/{article_id}"` — articles/blog posts live under `/blog/id/{id}`, distinct from the plain-FAQ `/id/{id}` route (see Section B) |
 | `company_id` | int | owning company |
 | `company_name` | string | author/company display name |
 | `company_url` | string | website domain shown under the name |
@@ -97,7 +97,7 @@ Generate: **1 object** → `DummyData::featured()`
 |---|---|---|
 | `title` | string | featured headline shown in the hero card |
 | `image` | string | hero/splash image URL, or `""` |
-| `url` | string | link target `"id/{id}"` |
+| `url` | string | link target `"blog/id/{id}"` (same article-route convention as A2) |
 
 ## A4. `articleDetail` — full article / individual FAQ page
 Used by: **Article detail page** (1 object).
@@ -197,6 +197,13 @@ Notes for backend:
 - `Article::getDetailByFaqId` should internally reuse `Faq::getFaqDetailsByID`,
   `Company::getCompanyDetails`, and `Faq::getFaqDetailsList` for the company + related_faqs parts, so
   those existing queries are not duplicated.
+
+**Two URL namespaces, one renderer:** plain FAQs live at `/id/{id}` (`IndividualPageController`);
+articles/blog posts live at `/blog/id/{id}` (`BlogPageController`, when an `id` param is present).
+Both call the exact same `BaseTemplateController::renderArticleDetail($faq_id)` — same template, same
+dummy-data branch — so they can never drift apart. Index.php special-cases the 3-segment
+`/blog/id/{id}` URL shape before the generic param parser runs (the generic parser only supports
+2-segment `/{route}/{value}` URLs).
 
 ---
 

@@ -4,6 +4,13 @@ class BlogPageController extends BaseTemplateController
 
     function displayBlogPage($array = [])
     {
+        // /blog/id/{id} - a blog article's own detail page, distinct from
+        // /id/{id} (plain FAQs). Same rendering, different URL namespace;
+        // see BaseTemplateController::renderArticleDetail().
+        if (isset($array['id'])) {
+            return $this->renderArticleDetail($array['id']);
+        }
+
         $BLOGPAGE_TEMPLATE = new TEMPLATE();
         $BLOGPAGE_TEMPLATE->getTemplate("view/blog.html");
         $FOR_BLOG_CARD = new TEMPLATE();
