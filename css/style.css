@@ -61,6 +61,13 @@ box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px
   padding: 1rem;
 }
 
+/* Mobile and below: drop the container padding so content goes edge-to-edge */
+@media screen and (max-width: 768px) {
+  .primaryContainer {
+    padding: 0;
+  }
+}
+
 /* Typography helpers */
 .gloock-regular {
   font-family: "Gloock", serif;
