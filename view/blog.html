@@ -23,20 +23,20 @@
 
     <div class="d-flex align-items-end justify-content-end w-100 d-none d-lg-flex">
       <div class="tabWrapper">
-        <div class="tabContainer" id="gridViewTab">
+        <div class="tabContainer selectedTabContainer" id="gridViewTab">
           <span><i class="bi bi-grid faSize"></i></span>
           <span> Grid View </span>
         </div>
-        <div class="tabContainer selectedTabContainer" id="listViewTab">
+        <div class="tabContainer" id="listViewTab">
           <span><i class="bi bi-list-ul faSize"></i></span>
           <span> List View </span>
         </div>
       </div>
     </div>
 
-    <div class="faqContentListWrapper list-view">
+    <div class="faqContentListWrapper grid-view">
       {START_BLOG_CARD:00}
-      <div class="blogCard resultCard shadowSm">
+      <div class="blogCard resultCard shadowSm" onclick="window.location.href='{BLOG_URL}'" style="cursor: pointer;">
         <div class="blogCardHeader">
           <div class="faqCompanyWrapper">
             <div class="companyLogoWrapper" onclick="window.location.href='{BLOG_URL}'">
