@@ -5,10 +5,11 @@ class BlogPageController extends BaseTemplateController
     function displayBlogPage($array = [])
     {
         // /blog/id/{id} - a blog article's own detail page, distinct from
-        // /id/{id} (plain FAQs). Same rendering, different URL namespace;
-        // see BaseTemplateController::renderArticleDetail().
+        // /id/{id} (plain FAQs). Same data pipeline, but the rich article
+        // template (splash + body + "Other FAQs" sidebar) rather than the plain
+        // FAQ one; see BaseTemplateController::renderArticleDetail().
         if (isset($array['id'])) {
-            return $this->renderArticleDetail($array['id']);
+            return $this->renderArticleDetail($array['id'], "view/individualBlog.html");
         }
 
         $BLOGPAGE_TEMPLATE = new TEMPLATE();

@@ -161,11 +161,14 @@ class BaseTemplatecontroller
     }
 
     // Shared by IndividualPageController (/id/{id}, plain FAQs) and
-    // BlogPageController (/blog/id/{id}, blog articles) so both URLs render
-    // identical content through one code path. Called as $this->... so
-    // setMetaTitle/setSchema/setOG land on whichever controller instance
-    // is actually calling it.
-    function renderArticleDetail($faq_id)
+    // BlogPageController (/blog/id/{id}, blog articles). Same data pipeline,
+    // but the two routes render different templates: the FAQ page is the plain
+    // Q&A+company card (view/individualFaq.html), while the blog page is the
+    // rich article layout with splash image, body paragraphs and the "Other
+    // FAQs" sidebar (view/individualBlog.html). $template selects which.
+    // Called as $this->... so setMetaTitle/setSchema/setOG land on whichever
+    // controller instance is actually calling it.
+    function renderArticleDetail($faq_id, $template = "view/individualFaq.html")
     {
         global $IMG_PATH;
         global $OG_URL;
@@ -173,7 +176,7 @@ class BaseTemplatecontroller
         $INDIVIDUALPAGE_TEMPLATE = new TEMPLATE();
         $FOR_EMAIL_ARRAY = new TEMPLATE();
         $FOR_COMPANY_TAG_ARRAY = new TEMPLATE();
-        $INDIVIDUALPAGE_TEMPLATE->getTemplate("view/individualFaq.html");
+        $INDIVIDUALPAGE_TEMPLATE->getTemplate($template);
 
         global $USE_DUMMY_DATA;
         $Faq = new Faq();
@@ -181,6 +184,9 @@ class BaseTemplatecontroller
         $Article = new Article();
 
         $article_detail = $Article->getDetailByFaqId($faq_id);
+        // Only the blog template renders a splash; the plain FAQ template has
+        // no {SPLASH_IMAGE} tag, so this replacement is a harmless no-op there.
+        $splash_image = $article_detail['splash_image'];
 
         if ($USE_DUMMY_DATA) {
             // Dummy article IDs don't exist as real ex_faq rows, so the real
@@ -321,6 +327,7 @@ class BaseTemplatecontroller
             "/{COMPANY_LOGO_IMAGE}/s" => $company_logo_image,
             "/{START_IF_MULTIPLE_EMAIL}(.+){END_IF_MULTIPLE_EMAIL}/s" => $all_email_item,
             "/{START_COMPANY_TAG:00}(.+){END_COMPANY_TAG:00}/s" => $all_tag_item,
+            "/{SPLASH_IMAGE}/s" => $splash_image,
             "/{START_BODY_PARA:00}(.+){END_BODY_PARA:00}/s" => $all_body_para_item,
             "/{START_RELATED_FAQ:00}(.+){END_RELATED_FAQ:00}/s" => $all_related_faq_item,
             "/{CTA_COMPANY_FAQS_URL}/s" => "$faq_path/company/$company_id/$company_name_check",
