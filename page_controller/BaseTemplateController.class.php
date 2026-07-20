@@ -330,6 +330,10 @@ class BaseTemplatecontroller
             "/{SPLASH_IMAGE}/s" => $splash_image,
             "/{START_BODY_PARA:00}(.+){END_BODY_PARA:00}/s" => $all_body_para_item,
             "/{START_RELATED_FAQ:00}(.+){END_RELATED_FAQ:00}/s" => $all_related_faq_item,
+            // Blog article's sticky FAQ column beside the body; reuses the same
+            // list HTML. Simple tag (not a block) so it can appear a second time
+            // without clashing with the greedy RELATED_FAQ block regex above.
+            "/{ARTICLE_FAQ_LIST}/s" => $all_related_faq_item,
             "/{CTA_COMPANY_FAQS_URL}/s" => "$faq_path/company/$company_id/$company_name_check",
             "/{CTA_WEBSITE_URL}/s" => $company_website,
             "/{CTA_BACK_URL}/s" => "$faq_path/",

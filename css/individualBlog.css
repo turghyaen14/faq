@@ -1,0 +1,47 @@
+/* ===========================
+   individualBlog.css
+   Blog ARTICLE detail only (view/individualBlog.html).
+   The plain FAQ page does NOT load this file, so nothing here affects it.
+=========================== */
+
+/* Two-column article row: the article body on the left, a sticky column of
+   this company's FAQs on the right — beside the article, not the company card. */
+.articleMainRow {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.articleMainRow .faqContentHeaderWrapper {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.articleFaqColumn {
+  flex: 0 0 300px;
+  width: 300px;
+  position: sticky;
+  top: 24px;
+  align-self: flex-start;
+}
+
+.articleFaqCard {
+  background-color: #faf7ef;
+  border: 1px solid rgba(27, 66, 151, 0.1);
+  border-radius: 18px;
+  padding: 1.25rem;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+/* Stack the FAQ column under the article on narrower screens */
+@media screen and (max-width: 992px) {
+  .articleMainRow {
+    flex-direction: column;
+  }
+  .articleFaqColumn {
+    position: static;
+    width: 100%;
+    flex-basis: auto;
+  }
+}
