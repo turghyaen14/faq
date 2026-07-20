@@ -329,11 +329,10 @@ class BaseTemplatecontroller
             "/{START_COMPANY_TAG:00}(.+){END_COMPANY_TAG:00}/s" => $all_tag_item,
             "/{SPLASH_IMAGE}/s" => $splash_image,
             "/{START_BODY_PARA:00}(.+){END_BODY_PARA:00}/s" => $all_body_para_item,
+            // Fills the blog article's sticky "Other FAQs" column beside the body
+            // (the only place this block now lives; the company card no longer
+            // carries it). No-op on the plain FAQ template, which lacks the block.
             "/{START_RELATED_FAQ:00}(.+){END_RELATED_FAQ:00}/s" => $all_related_faq_item,
-            // Blog article's sticky FAQ column beside the body; reuses the same
-            // list HTML. Simple tag (not a block) so it can appear a second time
-            // without clashing with the greedy RELATED_FAQ block regex above.
-            "/{ARTICLE_FAQ_LIST}/s" => $all_related_faq_item,
             "/{CTA_COMPANY_FAQS_URL}/s" => "$faq_path/company/$company_id/$company_name_check",
             "/{CTA_WEBSITE_URL}/s" => $company_website,
             "/{CTA_BACK_URL}/s" => "$faq_path/",

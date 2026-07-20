@@ -36,7 +36,11 @@
               <aside class="articleFaqColumn">
                 <div class="articleFaqCard">
                   <div class="relatedFaqHeader">Other FAQs from {COMPANY_NAME}</div>
-                  <div class="relatedFaqList">{ARTICLE_FAQ_LIST}</div>
+                  <div class="relatedFaqList">
+                    {START_RELATED_FAQ:00}
+                    <a href="{RELATED_FAQ_URL}" class="relatedFaqItem">{RELATED_FAQ_QUESTION}</a>
+                    {END_RELATED_FAQ:00}
+                  </div>
                 </div>
               </aside>
             </div>
@@ -105,13 +109,6 @@
                       <a class="ctaToSiteSec shadow-sm" href="{CTA_WEBSITE_URL}">Visit Official Website</a>
                       <a class="ctaToSiteSec shadow-sm" href="{CTA_BACK_URL}">Back to All FAQs</a>
                     </div>
-                  </div>
-                  <div class="relatedFaqDivider"></div>
-                  <div class="relatedFaqHeader">Other FAQs from {COMPANY_NAME}</div>
-                  <div class="relatedFaqList">
-                    {START_RELATED_FAQ:00}
-                    <a href="{RELATED_FAQ_URL}" class="relatedFaqItem">{RELATED_FAQ_QUESTION}</a>
-                    {END_RELATED_FAQ:00}
                   </div>
                   </div>
                 </div>
