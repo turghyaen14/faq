@@ -83,7 +83,7 @@ class Article
     {
         global $USE_DUMMY_DATA;
         if ($USE_DUMMY_DATA) {
-            return DummyData::articleDetail();
+            return DummyData::articleDetail($faq_id);
         }
         // BACKEND: real query here. Should reuse Faq::getFaqDetailsByID,
         // Company::getCompanyDetails, and Faq::getFaqDetailsList (related_faqs)

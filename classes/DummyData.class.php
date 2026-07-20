@@ -191,42 +191,153 @@ class DummyData
         return $cards[0];
     }
 
-    public static function articleDetail()
+    // Keyed by faq_id so different dummy IDs render visibly different content
+    // (QA needs this to confirm detail pages actually vary per ID). Falls back
+    // to the first entry (11040, PPF) for any ID not listed here — this keeps
+    // real FAQ IDs (which aren't in this map at all) working exactly as before.
+    public static function articleDetail($faq_id = null)
+    {
+        $details = self::articleDetails();
+        if ($faq_id !== null && isset($details[$faq_id])) {
+            return $details[$faq_id];
+        }
+        return $details[11040];
+    }
+
+    private static function articleDetails()
     {
         return [
-            'faq_id' => 11040,
-            'category' => 'Everything You Need to Know',
-            'question' => 'What is Paint Protection Film (PPF)?',
-            'answer' => 'PPF is a protective film that shields car paint from scratches, chips, stains, and minor damage.',
-            'tags' => ['Services', 'Specialist'],
-            'body' => [
-                'Paint Protection Film has become the go-to solution for car owners looking to preserve their vehicle\'s finish without altering its appearance. Unlike a wax or sealant, PPF is a physical layer that absorbs impact from road debris, gravel chips, and minor abrasions before they ever reach the paint underneath.',
-                'Most installers apply the film to high-impact zones — the front bumper, hood, mirrors, and door edges — though full-body coverage is increasingly common for owners who want long-term protection across every panel. A quality installation is virtually invisible, with a self-healing top coat that shrugs off light swirl marks when exposed to heat.',
-                'Beyond the cosmetic benefit, PPF also helps protect resale value: a car that has spent years shielded from chips and scratches tends to retain a cleaner, more original-looking paint job than one left unprotected.',
-                'The material itself has come a long way since the early days of "clear bra" kits. Modern films are built from thermoplastic polyurethane (TPU), a flexible yet durable polymer that conforms tightly to complex curves and edges. This is what allows a skilled installer to wrap a full bumper or a curved mirror cap with no visible seams, bubbles, or lifting at the corners.',
-                'Self-healing is one of the most talked-about features, and it is not just marketing. The top layer is engineered so that light scratches and swirl marks disappear as the film is warmed — whether by the sun, warm water, or a heat gun. Deeper cuts that reach past the top coat will not self-heal, but the day-to-day micro-scratches that dull a paint job over time simply vanish.',
-                'Installation quality matters far more than most buyers realize. Two shops using the exact same film can deliver very different results: edges tucked cleanly under panels versus edges left exposed to peel, or a dust-free bay versus contamination trapped under the film forever. This is why it is worth asking to see a shop\'s previous work and confirming whether they wrap edges or trim them at the panel line.',
-                'Maintenance is refreshingly simple. A PPF-covered car can be washed exactly like any other vehicle, though it is best to wait a week after installation before the first wash so the film can fully cure. Avoid aggressive automatic car washes with stiff brushes, and steer clear of harsh solvents; a standard pH-neutral car shampoo is all the film needs to stay clear for years.',
-                'Warranty terms vary widely between manufacturers, typically ranging from five to ten years against yellowing, cracking, and delamination. It is important to read what the warranty actually covers — some exclude edges, some require professional installation to remain valid, and almost none cover damage from improper cleaning. A reputable installer will register the warranty on your behalf and walk you through the exclusions.',
-                'So is PPF worth it? For a daily driver that racks up highway miles, a leased vehicle that must be returned in pristine condition, or a prized weekend car, the answer is usually yes. The upfront cost is real, but so is the cost of a full respray after years of accumulated chips — and PPF buys back both the paint and the peace of mind.',
-            ],
-            'splash_image' => 'https://picsum.photos/seed/article-splash/1200/500',
-            'company' => [
-                'company_id' => 28587,
-                'name' => 'M 8 CAR ACCESSORIES AND TINTED (M) SDN BHD',
-                'emails' => ['info@m8car.com.my'],
-                'address' => '15, Jalan Keruing 1, Taman Rinting, 81750 Masai, Johor, Malaysia.',
-                'website' => 'https://www.m8tint.com.my',
-                'map_url' => 'https://www.google.com/maps/search/?api=1&query=1.49,103.85',
-                'logo' => 'https://ui-avatars.com/api/?name=M8&background=1b4297&color=fff&size=128&bold=true',
-                'description' => 'We provided high-quality & affordable tinted window films, professional workmanship and excellent customer service won us many customers and made us one of the popular and leading tinted film companies in Johor Bahru, Kuala Lumpur & Selangor.',
+            11040 => [
+                'faq_id' => 11040,
+                'category' => 'Everything You Need to Know',
+                'question' => 'What is Paint Protection Film (PPF)?',
+                'answer' => 'PPF is a protective film that shields car paint from scratches, chips, stains, and minor damage.',
                 'tags' => ['Services', 'Specialist'],
+                'body' => [
+                    'Paint Protection Film has become the go-to solution for car owners looking to preserve their vehicle\'s finish without altering its appearance. Unlike a wax or sealant, PPF is a physical layer that absorbs impact from road debris, gravel chips, and minor abrasions before they ever reach the paint underneath.',
+                    'Most installers apply the film to high-impact zones — the front bumper, hood, mirrors, and door edges — though full-body coverage is increasingly common for owners who want long-term protection across every panel. A quality installation is virtually invisible, with a self-healing top coat that shrugs off light swirl marks when exposed to heat.',
+                    'Beyond the cosmetic benefit, PPF also helps protect resale value: a car that has spent years shielded from chips and scratches tends to retain a cleaner, more original-looking paint job than one left unprotected.',
+                    'The material itself has come a long way since the early days of "clear bra" kits. Modern films are built from thermoplastic polyurethane (TPU), a flexible yet durable polymer that conforms tightly to complex curves and edges. This is what allows a skilled installer to wrap a full bumper or a curved mirror cap with no visible seams, bubbles, or lifting at the corners.',
+                    'Self-healing is one of the most talked-about features, and it is not just marketing. The top layer is engineered so that light scratches and swirl marks disappear as the film is warmed — whether by the sun, warm water, or a heat gun. Deeper cuts that reach past the top coat will not self-heal, but the day-to-day micro-scratches that dull a paint job over time simply vanish.',
+                    'Installation quality matters far more than most buyers realize. Two shops using the exact same film can deliver very different results: edges tucked cleanly under panels versus edges left exposed to peel, or a dust-free bay versus contamination trapped under the film forever. This is why it is worth asking to see a shop\'s previous work and confirming whether they wrap edges or trim them at the panel line.',
+                    'Maintenance is refreshingly simple. A PPF-covered car can be washed exactly like any other vehicle, though it is best to wait a week after installation before the first wash so the film can fully cure. Avoid aggressive automatic car washes with stiff brushes, and steer clear of harsh solvents; a standard pH-neutral car shampoo is all the film needs to stay clear for years.',
+                    'Warranty terms vary widely between manufacturers, typically ranging from five to ten years against yellowing, cracking, and delamination. It is important to read what the warranty actually covers — some exclude edges, some require professional installation to remain valid, and almost none cover damage from improper cleaning. A reputable installer will register the warranty on your behalf and walk you through the exclusions.',
+                    'So is PPF worth it? For a daily driver that racks up highway miles, a leased vehicle that must be returned in pristine condition, or a prized weekend car, the answer is usually yes. The upfront cost is real, but so is the cost of a full respray after years of accumulated chips — and PPF buys back both the paint and the peace of mind.',
+                ],
+                'splash_image' => 'https://picsum.photos/seed/article-splash/1200/500',
+                'company' => [
+                    'company_id' => 28587,
+                    'name' => 'M 8 CAR ACCESSORIES AND TINTED (M) SDN BHD',
+                    'emails' => ['info@m8car.com.my'],
+                    'address' => '15, Jalan Keruing 1, Taman Rinting, 81750 Masai, Johor, Malaysia.',
+                    'website' => 'https://www.m8tint.com.my',
+                    'map_url' => 'https://www.google.com/maps/search/?api=1&query=1.49,103.85',
+                    'logo' => 'https://ui-avatars.com/api/?name=M8&background=1b4297&color=fff&size=128&bold=true',
+                    'description' => 'We provided high-quality & affordable tinted window films, professional workmanship and excellent customer service won us many customers and made us one of the popular and leading tinted film companies in Johor Bahru, Kuala Lumpur & Selangor.',
+                    'tags' => ['Services', 'Specialist'],
+                ],
+                'related_faqs' => [
+                    ['faq_id' => 11041, 'question' => 'How long does PPF installation take?', 'url' => 'id/11041'],
+                    ['faq_id' => 11042, 'question' => 'Does PPF affect the factory paint warranty?', 'url' => 'id/11042'],
+                    ['faq_id' => 11043, 'question' => 'How do I maintain a PPF-coated vehicle?', 'url' => 'id/11043'],
+                    ['faq_id' => 11044, 'question' => 'What is the difference between PPF and ceramic coating?', 'url' => 'id/11044'],
+                ],
             ],
-            'related_faqs' => [
-                ['faq_id' => 11041, 'question' => 'How long does PPF installation take?', 'url' => 'id/11041'],
-                ['faq_id' => 11042, 'question' => 'Does PPF affect the factory paint warranty?', 'url' => 'id/11042'],
-                ['faq_id' => 11043, 'question' => 'How do I maintain a PPF-coated vehicle?', 'url' => 'id/11043'],
-                ['faq_id' => 11044, 'question' => 'What is the difference between PPF and ceramic coating?', 'url' => 'id/11044'],
+            11070 => [
+                'faq_id' => 11070,
+                'category' => 'Guides',
+                'question' => 'Choosing the Right Replacement LCD Screen',
+                'answer' => 'A quick comparison of OLED, Incell, and LCD replacement panels and when each makes sense for a repair job.',
+                'tags' => ['Distributor', 'Supplier'],
+                'body' => [
+                    'Not every replacement screen is built the same, and the difference shows up fast once a repaired phone leaves the shop. The three panel types most repair shops choose between — OEM-grade OLED, Incell LCD, and standard LCD — trade off cost, color accuracy, and touch responsiveness in different ways.',
+                    'OLED panels reproduce true blacks and the widest color range, and are the closest match to what came out of the factory. They carry the highest cost per unit, which usually only makes sense for flagship devices or customers who specifically ask for original-spec quality.',
+                    'Incell LCD sits in the middle: the touch sensor is built into the LCD layer itself rather than laminated on top, giving a thinner panel with decent touch response at a lower cost than OLED. It is the most common choice for mid-range repair jobs where the customer wants good quality without flagship pricing.',
+                    'Standard LCD panels are the most affordable and the most durable against pressure damage, but color accuracy and viewing angles are noticeably weaker — blacks look grey rather than true black, and brightness can be uneven at the edges. These are usually the right call for budget repairs or older device models.',
+                    'Touch response is worth testing before installation, not after. A panel with a sluggish digitizer will feel fine sitting on a bench but frustrate a customer within days of daily use — swipe a few gestures across the full surface, including the very edges, before closing up the housing.',
+                    'Sourcing matters as much as panel type. The same "OLED" label can come from wildly different factories with very different defect rates; a reliable distributor relationship that stands behind DOA replacements is often worth more than chasing the lowest unit price.',
+                ],
+                'splash_image' => 'https://picsum.photos/seed/lcd-screen/1200/500',
+                'company' => [
+                    'company_id' => 19240,
+                    'name' => 'BEMAX DISTRIBUTION SDN BHD',
+                    'emails' => ['sales@bemax.com.my'],
+                    'address' => '22, Jalan Industri 3, Taman Perindustrian Cheras, 43200 Cheras, Selangor, Malaysia.',
+                    'website' => 'https://www.bemax.com.my',
+                    'map_url' => 'https://www.google.com/maps/search/?api=1&query=3.03,101.77',
+                    'logo' => 'https://ui-avatars.com/api/?name=BX&background=1b4297&color=fff&size=128&bold=true',
+                    'description' => 'Bemax Distribution supplies replacement mobile screens, batteries, and repair parts to workshops across the Klang Valley, with same-day delivery and DOA replacement on all panel stock.',
+                    'tags' => ['Distributor', 'Supplier'],
+                ],
+                'related_faqs' => [
+                    ['faq_id' => 11071, 'question' => 'What is the warranty on replacement screens?', 'url' => 'id/11071'],
+                    ['faq_id' => 11072, 'question' => 'Do you supply battery replacements too?', 'url' => 'id/11072'],
+                    ['faq_id' => 11073, 'question' => 'How fast is delivery within Klang Valley?', 'url' => 'id/11073'],
+                    ['faq_id' => 11074, 'question' => 'Can I return a screen if it is faulty on arrival?', 'url' => 'id/11074'],
+                ],
+            ],
+            11081 => [
+                'faq_id' => 11081,
+                'category' => 'Case Study',
+                'question' => 'When Can You Start Your Aligner Journey?',
+                'answer' => 'Aligner treatment can begin as early as age 8 for mild to moderate cases — here is how the timeline typically works.',
+                'tags' => ['Dental Clinic'],
+                'body' => [
+                    'Clear aligner treatment is often assumed to be an adult-only option, but early intervention for children as young as 8 is increasingly common for specific bite issues — particularly crowding and early crossbites that are easier to correct before jaw growth is complete.',
+                    'The first step is always a full assessment: photographs, X-rays, and a 3D scan of the bite. This is what determines whether a case is a good candidate for aligners at all, or whether traditional braces or a two-phase approach would serve the patient better.',
+                    'For teens and adults, the biggest factor in timeline is compliance — aligners only work if they are worn 20-22 hours a day. Cases with strong compliance can finish noticeably faster than the initial estimate, while inconsistent wear stretches treatment out and sometimes requires additional refinement aligners.',
+                    'A typical mild-to-moderate case runs 6 to 12 months; complex cases involving significant crowding or bite correction can run 18 months or longer. Your clinic will usually give a realistic range after the initial scan rather than a single fixed number.',
+                ],
+                'splash_image' => 'https://picsum.photos/seed/dental-aligner/1200/500',
+                'company' => [
+                    'company_id' => 20114,
+                    'name' => 'EZ DENTAL STUDIO SDN BHD',
+                    'emails' => ['hello@ezdental.com.my'],
+                    'address' => '8, Jalan Setia Tropika 1/12, Taman Setia Tropika, 81200 Johor Bahru, Johor, Malaysia.',
+                    'website' => 'https://www.ezdental.com.my',
+                    'map_url' => 'https://www.google.com/maps/search/?api=1&query=1.56,103.73',
+                    'logo' => 'https://ui-avatars.com/api/?name=EZ&background=1b4297&color=fff&size=128&bold=true',
+                    'description' => 'EZ Dental Studio provides general and cosmetic dentistry including clear aligner treatment, with in-house 3D scanning for a same-visit treatment plan.',
+                    'tags' => ['Dental Clinic'],
+                ],
+                'related_faqs' => [
+                    ['faq_id' => 11082, 'question' => 'How much does clear aligner treatment cost?', 'url' => 'id/11082'],
+                    ['faq_id' => 11083, 'question' => 'Do aligners hurt more than braces?', 'url' => 'id/11083'],
+                    ['faq_id' => 11084, 'question' => 'What happens if I lose an aligner tray?', 'url' => 'id/11084'],
+                    ['faq_id' => 11085, 'question' => 'Do I need a retainer after treatment ends?', 'url' => 'id/11085'],
+                ],
+            ],
+            11205 => [
+                'faq_id' => 11205,
+                'category' => 'Best Practices',
+                'question' => 'How Often Should a Commercial Office Be Deep Cleaned',
+                'answer' => 'Foot traffic and floor type both change the right interval for a full deep clean, not just calendar months.',
+                'tags' => ['Services', 'Supplier'],
+                'body' => [
+                    'A fixed monthly or quarterly schedule is the easiest way to plan a cleaning contract, but it is not actually the right way to decide when a deep clean is needed. Foot traffic is the biggest driver: a lobby or shared corridor sees dramatically more soil load per week than a private back office, even in the same building.',
+                    'Floor type changes the math too. Carpet tiles trap fine dust and allergens that daily vacuuming cannot fully remove, and typically need a hot-water extraction deep clean every 3 to 6 months depending on traffic. Hard floors (vinyl, tile) can often stretch to 6-9 months between deep scrubs if daily mopping is consistent.',
+                    'High-touch surfaces — door handles, lift buttons, shared kitchen counters — are a separate concern from floor cleaning entirely, and should be on a daily or twice-daily wipe-down schedule regardless of the deep-clean interval, especially in shared office buildings.',
+                    'Seasonal factors matter in Malaysia specifically: haze periods and the monsoon season both increase how much dust and mud gets tracked in, and many facilities managers shift to a shorter interval for those months rather than keeping a flat year-round schedule.',
+                    'The most reliable approach is an initial assessment visit rather than guessing from a generic rule of thumb — a facilities team can walk the space, check traffic patterns, and propose an interval that matches the actual building rather than an industry average.',
+                ],
+                'splash_image' => 'https://picsum.photos/seed/office-cleaning/1200/500',
+                'company' => [
+                    'company_id' => 24566,
+                    'name' => 'CRYSTALCLEAN SERVICES SDN BHD',
+                    'emails' => ['enquiry@crystalclean.com.my'],
+                    'address' => '17-1, Jalan PJU 1A/41B, Ara Damansara, 47301 Petaling Jaya, Selangor, Malaysia.',
+                    'website' => 'https://www.crystalclean.com.my',
+                    'map_url' => 'https://www.google.com/maps/search/?api=1&query=3.11,101.58',
+                    'logo' => 'https://ui-avatars.com/api/?name=CC&background=1b4297&color=fff&size=128&bold=true',
+                    'description' => 'CrystalClean Services provides commercial office cleaning, carpet deep-cleaning, and high-touch sanitation contracts across the Klang Valley.',
+                    'tags' => ['Services', 'Supplier'],
+                ],
+                'related_faqs' => [
+                    ['faq_id' => 11206, 'question' => 'Do you clean outside of office hours?', 'url' => 'id/11206'],
+                    ['faq_id' => 11207, 'question' => 'What is included in a standard cleaning contract?', 'url' => 'id/11207'],
+                    ['faq_id' => 11208, 'question' => 'Can you handle a one-off deep clean without a contract?', 'url' => 'id/11208'],
+                    ['faq_id' => 11209, 'question' => 'Are your cleaning products safe for offices with pets?', 'url' => 'id/11209'],
+                ],
             ],
         ];
     }
