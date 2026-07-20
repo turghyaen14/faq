@@ -181,7 +181,6 @@ class BaseTemplatecontroller
         $Article = new Article();
 
         $article_detail = $Article->getDetailByFaqId($faq_id);
-        $splash_image = $article_detail['splash_image'];
 
         if ($USE_DUMMY_DATA) {
             // Dummy article IDs don't exist as real ex_faq rows, so the real
@@ -322,7 +321,6 @@ class BaseTemplatecontroller
             "/{COMPANY_LOGO_IMAGE}/s" => $company_logo_image,
             "/{START_IF_MULTIPLE_EMAIL}(.+){END_IF_MULTIPLE_EMAIL}/s" => $all_email_item,
             "/{START_COMPANY_TAG:00}(.+){END_COMPANY_TAG:00}/s" => $all_tag_item,
-            "/{SPLASH_IMAGE}/s" => $splash_image,
             "/{START_BODY_PARA:00}(.+){END_BODY_PARA:00}/s" => $all_body_para_item,
             "/{START_RELATED_FAQ:00}(.+){END_RELATED_FAQ:00}/s" => $all_related_faq_item,
             "/{CTA_COMPANY_FAQS_URL}/s" => "$faq_path/company/$company_id/$company_name_check",
