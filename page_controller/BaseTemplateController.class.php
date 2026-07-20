@@ -253,6 +253,23 @@ class BaseTemplatecontroller
             $all_tag_item .= $FOR_COMPANY_TAG_ARRAY->content();
         }
 
+        // Article-level tags shown in the blog detail header (same data the
+        // blog card displays). Backend can return a dedicated article 'tags';
+        // until then fall back to the company tags. No-op on the plain FAQ
+        // template, which has no {START_ARTICLE_TAG:00} block.
+        $article_tags = isset($article_detail['tags']) ? $article_detail['tags'] : $tag_list;
+        $FOR_ARTICLE_TAG = new TEMPLATE();
+        $all_article_tag_item = '';
+        foreach ($article_tags as $tag) {
+            $FOR_ARTICLE_TAG->renew("/{START_ARTICLE_TAG:00}(.+){END_ARTICLE_TAG:00}/s", $INDIVIDUALPAGE_TEMPLATE->content());
+            $FOR_ARTICLE_TAG->replace(
+                array(
+                    "/{ARTICLE_TAG}/s" => $tag,
+                )
+            );
+            $all_article_tag_item .= $FOR_ARTICLE_TAG->content();
+        }
+
         $ques = Helper::normalizeSentence($ques);
         $answ = Helper::normalizeSentence($answ);
 
@@ -327,6 +344,7 @@ class BaseTemplatecontroller
             "/{COMPANY_LOGO_IMAGE}/s" => $company_logo_image,
             "/{START_IF_MULTIPLE_EMAIL}(.+){END_IF_MULTIPLE_EMAIL}/s" => $all_email_item,
             "/{START_COMPANY_TAG:00}(.+){END_COMPANY_TAG:00}/s" => $all_tag_item,
+            "/{START_ARTICLE_TAG:00}(.+){END_ARTICLE_TAG:00}/s" => $all_article_tag_item,
             "/{SPLASH_IMAGE}/s" => $splash_image,
             "/{START_BODY_PARA:00}(.+){END_BODY_PARA:00}/s" => $all_body_para_item,
             // Fills the blog article's sticky "Other FAQs" column beside the body

@@ -198,6 +198,7 @@ class DummyData
             'category' => 'Everything You Need to Know',
             'question' => 'What is Paint Protection Film (PPF)?',
             'answer' => 'PPF is a protective film that shields car paint from scratches, chips, stains, and minor damage.',
+            'tags' => ['Services', 'Specialist'],
             'body' => [
                 'Paint Protection Film has become the go-to solution for car owners looking to preserve their vehicle\'s finish without altering its appearance. Unlike a wax or sealant, PPF is a physical layer that absorbs impact from road debris, gravel chips, and minor abrasions before they ever reach the paint underneath.',
                 'Most installers apply the film to high-impact zones — the front bumper, hood, mirrors, and door edges — though full-body coverage is increasingly common for owners who want long-term protection across every panel. A quality installation is virtually invisible, with a self-healing top coat that shrugs off light swirl marks when exposed to heat.',
