@@ -1273,9 +1273,17 @@ box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px
 .homeHeroScrim {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 15%, rgba(0, 0, 0, 0.85) 100%);
+  /* Dark caps at both top (protects the company row) and bottom (protects
+     the title/excerpt), transparent through the middle so the image itself
+     stays visible. */
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.55) 0%,
+    rgba(0, 0, 0, 0) 22%,
+    rgba(0, 0, 0, 0) 40%,
+    rgba(0, 0, 0, 0.85) 100%
+  );
   z-index: 1;
-  
 }
 
 .homeHeroTop {
