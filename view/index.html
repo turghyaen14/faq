@@ -4,8 +4,20 @@
   <div class="faqContentContainer container">
 
     <a href="{FEATURED_URL}" class="homeHeroCard shadowSm">
-      <h2 class="homeHeroTitle gloock-regular">{FEATURED_TITLE}</h2>
-      <img src="{FEATURED_IMAGE}" class="homeHeroImage" alt="{FEATURED_TITLE}" />
+      <img src="{FEATURED_IMAGE}" class="homeHeroBgImage" alt="{FEATURED_TITLE}" />
+      <div class="homeHeroScrim"></div>
+      <div class="homeHeroTop">
+        <div class="homeHeroCompany">
+          <span class="homeHeroAvatar">{FEATURED_COMPANY_INITIALS}</span>
+          <span class="homeHeroCompanyName">{FEATURED_COMPANY_NAME}</span>
+        </div>
+        <span class="homeHeroCategoryBadge">{FEATURED_CATEGORY}</span>
+      </div>
+      <div class="homeHeroBottom">
+        <h2 class="homeHeroTitle gloock-regular">{FEATURED_TITLE}</h2>
+        <p class="homeHeroExcerpt">{FEATURED_EXCERPT}</p>
+        <span class="homeHeroReadBtn">Read the article &rarr;</span>
+      </div>
     </a>
 
     <div class="row homeMainRow">

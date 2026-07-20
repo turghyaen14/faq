@@ -82,22 +82,10 @@ Generate: **8 rows** → `DummyData::articleCards()`
 | `tags` | string[] | category/keyword pills |
 
 ## A3. `featured` — hero featured item
-Used by: **Home hero** and **Blog hero** (1 object).
-
-```json
-{
-  "title": "5 Signs Your Business Needs an FAQ Page",
-  "image": "",
-  "url": "id/11040"
-}
-```
-Generate: **1 object** → `DummyData::featured()`
-
-| key | type | notes |
-|---|---|---|
-| `title` | string | featured headline shown in the hero card |
-| `image` | string | hero/splash image URL, or `""` |
-| `url` | string | link target `"blog/id/{id}"` (same article-route convention as A2) |
+Used by: **Home hero** and **Blog hero** (1 object). Full-image-with-scrim design: same shape as
+`articleCard` (A2) — `DummyData::featured()` just returns `articleCards()[0]`, so there's one source
+of truth instead of two slightly-different copies of the same fields. See A2 for the field list
+(`title`, `image`, `url`, `excerpt`, `category`, `company_name`, `company_initials`, etc.).
 
 ## A4. `articleDetail` — full article / individual FAQ page
 Used by: **Article detail page** (1 object).
@@ -213,7 +201,9 @@ The controller maps Section A keys → these `{TAG}` names in the view HTML.
 Repeatable rows use the existing block convention `{START_X:00} ... {END_X:00}`.
 
 ## C1. `view/index.html` (Home)
-Hero (from `featured`): `{FEATURED_TITLE}`, `{FEATURED_IMAGE}`, `{FEATURED_URL}`
+Hero (from `featured`, full-image-with-scrim design): `{FEATURED_TITLE}`, `{FEATURED_IMAGE}`,
+`{FEATURED_URL}`, `{FEATURED_EXCERPT}`, `{FEATURED_CATEGORY}`, `{FEATURED_COMPANY_NAME}`,
+`{FEATURED_COMPANY_INITIALS}`
 Articles grid block `{START_ARTICLE_CARD:00}...{END_ARTICLE_CARD:00}` (from `articleCard`) — matches
 the Blog card layout exactly (same underlying schema): `{ARTICLE_URL}`, `{ARTICLE_TITLE}`,
 `{ARTICLE_CATEGORY}`, `{ARTICLE_IMAGE}`, `{ARTICLE_EXCERPT}`, `{ARTICLE_SLUG}`,

@@ -181,13 +181,14 @@ class DummyData
         ];
     }
 
+    // The hero needs company/category/excerpt too now (full-image-with-scrim
+    // design), which the old separate featured object didn't carry. Reusing
+    // the first articleCard keeps one source of truth instead of two
+    // slightly-different copies of the same fields.
     public static function featured()
     {
-        return [
-            'title' => '5 Signs Your Business Needs an FAQ Page',
-            'image' => 'https://picsum.photos/seed/blog-hero/1200/500',
-            'url' => 'blog/id/11040',
-        ];
+        $cards = self::articleCards();
+        return $cards[0];
     }
 
     public static function articleDetail()

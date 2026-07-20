@@ -1235,33 +1235,121 @@ box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px
    (enhancement: layout only, existing skin/tokens reused)
 =========================== */
 
+/* Full-image hero: image fills the card, a dark scrim at the bottom makes
+   the overlaid white text readable, company/category up top, title +
+   excerpt + CTA at the bottom. */
 .homeHeroCard {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
   width: 100%;
   box-sizing: border-box;
+  min-height: 420px;
   background-color: #faf7ef;
   border: 1px solid rgba(27, 66, 151, 0.12);
   border-radius: 25px;
   overflow: hidden;
-  padding: 2rem 2rem 0;
   margin-bottom: 1.5rem;
   text-decoration: none;
 }
 
-.homeHeroTitle {
-  color: #1b4297;
-  font-size: 2rem;
-  line-height: 1.25;
-  margin: 0 0 1.25rem;
+.homeHeroBgImage {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
 }
 
-.homeHeroImage {
-  width: calc(100% + 4rem);
-  margin-left: -2rem;
-  margin-right: -2rem;
-  height: 320px;
-  object-fit: cover;
-  display: block;
+.homeHeroScrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 35%, rgba(0, 0, 0, 0.8) 100%);
+  z-index: 1;
+}
+
+.homeHeroTop {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.5rem 2rem 0;
+}
+
+.homeHeroCompany {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-width: 0;
+}
+
+.homeHeroAvatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  background-color: #ffffff;
+  color: #1b4297;
+  font-size: 0.75rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.homeHeroCompanyName {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.homeHeroCategoryBadge {
+  background-color: #ffffff;
+  color: #1b4297;
+  border-radius: 999px;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.homeHeroBottom {
+  position: relative;
+  z-index: 2;
+  padding: 1.5rem 2rem 2rem;
+}
+
+.homeHeroTitle {
+  color: #ffffff;
+  font-size: 2rem;
+  line-height: 1.25;
+  margin: 0 0 0.75rem;
+}
+
+.homeHeroExcerpt {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0 0 1.25rem;
+  max-width: 40rem;
+}
+
+.homeHeroReadBtn {
+  display: inline-block;
+  background-color: #ffffff;
+  color: #1b4297;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.7rem 1.5rem;
+  border-radius: 999px;
 }
 
 .homeMainRow {
@@ -1448,18 +1536,23 @@ box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px
 
 @media screen and (max-width: 768px) {
   .homeHeroCard {
-    padding: 1.25rem 1.25rem 0;
+    min-height: 300px;
+  }
+
+  .homeHeroTop {
+    padding: 1rem 1.25rem 0;
+  }
+
+  .homeHeroBottom {
+    padding: 1rem 1.25rem 1.5rem;
   }
 
   .homeHeroTitle {
     font-size: 1.5rem;
   }
 
-  .homeHeroImage {
-    width: calc(100% + 2.5rem);
-    margin-left: -1.25rem;
-    margin-right: -1.25rem;
-    height: 200px;
+  .homeHeroExcerpt {
+    font-size: 0.9rem;
   }
 
   .homeColHeader {
