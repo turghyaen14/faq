@@ -14,6 +14,10 @@ sitemaps/*
 !sitemaps/.htaccess
 .sitemap_last_run
 
+# ── Internal planning docs (not app source) ───────────────────────────
+docs/*
+!docs/.htaccess
+
 # ── Local tooling / editor ────────────────────────────────────────────
 .claude/
 
